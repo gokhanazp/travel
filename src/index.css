@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Erişilebilirlik için özel stiller */
+@layer base {
+  /* Focus ring'leri daha görünür yap */
+  *:focus {
+    @apply outline-none ring-2 ring-piba-navy ring-offset-2;
+  }
+
+  /* Yüksek kontrast modu için */
+  @media (prefers-contrast: high) {
+    * {
+      @apply border-high-contrast text-high-contrast;
+    }
+  }
+
+  /* Hareket azaltma tercihi */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Temel font ve erişilebilirlik ayarları */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-white leading-relaxed;
+  }
+
+  /* Skip link için */
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-piba-navy text-white px-4 py-2 rounded-md z-50 focus:top-4;
+  }
+}
+
+@layer components {
+  /* Buton bileşenleri */
+  .btn-primary {
+    @apply bg-piba-navy hover:bg-piba-dark-navy text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 min-h-touch focus:ring-2 focus:ring-piba-yellow focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-piba-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 min-h-touch focus:ring-2 focus:ring-piba-navy focus:ring-offset-2;
+  }
+
+  /* Kart bileşenleri */
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100;
+  }
+
+  /* Form elemanları */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-piba-navy focus:border-piba-navy min-h-touch text-base;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Gradient text animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Slide in from left */
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+  }
+
+  /* Slide in from right */
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+  }
+
+  /* Scale in animation */
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+}
