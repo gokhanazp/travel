@@ -47,6 +47,8 @@ const translations = {
     highlights: 'Highlights',
     more: 'more',
     viewAllTours: 'View All Tours',
+    viewDetails: 'View Details',
+    reserveTour: 'Reserve Tour',
     
     // Tour Details
     aboutTour: 'About This Tour',
@@ -147,6 +149,8 @@ const translations = {
     highlights: 'Öne Çıkan Özellikler',
     more: 'daha',
     viewAllTours: 'Tüm Turları Görüntüle',
+    viewDetails: 'Detayları Gör',
+    reserveTour: 'Tur Rezervasyonu',
     
     // Tour Details
     aboutTour: 'Bu Tur Hakkında',

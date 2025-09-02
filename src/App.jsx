@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import ReservationPage from './pages/ReservationPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import TourDetailPage from './pages/TourDetailPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/rezervasyon" element={<ReservationPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/tour/:slug" element={<TourDetailPage />} />
           </Routes>
         </div>
       </Router>

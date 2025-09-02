@@ -15,6 +15,65 @@ const ReservationPage = () => {
     message: ''
   })
 
+  const content = {
+    en: {
+      title: 'Make a Reservation',
+      subtitle: 'Book your accessible tour experience',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'Your full name',
+      emailLabel: 'Email',
+      emailPlaceholder: 'example@email.com',
+      phoneLabel: 'Phone',
+      phonePlaceholder: '0555 123 45 67',
+      participantsLabel: 'Number of Participants',
+      participantsOption: 'person',
+      tourLabel: 'Select Tour',
+      tourPlaceholder: 'Choose a tour',
+      dateLabel: 'Date',
+      messageLabel: 'Special Requests and Notes',
+      messagePlaceholder: 'Your special needs, accessibility requirements or questions...',
+      submitButton: 'Send Reservation Request',
+      submitNote: '* Your reservation request will be reviewed within 24 hours.',
+      contactTitle: 'Contact Us Immediately',
+      contactSubtitle: 'You can contact us directly for urgent matters',
+      successMessage: 'Your reservation request has been received! We will get back to you as soon as possible.',
+      tours: [
+        { id: 'sultanahmet', name: 'Sultanahmet Historical Peninsula', price: '$45' },
+        { id: 'bosphorus', name: 'Bosphorus Tour', price: '$38' },
+        { id: 'galata', name: 'Galata and Beyoğlu', price: '$32' }
+      ]
+    },
+    tr: {
+      title: 'Rezervasyon Yap',
+      subtitle: 'Engelli dostu turlarımız için rezervasyon yapın',
+      nameLabel: 'Ad Soyad',
+      namePlaceholder: 'Adınız ve soyadınız',
+      emailLabel: 'E-posta',
+      emailPlaceholder: 'ornek@email.com',
+      phoneLabel: 'Telefon',
+      phonePlaceholder: '0555 123 45 67',
+      participantsLabel: 'Katılımcı Sayısı',
+      participantsOption: 'kişi',
+      tourLabel: 'Tur Seçin',
+      tourPlaceholder: 'Tur seçiniz',
+      dateLabel: 'Tarih',
+      messageLabel: 'Özel İstekler ve Notlar',
+      messagePlaceholder: 'Özel ihtiyaçlarınız, erişilebilirlik gereksinimleri veya sorularınız...',
+      submitButton: 'Rezervasyon Talebini Gönder',
+      submitNote: '* Rezervasyon talebiniz 24 saat içinde değerlendirilecektir.',
+      contactTitle: 'Hemen İletişime Geçin',
+      contactSubtitle: 'Acil durumlar için doğrudan bizimle iletişime geçebilirsiniz',
+      successMessage: 'Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.',
+      tours: [
+        { id: 'sultanahmet', name: 'Sultanahmet Tarihi Yarımada', price: '₺450' },
+        { id: 'bosphorus', name: 'Boğaz Turu', price: '₺380' },
+        { id: 'galata', name: 'Galata ve Beyoğlu', price: '₺320' }
+      ]
+    }
+  }
+
+  const currentContent = content[language]
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -26,14 +85,8 @@ const ReservationPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    alert('Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.')
+    alert(currentContent.successMessage)
   }
-
-  const tours = [
-    { id: 'sultanahmet', name: 'Sultanahmet Tarihi Yarımada', price: '₺450' },
-    { id: 'bosphorus', name: 'Boğaz Turu', price: '₺380' },
-    { id: 'galata', name: 'Galata ve Beyoğlu', price: '₺320' }
-  ]
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -41,24 +94,24 @@ const ReservationPage = () => {
       
       <div className="pt-24 pb-16">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Başlık */}
+          {/* Title */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Rezervasyon Yap
+              {currentContent.title}
             </h1>
             <p className="text-xl text-gray-600">
-              Engelli dostu turlarımız için rezervasyon yapın
+              {currentContent.subtitle}
             </p>
           </div>
 
           {/* Form */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Kişisel Bilgiler */}
+              {/* Personal Information */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Ad Soyad *
+                    {currentContent.nameLabel} *
                   </label>
                   <input
                     type="text"
@@ -67,13 +120,13 @@ const ReservationPage = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Adınız ve soyadınız"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder={currentContent.namePlaceholder}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    E-posta *
+                    {currentContent.emailLabel} *
                   </label>
                   <input
                     type="email"
@@ -82,8 +135,8 @@ const ReservationPage = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="ornek@email.com"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder={currentContent.emailPlaceholder}
                   />
                 </div>
               </div>
@@ -91,7 +144,7 @@ const ReservationPage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Telefon *
+                    {currentContent.phoneLabel} *
                   </label>
                   <input
                     type="tel"
@@ -100,33 +153,33 @@ const ReservationPage = () => {
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="0555 123 45 67"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder={currentContent.phonePlaceholder}
                   />
                 </div>
                 <div>
                   <label htmlFor="participants" className="block text-sm font-medium text-gray-700 mb-2">
-                    Katılımcı Sayısı
+                    {currentContent.participantsLabel}
                   </label>
                   <select
                     id="participants"
                     name="participants"
                     value={formData.participants}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   >
                     {[1,2,3,4,5,6,7,8,9,10].map(num => (
-                      <option key={num} value={num}>{num} kişi</option>
+                      <option key={num} value={num}>{num} {currentContent.participantsOption}</option>
                     ))}
                   </select>
                 </div>
               </div>
 
-              {/* Tur Seçimi */}
+              {/* Tour Selection */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="tour" className="block text-sm font-medium text-gray-700 mb-2">
-                    Tur Seçin *
+                    {currentContent.tourLabel} *
                   </label>
                   <select
                     id="tour"
@@ -134,10 +187,10 @@ const ReservationPage = () => {
                     required
                     value={formData.tour}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   >
-                    <option value="">Tur seçiniz</option>
-                    {tours.map(tour => (
+                    <option value="">{currentContent.tourPlaceholder}</option>
+                    {currentContent.tours.map(tour => (
                       <option key={tour.id} value={tour.id}>
                         {tour.name} - {tour.price}
                       </option>
@@ -146,7 +199,7 @@ const ReservationPage = () => {
                 </div>
                 <div>
                   <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
-                    Tarih *
+                    {currentContent.dateLabel} *
                   </label>
                   <input
                     type="date"
@@ -156,15 +209,15 @@ const ReservationPage = () => {
                     value={formData.date}
                     onChange={handleInputChange}
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   />
                 </div>
               </div>
 
-              {/* Ek Mesaj */}
+              {/* Additional Message */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Özel İstekler ve Notlar
+                  {currentContent.messageLabel}
                 </label>
                 <textarea
                   id="message"
@@ -172,46 +225,46 @@ const ReservationPage = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Özel ihtiyaçlarınız, erişilebilirlik gereksinimleri veya sorularınız..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  placeholder={currentContent.messagePlaceholder}
                 />
               </div>
 
-              {/* Gönder Butonu */}
+              {/* Submit Button */}
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  Rezervasyon Talebini Gönder
+                  {currentContent.submitButton}
                 </button>
                 <p className="text-sm text-gray-500 mt-4">
-                  * Rezervasyon talebiniz 24 saat içinde değerlendirilecektir.
+                  {currentContent.submitNote}
                 </p>
               </div>
             </form>
           </div>
 
-          {/* İletişim Bilgileri */}
-          <div className="mt-12 bg-purple-50 rounded-xl p-8 text-center">
+          {/* Contact Information */}
+          <div className="mt-12 bg-orange-50 rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Hemen İletişime Geçin
+              {currentContent.contactTitle}
             </h3>
             <p className="text-gray-600 mb-6">
-              Acil durumlar için doğrudan bizimle iletişime geçebilirsiniz
+              {currentContent.contactSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+905551234567"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300"
               >
-                📞 0555 123 45 67
+                📞 +90 555 123 45 67
               </a>
               <a
-                href="mailto:info@piwatours.com"
+                href="mailto:info@pibawingstravel.com"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300"
               >
-                ✉️ info@piwatours.com
+                ✉️ info@pibawingstravel.com
               </a>
             </div>
           </div>
