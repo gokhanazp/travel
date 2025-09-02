@@ -255,10 +255,10 @@ const ReservationPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+905551234567"
+                href="tel:+905325433673"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300"
               >
-                📞 +90 555 123 45 67
+                📞 +90 532 543 36 73
               </a>
               <a
                 href="mailto:info@pibawingstravel.com"

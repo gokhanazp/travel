@@ -140,10 +140,10 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+905551234567"
+              href="tel:+905325433673"
               className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              📞 +90 555 123 45 67
+              📞 +90 532 543 36 73
             </a>
             <a
               href="mailto:info@pibawingstravel.com"

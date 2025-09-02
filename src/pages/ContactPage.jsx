@@ -20,7 +20,7 @@ const ContactPage = () => {
       subtitle: 'Get in touch with our expert team for your accessible travel needs',
       contactInfo: 'Contact Information',
       office: 'Our Office',
-      officeAddress: 'Istanbul, Turkey',
+      officeAddress: 'Ataköy 7-8-9-10. Kısım Çobançeşme\nE5 Yanyol Caddesi A No: 22/1 217\nBakırköy – İSTANBUL',
       phone: 'Phone',
       email: 'Email',
       hours: 'Business Hours',
@@ -44,7 +44,7 @@ const ContactPage = () => {
       subtitle: 'Erişilebilir seyahat ihtiyaçlarınız için uzman ekibimizle iletişime geçin',
       contactInfo: 'İletişim Bilgileri',
       office: 'Ofisimiz',
-      officeAddress: 'İstanbul, Türkiye',
+      officeAddress: 'Ataköy 7-8-9-10. Kısım Çobançeşme\nE5 Yanyol Caddesi A No: 22/1 217\nBakırköy – İSTANBUL',
       phone: 'Telefon',
       email: 'E-posta',
       hours: 'Çalışma Saatleri',
@@ -117,7 +117,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">{currentContent.office}</h3>
-                    <p className="text-gray-600">{currentContent.officeAddress}</p>
+                    <p className="text-gray-600 whitespace-pre-line">{currentContent.officeAddress}</p>
                   </div>
                 </div>
 
@@ -130,9 +130,12 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">{currentContent.phone}</h3>
-                    <a href="tel:+905551234567" className="text-orange-600 hover:text-orange-700 font-medium">
-                      +90 555 123 45 67
-                    </a>
+                    <div className="text-orange-600">
+                      <div className="font-medium">Pınar SİVEREK</div>
+                      <a href="tel:+905325433673" className="hover:text-orange-700">
+                        📱 +90 532 543 36 73
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -175,8 +178,8 @@ const ContactPage = () => {
                 {currentContent.emergencyContact}
               </h3>
               <p className="text-red-700 mb-3">{currentContent.emergencyText}</p>
-              <a href="tel:+905551234567" className="text-red-800 font-bold text-lg">
-                📞 +90 555 123 45 67
+              <a href="tel:+905325433673" className="text-red-800 font-bold text-lg">
+                📞 +90 532 543 36 73
               </a>
             </div>
           </div>
