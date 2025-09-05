@@ -3,32 +3,20 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer 
-      className="relative text-white py-16"
-      style={{
-        backgroundImage: 'url(https://demo2.wpopal.com/havezic/wp-content/uploads/2024/07/h1_bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-blue-900/90 to-purple-900/95"></div>
+    <footer className="bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900 text-white py-16">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           {/* Company Information */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-4 mb-6">
-              <img
-                src="https://pibawingstravel.com/wp-content/uploads/2023/04/pibalogo.png"
-                alt="Piba Wings Travel Logo"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-2xl font-display font-bold">Piba Wings Travel</h3>
-                <p className="text-blue-200 font-semibold">Accessible Tourism</p>
+            <div className="mb-6">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 inline-block shadow-lg">
+                <img
+                  src="/logo.png"
+                  alt="Piba Wings Travel Logo"
+                  className="h-16 w-auto object-contain"
+                />
               </div>
             </div>
 
@@ -175,10 +163,7 @@ const Footer = () => {
               </a>
             </div>
             
-            <div className="flex items-center space-x-2 text-sm text-gray-300">
-              <span>Powered by</span>
-              <span className="font-semibold text-blue-400">Augment Code</span>
-            </div>
+
           </div>
         </div>
       </div>

@@ -109,98 +109,182 @@ const TourDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Hero Section */}
-      <div className="relative pt-20">
+      {/* Refined Hero Section */}
+      <div className="relative">
         <div className="relative h-96 overflow-hidden">
           <img
             src={tour.mainImage}
             alt={title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto px-4">
-                {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
-              </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+
+          {/* Floating Elements */}
+          <div className="absolute top-6 right-6">
+            <div className="flex space-x-2">
+              <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </button>
+              <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Accessibility Badge */}
+          <div className="absolute top-6 left-6">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">
+              ♿ {accessibility}
+            </span>
+          </div>
+
+          {/* Main Content */}
+          <div className="absolute inset-0 flex items-end">
+            <div className="w-full p-6 md:p-8">
+              <div className="max-w-4xl">
+                <div className="flex items-center space-x-3 mb-4">
+                  <span className="px-3 py-1 bg-orange-500 text-white rounded-full text-sm font-medium">
+                    {duration}
+                  </span>
+                  <div className="flex items-center text-yellow-400">
+                    {'★'.repeat(5)}
+                    <span className="text-white ml-2 text-sm">(4.9)</span>
+                  </div>
+                </div>
+
+                <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">{title}</h1>
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mb-4">
+                  {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
+                </p>
+
+                <div className="flex items-center space-x-4">
+                  <div className="text-white">
+                    <span className="text-2xl md:text-3xl font-bold text-orange-400">
+                      {tour.price} {language === 'en' ? tour.currencyEn : tour.currency}
+                    </span>
+                    <span className="text-sm ml-2 opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            {/* Navigation Tabs */}
-            <div className="border-b border-gray-200 mb-8">
-              <nav className="-mb-px flex space-x-8">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${
-                      activeTab === tab.id
-                        ? 'border-orange-500 text-orange-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </nav>
-            </div>
+      {/* Enhanced Content */}
+      <div
+        className="relative py-20"
+        style={{
+          backgroundImage: 'url(https://demo2.wpopal.com/havezic/wp-content/uploads/2024/07/h1_bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-orange-50/90 to-pink-50/95"></div>
 
-            {/* Tab Content */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              {activeTab === 'overview' && (
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                      {currentContent.overview}
-                    </h2>
-                    <p className="text-gray-700 leading-relaxed text-lg">
-                      {description}
-                    </p>
-                  </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Enhanced Main Content */}
+            <div className="lg:col-span-2">
+              {/* Enhanced Navigation Tabs */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 mb-8 shadow-lg">
+                <nav className="flex space-x-2">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`flex-1 py-4 px-6 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                        activeTab === tab.id
+                          ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
+                          : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>{tab.label}</span>
+                      </div>
+                    </button>
+                  ))}
+                </nav>
+              </div>
 
-                  {highlights && highlights.length > 0 && (
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
-                        {currentContent.highlights}
-                      </h3>
-                      <ul className="grid md:grid-cols-2 gap-3">
-                        {highlights.map((highlight, index) => (
-                          <li key={index} className="flex items-center bg-orange-50 p-3 rounded-lg">
-                            <svg className="w-5 h-5 mr-3 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span className="text-gray-700">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
+              {/* Enhanced Tab Content */}
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10">
+                {activeTab === 'overview' && (
+                  <div className="space-y-10">
+                    <div className="text-center mb-8">
+                      <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-pink-500 text-white mb-4">
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Tour Overview
+                      </span>
+                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        {currentContent.overview}
+                      </h2>
                     </div>
-                  )}
 
-                  {features && features.length > 0 && (
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
-                        {currentContent.features}
-                      </h3>
-                      <ul className="grid md:grid-cols-2 gap-3">
-                        {features.map((feature, index) => (
-                          <li key={index} className="flex items-center bg-blue-50 p-3 rounded-lg">
-                            <svg className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-gray-700">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-8">
+                      <p className="text-gray-800 leading-relaxed text-lg md:text-xl">
+                        {description}
+                      </p>
                     </div>
-                  )}
+
+                    {highlights && highlights.length > 0 && (
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                          {currentContent.highlights}
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {highlights.map((highlight, index) => (
+                            <div key={index} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                              <div className="flex items-start space-x-4">
+                                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <div className="flex-1">
+                                  <span className="text-gray-800 font-semibold text-lg leading-relaxed">{highlight}</span>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {features && features.length > 0 && (
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                          {currentContent.features}
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {features.map((feature, index) => (
+                            <div key={index} className="group bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 hover:from-blue-100 hover:to-indigo-100 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+                              <div className="flex items-start space-x-4">
+                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                                </div>
+                                <div className="flex-1">
+                                  <span className="text-gray-800 font-semibold text-lg leading-relaxed">{feature}</span>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                 </div>
               )}
 
@@ -316,51 +400,90 @@ const TourDetailPage = () => {
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8">
-              <div className="space-y-6">
-                {/* Price */}
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">
-                    {tour.price} {language === 'en' ? tour.currencyEn : tour.currency}
+            {/* Enhanced Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 sticky top-8">
+                <div className="space-y-8">
+                  {/* Enhanced Price Section */}
+                  <div className="text-center bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-6">
+                    <span className="text-sm text-gray-600 block mb-2">Starting from</span>
+                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                      {tour.price} {language === 'en' ? tour.currencyEn : tour.currency}
+                    </div>
+                    <p className="text-gray-600 font-medium">{language === 'en' ? 'per person' : 'kişi başı'}</p>
+                    <div className="flex items-center justify-center mt-4 text-yellow-500">
+                      {'★'.repeat(5)}
+                      <span className="text-gray-600 ml-2 text-sm">(4.9 rating)</span>
+                    </div>
                   </div>
-                  <p className="text-gray-500">{language === 'en' ? 'per person' : 'kişi başı'}</p>
+
+                  {/* Enhanced Tour Info */}
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-2xl p-4 shadow-md">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                            <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <span className="text-gray-700 font-medium">{currentContent.duration}</span>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">{duration}</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-2xl p-4 shadow-md">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <span className="text-gray-700 font-medium">{currentContent.accessibility}</span>
+                        </div>
+                        <span className="font-bold text-green-600 text-lg">♿ {accessibility}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Enhanced Action Buttons */}
+                  <div className="space-y-4">
+                    <Link
+                      to="/reservation"
+                      className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-5 px-6 rounded-2xl font-bold text-lg text-center transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl block group"
+                    >
+                      <div className="flex items-center justify-center space-x-3">
+                        <svg className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{currentContent.bookNow}</span>
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </Link>
+
+                    <Link
+                      to="/tours"
+                      className="w-full bg-white hover:bg-gray-50 text-gray-800 py-4 px-6 rounded-2xl font-semibold text-center transition-all duration-300 border-2 border-gray-200 hover:border-orange-300 block group"
+                    >
+                      <div className="flex items-center justify-center space-x-3">
+                        <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                        <span>{currentContent.backToTours}</span>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
-
-                {/* Tour Info */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                    <span className="text-gray-600">{currentContent.duration}</span>
-                    <span className="font-semibold text-gray-900">{duration}</span>
-                  </div>
-                  <div className="flex items-center justify-between py-3 border-b border-gray-200">
-                    <span className="text-gray-600">{currentContent.accessibility}</span>
-                    <span className="font-semibold text-gray-900">{accessibility}</span>
-                  </div>
-                </div>
-
-                {/* Book Now Button */}
-                <Link
-                  to="/reservation"
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 px-6 rounded-xl font-bold text-lg text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl block"
-                >
-                  {currentContent.bookNow}
-                </Link>
-
-                {/* Back to Tours */}
-                <Link
-                  to="/#tours"
-                  className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-6 rounded-xl font-semibold text-center transition-all duration-300 block"
-                >
-                  {currentContent.backToTours}
-                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   )

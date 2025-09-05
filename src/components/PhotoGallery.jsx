@@ -6,73 +6,73 @@ const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const [activeFilter, setActiveFilter] = useState('all')
 
-  // Tour participant photos
+  // Tour participant photos - Real Accessible Tourism Experiences
   const participantPhotos = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Sultanahmet Tour",
+      image: "https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg",
+      tourName: "Blue Mosque Tour",
       participantName: "Sarah Johnson",
       date: "March 15, 2024",
       category: "historical",
-      description: "Unforgettable moments at Hagia Sophia",
+      description: "Wheelchair accessible tour at Blue Mosque",
       likes: 24,
       accessibility: "Wheelchair user"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Bosphorus Tour",
+      image: "https://denilyatour.com/wp-content/uploads/2024/03/cropped-yaaslu.webp",
+      tourName: "Accessible City Tour",
       participantName: "Michael Davis",
       date: "March 22, 2024",
-      category: "bosphorus",
-      description: "Great day at the Bosphorus",
+      category: "cultural",
+      description: "Professional accessible tourism experience",
       likes: 31,
-      accessibility: "Visually impaired"
+      accessibility: "Wheelchair user"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Galata Tour",
+      image: "https://antalya3tcom.teimg.com/crop/1280x720/antalya3t-com/uploads/2024/12/engelli-1.jpg",
+      tourName: "Accessible Tourism Experience",
       participantName: "Emma Wilson",
       date: "April 8, 2024",
       category: "cultural",
-      description: "View from Galata Tower",
+      description: "Enjoying accessible tourism with family support",
       likes: 18,
-      accessibility: "Hearing impaired"
+      accessibility: "Wheelchair user"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Grand Bazaar Tour",
+      image: "https://doksad.com/wp-content/uploads/2015/01/1.png",
+      tourName: "Accessible Transportation",
       participantName: "James Miller",
       date: "April 12, 2024",
-      category: "cultural",
-      description: "Shopping joy at the bazaar",
+      category: "bosphorus",
+      description: "Accessible vehicle transportation service",
       likes: 27,
       accessibility: "Wheelchair user"
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Sultanahmet Tour",
+      image: "https://i20.haber7.net/resize/1280x720//haber/haber7/photos/2021/31/engelli_dostu_sehirler_dunyadaki_engelli_dostu_9_sehir_1628082972_4048.jpg",
+      tourName: "Accessible City Experience",
       participantName: "Lisa Anderson",
       date: "April 20, 2024",
-      category: "historical",
-      description: "At Topkapi Palace",
+      category: "cultural",
+      description: "Exploring accessible city infrastructure",
       likes: 35,
-      accessibility: "Visually impaired"
+      accessibility: "Wheelchair user"
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tourName: "Bosphorus Tour",
+      image: "https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg",
+      tourName: "Historical Sites Tour",
       participantName: "David Brown",
       date: "April 25, 2024",
-      category: "bosphorus",
-      description: "Happy moments on boat tour",
+      category: "historical",
+      description: "Accessible historical tour experience",
       likes: 42,
-      accessibility: "Hearing impaired"
+      accessibility: "Wheelchair user"
     }
   ]
 

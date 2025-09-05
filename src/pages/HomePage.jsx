@@ -62,7 +62,7 @@ const HomePage = () => {
                     {t('discoverWorld')}
                   </span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500">
-                    Piwatours
+                    PibaWings
                   </span>
                 </h1>
 
@@ -242,12 +242,12 @@ const HomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tour Card 1 - Historic Istanbul */}
+            {/* Tour Card 1 - Sultanahmet Camii */}
             <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="relative h-64 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Historic Istanbul Tour"
+                  alt="Sultanahmet Camii Tour"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -278,24 +278,25 @@ const HomePage = () => {
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">Historic Istanbul Tour</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Blue Mosque Accessible Tour</h3>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€89</div>
-                    <div className="text-sm text-gray-500 line-through">€120</div>
+                    <div className="text-2xl font-bold text-orange-500">$25</div>
+                    <div className="text-sm text-gray-500 line-through">$35</div>
                   </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Discover the magnificent history of Istanbul with our fully accessible tour featuring Hagia Sophia, Blue Mosque, and Topkapi Palace.
+                  Experience the magnificent Blue Mosque with our specially designed accessible tour. Features wheelchair-friendly entrances, audio guide systems for visually impaired visitors, and dedicated rest areas. Our expert guides provide detailed descriptions of the stunning blue tiles and Ottoman architecture.
                 </p>
 
                 {/* Tour Highlights */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{t('tourHighlights')}:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Accessibility Features:</h4>
                   <div className="flex flex-wrap gap-1">
-                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
-                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
-                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Topkapi Palace</span>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Wheelchair Access</span>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Audio Guide</span>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Rest Areas</span>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Special Entrance</span>
                   </div>
                 </div>
 
@@ -339,12 +340,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Tour Card 2 - Bosphorus Cruise */}
+            {/* Tour Card 2 - İstanbul Turu */}
             <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="relative h-64 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Bosphorus Cruise"
+                  alt="İstanbul Turu"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -375,24 +376,25 @@ const HomePage = () => {
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">Bosphorus Accessible Cruise</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Istanbul Comprehensive City Tour</h3>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€65</div>
-                    <div className="text-sm text-gray-500 line-through">€85</div>
+                    <div className="text-2xl font-bold text-orange-500">$45</div>
+                    <div className="text-sm text-gray-500 line-through">$60</div>
                   </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Experience the beauty of Bosphorus with our wheelchair-accessible boat featuring panoramic views and comfortable seating.
+                  Comprehensive accessible city tour covering Istanbul's most important historical and cultural sites. Features adapted transportation, sign language interpreters available upon request, and tactile experiences for visually impaired guests. Includes Bosphorus views and both historical peninsula and modern Istanbul.
                 </p>
 
                 {/* Tour Highlights */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{t('tourHighlights')}:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Accessibility Features:</h4>
                   <div className="flex flex-wrap gap-1">
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Dolmabahçe Palace</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Maiden's Tower</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Bosphorus Bridge</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Adapted Vehicle</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Sign Language</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Tactile Experience</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Flexible Timing</span>
                   </div>
                 </div>
 
@@ -436,12 +438,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Tour Card 3 - Cultural Heritage */}
+            {/* Tour Card 3 - Topkapı Sarayı */}
             <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Cultural Heritage Tour"
+                  src="https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg"
+                  alt="Topkapi Palace Tour"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -472,24 +474,27 @@ const HomePage = () => {
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">Cultural Heritage Tour</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Topkapi Palace Accessible Tour</h3>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€120</div>
-                    <div className="text-sm text-gray-500 line-through">€150</div>
+                    <div className="text-2xl font-bold text-orange-500">$35</div>
+                    <div className="text-sm text-gray-500 line-through">$50</div>
                   </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Explore Istanbul's rich cultural heritage with expert guides, featuring accessible museums and traditional neighborhoods.
+                  Explore the magnificent Topkapi Palace with full accessibility support. Features elevator access to upper levels, ramp systems throughout museum sections, specialized wheelchairs for garden areas, and trained guides for visitors with visual or hearing impairments. Experience the Harem quarters, Sacred Relics, and breathtaking Bosphorus views with complete comfort and safety.
                 </p>
 
                 {/* Tour Highlights */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{t('tourHighlights')}:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Premium Accessibility Features:</h4>
                   <div className="flex flex-wrap gap-1">
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Grand Bazaar</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Spice Bazaar</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Turkish Bath</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Elevator Access</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Ramp Systems</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Garden Wheelchairs</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Trained Guides</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Rest Benches</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Sensory Support</span>
                   </div>
                 </div>
 

@@ -57,7 +57,7 @@ const MainHeader = () => {
           {/* Logo - Piba Wings Travel */}
           <Link to="/" className="flex items-center">
             <img
-              src="https://pibawingstravel.com/wp-content/uploads/2023/04/pibalogo.png"
+              src="/logo.png"
               alt="Piba Wings Travel"
               className="h-12 w-auto"
             />
@@ -68,24 +68,12 @@ const MainHeader = () => {
             <Link to="/" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('home')}
             </Link>
-            <div className="relative group">
-              <button className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base flex items-center">
-                {t('tours')}
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-            <div className="relative group">
-              <button className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base flex items-center">
-                {t('destinations')}
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
+            <Link to="/tours" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
+              {t('tours')}
+            </Link>
+
             <Link to="/gallery" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
-              Gallery
+              {t('gallery')}
             </Link>
             <Link to="/about" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('about')}
@@ -149,11 +137,14 @@ const MainHeader = () => {
               <Link to="/" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
                 Ana Sayfa
               </Link>
-              <a href="/#tours" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
-                Turlarımız
-              </a>
+              <Link to="/tours" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                {t('tours')}
+              </Link>
+              <Link to="/gallery" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                {t('gallery')}
+              </Link>
               <a href="/#accessibility" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
-                Erişilebilirlik
+                {t('accessibility')}
               </a>
               <a href="/#gallery" className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
                 Galeri

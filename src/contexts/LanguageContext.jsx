@@ -16,6 +16,8 @@ const translations = {
     home: 'Home',
     about: 'About',
     tours: 'Tours',
+    gallery: 'Gallery',
+    accessibility: 'Accessibility',
     destinations: 'Destinations',
     contact: 'Contact',
     phone: 'Phone',
@@ -49,6 +51,26 @@ const translations = {
     viewAllTours: 'View All Tours',
     viewDetails: 'View Details',
     reserveTour: 'Reserve Tour',
+
+    // Accessibility Features
+    wheelchairRamps: 'Wheelchair Ramps',
+    accessibleToilets: 'Accessible Toilets',
+    audioGuides: 'Audio Guide Systems',
+
+    // Guide Features
+    certifiedGuides: 'Certified Professional Guides',
+    multiLanguage: 'Multi-Language Support',
+    localExpertise: 'Local Expertise & Knowledge',
+
+    // Vehicle Features
+    wheelchairVans: 'Wheelchair Accessible Vehicles',
+    comfortableSeating: 'Comfortable Seating',
+    airConditioning: 'Climate Control System',
+
+    // Service Features
+    customItinerary: 'Custom Itinerary Planning',
+    flexibleTiming: 'Flexible Schedule',
+    specialNeeds: 'Special Needs Assistance',
     
     // Tour Details
     aboutTour: 'About This Tour',
@@ -118,6 +140,8 @@ const translations = {
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
     tours: 'Turlar',
+    gallery: 'Galeri',
+    accessibility: 'Erişilebilirlik',
     destinations: 'Destinasyonlar',
     contact: 'İletişim',
     phone: 'Telefon',
@@ -151,6 +175,26 @@ const translations = {
     viewAllTours: 'Tüm Turları Görüntüle',
     viewDetails: 'Detayları Gör',
     reserveTour: 'Tur Rezervasyonu',
+
+    // Accessibility Features
+    wheelchairRamps: 'Tekerlekli Sandalye Rampaları',
+    accessibleToilets: 'Engelsiz Tuvaletler',
+    audioGuides: 'Sesli Rehber Sistemleri',
+
+    // Guide Features
+    certifiedGuides: 'Sertifikalı Profesyonel Rehberler',
+    multiLanguage: 'Çoklu Dil Desteği',
+    localExpertise: 'Yerel Uzmanlık ve Bilgi',
+
+    // Vehicle Features
+    wheelchairVans: 'Tekerlekli Sandalye Erişimli Araçlar',
+    comfortableSeating: 'Konforlu Oturma Düzeni',
+    airConditioning: 'İklim Kontrol Sistemi',
+
+    // Service Features
+    customItinerary: 'Özel Program Planlama',
+    flexibleTiming: 'Esnek Zaman Planlaması',
+    specialNeeds: 'Özel İhtiyaç Desteği',
     
     // Tour Details
     aboutTour: 'Bu Tur Hakkında',
