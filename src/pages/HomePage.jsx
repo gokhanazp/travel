@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 import PhotoGallery from '../components/PhotoGallery'
 import TestimonialsSection from '../components/TestimonialsSection'
+import AccessibilityToolsGallery from '../components/AccessibilityToolsGallery'
 
 const HomePage = () => {
   const { t } = useLanguage()
@@ -58,11 +59,20 @@ const HomePage = () => {
 
                 {/* Main Heading */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  <span className="block mb-2">
-                    {t('discoverWorld')}
+                  <span className="block mb-2 relative animate-float-up">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 animate-subtle-glow">
+                      "{t('heroSlogan')}"
+                    </span>
+                    {/* Decorative elements */}
+                    <div className="absolute -top-2 -left-2 w-4 h-4 bg-orange-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0s'}}></div>
+                    <div className="absolute -top-1 -right-3 w-3 h-3 bg-pink-400 rounded-full opacity-50 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute -bottom-2 left-1/4 w-2 h-2 bg-red-400 rounded-full opacity-70 animate-bounce" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute -bottom-1 right-1/3 w-2 h-2 bg-orange-300 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1.5s'}}></div>
                   </span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500">
+                  <span className="block text-gray-800 relative">
                     PibaWings
+                    {/* Subtle underline animation */}
+                    <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
                   </span>
                 </h1>
 
@@ -70,6 +80,17 @@ const HomePage = () => {
                 <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   {t('heroSubtitle')}
                 </p>
+
+                {/* Brand Tagline */}
+                <div className="mb-8 animate-slide-in-up" style={{animationDelay: '0.5s'}}>
+                  <div className="flex items-center justify-center lg:justify-start">
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 mr-3 animate-scale-in" style={{animationDelay: '0.7s'}}></div>
+                    <span className="text-sm text-gray-500 font-medium uppercase tracking-widest animate-fade-in" style={{animationDelay: '0.9s'}}>
+                      Piba Wings Mobility
+                    </span>
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-pink-500 to-orange-500 ml-3 animate-scale-in" style={{animationDelay: '1.1s'}}></div>
+                  </div>
+                </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
@@ -710,6 +731,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Accessibility Tools Gallery Section */}
+      <AccessibilityToolsGallery />
 
       {/* Photo Gallery Section */}
       <PhotoGallery />

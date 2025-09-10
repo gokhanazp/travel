@@ -27,6 +27,14 @@ const translations = {
     accessibleTravel: 'Accessible Travel Experience',
     discoverWorld: 'Discover The World With Us',
     heroSubtitle: 'Experience barrier-free travel with our specially designed accessible tours and destinations. Safe, comfortable, and unforgettable journeys for everyone.',
+    heroSlogan: 'Free Your Soul',
+    // Alternative slogans (for future use)
+    sloganOptions: [
+      'Free Your Soul',
+      'No Barriers to Free Souls',
+      'Leave Barriers Behind',
+      'Accessible Holidays, Unique Memories'
+    ],
     exploreTours: 'Explore Tours',
     
     // Stats
@@ -89,27 +97,27 @@ const translations = {
     
     // Why Choose Us
     whyChooseUs: 'Why Choose Us',
-    whyChooseUsTitle: 'Why Choose <span class="text-orange-500">Us</span>?',
-    whyChooseUsSubtitle: 'With our expert staff and special services in the field of accessible tourism, we offer unforgettable and safe travel experiences to every passenger.',
+    whyChooseUsTitle: 'Turkey\'s <span class="text-orange-500">First & Only</span><br/>Accessible Tours Agency',
+    whyChooseUsSubtitle: 'WE ARE HERE TO INCREASE YOUR TRAVEL FREEDOM! We offer safe and comfortable travel opportunities with our tours and equipment specially designed for disabled individuals.',
     happyCustomers: 'Happy Guests',
     yearsExperience: 'Years Experience',
     customerScore: 'Recommendation Rate',
     
     // Features
-    fullAccessibility: 'Full Accessibility',
-    fullAccessibilityDesc: 'All vehicles and venues are specially designed for barrier-free access',
-    expertGuides: 'Expert Guide Team',
-    expertGuidesDesc: 'Professional guides trained and experienced in accessible tourism',
-    specialVehicles: 'Special Design Vehicles',
-    specialVehiclesDesc: 'Special vehicle fleet with wheelchair access and safety equipment',
-    personalizedService: 'Personalized Service',
-    personalizedServiceDesc: 'Individual solutions planned according to each guest\'s special needs',
+    fullAccessibility: 'Special Tours for Disabled & Elderly',
+    fullAccessibilityDesc: 'Tours specially designed for disabled and elderly individuals with complete accessibility solutions',
+    expertGuides: 'Reliable & Professional Service',
+    expertGuidesDesc: 'Turkey\'s most experienced team in accessible tourism with certified professional guides',
+    specialVehicles: 'Specially Designed Equipment',
+    specialVehiclesDesc: 'Modern vehicle fleet and equipment specially designed for disabled individuals',
+    personalizedService: 'Safe & Comfortable Travel',
+    personalizedServiceDesc: 'We provide safe and comfortable travel opportunities with our professional approach',
     
     // Feature Lists
-    accessibilityFeaturesList: ['Ramp systems', 'Accessible toilets', 'Special lift systems', 'Audio guidance'],
-    expertGuidesFeaturesList: ['Certified guides', 'Multi-language support', 'First aid training', 'Empathy training'],
-    specialVehiclesFeaturesList: ['Hydraulic lift', 'Safety belts', 'Air conditioning', '24/7 technical support'],
-    personalizedServiceFeaturesList: ['Special menu options', 'Flexible schedule', 'One-on-one support', 'Family-friendly service'],
+    accessibilityFeaturesList: ['Wheelchair accessible venues', 'Barrier-free transportation', 'Special assistance services', 'Accessible accommodation'],
+    expertGuidesFeaturesList: ['8+ years experience', 'Professional certification', 'Specialized training', 'Emergency response'],
+    specialVehiclesFeaturesList: ['Hydraulic lift systems', 'Safety equipment', 'Climate control', 'Professional drivers'],
+    personalizedServiceFeaturesList: ['Individual planning', 'Flexible itinerary', 'Medical support', '24/7 assistance'],
     
     // Breadcrumb
     homePage: 'Home',
@@ -129,6 +137,20 @@ const translations = {
     // Testimonials
     guestComments: 'Guest Comments',
     whatTheySay: 'What They Say?',
+
+    // Vehicle Fleet Gallery
+    ourFleet: 'Our Fleet',
+    accessibleVehicleFleet: 'Accessible Vehicle Fleet',
+    vehicleFleetSubtitle: 'Modern and specially equipped vehicles designed to provide safe, comfortable and accessible transportation for all our guests.',
+    viewDetailsRent: 'View Details & Rent →',
+    vehicleDescription: 'Vehicle Description',
+    keyFeatures: 'Key Features',
+    technicalSpecifications: 'Technical Specifications',
+    passengerCapacity: 'Passenger Capacity',
+    wheelchairSpaces: 'Wheelchair Spaces',
+    climateControl: 'Climate Control',
+    bookThisVehicle: 'Book This Vehicle',
+    contactForInfo: 'Contact for Info',
 
     // Contact
     contactUs: 'Contact Us',
@@ -151,6 +173,14 @@ const translations = {
     accessibleTravel: 'Erişilebilir Seyahat Deneyimi',
     discoverWorld: 'Dünyayı Bizimle Keşfedin',
     heroSubtitle: 'Özel olarak tasarlanmış erişilebilir turlarımız ve destinasyonlarımızla engelsiz seyahat deneyimi yaşayın. Herkes için güvenli, konforlu ve unutulmaz yolculuklar.',
+    heroSlogan: 'Ruhunuzu Özgür Bırakın',
+    // Alternative slogans (for future use)
+    sloganOptions: [
+      'Ruhunuzu Özgür Bırakın',
+      'Özgür Ruhlar İçin Engel Yok',
+      'Engelleri Geride Bırakın',
+      'Engelsiz Tatiller, Eşsiz Anılar'
+    ],
     exploreTours: 'Turları Keşfet',
     
     // Stats
@@ -213,27 +243,27 @@ const translations = {
     
     // Why Choose Us
     whyChooseUs: 'Neden Bizi Seçmelisiniz',
-    whyChooseUsTitle: 'Neden <span class="text-orange-500">Bizi</span> Seçmelisiniz?',
-    whyChooseUsSubtitle: 'Erişilebilir turizm alanında uzman kadromuz ve özel hizmetlerimizle, her yolcuya unutulmaz ve güvenli seyahat deneyimi sunuyoruz.',
+    whyChooseUsTitle: 'Türkiye\'nin <span class="text-orange-500">İlk ve Tek</span><br/>Engelli Turlar Acentası',
+    whyChooseUsSubtitle: 'SEYAHAT ÖZGÜRLÜĞÜNÜZÜ ARTIRMAK İÇİN BURADAYIZ! Engelli bireyler için özel olarak tasarlanmış turlarımız ve ekipmanlarımızla güvenli ve konforlu seyahat imkanı sunuyoruz.',
     happyCustomers: 'Mutlu Misafir',
     yearsExperience: 'Yıl Deneyim',
     customerScore: 'Tavsiye Oranı',
     
     // Features
-    fullAccessibility: 'Tam Erişilebilirlik',
-    fullAccessibilityDesc: 'Tüm araçlar ve mekanlar engelsiz erişim için özel olarak tasarlanmıştır',
-    expertGuides: 'Uzman Rehber Kadrosu',
-    expertGuidesDesc: 'Erişilebilir turizm konusunda eğitimli ve deneyimli profesyonel rehberler',
-    specialVehicles: 'Özel Tasarım Araçlar',
-    specialVehiclesDesc: 'Tekerlekli sandalye erişimi olan, güvenlik donanımlı özel araç filosu',
-    personalizedService: 'Kişiselleştirilmiş Hizmet',
-    personalizedServiceDesc: 'Her misafirimizin özel ihtiyaçlarına göre planlanmış bireysel çözümler',
+    fullAccessibility: 'Engelli ve Yaşlı Bireylere Özel Turlar',
+    fullAccessibilityDesc: 'Engelli ve yaşlı bireylere özel olarak tasarlanmış, tam erişilebilirlik çözümlü turlar',
+    expertGuides: 'Güvenilir ve Profesyonel Hizmet',
+    expertGuidesDesc: 'Sertifikalı profesyonel rehberlerle erişilebilir turizm konusunda Türkiye\'nin en deneyimli ekibi',
+    specialVehicles: 'Özel Tasarım Ekipmanlar',
+    specialVehiclesDesc: 'Engelli bireyler için özel olarak tasarlanmış modern araç filosu ve ekipmanlar',
+    personalizedService: 'Güvenli ve Konforlu Seyahat',
+    personalizedServiceDesc: 'Profesyonel yaklaşımımızla güvenli ve konforlu seyahat imkanları sunuyoruz',
     
     // Feature Lists
-    accessibilityFeaturesList: ['Rampa sistemleri', 'Engelsiz tuvaletler', 'Özel kaldırım sistemleri', 'Sesli rehberlik'],
-    expertGuidesFeaturesList: ['Sertifikalı rehberler', 'Çoklu dil desteği', 'İlk yardım eğitimi', 'Empati eğitimi'],
-    specialVehiclesFeaturesList: ['Hidrolik kaldırım', 'Güvenlik kemerleri', 'Klima sistemi', '24/7 teknik destek'],
-    personalizedServiceFeaturesList: ['Özel menü seçenekleri', 'Esnek program', 'Birebir destek', 'Aile dostu hizmet'],
+    accessibilityFeaturesList: ['Tekerlekli sandalye erişimli mekanlar', 'Engelsiz ulaşım', 'Özel yardım hizmetleri', 'Erişilebilir konaklama'],
+    expertGuidesFeaturesList: ['8+ yıl deneyim', 'Profesyonel sertifikasyon', 'Özel eğitim', 'Acil durum müdahalesi'],
+    specialVehiclesFeaturesList: ['Hidrolik kaldırım sistemleri', 'Güvenlik ekipmanları', 'İklim kontrolü', 'Profesyonel şoförler'],
+    personalizedServiceFeaturesList: ['Bireysel planlama', 'Esnek program', 'Tıbbi destek', '24/7 yardım'],
     
     // Breadcrumb
     homePage: 'Ana Sayfa',
@@ -253,6 +283,20 @@ const translations = {
     // Testimonials
     guestComments: 'Misafir Yorumları',
     whatTheySay: 'Ne Diyor?',
+
+    // Vehicle Fleet Gallery
+    ourFleet: 'Araç Filomuz',
+    accessibleVehicleFleet: 'Erişilebilir Araç Filomuz',
+    vehicleFleetSubtitle: 'Tüm misafirlerimiz için güvenli, konforlu ve erişilebilir ulaşım sağlamak üzere tasarlanmış modern ve özel donanımlı araçlarımız.',
+    viewDetailsRent: 'Detayları Gör & Kirala →',
+    vehicleDescription: 'Araç Açıklaması',
+    keyFeatures: 'Temel Özellikler',
+    technicalSpecifications: 'Teknik Özellikler',
+    passengerCapacity: 'Yolcu Kapasitesi',
+    wheelchairSpaces: 'Tekerlekli Sandalye Yeri',
+    climateControl: 'İklim Kontrolü',
+    bookThisVehicle: 'Bu Aracı Rezerve Et',
+    contactForInfo: 'Bilgi İçin İletişim',
 
     // Contact
     contactUs: 'İletişim',
