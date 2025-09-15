@@ -481,12 +481,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Tour Card 3 - Topkapı Sarayı */}
+            {/* Tour Card 3 - Accessible Istanbul One Day */}
             <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="relative h-64 overflow-hidden">
                 <img
                   src="https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg"
-                  alt="Topkapi Palace Tour"
+                  alt="Accessible Istanbul One Day Tour"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -495,7 +495,7 @@ const HomePage = () => {
                     {t('accessibleTour')}
                   </span>
                   <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('fullDay')}
+                    One Day
                   </span>
                 </div>
                 <div className="absolute top-4 right-4">
@@ -512,32 +512,37 @@ const HomePage = () => {
                     </div>
                     <span className="text-sm font-medium">4.9 (87 {t('reviews')})</span>
                   </div>
+                  <div className="text-xs bg-black/30 px-2 py-1 rounded">
+                    Tour Code: PBWAI0019
+                  </div>
                 </div>
               </div>
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">Topkapi Palace Accessible Tour</h3>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">Accessible Istanbul One Day</h3>
+                    <p className="text-sm text-gray-500">(With Wheelchair)</p>
+                  </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">$35</div>
-                    <div className="text-sm text-gray-500 line-through">$50</div>
+                    <div className="text-2xl font-bold text-orange-500">€120</div>
+                    <div className="text-sm text-gray-500">per person</div>
                   </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Explore the magnificent Topkapi Palace with full accessibility support. Features elevator access to upper levels, ramp systems throughout museum sections, specialized wheelchairs for garden areas, and trained guides for visitors with visual or hearing impairments. Experience the Harem quarters, Sacred Relics, and breathtaking Bosphorus views with complete comfort and safety.
+                  Specially designed one-day wheelchair accessible tour to discover Istanbul's historical and cultural beauties. Visit Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome with specially arranged routes and disabled-friendly services for an unforgettable experience.
                 </p>
 
                 {/* Tour Highlights */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Premium Accessibility Features:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Places to Visit:</h4>
                   <div className="flex flex-wrap gap-1">
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Elevator Access</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Ramp Systems</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Garden Wheelchairs</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Trained Guides</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Rest Benches</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Sensory Support</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Topkapı Palace</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Hippodrome</span>
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Grand Bazaar</span>
                   </div>
                 </div>
 
@@ -553,19 +558,19 @@ const HomePage = () => {
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    {t('groupSize')}: 6-10 {t('people')}
+                    Start: 09:00
                   </div>
                   <div className="flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0l-2 2m8-2l2 2m-2-2v6a2 2 0 01-2 2H10a2 2 0 01-2-2v-6" />
                     </svg>
-                    {t('includes')}: {t('fullMeals')}
+                    {t('includes')}: {t('lunch')}
                   </div>
                   <div className="flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {t('privateGuide')}
+                    Wheelchair Accessible
                   </div>
                 </div>
 
