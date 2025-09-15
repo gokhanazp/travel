@@ -71,27 +71,9 @@ const ToursPage = () => {
     return levels[language]?.[level] || "bg-gray-100 text-gray-800"
   }
 
-  const filteredTours = selectedCategory === 'all' 
-    ? toursData 
-    : toursData.filter(tour => {
-        // Simple category filtering based on tour content
-        const title = language === 'en' ? tour.titleEn.toLowerCase() : tour.title.toLowerCase()
-        const description = language === 'en' ? tour.longDescriptionEn.toLowerCase() : tour.longDescription.toLowerCase()
-        
-        switch(selectedCategory) {
-          case 'historical':
-            return title.includes('mosque') || title.includes('palace') || title.includes('hagia') || 
-                   title.includes('cami') || title.includes('saray') || title.includes('ayasofya')
-          case 'cultural':
-            return title.includes('bazaar') || title.includes('museum') || title.includes('cultural') ||
-                   title.includes('çarşı') || title.includes('müze') || title.includes('kültür')
-          case 'nature':
-            return title.includes('bosphorus') || title.includes('park') || title.includes('garden') ||
-                   title.includes('boğaz') || title.includes('park') || title.includes('bahçe')
-          default:
-            return true
-        }
-      })
+  const filteredTours = selectedCategory === 'all'
+    ? toursData
+    : toursData.filter(tour => tour.category === selectedCategory)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-pink-50">
