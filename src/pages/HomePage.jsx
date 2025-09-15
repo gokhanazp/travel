@@ -365,9 +365,12 @@ const HomePage = () => {
                   <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
                     {t('bookNow')}
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm">
+                  <Link
+                    to="/tours/accessible-istanbul-4n5d"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
+                  >
                     {t('details')}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -474,9 +477,12 @@ const HomePage = () => {
                   <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
                     {t('bookNow')}
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm">
+                  <Link
+                    to="/tours/accessible-istanbul-3n4d"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
+                  >
                     {t('details')}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -579,9 +585,12 @@ const HomePage = () => {
                   <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
                     {t('bookNow')}
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm">
+                  <Link
+                    to="/tours/accessible-istanbul-one-day"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
+                  >
                     {t('details')}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
