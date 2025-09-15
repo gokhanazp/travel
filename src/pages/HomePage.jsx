@@ -70,7 +70,7 @@ const HomePage = () => {
                     <div className="absolute -bottom-1 right-1/3 w-2 h-2 bg-orange-300 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1.5s'}}></div>
                   </span>
                   <span className="block text-gray-800 relative">
-                    PibaWings
+                    pibawingsmobility.com
                     {/* Subtle underline animation */}
                     <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
                   </span>
@@ -86,7 +86,7 @@ const HomePage = () => {
                   <div className="flex items-center justify-center lg:justify-start">
                     <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 mr-3 animate-scale-in" style={{animationDelay: '0.7s'}}></div>
                     <span className="text-sm text-gray-500 font-medium uppercase tracking-widest animate-fade-in" style={{animationDelay: '0.9s'}}>
-                      Piba Wings Mobility
+                      Accessible Tourism Solutions
                     </span>
                     <div className="w-12 h-0.5 bg-gradient-to-r from-pink-500 to-orange-500 ml-3 animate-scale-in" style={{animationDelay: '1.1s'}}></div>
                   </div>

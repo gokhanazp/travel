@@ -17,7 +17,7 @@ const TopBar = () => {
             <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span>info@pibawingstravel.com</span>
+            <span>info@pibawingsmobility.com</span>
           </div>
         </div>
         <div className="flex items-center space-x-4">
@@ -54,11 +54,11 @@ const MainHeader = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
 
-          {/* Logo - Piba Wings Travel */}
+          {/* Logo - pibawingsmobility.com */}
           <Link to="/" className="flex items-center">
             <img
               src="/logo.png"
-              alt="Piba Wings Travel"
+              alt="pibawingsmobility.com"
               className="h-10 sm:h-12 w-auto"
             />
           </Link>
@@ -223,7 +223,7 @@ const MainHeader = () => {
                     <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <a href="mailto:info@pibawingstravel.com" className="hover:text-orange-500 break-all">info@pibawingstravel.com</a>
+                    <a href="mailto:info@pibawingsmobility.com" className="hover:text-orange-500 break-all">info@pibawingsmobility.com</a>
                   </div>
                 </div>
               </div>

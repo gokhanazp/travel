@@ -148,8 +148,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">{currentContent.email}</h3>
-                    <a href="mailto:info@pibawingstravel.com" className="text-orange-600 hover:text-orange-700 font-medium">
-                      info@pibawingstravel.com
+                    <a href="mailto:info@pibawingsmobility.com" className="text-orange-600 hover:text-orange-700 font-medium">
+                      info@pibawingsmobility.com
                     </a>
                   </div>
                 </div>

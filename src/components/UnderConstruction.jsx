@@ -11,7 +11,7 @@ const UnderConstruction = ({ onAuthenticated }) => {
 
   const content = {
     en: {
-      title: 'PibaWings Travel',
+      title: 'pibawingsmobility.com',
       subtitle: 'Accessible Tourism Solutions',
       message: 'We are working hard to bring you the best accessible travel experience.',
       description: 'Our website is currently under development. We are preparing special accessible tours for people with disabilities.',
@@ -23,7 +23,7 @@ const UnderConstruction = ({ onAuthenticated }) => {
       ],
       comingSoon: 'Coming Soon...',
       contact: 'For information and early bookings:',
-      email: 'info@pibawings.com',
+      email: 'info@pibawingsmobility.com',
       phone: '+90 212 XXX XX XX',
       passwordLabel: 'Access Password',
       passwordPlaceholder: 'Enter password to preview',
@@ -31,7 +31,7 @@ const UnderConstruction = ({ onAuthenticated }) => {
       errorMessage: 'Incorrect password. Please try again.'
     },
     tr: {
-      title: 'PibaWings Travel',
+      title: 'pibawingsmobility.com',
       subtitle: 'Erişilebilir Turizm Çözümleri',
       message: 'Size en iyi erişilebilir seyahat deneyimini sunmak için çok çalışıyoruz.',
       description: 'Web sitemiz şu anda geliştirme aşamasındadır. Engelli bireyler için özel erişilebilir turlar hazırlıyoruz.',
@@ -43,7 +43,7 @@ const UnderConstruction = ({ onAuthenticated }) => {
       ],
       comingSoon: 'Çok Yakında...',
       contact: 'Bilgi ve erken rezervasyon için:',
-      email: 'info@pibawings.com',
+      email: 'info@pibawingsmobility.com',
       phone: '+90 212 XXX XX XX',
       passwordLabel: 'Erişim Şifresi',
       passwordPlaceholder: 'Önizleme için şifre girin',
