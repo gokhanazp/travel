@@ -57,7 +57,7 @@ const MainHeader = () => {
           {/* Logo - pibawingsmobility.com */}
           <Link to="/" className="flex items-center">
             <img
-              src="/logo.png"
+              src="/pibawingsmobility-logo.png"
               alt="pibawingsmobility.com"
               className="h-10 sm:h-12 w-auto"
             />

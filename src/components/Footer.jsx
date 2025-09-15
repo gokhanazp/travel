@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="mb-6">
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 inline-block shadow-lg">
                 <img
-                  src="/logo.png"
+                  src="/pibawingsmobility-logo.png"
                   alt="pibawingsmobility.com Logo"
                   className="h-16 w-auto object-contain"
                 />

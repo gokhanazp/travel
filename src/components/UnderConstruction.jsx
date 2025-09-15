@@ -64,7 +64,14 @@ const UnderConstruction = ({ onAuthenticated }) => {
       <div className="max-w-4xl mx-auto text-center">
         {/* Logo/Title */}
         <div className="mb-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          <div className="mb-6">
+            <img
+              src="/pibawingsmobility-logo.png"
+              alt="pibawingsmobility.com"
+              className="h-20 md:h-24 w-auto mx-auto"
+            />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {currentContent.title}
           </h1>
           <p className="text-xl md:text-2xl text-orange-600 font-semibold">
