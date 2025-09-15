@@ -1,4 +1,4 @@
-# PibaWings Travel - Accessible Tourism Website
+# PibaWings Mobility - Accessible Tourism Website
 
 A modern, accessible tourism website built with React and Tailwind CSS, featuring full English translation and responsive design.
 
