@@ -40,7 +40,6 @@ const translations = {
     // Stats
     happyTravelers: 'Happy Travelers',
     customerRating: 'Average Rating',
-    destinations: 'Destinations',
     
     // Tours Section
     speciallySelected: 'Specially Selected For You',
@@ -84,7 +83,6 @@ const translations = {
     aboutTour: 'About This Tour',
     included: 'Included',
     notIncluded: 'Not Included',
-    accessibility: 'Accessibility Features',
     makeReservation: 'Make Reservation',
     
     // Common
@@ -152,10 +150,7 @@ const translations = {
     bookThisVehicle: 'Book This Vehicle',
     contactForInfo: 'Contact for Info',
 
-    // Contact
-    contactUs: 'Contact Us',
-    questions: 'Have Questions?',
-    contactTeam: 'Our expert team is ready to help you plan your accessible travel experience.'
+    // Contact - using existing keys from above
   },
   tr: {
     // Header
@@ -186,7 +181,6 @@ const translations = {
     // Stats
     happyTravelers: 'Mutlu Gezgin',
     customerRating: 'Ortalama Puan',
-    destinations: 'Destinasyon',
     
     // Tours Section
     speciallySelected: 'Sizin İçin Özel Seçilmiş',
@@ -230,7 +224,6 @@ const translations = {
     aboutTour: 'Bu Tur Hakkında',
     included: 'Dahil Olanlar',
     notIncluded: 'Dahil Olmayanlar',
-    accessibility: 'Erişilebilirlik Özellikleri',
     makeReservation: 'Rezervasyon Yap',
     
     // Common
@@ -298,10 +291,7 @@ const translations = {
     bookThisVehicle: 'Bu Aracı Rezerve Et',
     contactForInfo: 'Bilgi İçin İletişim',
 
-    // Contact
-    contactUs: 'İletişim',
-    questions: 'Sorularınız mı Var?',
-    contactTeam: 'Uzman ekibimiz erişilebilir seyahat deneyiminizi planlamanıza yardımcı olmaya hazır.'
+    // Contact - using existing keys from above
   }
 }
 
