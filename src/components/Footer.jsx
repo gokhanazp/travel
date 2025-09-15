@@ -15,7 +15,8 @@ const Footer = () => {
                 <img
                   src="/pibawingsmobility-logo.png"
                   alt="pibawingsmobility.com Logo"
-                  className="h-16 w-auto object-contain"
+                  className="h-12 md:h-16 w-auto max-w-[250px] object-contain"
+                  loading="lazy"
                 />
               </div>
             </div>

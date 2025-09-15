@@ -59,7 +59,8 @@ const MainHeader = () => {
             <img
               src="/pibawingsmobility-logo.png"
               alt="pibawingsmobility.com"
-              className="h-10 sm:h-12 w-auto"
+              className="h-8 sm:h-10 md:h-12 w-auto max-w-[200px] object-contain"
+              loading="eager"
             />
           </Link>
 

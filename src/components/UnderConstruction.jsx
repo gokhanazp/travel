@@ -68,7 +68,8 @@ const UnderConstruction = ({ onAuthenticated }) => {
             <img
               src="/pibawingsmobility-logo.png"
               alt="pibawingsmobility.com"
-              className="h-20 md:h-24 w-auto mx-auto"
+              className="h-16 md:h-20 lg:h-24 w-auto max-w-[300px] mx-auto object-contain"
+              loading="eager"
             />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
