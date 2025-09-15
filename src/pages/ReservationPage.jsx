@@ -38,9 +38,9 @@ const ReservationPage = () => {
       contactSubtitle: 'You can contact us directly for urgent matters',
       successMessage: 'Your reservation request has been received! We will get back to you as soon as possible.',
       tours: [
-        { id: 'sultanahmet', name: 'Sultanahmet Historical Peninsula', price: '$45' },
-        { id: 'bosphorus', name: 'Bosphorus Tour', price: '$38' },
-        { id: 'galata', name: 'Galata and Beyoğlu', price: '$32' }
+        { id: 'PBWAI0021', name: 'Accessible Istanbul Tour (4N/5D)', price: '€450', code: 'PBWAI0021' },
+        { id: 'PBWAI0020', name: 'Accessible Istanbul Tour (3N/4D)', price: '€350', code: 'PBWAI0020' },
+        { id: 'PBWAI0019', name: 'Accessible Istanbul One Day', price: '€120', code: 'PBWAI0019' }
       ]
     },
     tr: {
@@ -65,9 +65,9 @@ const ReservationPage = () => {
       contactSubtitle: 'Acil durumlar için doğrudan bizimle iletişime geçebilirsiniz',
       successMessage: 'Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.',
       tours: [
-        { id: 'sultanahmet', name: 'Sultanahmet Tarihi Yarımada', price: '₺450' },
-        { id: 'bosphorus', name: 'Boğaz Turu', price: '₺380' },
-        { id: 'galata', name: 'Galata ve Beyoğlu', price: '₺320' }
+        { id: 'PBWAI0021', name: 'Erişilebilir İstanbul Turu (4G/5G)', price: '€450', code: 'PBWAI0021' },
+        { id: 'PBWAI0020', name: 'Erişilebilir İstanbul Turu (3G/4G)', price: '€350', code: 'PBWAI0020' },
+        { id: 'PBWAI0019', name: 'Erişilebilir İstanbul Tek Gün', price: '€120', code: 'PBWAI0019' }
       ]
     }
   }
@@ -192,7 +192,7 @@ const ReservationPage = () => {
                     <option value="">{currentContent.tourPlaceholder}</option>
                     {currentContent.tours.map(tour => (
                       <option key={tour.id} value={tour.id}>
-                        {tour.name} - {tour.price}
+                        {tour.name} - {tour.price} ({tour.code})
                       </option>
                     ))}
                   </select>
