@@ -366,7 +366,7 @@ const HomePage = () => {
                     {t('bookNow')}
                   </button>
                   <Link
-                    to="/tours/accessible-istanbul-4n5d"
+                    to="/tour/accessible-istanbul-4n5d"
                     className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
                   >
                     {t('details')}
@@ -478,7 +478,7 @@ const HomePage = () => {
                     {t('bookNow')}
                   </button>
                   <Link
-                    to="/tours/accessible-istanbul-3n4d"
+                    to="/tour/accessible-istanbul-3n4d"
                     className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
                   >
                     {t('details')}
@@ -586,7 +586,7 @@ const HomePage = () => {
                     {t('bookNow')}
                   </button>
                   <Link
-                    to="/tours/accessible-istanbul-one-day"
+                    to="/tour/accessible-istanbul-one-day"
                     className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
                   >
                     {t('details')}

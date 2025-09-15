@@ -24,6 +24,7 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/galeri" element={<GalleryPage />} />
             <Route path="/tour/:slug" element={<TourDetailPage />} />
+            <Route path="/tours/:slug" element={<TourDetailPage />} />
           </Routes>
         </div>
       </Router>
