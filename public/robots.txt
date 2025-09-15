@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Site under construction - Do not index
+# PibaWings Travel - Accessible Tourism Solutions
