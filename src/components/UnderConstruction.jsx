@@ -11,16 +11,8 @@ const UnderConstruction = ({ onAuthenticated }) => {
 
   const content = {
     en: {
-      title: 'pibawingsmobility.com',
+      title: 'PibaWings Mobility',
       subtitle: 'Accessible Tourism Solutions',
-      message: 'We are working hard to bring you the best accessible travel experience.',
-      description: 'Our website is currently under development. We are preparing special accessible tours for people with disabilities.',
-      features: [
-        'Wheelchair accessible tours',
-        'Professional English-speaking guides',
-        'Accessible accommodation',
-        'Special transportation vehicles'
-      ],
       comingSoon: 'Coming Soon...',
       contact: 'For information and early bookings:',
       email: 'info@pibawingsmobility.com',
@@ -31,16 +23,8 @@ const UnderConstruction = ({ onAuthenticated }) => {
       errorMessage: 'Incorrect password. Please try again.'
     },
     tr: {
-      title: 'pibawingsmobility.com',
+      title: 'PibaWings Mobility',
       subtitle: 'Erişilebilir Turizm Çözümleri',
-      message: 'Size en iyi erişilebilir seyahat deneyimini sunmak için çok çalışıyoruz.',
-      description: 'Web sitemiz şu anda geliştirme aşamasındadır. Engelli bireyler için özel erişilebilir turlar hazırlıyoruz.',
-      features: [
-        'Tekerlekli sandalye erişilebilir turlar',
-        'Profesyonel İngilizce rehberler',
-        'Erişilebilir konaklama',
-        'Özel ulaşım araçları'
-      ],
       comingSoon: 'Çok Yakında...',
       contact: 'Bilgi ve erken rezervasyon için:',
       email: 'info@pibawingsmobility.com',
@@ -100,47 +84,20 @@ const UnderConstruction = ({ onAuthenticated }) => {
           </h2>
         </div>
 
-        {/* Message */}
-        <div className="mb-8">
-          <p className="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">
-            {currentContent.message}
-          </p>
-          <p className="text-base md:text-lg text-gray-500 mb-8">
-            {currentContent.description}
-          </p>
-        </div>
 
-        {/* Features */}
-        <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {currentContent.features.map((feature, index) => (
-              <div key={index} className="flex items-center bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-                <svg className="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Contact Info */}
-        <div className="mb-8 bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">
-            {currentContent.contact}
-          </h3>
-          <div className="space-y-2">
-            <p className="text-gray-600">
-              📧 {currentContent.email}
-            </p>
-            <p className="text-gray-600">
-              📞 {currentContent.phone}
-            </p>
-          </div>
+        <div className="mb-6 text-center">
+          <p className="text-gray-600 mb-2">
+            📧 {currentContent.email}
+          </p>
+          <p className="text-gray-600 mb-6">
+            📞 {currentContent.phone}
+          </p>
         </div>
 
         {/* Password Form */}
-        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-md mx-auto">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-sm mx-auto">
           <form onSubmit={handlePasswordSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">

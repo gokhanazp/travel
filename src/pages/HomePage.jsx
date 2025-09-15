@@ -69,8 +69,8 @@ const HomePage = () => {
                     <div className="absolute -bottom-2 left-1/4 w-2 h-2 bg-red-400 rounded-full opacity-70 animate-bounce" style={{animationDelay: '1s'}}></div>
                     <div className="absolute -bottom-1 right-1/3 w-2 h-2 bg-orange-300 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1.5s'}}></div>
                   </span>
-                  <span className="block text-gray-800 relative">
-                    pibawingsmobility.com
+                  <span className="block text-gray-800 relative text-4xl md:text-5xl lg:text-6xl">
+                    PibaWings Mobility
                     {/* Subtle underline animation */}
                     <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
                   </span>
