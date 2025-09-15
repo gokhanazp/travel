@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import ReservationPage from './pages/ReservationPage'
 import AboutPage from './pages/AboutPage'
@@ -13,6 +14,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-white">
           <Routes>
             <Route path="/" element={<HomePage />} />
