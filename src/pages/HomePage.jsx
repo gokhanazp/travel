@@ -406,58 +406,7 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-                <img
-                  src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Accessible Istanbul Tour 3N/4D"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('accessibleTour')}
-                  </span>
-                  <span className="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('boatTour')}
-                  </span>
-                  <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    3N/4D
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                    <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400 mr-2">
-                      {'★'.repeat(4)}{'☆'}
-                    </div>
-                    <span className="text-sm font-medium">4.8 (95 {t('reviews')})</span>
-                  </div>
-                  <div className="text-xs bg-black/30 px-2 py-1 rounded">
-                    Tour Code: PBWAI0020
-                  </div>
-                </div>
-              </div>
 
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Accessible Istanbul Tour</h3>
-                    <p className="text-sm text-gray-500">(With Wheelchair)</p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€350</div>
-                    <div className="text-sm text-gray-500">per person</div>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Special 3 nights 4 days tour program designed for wheelchair users to discover Istanbul's rich historical and cultural heritage. All points are designed for disabled access with carefully selected disabled-friendly guides.
-                </p>
 
                 {/* Tour Highlights */}
                 <div className="mb-4">
