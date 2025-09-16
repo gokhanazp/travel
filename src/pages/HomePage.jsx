@@ -253,13 +253,17 @@ const HomePage = () => {
       </section>
 
       {/* Popular Tours Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="bg-gradient-to-br from-orange-50 via-white to-pink-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-pink-500 text-white mb-6">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
               {t('speciallySelected')}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Accessible Istanbul Tours</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t('toursSubtitle')}
             </p>
           </div>
@@ -289,7 +293,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-                <div className="relative h-72 overflow-hidden">
                   <img
                     src={tour.mainImage}
                     alt={language === 'en' ? tour.titleEn : tour.title}
@@ -425,20 +428,10 @@ const HomePage = () => {
             ))}
           </div>
 
-          {/* View All Tours Button */}
-          <div className="text-center mt-12">
-            <Link
-              to="/tours"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <span>View All Tours</span>
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+
+                {/* Tour Highlights */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Tour Highlights:</h4>
                   <div className="flex flex-wrap gap-1">
                     <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
                     <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
