@@ -608,7 +608,6 @@ const HomePage = () => {
               </svg>
             </Link>
           </div>
-        </div>
       </section>
 
       {/* Why Choose Us Section */}
