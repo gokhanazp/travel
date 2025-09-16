@@ -574,6 +574,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+          </div>
 
           {/* View All Tours Button */}
           <div className="text-center mt-12">
@@ -587,6 +588,7 @@ const HomePage = () => {
               </svg>
             </Link>
           </div>
+        </div>
       </section>
 
       {/* Why Choose Us Section */}
