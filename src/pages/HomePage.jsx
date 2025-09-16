@@ -252,31 +252,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Popular Tours Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t('speciallySelected')}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {t('toursSubtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {toursData.map((tour, index) => (
-              <TourCard
-                key={tour.id}
-                tour={tour}
-                index={index}
-                showViewDetails={false}
-              />
-            ))}
-          </div>
-
-
-                {/* Tour Highlights */}
+      {/* Why Choose Us Section */}
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-900 mb-2">Tour Highlights:</h4>
                   <div className="flex flex-wrap gap-1">
@@ -334,7 +310,9 @@ const HomePage = () => {
                 </div>
               </div>
 
-
+            {/* Tour Card 3 - Accessible Istanbul One Day */}
+            <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src="https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg"
                   alt="Accessible Istanbul One Day Tour"
