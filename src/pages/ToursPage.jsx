@@ -263,7 +263,7 @@ const ToursPage = () => {
                       </svg>
                     </Link>
                     <Link
-                      to="/reservation"
+                      to={`/reservation?tour=${tour.id}`}
                       className="w-full bg-white hover:bg-gray-50 text-gray-800 py-2 px-4 rounded-xl font-medium text-center transition-all duration-300 border-2 border-gray-200 hover:border-orange-300 flex items-center justify-center group text-sm"
                     >
                       <svg className="w-4 h-4 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const ReservationPage = () => {
   const { t, language } = useLanguage()
+  const location = useLocation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,15 @@ const ReservationPage = () => {
     participants: 1,
     message: ''
   })
+
+  // URL parametrelerinden tur ID'sini al ve otomatik seç
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search)
+    const tourId = urlParams.get('tour')
+    if (tourId) {
+      setFormData(prev => ({ ...prev, tour: tourId }))
+    }
+  }, [location.search])
 
   const content = {
     en: {
