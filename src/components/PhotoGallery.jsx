@@ -230,26 +230,6 @@ const PhotoGallery = () => {
             </div>
           ))}
         </div>
-
-        {/* İstatistikler */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">500+</div>
-            <div className="text-gray-600">Mutlu Misafir</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-pink-600 mb-2">1,200+</div>
-            <div className="text-gray-600">Paylaşılan Fotoğraf</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
-            <div className="text-gray-600">Farklı Tur</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-            <div className="text-gray-600">Memnuniyet Oranı</div>
-          </div>
-        </div>
       </div>
 
       {/* Fotoğraf Modal */}

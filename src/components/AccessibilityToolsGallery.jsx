@@ -3,12 +3,6 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 // Assets klasöründeki görselleri import ediyoruz
 import tool1 from '../assets/40967285-7162-45c6-b24c-7ccac9126504-min.jpeg'
-import tool2 from '../assets/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpeg'
-import tool3 from '../assets/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpg'
-import tool4 from '../assets/b36f1069-f66f-432d-b302-1a22021bdb58-min.jpeg'
-import tool5 from '../assets/c3394750-8887-43b0-aee6-13fdfe28f056-min.jpeg'
-import tool6 from '../assets/e1ff3bb4-5e16-46a5-8cfc-1b416b5b7b11-min.jpeg'
-import tool7 from '../assets/f027d74a-61bb-48a8-89d6-f974d9e4bc5d-min.jpeg'
 
 const AccessibilityToolsGallery = () => {
   const { t, language } = useLanguage()
@@ -43,122 +37,50 @@ const AccessibilityToolsGallery = () => {
     },
     {
       id: 2,
-      image: tool2,
-      vehicleModel: 'Mercedes Sprinter',
-      subtitle: language === 'en' ? '(Premium Service)' : '(Premium Hizmet)',
-      category: language === 'en' ? 'Luxury Transport' : 'Lüks Ulaşım',
-      title: language === 'en' ? 'Luxury Accessible Transport Vehicle' : 'Lüks Erişilebilir Ulaşım Aracı',
+      image: 'https://hncotomotiv.com/wp-content/uploads/custom.jpg',
+      vehicleModel: 'Ford Transit Custom',
+      subtitle: language === 'en' ? '(With or Without Driver Rental)' : '(Sürücülü Veya Sürücüsüz Kiralama)',
+      category: language === 'en' ? 'City Transport' : 'Şehir Ulaşımı',
+      title: language === 'en' ? 'Ramped and Lift Accessible Vehicle' : 'Rampalı ve Lifli Erişilebilir Araç',
       description: language === 'en'
-        ? 'Premium Mercedes Sprinter with advanced accessibility features and luxury comfort for group transportation.'
-        : 'Gelişmiş erişilebilirlik özellikleri ve lüks konfor ile grup ulaşımı için premium Mercedes Sprinter.',
+        ? 'Ford Transit Custom offers comfortable and safe transportation for individuals with mobility restrictions and their companions with ramp or lift options. This vehicle has a capacity of 8 companions + 1 wheelchair passenger + 1 driver. Its spacious interior allows passengers to travel comfortably, while special access systems facilitate boarding and alighting. Its diesel engine and manual transmission provide fuel savings, while its solid structure offers long-lasting use.'
+        : 'Ford Transit Custom, rampalı veya liftli seçenekleri ile hareket kabiliyeti kısıtlı bireyler ve refakatçileri için konforlu ve güvenli taşımacılık sunar. Bu araç, 8 refakatçi + 1 tekerlekli sandalye yolcusu + 1 şoför kapasitesine sahiptir. Geniş iç hacmi, yolcuların rahat bir şekilde seyahat etmesini sağlarken, özel erişim sistemleri ile araca biniş ve inişleri kolaylaştırır. Dizel motoru ve manuel vitesi, yakıt tasarrufu sağlarken, sağlam yapısı ile uzun ömürlü kullanım sunar.',
       features: language === 'en'
-        ? ['Multiple wheelchair positions', 'Climate control system', 'Premium interior design', 'Professional driver service']
-        : ['Çoklu tekerlekli sandalye pozisyonu', 'İklim kontrol sistemi', 'Premium iç tasarım', 'Profesyonel şoför hizmeti'],
+        ? ['Ramp or lift system options suitable for wheelchair users', 'Spacious interior, comfortable and safe transportation', 'Manual transmission and diesel engine for economical fuel consumption', 'Solid and durable structure, long-lasting use features']
+        : ['Rampalı veya liftli sistem seçenekleri ile tekerlekli sandalye kullanıcılarına uygun', 'Geniş iç hacim, konforlu ve güvenli taşıma imkanı', 'Manuel vites ve dizel motor ile ekonomik yakıt tüketimi', 'Sağlam ve dayanıklı yapı, uzun ömürlü kullanım özellikleri'],
       specifications: {
-        brand: 'Mercedes Sprinter',
-        year: '2023',
-        licenseClass: 'D1',
-        capacity: language === 'en' ? '8 Passengers + 2 Wheelchair + 1 Driver' : '8 Yolcu + 2 Tekerlekli Sandalye + 1 Şoför',
+        brand: 'Ford Transit Custom',
+        year: '2015',
+        licenseClass: 'B',
+        capacity: language === 'en' ? '8 Passengers, 1 Wheelchair + 1 Driver' : '8 Yolcu, 1 Tekerlekli Sandalye + 1 Şoför',
         engine: language === 'en' ? 'Diesel' : 'Dizel',
-        transmission: language === 'en' ? 'Automatic' : 'Otomatik',
-        seats: language === 'en' ? '11 Person' : '11 Kişilik',
-        accessibility: language === 'en' ? 'Lift & Ramp' : 'Lift & Rampa'
+        transmission: language === 'en' ? 'Manual' : 'Manuel',
+        seats: language === 'en' ? '10 Person' : '10 Kişilik',
+        accessibility: language === 'en' ? 'Ramped & Lift' : 'Rampalı & Lifli'
       }
     },
     {
       id: 3,
-      image: tool3,
-      vehicleModel: 'Ford Transit Custom',
-      subtitle: language === 'en' ? '(City Tours)' : '(Şehir Turları)',
-      category: language === 'en' ? 'City Vehicle' : 'Şehir Aracı',
-      title: language === 'en' ? 'Compact Accessible City Vehicle' : 'Kompakt Erişilebilir Şehir Aracı',
+      image: 'https://hncotomotiv.com/wp-content/uploads/vito.jpg',
+      vehicleModel: 'Mercedes Vito',
+      subtitle: language === 'en' ? '(Comfort & Accessibility)' : '(Konfor & Erişilebilirlik)',
+      category: language === 'en' ? 'Premium Comfort' : 'Premium Konfor',
+      title: language === 'en' ? 'Swivel Seat Mechanism Accessible Vehicle' : 'Döner Koltuk Mekanizmalı Erişilebilir Araç',
       description: language === 'en'
-        ? 'Ideal Ford Transit Custom for city tours with easy access and maneuverability in narrow streets.'
-        : 'Dar sokaklarda kolay erişim ve manevra kabiliyeti ile şehir turları için ideal Ford Transit Custom.',
+        ? 'Mercedes Vito offers comfortable and safe transportation for individuals with mobility restrictions and their companions with swivel seat mechanism and automatic transmission option. This vehicle has a capacity of 5 companions + 1 swivel seat passenger + 1 driver. Its spacious interior allows passengers to travel comfortably, while the swivel seat mechanism facilitates mobility within the vehicle. Automatic transmission and diesel engine increase driving comfort, while its solid structure offers long-lasting use.'
+        : 'Mercedes Vito, döner koltuk mekanizması ve otomatik vites seçeneği ile hareket kabiliyeti kısıtlı bireyler ve refakatçileri için konforlu ve güvenli taşımacılık sunar. Bu araç, 5 refakatçi + 1 döner koltuklu yolcu + 1 şoför kapasitesine sahiptir. Geniş iç hacmi, yolcuların rahat bir şekilde seyahat etmesini sağlarken, döner koltuk mekanizması ile araç içi hareketliliği kolaylaştırır. Otomatik vites ve dizel motoru, sürüş konforunu artırırken, sağlam yapısı ile uzun ömürlü kullanım sunar.',
       features: language === 'en'
-        ? ['Easy city navigation', 'Quick boarding system', 'Fuel efficient', 'Perfect for historical sites']
-        : ['Kolay şehir navigasyonu', 'Hızlı binme sistemi', 'Yakıt tasarruflu', 'Tarihi mekanlar için mükemmel'],
+        ? ['Swivel seat mechanism for easy sitting and getting off', 'Spacious interior, comfortable and safe transportation area', 'Automatic transmission and diesel engine for comfortable and economical driving', 'Solid and durable structure, long-lasting use']
+        : ['Döner koltuk mekanizması ile kolay oturma ve inme imkanı', 'Geniş iç hacim, konforlu ve güvenli taşıma alanı', 'Otomatik vites ve dizel motor ile rahat ve ekonomik sürüş', 'Sağlam ve dayanıklı yapı, uzun ömürlü kullanım'],
       specifications: {
-        brand: 'Ford Transit Custom',
-        year: '2022',
+        brand: 'Mercedes Vito',
+        year: '2017',
         licenseClass: 'B',
-        capacity: language === 'en' ? '4 Passengers + 1 Wheelchair + 1 Driver' : '4 Yolcu + 1 Tekerlekli Sandalye + 1 Şoför',
-        engine: language === 'en' ? 'Diesel' : 'Dizel',
-        transmission: language === 'en' ? 'Manual' : 'Manuel',
-        seats: language === 'en' ? '6 Person' : '6 Kişilik',
-        accessibility: language === 'en' ? 'Ramp' : 'Rampa'
-      }
-    },
-    {
-      id: 4,
-      image: tool4,
-      vehicleModel: 'Volkswagen Crafter',
-      subtitle: language === 'en' ? '(Group Transport)' : '(Grup Ulaşımı)',
-      category: language === 'en' ? 'High Capacity' : 'Yüksek Kapasite',
-      title: language === 'en' ? 'High Capacity Accessible Vehicle' : 'Yüksek Kapasiteli Erişilebilir Araç',
-      description: language === 'en'
-        ? 'Spacious Volkswagen Crafter designed for large groups with multiple accessibility options.'
-        : 'Çoklu erişilebilirlik seçenekleri ile büyük gruplar için tasarlanmış geniş Volkswagen Crafter.',
-      features: language === 'en'
-        ? ['Large group capacity', 'Multiple access points', 'Advanced safety systems', 'Long distance comfort']
-        : ['Büyük grup kapasitesi', 'Çoklu erişim noktaları', 'Gelişmiş güvenlik sistemleri', 'Uzun mesafe konforu'],
-      specifications: {
-        brand: 'Volkswagen Crafter',
-        year: '2023',
-        licenseClass: 'D1',
-        capacity: language === 'en' ? '12 Passengers + 3 Wheelchair + 1 Driver' : '12 Yolcu + 3 Tekerlekli Sandalye + 1 Şoför',
+        capacity: language === 'en' ? '5 Passengers, 1 Wheelchair + 1 Driver' : '5 Yolcu, 1 Tekerlekli Sandalye + 1 Şoför',
         engine: language === 'en' ? 'Diesel' : 'Dizel',
         transmission: language === 'en' ? 'Automatic' : 'Otomatik',
-        seats: language === 'en' ? '16 Person' : '16 Kişilik',
-        accessibility: language === 'en' ? 'Lift & Multiple Ramps' : 'Lift & Çoklu Rampa'
-      }
-    },
-    {
-      id: 5,
-      image: tool5,
-      vehicleModel: 'Renault Master',
-      subtitle: language === 'en' ? '(Multi-Purpose)' : '(Çok Amaçlı)',
-      category: language === 'en' ? 'Versatile' : 'Çok Yönlü',
-      title: language === 'en' ? 'Versatile Accessibility Vehicle' : 'Çok Amaçlı Erişilebilirlik Aracı',
-      description: language === 'en'
-        ? 'Flexible Renault Master with customizable interior for various accessibility needs and tour types.'
-        : 'Çeşitli erişilebilirlik ihtiyaçları ve tur türleri için özelleştirilebilir iç mekan ile esnek Renault Master.',
-      features: language === 'en'
-        ? ['Flexible seating arrangement', 'Multi-purpose design', 'Easy maintenance', 'Reliable performance']
-        : ['Esnek oturma düzeni', 'Çok amaçlı tasarım', 'Kolay bakım', 'Güvenilir performans'],
-      specifications: {
-        brand: 'Renault Master',
-        year: '2022',
-        licenseClass: 'B',
-        capacity: language === 'en' ? '6 Passengers + 2 Wheelchair + 1 Driver' : '6 Yolcu + 2 Tekerlekli Sandalye + 1 Şoför',
-        engine: language === 'en' ? 'Diesel' : 'Dizel',
-        transmission: language === 'en' ? 'Manual' : 'Manuel',
-        seats: language === 'en' ? '9 Person' : '9 Kişilik',
-        accessibility: language === 'en' ? 'Ramp & Lift' : 'Rampa & Lift'
-      }
-    },
-    {
-      id: 6,
-      image: tool6,
-      vehicleModel: 'Iveco Daily',
-      subtitle: language === 'en' ? '(Professional)' : '(Profesyonel)',
-      category: language === 'en' ? 'Commercial' : 'Ticari',
-      title: language === 'en' ? 'Professional Accessible Transport' : 'Profesyonel Erişilebilir Ulaşım',
-      description: language === 'en'
-        ? 'Robust Iveco Daily built for professional accessibility services with enhanced durability.'
-        : 'Gelişmiş dayanıklılık ile profesyonel erişilebilirlik hizmetleri için inşa edilmiş sağlam Iveco Daily.',
-      features: language === 'en'
-        ? ['Heavy-duty construction', 'Professional grade equipment', 'Enhanced durability', 'Commercial reliability']
-        : ['Ağır hizmet yapısı', 'Profesyonel kalite ekipman', 'Gelişmiş dayanıklılık', 'Ticari güvenilirlik'],
-      specifications: {
-        brand: 'Iveco Daily',
-        year: '2023',
-        licenseClass: 'D1',
-        capacity: language === 'en' ? '10 Passengers + 2 Wheelchair + 1 Driver' : '10 Yolcu + 2 Tekerlekli Sandalye + 1 Şoför',
-        engine: language === 'en' ? 'Diesel' : 'Dizel',
-        transmission: language === 'en' ? 'Manual' : 'Manuel',
-        seats: language === 'en' ? '13 Person' : '13 Kişilik',
-        accessibility: language === 'en' ? 'Professional Lift' : 'Profesyonel Lift'
+        seats: language === 'en' ? '7 Person' : '7 Kişilik',
+        accessibility: language === 'en' ? 'Swivel Seat Mechanism & Vebasto' : 'Döner Koltuk Mekanizması & Vebasto'
       }
     }
   ]

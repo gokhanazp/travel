@@ -6,9 +6,72 @@ import { useLanguage } from '../contexts/LanguageContext'
 import PhotoGallery from '../components/PhotoGallery'
 import TestimonialsSection from '../components/TestimonialsSection'
 import AccessibilityToolsGallery from '../components/AccessibilityToolsGallery'
+import { toursData } from '../data/toursData'
 
 const HomePage = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+
+  // Tours content for different languages
+  const toursContent = {
+    en: {
+      title: 'Our Popular Tours',
+      subtitle: 'Discover Istanbul\'s most beautiful places with our specially designed accessible tours. Every tour is carefully planned for travelers with different needs.',
+      duration: 'Duration',
+      price: 'Price',
+      accessibility: 'Accessibility',
+      viewDetails: 'View Details',
+      bookNow: 'Book Now',
+      features: 'Features',
+      highlights: 'Highlights',
+      perPerson: 'per person',
+      days: 'days',
+      nights: 'nights',
+      includes: 'What\'s Included',
+      rating: 'Rating',
+      reviews: 'reviews',
+      wheelchairAccessible: 'Wheelchair Accessible',
+      professionalGuide: 'Professional Guide',
+      transportation: 'Transportation Included'
+    },
+    tr: {
+      title: 'Popüler Turlarımız',
+      subtitle: 'Özel olarak tasarlanmış erişilebilir turlarımızla İstanbul\'un en güzel yerlerini keşfedin. Her tur, farklı ihtiyaçları olan gezginler için özenle planlanmıştır.',
+      duration: 'Süre',
+      price: 'Fiyat',
+      accessibility: 'Erişilebilirlik',
+      viewDetails: 'Detayları Gör',
+      bookNow: 'Rezervasyon Yap',
+      features: 'Özellikler',
+      highlights: 'Öne Çıkanlar',
+      perPerson: 'kişi başı',
+      days: 'gün',
+      nights: 'gece',
+      includes: 'Dahil Olanlar',
+      rating: 'Puan',
+      reviews: 'değerlendirme',
+      wheelchairAccessible: 'Tekerlekli Sandalye Erişimli',
+      professionalGuide: 'Profesyonel Rehber',
+      transportation: 'Ulaşım Dahil'
+    }
+  }
+
+  const currentToursContent = toursContent[language]
+
+  const getAccessibilityColor = (level) => {
+    const levels = {
+      en: {
+        "Fully accessible": "bg-green-100 text-green-800",
+        "Mostly accessible": "bg-yellow-100 text-yellow-800",
+        "Partially accessible": "bg-orange-100 text-orange-800"
+      },
+      tr: {
+        "Tam erişilebilir": "bg-green-100 text-green-800",
+        "Çoğunlukla erişilebilir": "bg-yellow-100 text-yellow-800",
+        "Kısmi erişilebilir": "bg-orange-100 text-orange-800"
+      }
+    }
+    return levels[language]?.[level] || "bg-gray-100 text-gray-800"
+  }
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -251,359 +314,176 @@ const HomePage = () => {
       </section>
 
       {/* Popular Tours Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-4">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Accessible Tourism
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t('speciallySelected')}
+              {currentToursContent.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {t('toursSubtitle')}
+              {currentToursContent.subtitle}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tour Card 1 - Accessible Istanbul Tour */}
-            <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Accessible Istanbul Tour"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('accessibleTour')}
-                  </span>
-                  <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('mostPopular')}
-                  </span>
-                  <span className="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    4N/5D
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                    </svg>
+          {/* Tour Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {toursData.slice(0, 6).map((tour, index) => (
+              <div
+                key={tour.id}
+                className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {/* Tour Image */}
+                <div className="relative h-72 overflow-hidden">
+                  <img
+                    src={tour.mainImage}
+                    alt={language === 'en' ? tour.titleEn : tour.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                  {/* Tour Code Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-orange-500 text-white text-sm font-bold rounded-full">
+                      {tour.id}
+                    </span>
                   </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400 mr-2">
-                      {'★'.repeat(5)}
+
+                  {/* Accessibility Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${getAccessibilityColor(language === 'en' ? tour.accessibilityEn : tour.accessibility)}`}>
+                      ♿ {language === 'en' ? tour.accessibilityEn : tour.accessibility}
+                    </span>
+                  </div>
+
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                      {language === 'en' ? tour.titleEn : tour.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-orange-300">
+                      <div className="flex items-center">
+                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-sm font-medium">
+                          {language === 'en' ? tour.durationEn : tour.duration}
+                        </span>
+                      </div>
+                      <div className="flex items-center text-yellow-400">
+                        {'★'.repeat(5)}
+                        <span className="text-white text-sm ml-1">4.9</span>
+                      </div>
                     </div>
-                    <span className="text-sm font-medium">4.9 (120 {t('reviews')})</span>
-                  </div>
-                  <div className="text-xs bg-black/30 px-2 py-1 rounded">
-                    Tour Code: PBWAI0021
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Accessible Istanbul Tour</h3>
-                    <p className="text-sm text-gray-500">(With Wheelchair & Accessible Van)</p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€450</div>
-                    <div className="text-sm text-gray-500">per person</div>
                   </div>
                 </div>
 
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Specially designed 4 nights 5 days tour for people with physical disabilities to discover Istanbul comfortably. All routes are wheelchair accessible with professional English-speaking guide and accessible accommodation.
-                </p>
+                {/* Tour Content */}
+                <div className="p-6">
+                  {/* Description */}
+                  <p className="text-gray-700 mb-4 leading-relaxed text-sm line-clamp-2">
+                    {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
+                  </p>
 
-                {/* Tour Highlights */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Tour Highlights:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Topkapı Palace</span>
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Bosphorus Tour</span>
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Grand Bazaar</span>
-                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Dolmabahçe</span>
-                  </div>
-                </div>
-
-                {/* Tour Details */}
-                <div className="grid grid-cols-2 gap-4 text-xs text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {t('duration')}: 4N/5D
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    Private Guide
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0l-2 2m8-2l2 2m-2-2v6a2 2 0 01-2 2H10a2 2 0 01-2-2v-6" />
-                    </svg>
-                    {t('includes')}: Hotel + {t('lunch')}
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Accessible Van
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
-                    {t('bookNow')}
-                  </button>
-                  <Link
-                    to="/tour/accessible-istanbul-4n5d"
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
-                  >
-                    {t('details')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Tour Card 2 - Accessible Istanbul Tour (3N/4D) */}
-            <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Accessible Istanbul Tour 3N/4D"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('accessibleTour')}
-                  </span>
-                  <span className="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('boatTour')}
-                  </span>
-                  <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    3N/4D
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                    <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400 mr-2">
-                      {'★'.repeat(4)}{'☆'}
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    <div className="flex items-center text-xs text-gray-600">
+                      <svg className="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {currentToursContent.wheelchairAccessible}
                     </div>
-                    <span className="text-sm font-medium">4.8 (95 {t('reviews')})</span>
-                  </div>
-                  <div className="text-xs bg-black/30 px-2 py-1 rounded">
-                    Tour Code: PBWAI0020
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Accessible Istanbul Tour</h3>
-                    <p className="text-sm text-gray-500">(With Wheelchair)</p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€350</div>
-                    <div className="text-sm text-gray-500">per person</div>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Special 3 nights 4 days tour program designed for wheelchair users to discover Istanbul's rich historical and cultural heritage. All points are designed for disabled access with carefully selected disabled-friendly guides.
-                </p>
-
-                {/* Tour Highlights */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Tour Highlights:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Topkapı Palace</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Basilica Cistern</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Grand Bazaar</span>
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Bosphorus Cruise</span>
-                  </div>
-                </div>
-
-                {/* Tour Details */}
-                <div className="grid grid-cols-2 gap-4 text-xs text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {t('duration')}: 3N/4D
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    Private Guide
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0l-2 2m8-2l2 2m-2-2v6a2 2 0 01-2 2H10a2 2 0 01-2-2v-6" />
-                    </svg>
-                    {t('includes')}: Hotel + {t('lunch')}
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Wheelchair Van
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
-                    {t('bookNow')}
-                  </button>
-                  <Link
-                    to="/tour/accessible-istanbul-3n4d"
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
-                  >
-                    {t('details')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Tour Card 3 - Accessible Istanbul One Day */}
-            <div className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src="https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg"
-                  alt="Accessible Istanbul One Day Tour"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {t('accessibleTour')}
-                  </span>
-                  <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    One Day
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                    <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400 mr-2">
-                      {'★'.repeat(5)}
+                    <div className="flex items-center text-xs text-gray-600">
+                      <svg className="w-4 h-4 mr-1 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                      {currentToursContent.professionalGuide}
                     </div>
-                    <span className="text-sm font-medium">4.9 (87 {t('reviews')})</span>
+                    <div className="flex items-center text-xs text-gray-600">
+                      <svg className="w-4 h-4 mr-1 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                      </svg>
+                      {currentToursContent.transportation}
+                    </div>
                   </div>
-                  <div className="text-xs bg-black/30 px-2 py-1 rounded">
-                    Tour Code: PBWAI0019
+
+                  {/* Price Section */}
+                  <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-xl p-4 mb-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-xs text-gray-600 block">{currentToursContent.price}</span>
+                        <span className="text-2xl font-bold text-orange-600">
+                          €{tour.price}
+                        </span>
+                        <span className="text-xs text-gray-500 ml-1">{currentToursContent.perPerson}</span>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-center text-yellow-500 mb-1">
+                          {'★'.repeat(5)}
+                        </div>
+                        <span className="text-xs text-gray-600">4.9 (120+ {currentToursContent.reviews})</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="font-bold text-gray-900 mb-3 text-sm">{currentToursContent.highlights}:</h4>
+                    <div className="space-y-2">
+                      {(language === 'en' ? tour.highlightsEn : tour.highlights).slice(0, 2).map((highlight, idx) => (
+                        <div key={idx} className="flex items-start">
+                          <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+                            <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <span className="text-gray-700 text-xs leading-relaxed">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-2">
+                    <Link
+                      to={`/tour/${tour.slug}`}
+                      className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group text-sm"
+                    >
+                      <span>{currentToursContent.viewDetails}</span>
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link
+                      to={`/reservation?tour=${tour.id}`}
+                      className="w-full bg-white hover:bg-gray-50 text-gray-800 py-2 px-4 rounded-xl font-medium text-center transition-all duration-300 border-2 border-gray-200 hover:border-orange-300 flex items-center justify-center group text-sm"
+                    >
+                      <svg className="w-4 h-4 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span>{currentToursContent.bookNow}</span>
+                    </Link>
                   </div>
                 </div>
               </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Accessible Istanbul One Day</h3>
-                    <p className="text-sm text-gray-500">(With Wheelchair)</p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-orange-500">€120</div>
-                    <div className="text-sm text-gray-500">per person</div>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  Specially designed one-day wheelchair accessible tour to discover Istanbul's historical and cultural beauties. Visit Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome with specially arranged routes and disabled-friendly services for an unforgettable experience.
-                </p>
-
-                {/* Tour Highlights */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Places to Visit:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Hagia Sophia</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Topkapı Palace</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Blue Mosque</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Hippodrome</span>
-                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Grand Bazaar</span>
-                  </div>
-                </div>
-
-                {/* Tour Details */}
-                <div className="grid grid-cols-2 gap-4 text-xs text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {t('duration')}: 8 {t('hours')}
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    Start: 09:00
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0l-2 2m8-2l2 2m-2-2v6a2 2 0 01-2 2H10a2 2 0 01-2-2v-6" />
-                    </svg>
-                    {t('includes')}: {t('lunch')}
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Wheelchair Accessible
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 text-sm">
-                    {t('bookNow')}
-                  </button>
-                  <Link
-                    to="/tour/accessible-istanbul-one-day"
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm text-center"
-                  >
-                    {t('details')}
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* View All Tours Button */}
           <div className="text-center mt-12">
             <Link
               to="/tours"
-              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              {t('viewAllTours')}
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span className="mr-2">{language === 'en' ? 'View All Tours' : 'Tüm Turları Gör'}</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
@@ -621,22 +501,6 @@ const HomePage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t('whyChooseUsSubtitle')}
             </p>
-          </div>
-
-          {/* Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl border border-orange-100 hover:shadow-lg transition-all duration-300">
-              <div className="text-5xl font-bold text-orange-500 mb-2">1,200+</div>
-              <div className="text-gray-600 font-semibold">{t('happyCustomers')}</div>
-            </div>
-            <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border border-blue-100 hover:shadow-lg transition-all duration-300">
-              <div className="text-5xl font-bold text-blue-500 mb-2">8</div>
-              <div className="text-gray-600 font-semibold">{t('yearsExperience')}</div>
-            </div>
-            <div className="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl border border-green-100 hover:shadow-lg transition-all duration-300">
-              <div className="text-5xl font-bold text-green-500 mb-2">98%</div>
-              <div className="text-gray-600 font-semibold">{t('customerScore')}</div>
-            </div>
           </div>
 
           {/* Features Grid */}
