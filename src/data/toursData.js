@@ -201,26 +201,26 @@ export const toursData = [
   },
   {
     id: 'PBWAI0019',
-    slug: "accessible-istanbul-one-day",
-    title: "Erişilebilir İstanbul Tek Gün",
-    titleEn: "Accessible Istanbul One Day",
-    shortDescription: "Tekerlekli sandalye ile erişilebilir tek günlük İstanbul'un tarihi ve kültürel güzelliklerini keşfetme turu.",
-    shortDescriptionEn: "One-day wheelchair accessible tour to discover Istanbul's historical and cultural beauties.",
-    longDescription: "Engelliler için özel olarak tasarlanmış ve tekerlekli sandalye ile erişilebilir olan bu tur, İstanbul'un tarihi ve kültürel güzelliklerini keşfetmek için ideal bir seçenektir. Tur, Ayasofya, Topkapı Sarayı, Kapalıçarşı ve Hipodrom gibi önemli ve popüler turistik yerleri içermekte olup, engelli kişilerin kolayca gezebileceği şekilde organize edilmiştir.",
-    longDescriptionEn: "This tour, specially designed for the disabled and accessible by wheelchair, is an ideal option to discover the historical and cultural beauties of Istanbul. The tour includes important and popular touristic places such as Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome, and is organized in a way that disabled people can easily navigate.",
+    slug: "accessible-daily-istanbul",
+    title: "Erişilebilir Günlük İstanbul Turu",
+    titleEn: "Accessible Daily Istanbul",
+    shortDescription: "09:00-17:00 saatleri arasında kısa ve rahat bir tur. Kültür, tarih ve alışverişi birleştiren bir rota. Erişilebilirlik desteği.",
+    shortDescriptionEn: "A short and relaxed tour scheduled between 9.00 – 17.00 am. A route combining culture, history and shopping. Accessibility support.",
+    longDescription: "Sultanahmet Camii, Ayasofya, Topkapı Sarayı, Kapalıçarşı ve Hipodrom gibi önemli ve popüler turistik yerleri içeren bu tur, engelli ve yaşlı kişilerin kolayca gezebileceği şekilde organize edilmiştir. Tarihi yerlere erişim rehber eşliğinde ve özel olarak düzenlenmiş rotalarla sağlanırken, engelli dostu hizmetlerle konforlu bir tur deneyimi sunulmaktadır.",
+    longDescriptionEn: "The tour includes important and popular touristic places such as Blue Mosque, Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome, and is organized in a way that disabled and elderly people can easily navigate. Access to historical places is provided with a guide and specially arranged routes, while a comfortable tour experience is offered with disabled-friendly services.",
     features: [
-      "Profesyonel İngilizce rehber",
-      "Engelli ve refakatçiler için klimalı araç",
-      "Tekerlekli sandalye kullanıcıları için uygun otellerde konaklama",
-      "Tur sırasında öğle yemekleri",
-      "Müze ve görülecek yerlerin giriş ücretleri"
+      "Erişilebilir dostu Profesyonel İngilizce rehberlik",
+      "Erişilebilir dostu restoranda öğle yemeği",
+      "Müze ve görülecek yerlerin giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "PİBA WINGS TRAVEL koordinasyon ve özenli müşteri hizmeti"
     ],
     featuresEn: [
-      "Professional English-speaking guide",
-      "A/C vehicles prepared for disabled & companions",
-      "Accommodation in suitable hotels for wheelchair users",
-      "Lunches on tour",
-      "Admission to museums and sights"
+      "Accessible-friendly Professional English Speaking guiding",
+      "Lunch at accessible friendly restaurant",
+      "Admission fees to the museums and sights",
+      "Parking, portage, toll roads",
+      "Coordination and attentive customer service by PİBA WINGS TRAVEL"
     ],
     duration: "8 Saat",
     durationEn: "8 Hours",
@@ -239,12 +239,14 @@ export const toursData = [
       "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ],
     highlights: [
+      "Sultanahmet Camii",
       "Ayasofya",
       "Topkapı Sarayı",
       "Hipodrom",
       "Kapalıçarşı"
     ],
     highlightsEn: [
+      "Blue Mosque",
       "Hagia Sophia",
       "Topkapi Palace",
       "Hippodrome",
@@ -255,70 +257,128 @@ export const toursData = [
         time: "09:00",
         title: "Otelde Karşılama",
         titleEn: "Hotel Pickup",
-        description: "Özel rehber otelde karşılama",
-        descriptionEn: "Private guide meets you at the hotel"
+        description: "Özel rehber otelde karşılama. Engelli ziyaretçiler için rampa girişi ile Sultanahmet Camii'ne gidiş.",
+        descriptionEn: "Your private guide will meet you at the hotel. Then we will go to visit the Blue Mosque (built by Sultan Ahmet in 17th century). Entry via ramps for disabled visitors."
       },
       {
-        time: "09:30",
+        time: "10:00",
         title: "Sultanahmet Camii",
         titleEn: "Blue Mosque",
-        description: "17. yüzyılda Sultan Ahmet tarafından inşa ettirilen cami ziyareti",
-        descriptionEn: "Visit Blue Mosque (built by Sultan Ahmet in 17th century)"
+        description: "Tekerlekli sandalye kullanıcıları için: Rampalı giriş ve geniş avlu. İşitme engelliler için: İşaret dili rehberi/tercümanı.",
+        descriptionEn: "For Wheelchair Users: There is ramped entrance and large courtyard. For Hearing Impaired: Sign language guide / translator."
       },
       {
         time: "10:30",
         title: "Ayasofya",
         titleEn: "Hagia Sophia",
-        description: "1000 yıl Bizans katedrali, 500 yıl Osmanlı camii olarak kullanılan yapı",
-        descriptionEn: "Visit Hagia Sophia (1000 years as Byzantine cathedral, 500 years as Ottoman mosque)"
+        description: "İstanbul'un muhteşem antik yapısı (1000 yıl Bizans kilisesi, 500 yıl Osmanlı camii). Tekerlekli sandalye kullanıcıları için geniş giriş kapıları ve rampalar.",
+        descriptionEn: "Visit Hagia Sophia, a magnificent ancient building of İstanbul (1000 years as Byzantine church, 500 years as Ottoman mosque). Main area accessible with special permission for wheelchair users."
       },
       {
         time: "12:00",
         title: "Öğle Yemeği",
         titleEn: "Lunch",
-        description: "Yerel restoranda öğle yemeği",
-        descriptionEn: "Lunch at a local restaurant"
+        description: "Erişilebilir yerel restoranda öğle yemeği. Tekerlekli sandalye dostu masa düzenlemesi.",
+        descriptionEn: "Lunch at a local accessible restaurant. For Wheelchair Users: Wheelchair-friendly table arrangement."
       },
       {
         time: "13:30",
         title: "Topkapı Sarayı",
         titleEn: "Topkapi Palace",
-        description: "Osmanlı İmparatorluğu'nun büyük sarayı ziyareti",
-        descriptionEn: "Visit Topkapi Palace, the grand palace of the Ottoman Empire"
+        description: "Osmanlı İmparatorluğu'nun yaklaşık 400 yıl idari merkezi. Rampalar ile erişilebilir bölümleri keşfedin ve erişilebilir bahçelerde dinlenin.",
+        descriptionEn: "Continue to Topkapi Palace (administrative center of Ottoman Empire for nearly 400 years). Explore accessible sections with ramps and rest in accessible gardens."
       },
       {
         time: "15:00",
         title: "Hipodrom",
         titleEn: "Hippodrome",
-        description: "Bizans dönemi araba yarışı alanı, Mısır Obeliski, Yılan Sütunu, Konstantin Sütunu",
-        descriptionEn: "Visit Hippodrome (chariot racing area, Byzantine period → Egyptian Obelisk, Serpent Column, Constantine Column)"
+        description: "Antik araba yarışı alanı. Mısır Obeliski, Yılan Sütunu ve Konstantin Sütunu'nu görün. Düz zemin, oturma bankları mevcut.",
+        descriptionEn: "Visit Hippodrome (ancient chariot racing area). See Egyptian Obelisk, Serpent Column and Constantine Column. Flat ground."
       },
       {
         time: "16:00",
         title: "Kapalıçarşı",
         titleEn: "Grand Bazaar",
-        description: "15. yüzyıldan kalma, dünyanın en eski çarşılarından biri",
-        descriptionEn: "Visit Grand Bazaar (15th century, one of the oldest bazaars)"
+        description: "15. yüzyıl. Alışveriş yapın veya dünyanın en eski alışveriş merkezinin atmosferini yaşayın. Tekerlekli sandalye dostu düz ana yollar.",
+        descriptionEn: "Visit Grand Bazaar (15th century). Enjoy shopping or atmosphere of world's oldest shopping mall. Wheelchair-friendly route with flat main roads."
       },
       {
         time: "17:00",
         title: "Tur Sonu",
         titleEn: "End of Tour",
         description: "Otele geri dönüş transferi",
-        descriptionEn: "Transfer back to hotel"
+        descriptionEn: "Drop off at hotel."
       }
     ],
+    accessibility: {
+      blueMosque: {
+        wheelchair: "Rampalı giriş ve geniş avlu",
+        wheelchairEn: "There is ramped entrance and large courtyard",
+        hearing: "İşaret dili rehberi / tercümanı",
+        hearingEn: "Sign language guide / translator"
+      },
+      hagiaSophia: {
+        wheelchair: "Geniş giriş kapıları ve rampalar",
+        wheelchairEn: "Wide entrance doors and ramps",
+        hearing: "İşaret dili rehberi / tercümanı",
+        hearingEn: "Sign Language guide / translator"
+      },
+      topkapiPalace: {
+        wheelchair: "Bazı bölümler rampalar ile erişilebilir. Dinlenmek için uygun bahçeler",
+        wheelchairEn: "Some sections are accessible via ramps. Gardens suitable for relaxation",
+        hearing: "İşaret dili rehberi / tercümanı",
+        hearingEn: "Sign Language guide / translator"
+      },
+      hippodrome: {
+        general: "Düz zemin ile açık alan. Oturma bankları mevcut",
+        generalEn: "Open area with flat ground. Seating benches available"
+      },
+      grandBazaar: {
+        wheelchair: "Düz ana yollar",
+        wheelchairEn: "Straight main roads",
+        hearing: "İşaret dili rehberi",
+        hearingEn: "Sign language guide",
+        visual: "Rehberli 'dokunarak alışveriş'",
+        visualEn: "Guided 'touch shopping'"
+      },
+      restaurant: {
+        wheelchair: "Tekerlekli sandalye dostu masa düzenlemesi",
+        wheelchairEn: "Wheelchair-friendly table arrangement"
+      }
+    },
     specialNotes: [
       "Topkapı Sarayı Salı günleri kapalı",
       "Kapalıçarşı Pazar günleri kapalı",
-      "İşitme engelliler / Sağırlar için uygun",
-      "Tekerlekli sandalye kullanıcıları için uygun"
+      "İşitme engelliler için uygun",
+      "Tekerlekli sandalye kullanıcıları için uygun",
+      "Yaşlı kişiler için uygun",
+      "Ek hizmetler mevcut (yürüteç, scooter, manuel/elektrikli tekerlekli sandalye, yardımcı personel - ek ücretli)"
     ],
     specialNotesEn: [
       "Topkapi Palace closed on Tuesdays",
       "Grand Bazaar closed on Sundays",
-      "Suitable for Deaf / Hearing Impaired",
-      "Suitable for Wheelchair users"
+      "Suitable for Hearing Impaired",
+      "Suitable for Wheelchair users",
+      "Suitable for Elderly people",
+      "Additional services available (walkers, scooters, manual/electric wheelchairs, assistance staff with extra cost)"
+    ],
+    excludes: [
+      "Konaklama",
+      "Kişisel harcamalar",
+      "Akşam yemekleri",
+      "Öğle yemeklerinde içecekler",
+      "Rehber ve şoför bahşişleri",
+      "Tekerlekli sandalye kiralama",
+      "İsteğe bağlı programlar"
+    ],
+    excludesEn: [
+      "Accommodation",
+      "Personal expenses",
+      "Dinners",
+      "Beverages at lunches",
+      "Gratuities for guide and driver",
+      "Wheelchair Rental",
+      "Optional programmes listed in the itinerary"
     ],
     reviews: [
       {
