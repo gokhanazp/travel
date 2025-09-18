@@ -106,25 +106,31 @@ export const toursData = [
   {
     id: 'PBWAI0020',
     slug: "accessible-istanbul-3n4d",
-    title: "Erişilebilir İstanbul Turu (3G/4G)",
-    titleEn: "Accessible Istanbul Tour (3N/4D)",
-    shortDescription: "Tekerlekli sandalye kullanıcıları için özel olarak tasarlanmış 3 gece 4 gün İstanbul keşif turu.",
-    shortDescriptionEn: "Special 3 nights 4 days Istanbul discovery tour designed for wheelchair users.",
-    longDescription: "Bu özel tur programı, tekerlekli sandalye kullanıcılarının İstanbul'un zengin tarihi ve kültürel mirasını keşfetmesi ve unutulmaz anılar biriktirmesi için tasarlanmıştır. Engelli erişimi için tasarlanmış noktaları içeren bu tur programı, Topkapı Sarayı, Ayasofya, Sultanahmet Camii, Yerebatan Sarnıcı, Kapalıçarşı, Boğaz turu, Mısır Çarşısı ve Hipodrom gibi popüler noktaları kapsamaktadır.",
-    longDescriptionEn: "This special tour program is designed for wheelchair users to discover the rich historical and cultural heritage of Istanbul and to create unforgettable memories. This tour program, which includes points designed for disabled access, covers popular points such as Topkapi Palace, Hagia Sophia, Sultanahmet Mosque, Basilica Cistern, Grand Bazaar, Bosphorus tour, Spice Bazaar and Hippodrome.",
+    title: "Erişilebilir İstanbul Turu",
+    titleEn: "Accessible İstanbul Tour",
+    shortDescription: "İstanbul'un tarihi ve kültürel içgörülerini erişilebilir bir şekilde sunan 3 gece 4 gün tur. Alışveriş, doğa ve sosyal etkileşimi bir araya getirir.",
+    shortDescriptionEn: "A 3 Nights 4 Days tour offering historical and cultural insights of Istanbul in an accessible way. It brings together shopping, nature and social interaction.",
+    longDescription: "Erişilebilir odalarda konaklama (alçak yataklar, geniş kapılar, banyoda tutunma barları), asansörlü ve rampalı araçlarla ulaşım, her lokasyonda önceden erişilebilirlik kontrolleri, işitme engelliler için işaret dili tercümanı desteği, tur boyunca yardımcı personel ve sık dinlenme molaları ile tam erişilebilir tur deneyimi.",
+    longDescriptionEn: "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom. Transportation by vehicles with lifts and ramps. Accessibility checks at each location in advance, ramps and alternative entrances planned. Sign language interpreter support for the hearing impaired. Support staff available throughout the tour to assist as needed. Frequent scheduled rest breaks.",
     features: [
-      "Tekerlekli sandalye erişilebilir araç",
-      "Deneyimli profesyonel İngilizce rehber",
-      "Erişilebilir otel konaklaması",
+      "Erişilebilir Turlar Deneyimli Profesyonel İngilizce rehberlik",
+      "Fiziksel engelliler için hazırlanmış klimalı araçlarla havaalanı ulaşımı",
+      "Tekerlekli sandalye kullanıcıları ve engelliler için uygun otellerde konaklama",
       "Tur sırasında öğle yemekleri",
-      "Müze ve tekne giriş ücretleri"
+      "Müze, feribot ve görülecek yerlerin giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "Seyahat sigortası",
+      "PİBA WINGS TRAVEL koordinasyon ve özenli müşteri hizmeti"
     ],
     featuresEn: [
-      "Wheelchair accessible vehicle",
-      "Experienced professional English guide",
-      "Wheelchair-friendly hotel accommodation",
-      "Lunches on tour",
-      "Museum and ferry entrance fees"
+      "Accessible Tours Experienced Professional English-Speaking guiding",
+      "Airport transportation with A/C vehicles prepared for the physically disabled",
+      "Accommodation in suitable hotels for wheelchair users and disabled people",
+      "Lunches during tour",
+      "Admission to museums, ferry and sights",
+      "Parking, portage, toll roads",
+      "Travel insurance",
+      "Coordination and attentive customer service by PİBA WINGS TRAVEL"
     ],
     duration: "3 Gece / 4 Gün",
     durationEn: "3 Nights / 4 Days",
@@ -147,45 +153,125 @@ export const toursData = [
       "Topkapı Sarayı",
       "Yerebatan Sarnıcı",
       "Kapalıçarşı",
-      "Boğaz Turu"
+      "Mısır Çarşısı",
+      "Boğaz Turu",
+      "Hipodrom"
     ],
     highlightsEn: [
       "Blue Mosque",
       "Hagia Sophia",
       "Topkapi Palace",
-      "Basilica Cistern",
+      "Underground Cistern",
       "Grand Bazaar",
-      "Bosphorus Cruise"
+      "Spice Market",
+      "Bosphorus Cruise",
+      "Hippodrome"
     ],
     itinerary: [
       {
         day: 1,
         title: "İstanbul Varış",
         titleEn: "Istanbul Arrival",
-        description: "Havaalanından özel erişilebilir araçla karşılama ve otele transfer. Gün serbest.",
-        descriptionEn: "Private guide and driver pick you from airport with specially designed van for wheelchair users and transfer to hotel. Rest of the day free."
+        description: "Tekerlekli sandalye kullanıcıları için özel van ile havaalanından karşılama → otele transfer. Günün geri kalanı serbest. İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "Pick-up from airport with special van for wheelchair users → transfer to hotel. Free time for the rest of the day. Overnight in accessible-friendly hotel in İstanbul."
       },
       {
         day: 2,
-        title: "İstanbul (Tekerlekli Sandalye ile)",
-        titleEn: "Istanbul (With Wheelchair)",
-        description: "09:30 rehber otelde karşılama. Sultanahmet Camii, Ayasofya, Yerebatan Sarnıcı, öğle yemeği, Mısır Obeliski, Kapalıçarşı.",
-        descriptionEn: "09:30 guide meets you at hotel. Blue Mosque, Hagia Sophia Mosque, Underground Cistern, lunch, Egyptian Obelisk, Grand Bazaar."
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        description: "09:30 otelde özel rehberle buluşma. Sultanahmet Camii ziyareti (engelliler için rampalar). Ayasofya ziyareti (ana alan izinle erişilebilir). Erişilebilir restoranda öğle yemeği. Yerebatan Sarnıcı ziyareti (özel asansör, rampa erişimi). Hipodrom ziyareti (düz zemin, Mısır Obeliski, Yılan Sütunu, Konstantin Sütunu). Kapalıçarşı ziyareti (düz ana yollarda tekerlekli sandalye dostu rota). İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "09:30 meeting with private guide at hotel. Visit Blue Mosque (ramps for disabled). Visit Hagia Sophia (main area accessible with permission). Lunch at accessible restaurant. Visit Underground Cistern (dedicated lift, ramp access). Visit Hippodrome (flat ground, Egyptian Obelisk, Serpent Column, Constantine Column). Visit Grand Bazaar (wheelchair-friendly route on flat main roads). Overnight in accessible-friendly hotel in İstanbul."
       },
       {
         day: 3,
-        title: "İstanbul (Tekerlekli Sandalye ile)",
-        titleEn: "Istanbul (With Wheelchair)",
-        description: "Topkapı Sarayı, Mısır Çarşısı, Galata Köprüsü (öğle yemeği), Boğaz Turu.",
-        descriptionEn: "Topkapi Palace, Spice Market, Galata Bridge (lunch), Bosphorus Cruise."
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        description: "Topkapı Sarayı ziyareti (erişilebilir rampalar, dinlenme alanları). Mısır Çarşısı ziyareti (baharat tadımı, Türk lokumu). Deniz kenarında erişilebilir restoranda öğle yemeği. Erişilebilir tekne ile 1.5 saatlik Boğaz Turu. İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "Visit Topkapi Palace (accessible ramps, rest areas). Visit Spice Market (taste spices, Turkish delights). Lunch at seaside accessible restaurant. 1.5-hour Bosphorus Cruise with accessible boat. Overnight in accessible-friendly hotel in İstanbul."
       },
       {
         day: 4,
         title: "Ayrılış",
         titleEn: "Departure",
-        description: "İstanbul havaalanına özel transfer ile uğurlama.",
-        descriptionEn: "Private driver transfer to Istanbul airport for return international flight."
+        description: "Erişilebilir van ile otelden İstanbul Havaalanı'na özel şoför transferi. Tur sonu.",
+        descriptionEn: "Private driver transfer from hotel to Istanbul Airport with accessible van. End of tour."
       }
+    ],
+    accessibility: {
+      blueMosque: {
+        wheelchair: "Rampalı giriş, geniş avlu",
+        wheelchairEn: "Ramped entrance, large courtyard",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator"
+      },
+      hagiaSophia: {
+        wheelchair: "Geniş giriş kapıları, rampalar",
+        wheelchairEn: "Wide entrance doors, ramps",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator"
+      },
+      topkapiPalace: {
+        wheelchair: "Rampalarla erişilebilir bazı bölümler, dinlenmek için uygun bahçeler",
+        wheelchairEn: "Some sections accessible with ramps, gardens suitable for relaxation",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator"
+      },
+      hippodrome: {
+        general: "Açık düz zemin, banklar mevcut",
+        generalEn: "Open flat ground, benches available"
+      },
+      grandBazaar: {
+        wheelchair: "Düz ana yollar",
+        wheelchairEn: "Straight main roads",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator",
+        visual: "Rehberli 'dokunarak alışveriş'",
+        visualEn: "Guided 'touch shopping'"
+      },
+      undergroundCistern: {
+        wheelchair: "Asansör ve rampalı giriş",
+        wheelchairEn: "Lift and ramped entrance",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator"
+      },
+      spiceMarket: {
+        wheelchair: "Erişilebilir ana yollar",
+        wheelchairEn: "Accessible main roads",
+        visual: "Koku ile baharat tanıtımı",
+        visualEn: "Spices introduced by smell"
+      },
+      bosphorusCruise: {
+        wheelchair: "Erişilebilir tekne",
+        wheelchairEn: "Accessible boat",
+        hearing: "İşaret dili desteği",
+        hearingEn: "Sign language support"
+      },
+      restaurant: {
+        wheelchair: "Tekerlekli sandalye dostu masa düzenlemesi",
+        wheelchairEn: "Wheelchair-friendly table arrangement"
+      }
+    },
+    excludes: [
+      "Kişisel harcamalar",
+      "Akşam yemekleri",
+      "Öğle yemeklerinde içecekler",
+      "Rehber ve şoför bahşişleri",
+      "Tekerlekli sandalye kiralama",
+      "İsteğe bağlı programlar"
+    ],
+    excludesEn: [
+      "Personal expenses",
+      "Dinners",
+      "Beverages at lunches",
+      "Gratuities for guide and driver",
+      "Wheelchair Rental",
+      "Optional programmes in itinerary"
+    ],
+    additionalServices: [
+      "Yürüteç, scooter, elektrikli/manuel tekerlekli sandalye, yardımcı personel (ek ücretli)"
+    ],
+    additionalServicesEn: [
+      "Additional services available: walkers, scooters, electric/manual wheelchairs, assistance staff with extra cost"
     ],
     reviews: [
       {
