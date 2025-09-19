@@ -17,9 +17,6 @@ const VehiclesPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {t('vehicles')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('vehicleFleetSubtitle')}
-          </p>
         </div>
       </div>
 
