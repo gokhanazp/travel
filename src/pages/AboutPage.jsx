@@ -53,21 +53,18 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-orange-500 to-orange-600 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {currentContent.title}
           </h1>
-          <p className="text-xl text-orange-100 max-w-3xl mx-auto font-semibold">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {currentContent.subtitle}
           </p>
         </div>
-      </div>
 
-      {/* Introduction */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-12 mb-16">
           <p className="text-lg lg:text-xl text-gray-700 leading-relaxed text-center max-w-5xl mx-auto">
             {currentContent.intro}
