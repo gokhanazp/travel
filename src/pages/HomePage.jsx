@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
-import PhotoGallery from '../components/PhotoGallery'
+// import PhotoGallery from '../components/PhotoGallery' // Temporarily disabled - will be enabled when our own photos are ready
 import TestimonialsSection from '../components/TestimonialsSection'
 
 import { toursData } from '../data/toursData'
@@ -632,8 +632,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Photo Gallery Section */}
-      <PhotoGallery />
+      {/* Photo Gallery Section - Temporarily disabled */}
+      {/* <PhotoGallery /> */}
 
       {/* Testimonials Section */}
       <TestimonialsSection />

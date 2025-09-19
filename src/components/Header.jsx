@@ -75,9 +75,10 @@ const MainHeader = () => {
             <Link to="/vehicles" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('vehicles')}
             </Link>
-            <Link to="/gallery" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
+            {/* Temporarily disabled - will be enabled when our own photos are ready */}
+            {/* <Link to="/gallery" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('gallery')}
-            </Link>
+            </Link> */}
             <Link to="/about" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('about')}
             </Link>
@@ -198,13 +199,14 @@ const MainHeader = () => {
               >
                 {t('vehicles')}
               </Link>
-              <Link
+              {/* Temporarily disabled - will be enabled when our own photos are ready */}
+              {/* <Link
                 to="/gallery"
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('gallery')}
-              </Link>
+              </Link> */}
               <Link
                 to="/about"
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
