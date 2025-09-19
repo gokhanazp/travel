@@ -54,11 +54,11 @@ const MainHeader = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
 
-          {/* Logo - pibawingsmobility.com */}
+          {/* Logo - Original Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="/pibawingsmobility-logo.png"
-              alt="pibawingsmobility.com"
+              src="/logo.png"
+              alt="PibaWings Travel"
               className="h-8 sm:h-10 md:h-12 w-auto max-w-[200px] object-contain"
               loading="eager"
             />
