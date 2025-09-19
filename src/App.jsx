@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import TourDetailPage from './pages/TourDetailPage'
 import ToursPage from './pages/ToursPage'
+import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/tours" element={<ToursPage />} />
+              <Route path="/vehicles" element={<VehiclesPage />} />
+              <Route path="/araclarimiz" element={<VehiclesPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/galeri" element={<GalleryPage />} />
               <Route path="/tour/:slug" element={<TourDetailPage />} />

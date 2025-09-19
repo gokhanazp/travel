@@ -72,7 +72,9 @@ const MainHeader = () => {
             <Link to="/tours" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('tours')}
             </Link>
-
+            <Link to="/vehicles" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
+              {t('vehicles')}
+            </Link>
             <Link to="/gallery" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('gallery')}
             </Link>
@@ -188,6 +190,13 @@ const MainHeader = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('tours')}
+              </Link>
+              <Link
+                to="/vehicles"
+                className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('vehicles')}
               </Link>
               <Link
                 to="/gallery"

@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 import PhotoGallery from '../components/PhotoGallery'
 import TestimonialsSection from '../components/TestimonialsSection'
-import AccessibilityToolsGallery from '../components/AccessibilityToolsGallery'
+
 import { toursData } from '../data/toursData'
 
 const HomePage = () => {
@@ -631,9 +631,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* Accessibility Tools Gallery Section */}
-      <AccessibilityToolsGallery />
 
       {/* Photo Gallery Section */}
       <PhotoGallery />
