@@ -73,62 +73,15 @@ const ToursPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-pink-50">
       <Header />
 
-      {/* Hero Section - Enhanced */}
-      <div
-        className="relative py-32 overflow-hidden"
-        style={{
-          backgroundImage: 'url(https://demo2.wpopal.com/havezic/wp-content/uploads/2024/07/h1_bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        {/* Enhanced Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/90 via-orange-500/85 to-pink-600/90"></div>
 
-        {/* Decorative Elements */}
-        <div className="absolute top-20 left-16 text-orange-300 opacity-20">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-
-        <div className="absolute bottom-24 right-20 text-pink-300 opacity-15">
-          <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm text-white mb-6">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            Accessible Tourism
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            {currentContent.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            {currentContent.subtitle}
-          </p>
-        </div>
-      </div>
 
       {/* Tours Section */}
-      <div className="bg-gradient-to-br from-orange-50 via-white to-pink-50 py-20">
+      <div className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-pink-500 text-white mb-6">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-              Our Tours
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Accessible Istanbul Tours</h2>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{currentContent.title}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the beauty of Istanbul with our specially designed accessible tours, perfect for travelers with mobility needs
+              {currentContent.subtitle}
             </p>
           </div>
 
