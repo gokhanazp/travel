@@ -447,18 +447,8 @@ const TourDetailPage = () => {
                         {currentContent.priceIncludes}
                       </h3>
                       <div className="space-y-3">
-                        {tour.features && tour.features.map((feature, index) => (
+                        {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
                           <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                            </div>
-                            <p className="text-gray-700">{feature}</p>
-                          </div>
-                        ))}
-                        {tour.featuresEn && language === 'en' && tour.featuresEn.map((feature, index) => (
-                          <div key={`en-${index}`} className="flex items-start space-x-3">
                             <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -479,18 +469,8 @@ const TourDetailPage = () => {
                         {currentContent.priceExcludes}
                       </h3>
                       <div className="space-y-3">
-                        {tour.excludes && tour.excludes.map((exclude, index) => (
+                        {(language === 'en' ? tour.excludesEn : tour.excludes)?.map((exclude, index) => (
                           <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
-                            </div>
-                            <p className="text-gray-700">{exclude}</p>
-                          </div>
-                        ))}
-                        {tour.excludesEn && language === 'en' && tour.excludesEn.map((exclude, index) => (
-                          <div key={`en-${index}`} className="flex items-start space-x-3">
                             <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -512,17 +492,7 @@ const TourDetailPage = () => {
                           {currentContent.additionalServices}
                         </h3>
                         <div className="space-y-3">
-                          {language === 'en' && tour.additionalServicesEn && tour.additionalServicesEn.map((service, index) => (
-                            <div key={index} className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                              </div>
-                              <p className="text-gray-700">{service}</p>
-                            </div>
-                          ))}
-                          {language === 'tr' && tour.additionalServices && tour.additionalServices.map((service, index) => (
+                          {(language === 'en' ? tour.additionalServicesEn : tour.additionalServices)?.map((service, index) => (
                             <div key={index} className="flex items-start space-x-3">
                               <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
