@@ -191,8 +191,8 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-56 rounded-2xl overflow-hidden shadow-xl">
                       <img
-                        src="https://cdn.listelist.com/wp-content/uploads/2020/07/Ayasofya-tarihi-e1594293139823.jpg"
-                        alt="Hagia Sophia Visit"
+                        src="/pibawings3.jpeg"
+                        alt="Piba Wings Travel"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
