@@ -5,10 +5,36 @@ export const toursData = [
     slug: "accessible-istanbul-byzantine-ottoman-4n5d",
     title: "Erişilebilir İstanbul - Bizans & Osmanlı Mirası (4G/5G)",
     titleEn: "Accessible Istanbul - Byzantine & Ottoman Relics (4N/5D)",
-    shortDescription: "Bizans ve Osmanlı mirasını keşfedin, tarihi çarşıları deneyimleyin, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkarın.",
-    shortDescriptionEn: "Explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill.",
-    longDescription: "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle. Erişilebilir odalarda konaklama, asansörlü ve rampalı araçlarla ulaşım, her lokasyonda önceden erişilebilirlik kontrolleri yapılmış.",
-    longDescriptionEn: "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible. Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom, transportation by vehicles with lifts and ramps.",
+    shortDescription: "Bizans ve Osmanlı mirasını keşfedin, tarihi çarşıları deneyimleyin, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkarın ve modern canlı mahalle Kadıköy'ü keşfedin - mümkün olan her yerde engelsiz erişimle.",
+    shortDescriptionEn: "Explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible.",
+    longDescription: "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle.",
+    longDescriptionEn: "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible.",
+    accessibilityOverview: {
+      accommodation: {
+        tr: "Alçak yataklar, geniş kapılar ve banyoda tutunma barları olan erişilebilir odalarda konaklama",
+        en: "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom"
+      },
+      transportation: {
+        tr: "Asansörlü ve rampalı araçlarla ulaşım",
+        en: "Transportation by vehicles with lifts and ramps"
+      },
+      accessibility: {
+        tr: "Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış",
+        en: "Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned"
+      },
+      signLanguage: {
+        tr: "İşitme engelliler için işaret dili tercümanı desteği",
+        en: "Sign language interpreter support for the hearing impaired"
+      },
+      supportStaff: {
+        tr: "Gerektiğinde yardım etmek için tur boyunca destek personeli mevcuttur",
+        en: "Support staff available throughout the tour to assist as needed"
+      },
+      restBreaks: {
+        tr: "Sık planlanan dinlenme molaları",
+        en: "Frequent scheduled rest breaks"
+      }
+    },
     features: [
       "Erişilebilir turlar deneyimli profesyonel İngilizce rehberlik",
       "Fiziksel engelliler için özel hazırlanmış klimalı araçlar",

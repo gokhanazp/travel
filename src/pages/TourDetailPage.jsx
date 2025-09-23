@@ -295,6 +295,118 @@ const TourDetailPage = () => {
                         </div>
                       </div>
                     )}
+
+                    {/* Accessibility Overview Section */}
+                    {tour.accessibilityOverview && (
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                          {language === 'en' ? 'Accessibility Features' : 'Erişilebilirlik Özellikleri'}
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {/* Accommodation */}
+                          <div className="group bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Accommodation' : 'Konaklama'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.accommodation.en : tour.accessibilityOverview.accommodation.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Transportation */}
+                          <div className="group bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Transportation' : 'Ulaşım'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.transportation.en : tour.accessibilityOverview.transportation.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Accessibility Checks */}
+                          <div className="group bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Pre-Planning' : 'Ön Planlama'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.accessibility.en : tour.accessibilityOverview.accessibility.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Sign Language Support */}
+                          <div className="group bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 border border-orange-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h4a1 1 0 011 1v2m-6 0h8m-8 0a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Sign Language' : 'İşaret Dili'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.signLanguage.en : tour.accessibilityOverview.signLanguage.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Support Staff */}
+                          <div className="group bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl p-6 border border-teal-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Support Staff' : 'Destek Personeli'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.supportStaff.en : tour.accessibilityOverview.supportStaff.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Rest Breaks */}
+                          <div className="group bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl p-6 border border-yellow-100 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-gray-900 mb-2">{language === 'en' ? 'Rest Breaks' : 'Dinlenme Molaları'}</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? tour.accessibilityOverview.restBreaks.en : tour.accessibilityOverview.restBreaks.tr}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                 </div>
               )}
 
