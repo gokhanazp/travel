@@ -203,23 +203,24 @@ const TourDetailPage = () => {
             {/* Enhanced Main Content */}
             <div className="lg:col-span-2">
               {/* Enhanced Navigation Tabs */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 mb-8 shadow-lg">
-                <nav className="flex space-x-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 mb-8 shadow-lg overflow-hidden">
+                <nav className="flex space-x-2 overflow-x-auto scrollbar-hide">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
-                      className={`flex-1 py-4 px-6 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                      className={`flex-shrink-0 py-3 px-4 md:py-4 md:px-6 rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 whitespace-nowrap ${
                         activeTab === tab.id
                           ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
                           : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
                       }`}
                     >
-                      <div className="flex items-center justify-center space-x-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex items-center justify-center space-x-1 md:space-x-2">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
-                        <span>{tab.label}</span>
+                        <span className="hidden sm:inline">{tab.label}</span>
+                        <span className="sm:hidden">{tab.label.split('/')[0]}</span>
                       </div>
                     </button>
                   ))}
