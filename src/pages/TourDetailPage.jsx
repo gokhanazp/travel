@@ -51,10 +51,11 @@ const TourDetailPage = () => {
     en: {
       overview: 'Overview',
       itinerary: 'Itinerary',
+      accessibility: 'Accessibility',
+      inclusions: 'Inclusions/Exclusions',
       reviews: 'Reviews',
       gallery: 'Gallery',
       duration: 'Duration',
-      accessibility: 'Accessibility',
       price: 'Price',
       features: 'Features',
       highlights: 'Highlights',
@@ -65,15 +66,19 @@ const TourDetailPage = () => {
       readLess: 'Read Less',
       minutes: 'minutes',
       rating: 'Rating',
-      noReviews: 'No reviews yet'
+      noReviews: 'No reviews yet',
+      priceIncludes: 'Price Includes',
+      priceExcludes: 'Price Excludes',
+      additionalServices: 'Additional Services'
     },
     tr: {
       overview: 'Genel Bakış',
       itinerary: 'Program',
+      accessibility: 'Erişilebilirlik',
+      inclusions: 'Dahil/Hariç',
       reviews: 'Yorumlar',
       gallery: 'Galeri',
       duration: 'Süre',
-      accessibility: 'Erişilebilirlik',
       price: 'Fiyat',
       features: 'Özellikler',
       highlights: 'Öne Çıkanlar',
@@ -84,7 +89,10 @@ const TourDetailPage = () => {
       readLess: 'Daha Az Göster',
       minutes: 'dakika',
       rating: 'Puan',
-      noReviews: 'Henüz yorum yok'
+      noReviews: 'Henüz yorum yok',
+      priceIncludes: 'Fiyata Dahil',
+      priceExcludes: 'Fiyata Dahil Değil',
+      additionalServices: 'Ek Hizmetler'
     }
   }
 
@@ -102,6 +110,7 @@ const TourDetailPage = () => {
     { id: 'overview', label: currentContent.overview },
     { id: 'itinerary', label: currentContent.itinerary },
     { id: 'accessibility', label: currentContent.accessibility },
+    { id: 'inclusions', label: currentContent.inclusions },
     { id: 'reviews', label: currentContent.reviews },
     { id: 'gallery', label: currentContent.gallery }
   ]
@@ -419,6 +428,114 @@ const TourDetailPage = () => {
                       {language === 'en' ? 'Accessibility information coming soon.' : 'Erişilebilirlik bilgileri yakında eklenecek.'}
                     </p>
                   )}
+                </div>
+              )}
+
+              {activeTab === 'inclusions' && (
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                    {currentContent.inclusions}
+                  </h2>
+
+                  <div className="space-y-8">
+                    {/* Price Includes Section */}
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {currentContent.priceIncludes}
+                      </h3>
+                      <div className="space-y-3">
+                        {tour.features && tour.features.map((feature, index) => (
+                          <div key={index} className="flex items-start space-x-3">
+                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                            <p className="text-gray-700">{feature}</p>
+                          </div>
+                        ))}
+                        {tour.featuresEn && language === 'en' && tour.featuresEn.map((feature, index) => (
+                          <div key={`en-${index}`} className="flex items-start space-x-3">
+                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                            <p className="text-gray-700">{feature}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Price Excludes Section */}
+                    <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {currentContent.priceExcludes}
+                      </h3>
+                      <div className="space-y-3">
+                        {tour.excludes && tour.excludes.map((exclude, index) => (
+                          <div key={index} className="flex items-start space-x-3">
+                            <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </div>
+                            <p className="text-gray-700">{exclude}</p>
+                          </div>
+                        ))}
+                        {tour.excludesEn && language === 'en' && tour.excludesEn.map((exclude, index) => (
+                          <div key={`en-${index}`} className="flex items-start space-x-3">
+                            <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </div>
+                            <p className="text-gray-700">{exclude}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Additional Services Section */}
+                    {(tour.additionalServices || tour.additionalServicesEn) && (
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                          </svg>
+                          {currentContent.additionalServices}
+                        </h3>
+                        <div className="space-y-3">
+                          {language === 'en' && tour.additionalServicesEn && tour.additionalServicesEn.map((service, index) => (
+                            <div key={index} className="flex items-start space-x-3">
+                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                              </div>
+                              <p className="text-gray-700">{service}</p>
+                            </div>
+                          ))}
+                          {language === 'tr' && tour.additionalServices && tour.additionalServices.map((service, index) => (
+                            <div key={index} className="flex items-start space-x-3">
+                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                              </div>
+                              <p className="text-gray-700">{service}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
 
