@@ -624,38 +624,100 @@ const TourDetailPage = () => {
 
               {activeTab === 'extraServices' && (
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                    {currentContent.extraServices}
-                  </h2>
+                  {/* Header Section */}
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      {language === 'en' ? 'OUR OPTIONAL SERVICES' : 'OPSİYONEL HİZMETLERİMİZ'}
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                      {language === 'en'
+                        ? 'In addition to our standard comfort services for all our guests, you can also take advantage of our optional additional services. You can easily add these services to your tour as needed, allowing you to completely customize your trip.'
+                        : 'Tüm misafirlerimiz için standart konfor hizmetlerimize ek olarak, opsiyonel ek hizmetlerimizden de yararlanabilirsiniz. Bu hizmetleri ihtiyacınıza göre kolayca turunuza ekleyebilir, seyahatinizi tamamen kişiselleştirebilirsiniz.'
+                      }
+                    </p>
+                  </div>
 
                   {tour.extraServices && tour.extraServices.length > 0 ? (
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                        {language === 'en' ? 'Our Optional Services:' : 'Opsiyonel Hizmetlerimiz:'}
+                      </h3>
+
                       {tour.extraServices.map((service, index) => (
-                        <div key={index} className="group bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                          <div className="flex items-start space-x-4">
-                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                              </svg>
+                        <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                          {/* Service Header */}
+                          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 border-b border-gray-200">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-4">
+                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                                  </svg>
+                                </div>
+                                <h4 className="text-xl font-bold text-gray-900">
+                                  {language === 'en' ? service.titleEn : service.title}
+                                </h4>
+                              </div>
+
+                              {service.hasSelectButton && (
+                                <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                                  {language === 'en' ? 'Select' : 'Seç'}
+                                </button>
+                              )}
                             </div>
-                            <div className="flex-1">
-                              <h3 className="font-bold text-gray-900 mb-2 text-lg">
-                                {language === 'en' ? service.titleEn : service.title}
-                              </h3>
-                              <p className="text-gray-700 leading-relaxed mb-3">
-                                {language === 'en' ? service.descriptionEn : service.description}
-                              </p>
-                              {service.price && (
+                          </div>
+
+                          {/* Service Content */}
+                          <div className="p-6">
+                            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                              {language === 'en' ? service.descriptionEn : service.description}
+                            </p>
+
+                            {/* Service Features */}
+                            {service.features && service.features.length > 0 && (
+                              <div className="space-y-3">
+                                {(language === 'en' ? service.featuresEn : service.features).map((feature, featureIndex) => (
+                                  <div key={featureIndex} className="flex items-start space-x-3">
+                                    <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                      </svg>
+                                    </div>
+                                    <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Price Section */}
+                            {service.price && service.price !== 'İletişime geçin' && service.price !== 'Contact us' && (
+                              <div className="mt-6 pt-4 border-t border-gray-200">
                                 <div className="flex items-center justify-between">
                                   <span className="text-sm text-gray-600">
                                     {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
                                   </span>
-                                  <span className="font-bold text-purple-600 text-lg">
+                                  <span className="font-bold text-blue-600 text-lg">
                                     {service.price} {language === 'en' ? service.currencyEn : service.currency}
                                   </span>
                                 </div>
-                              )}
-                            </div>
+                              </div>
+                            )}
+
+                            {/* Contact for Price */}
+                            {(service.price === 'İletişime geçin' || service.price === 'Contact us') && (
+                              <div className="mt-6 pt-4 border-t border-gray-200">
+                                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg p-4">
+                                  <div className="flex items-center space-x-3">
+                                    <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                    <span className="text-orange-700 font-medium">
+                                      {language === 'en' ? 'Contact us for pricing and availability' : 'Fiyat ve müsaitlik için iletişime geçin'}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       ))}

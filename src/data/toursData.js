@@ -244,58 +244,118 @@ export const toursData = [
     ],
     extraServices: [
       {
-        title: "Özel Tekerlekli Sandalye Kiralama",
-        titleEn: "Private Wheelchair Rental",
-        description: "Hafif, katlanabilir ve konforlu tekerlekli sandalyeler. Günlük kiralama imkanı.",
-        descriptionEn: "Lightweight, foldable and comfortable wheelchairs. Daily rental available.",
-        price: "50",
-        currency: "TL/gün",
-        currencyEn: "TL/day"
+        title: "Refakatçi Desteği (Her 5-6 kişi için)",
+        titleEn: "Companion Support (For every 5-6 people)",
+        description: "Özel refakatçi desteğimizle seyahatiniz boyunca tüm ihtiyaçlarınızda yanınızdayız. Check-in, pasaport kontrolü, bagaj işlemleri, transfer yardımı, otel yerleşimi, ilaç hatırlatması, tekerlekli sandalye kullanımı ve özel ihtiyaçlar için destek.",
+        descriptionEn: "With our dedicated companion support, we are there for you with all your needs throughout your trip. Accompaniment during check-in, passport control, baggage handling, transfer assistance, hotel setup, medication reminders, wheelchair assistance, and special needs support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Check-in, pasaport kontrolü ve bagaj işlemleri eşliği",
+          "Transfer biniş-iniş, bagaj ve ekipman yardımı",
+          "Otel check-in, oda düzeni ve konaklama ihtiyaçları",
+          "İlaç hatırlatması, tekerlekli sandalye kullanımı yardımı",
+          "Rehberle iletişim kolaylığı ve sosyal etkinlik eşliği"
+        ],
+        featuresEn: [
+          "Accompaniment during check-in, passport control, and baggage handling",
+          "Transfer boarding and disembarkation, luggage, and equipment assistance",
+          "Facilitating hotel check-in, room setup, and needs during your stay",
+          "Medication reminders, assistance with wheelchair use, or special needs",
+          "Facilitating communication with the guide and accompanying social occasions"
+        ]
       },
       {
-        title: "Kişisel Bakım Asistanı",
-        titleEn: "Personal Care Assistant",
-        description: "Deneyimli bakım personeli eşliğinde tur. Kişisel ihtiyaçlarınız için 7/24 destek.",
-        descriptionEn: "Tour with experienced care staff. 24/7 support for your personal needs.",
-        price: "200",
-        currency: "TL/gün",
-        currencyEn: "TL/day"
+        title: "Özel Yemek Menüsü (Diyabet)",
+        titleEn: "Special Meal Menu (Diabetes)",
+        description: "Diyabet hastası misafirlerimiz için özel hazırlanan yemek menüleri sayesinde tatilinizi gönül rahatlığıyla geçirebilirsiniz. Tur boyunca kan şekerinizi kontrol altında tutacak dengeli ve özenle hazırlanmış yemekler sunuyoruz.",
+        descriptionEn: "Thanks to our specially prepared meal menus for our guests with diabetes, you can enjoy your holiday with peace of mind. We offer balanced and carefully prepared meals that will keep your blood sugar under control throughout the tour.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Düşük glisemik indeksli yiyecekler",
+          "Protein ve lif dengeli tabaklar",
+          "Taze meyve ve sağlıklı atıştırmalıklar",
+          "Şekersiz ve özel hazırlanmış tatlı seçenekleri",
+          "Şekersiz içecek seçenekleri"
+        ],
+        featuresEn: [
+          "Low glycemic index foods",
+          "Protein and fiber-balanced plates",
+          "Fresh fruit and healthy snacks",
+          "Sugar-free and specially prepared dessert options",
+          "Sugar-free beverage options"
+        ]
       },
       {
-        title: "İşaret Dili Tercümanı",
-        titleEn: "Sign Language Interpreter",
-        description: "Profesyonel işaret dili tercümanı eşliğinde tam tur deneyimi.",
-        descriptionEn: "Full tour experience with professional sign language interpreter.",
-        price: "300",
-        currency: "TL/tur",
-        currencyEn: "TL/tour"
+        title: "Fotoğraf & Video Paketi",
+        titleEn: "Photo & Video Package",
+        description: "Turunuz sırasında yaşadığınız en özel anları profesyonel fotoğraf ve video çekimi ile ölümsüzleştiriyoruz. Böylece turunuz bittikten sonra da her anı yeniden yaşayabilir ve sevdiklerinizle paylaşabilirsiniz.",
+        descriptionEn: "We capture the most special moments you experience during your tour with professional photography and video. So, even after your tour is over, you can relive every moment and share it with your loved ones.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Gezi yerlerinizin ve özel anlarınızın profesyonel fotoğrafçılığı",
+          "Video hikaye editlemesi",
+          "Grup ve bireysel çekimler",
+          "Dijital teslimat"
+        ],
+        featuresEn: [
+          "Professional photography of your travel destinations and special moments",
+          "Video story editing",
+          "Group and individual shots",
+          "Digital delivery"
+        ]
       },
       {
-        title: "Özel Erişilebilir Araç",
-        titleEn: "Private Accessible Vehicle",
-        description: "Rampa ve asansör sistemli lüks araç. Tekerlekli sandalye dostu iç tasarım.",
-        descriptionEn: "Luxury vehicle with ramp and lift system. Wheelchair-friendly interior design.",
-        price: "400",
-        currency: "TL/gün",
-        currencyEn: "TL/day"
+        title: "Medikal Destek",
+        titleEn: "Medical Support",
+        description: "Acil durum veya düzenli sağlık takibi gereken misafirler için. Hemşire/paramedik eşliğinde tur, ilaç ve tedavi takibi, acil durum müdahale desteği, medikal cihaz desteği.",
+        descriptionEn: "For guests who need emergency or regular health monitoring. Nurse/paramedic accompanying the tour, medication and treatment monitoring, emergency response support, medical device support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Tura eşlik eden hemşire/paramedik",
+          "İlaç ve tedavi takibi",
+          "Acil durum müdahale desteği",
+          "Medikal cihaz desteği"
+        ],
+        featuresEn: [
+          "Nurse/paramedic accompanying the tour",
+          "Medication and treatment monitoring",
+          "Emergency response support",
+          "Medical device support"
+        ]
       },
       {
-        title: "Medikal Destek Paketi",
-        titleEn: "Medical Support Package",
-        description: "Hemşire eşliğinde tur. İlk yardım ve medikal destek hizmeti.",
-        descriptionEn: "Tour with nurse accompaniment. First aid and medical support service.",
-        price: "350",
-        currency: "TL/gün",
-        currencyEn: "TL/day"
-      },
-      {
-        title: "Özel Fotoğraf Çekimi",
-        titleEn: "Private Photography Session",
-        description: "Profesyonel fotoğrafçı eşliğinde anılarınızı ölümsüzleştirin.",
-        descriptionEn: "Immortalize your memories with professional photographer.",
-        price: "250",
-        currency: "TL/seans",
-        currencyEn: "TL/session"
+        title: "Tekerlekli Sandalye ve Ekipman Kiralama",
+        titleEn: "Wheelchair and Equipment Rental",
+        description: "Manuel veya motorlu tekerlekli sandalye, yürüteç, baston ve destek cihazları, medikal cihazlar (oksijen tüpü, taşınabilir cihazlar vb.), otelinize veya havaalanına direkt teslimat ve kurulum.",
+        descriptionEn: "Manual or motorized wheelchair, walkers, canes, and support devices, medical devices (oxygen tanks, portable devices, etc.), direct delivery and installation to your hotel or airport.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Manuel veya motorlu tekerlekli sandalye",
+          "Yürüteç, baston ve destek cihazları",
+          "Medikal cihazlar (oksijen tüpü, taşınabilir cihazlar vb.)",
+          "Otelinize veya havaalanına direkt teslimat ve kurulum"
+        ],
+        featuresEn: [
+          "Manual or motorized wheelchair",
+          "Walkers, canes, and support devices",
+          "Medical devices (oxygen tanks, portable devices, etc.)",
+          "Direct delivery and installation to your hotel or airport"
+        ]
       }
     ]
   },
