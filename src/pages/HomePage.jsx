@@ -478,9 +478,9 @@ const HomePage = () => {
             </div>
 
             {/* Right Side - Features */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               {/* Feature 1 */}
-              <div className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
+              <div className="flex items-start space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -494,7 +494,7 @@ const HomePage = () => {
               </div>
 
               {/* Feature 2 */}
-              <div className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
+              <div className="flex items-start space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -508,7 +508,7 @@ const HomePage = () => {
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
+              <div className="flex items-start space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -522,7 +522,7 @@ const HomePage = () => {
               </div>
 
               {/* Feature 4 */}
-              <div className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
+              <div className="flex items-start space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -536,14 +536,14 @@ const HomePage = () => {
               </div>
 
               {/* Description Box */}
-              <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-2xl border border-blue-100">
+              <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-4 rounded-2xl border border-blue-100">
                 <p className="text-gray-700 leading-relaxed">
                   {t('comfortDescription')}
                 </p>
               </div>
 
               {/* CTA Button */}
-              <div className="pt-4">
+              <div className="pt-2">
                 <Link
                   to="/vehicles"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
