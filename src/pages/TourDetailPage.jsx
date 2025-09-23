@@ -75,7 +75,7 @@ const TourDetailPage = () => {
       overview: 'Genel Bakış',
       itinerary: 'Program',
       accessibility: 'Erişilebilirlik',
-      inclusions: 'Dahil/Hariç',
+      inclusions: 'Inclusions/Exclusions',
       reviews: 'Yorumlar',
       gallery: 'Galeri',
       duration: 'Süre',
