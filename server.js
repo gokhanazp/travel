@@ -1,24 +1,34 @@
-// Vercel serverless function for sending contact form emails
+// Local development server for API endpoints
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
 import nodemailer from 'nodemailer'
 
-export default async function handler(req, res) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+// Load environment variables
+dotenv.config()
 
-  if (req.method === 'OPTIONS') {
-    res.status(200).end()
-    return
-  }
+const app = express()
+const PORT = 3001
 
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' })
-  }
+// Middleware
+app.use(cors())
+app.use(express.json())
 
+// Contact form endpoint
+app.post('/api/send-contact', async (req, res) => {
   try {
     const contactData = req.body
+
+    // Check if email credentials are configured
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.log('Email credentials not configured. Simulating email send...')
+      console.log('Contact Data:', contactData)
+      
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Email simulated successfully (credentials not configured)' 
+      })
+    }
 
     // Email transporter configuration
     const transporter = nodemailer.createTransport({
@@ -29,7 +39,7 @@ export default async function handler(req, res) {
       }
     })
 
-    // Müşteriye gönderilecek onay maili
+    // Customer confirmation email
     const customerEmailHTML = `
     <!DOCTYPE html>
     <html>
@@ -98,7 +108,7 @@ export default async function handler(req, res) {
     </html>
     `
 
-    // Şirkete gönderilecek bildirim maili
+    // Company notification email
     const companyEmailHTML = `
     <!DOCTYPE html>
     <html>
@@ -165,7 +175,7 @@ export default async function handler(req, res) {
     </html>
     `
 
-    // Müşteriye onay maili gönder
+    // Send customer confirmation email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: contactData.email,
@@ -173,7 +183,7 @@ export default async function handler(req, res) {
       html: customerEmailHTML
     })
 
-    // Şirkete bildirim maili gönder (TEST - gokhanyildirim1905@gmail.com)
+    // Send company notification email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: 'gokhanyildirim1905@gmail.com',
@@ -193,4 +203,15 @@ export default async function handler(req, res) {
       message: 'E-posta gönderilirken bir hata oluştu.' 
     })
   }
-}
+})
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Local API server is running' })
+})
+
+app.listen(PORT, () => {
+  console.log(`🚀 Local API server running on http://localhost:${PORT}`)
+  console.log(`📧 Email User: ${process.env.EMAIL_USER || 'Not configured'}`)
+  console.log(`🔑 Email Pass: ${process.env.EMAIL_PASS ? 'Configured' : 'Not configured'}`)
+})

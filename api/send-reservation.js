@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const reservationData = req.body
 
     // Email transporter configuration (Gmail örneği)
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER, // Gmail adresiniz
