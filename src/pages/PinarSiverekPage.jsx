@@ -7,46 +7,50 @@ const PinarSiverekPage = () => {
 
   const content = {
     en: {
-      title: 'ABOUT PINAR SİVEREK / FOUNDER',
-      content: `Pınar Siverek, founder of Piba Wings Travel, is a professional tour guide with over 24 years of experience in the tourism industry. For years, she has connected guests from around the world with the historical, cultural, and natural wonders of Turkey, experiencing that tourism is not only about travel but also a cultural bridge and a space of freedom.
+      title: 'WHO IS PINAR SİVEREK?',
+      content: `Hello, I'm Pınar Siverek. For 24 years, I've been a professional tour guide, accompanying thousands of travelers to their dreams. During these journeys, I've seen that traveling isn't just a vacation; it's also about freedom, happiness, and enjoying life. However, throughout my career, one thing has always captured my attention: the challenges faced by people with disabilities and the elderly in traveling.
 
-Throughout her career, Pınar Siverek, who has organized hundreds of tours and guided thousands of travelers, realized that a significant segment of society was being deprived of the right to travel: individuals with disabilities. The inaccessibility of museums, historical sites, historical sites, and even major tourist attractions makes it difficult for individuals with disabilities to travel and restricts their freedom to explore the world.
+Unfortunately, people with disabilities and the elderly face numerous obstacles in achieving this freedom. Museums, historical sites, and most historical and touristic destinations are not designed to meet the needs of people with disabilities. I've repeatedly seen many people who long to see a place but are denied it due to their physical limitations. In those moments, my feeling is this: "Freedom to travel is everyone's right."
 
-These observations paved a new path for Pınar Siverek's career. She decided to use her 24 years of tourism knowledge and professional guiding experience to add value to the lives of individuals with disabilities. With this vision, she founded Piba Wings Travel Agency, a pioneer in accessible tourism in Turkey.
+It was with this belief that I founded Piba Wings Travel Mobility. Our goal is for people with disabilities, just like everyone else, to be able to visit museums, explore historical sites, and enjoy a barrier-free holiday.
 
-Pınar Siverek's greatest motivation is ensuring that individuals with disabilities and the elderly can travel freely, visit museums and historical sites, experience new places, and experience different cultures, just like everyone else. Under her leadership, Piba Wings Travel:
+Our mission is clear: to eliminate travel barriers and make the world accessible to everyone. In line with this mission, we:
 
-- Provides transportation and accommodation solutions tailored to the needs of individuals with disabilities.
-- Provides special arrangements for access to museums and historical sites.
-- Provides confidence with complementary services such as companionship and medical support.
-- Acts with a socially responsible approach that believes in every individual's right to explore the world.
+*Provide barrier-free access on our tours,
+*Develop accessible solutions for museums and historical sites,
+*Provide companionship and medical support when needed,
+*Even the smallest detail is important to ensure that every guest feels safe, free, and valued.
 
-Pınar Siverek's vision is clear: "To eliminate travel barriers and make Turkey and the world accessible to everyone." In line with this vision, Piba Wings Travel is not just a tourism company; it is also an initiative that supports the active participation of individuals with disabilities in social life.
+As Piba Wings Travel, our vision is to be a pioneer of accessible tourism not only in Turkey but also globally. Because we believe: "Every journey should be possible for everyone."
 
-Today, Pınar Siverek continues to offer safe and independent holidays to individuals with disabilities, leveraging her knowledge and years of experience. Under her leadership, Piba Wings Travel has evolved into a brand that aims to overcome barriers and make travel accessible to everyone.
+As Piba Wings Travel Agency, we would be happy to be your traveling companion.
 
-Together, we carry the luggage of your dreams.`
+Pınar SİVEREK
+Founder & CEO
+Piba Wings Travel Agency`
     },
     tr: {
-      title: 'PINAR SİVEREK HAKKINDA / KURUCU',
-      content: `Piba Wings Travel'ın kurucusu Pınar Siverek, turizm sektöründe 24 yılı aşkın deneyime sahip profesyonel bir tur rehberidir. Yıllarca dünyanın dört bir yanından gelen misafirleri Türkiye'nin tarihi, kültürel ve doğal güzellikleriyle buluşturmuş, turizmin sadece seyahat değil, aynı zamanda kültürel bir köprü ve özgürlük alanı olduğunu deneyimlemiştir.
+      title: 'PINAR SİVEREK KİMDİR?',
+      content: `Merhaba, ben Pınar Siverek. 24 yıldır profesyonel tur rehberi olarak binlerce gezgini hayallerine eşlik ettim. Bu yolculuklar sırasında gördüm ki seyahat etmek sadece tatil değil; aynı zamanda özgürlük, mutluluk ve hayatın tadını çıkarmakla ilgili. Ancak kariyerim boyunca dikkatimi her zaman çeken bir şey oldu: engelli ve yaşlı insanların seyahatte karşılaştıkları zorluklar.
 
-Kariyeri boyunca yüzlerce tur organize eden ve binlerce gezgine rehberlik eden Pınar Siverek, toplumun önemli bir kesiminin seyahat hakkından mahrum bırakıldığını fark etti: engelli bireyler. Müzelerin, tarihi mekanların, tarihi alanların ve hatta büyük turistik cazibe merkezlerinin erişilebilir olmaması, engelli bireylerin seyahat etmesini zorlaştırıyor ve dünyayı keşfetme özgürlüklerini kısıtlıyordu.
+Ne yazık ki engelli ve yaşlı insanlar bu özgürlüğe ulaşmada sayısız engelle karşılaşıyor. Müzeler, tarihi mekanlar ve çoğu tarihi ve turistik destinasyon engelli insanların ihtiyaçlarını karşılayacak şekilde tasarlanmamış. Bir yeri görmeyi çok isteyen ama fiziksel sınırlamaları nedeniyle bundan mahrum kalan birçok insanı defalarca gördüm. O anlarda hissettiğim şu: "Seyahat özgürlüğü herkesin hakkıdır."
 
-Bu gözlemler Pınar Siverek'in kariyerinde yeni bir yol açtı. 24 yıllık turizm bilgisini ve profesyonel rehberlik deneyimini engelli bireylerin hayatlarına değer katmak için kullanmaya karar verdi. Bu vizyonla, Türkiye'de erişilebilir turizmin öncüsü olan Piba Wings Travel Acentesi'ni kurdu.
+İşte bu inançla Piba Wings Travel Mobility'yi kurdum. Amacımız engelli insanların da herkes gibi müzeleri ziyaret edebilmeleri, tarihi mekanları keşfedebilmeleri ve engelsiz bir tatil geçirebilmeleri.
 
-Pınar Siverek'in en büyük motivasyonu, engelli bireylerin ve yaşlıların herkes gibi özgürce seyahat edebilmelerini, müzeleri ve tarihi mekanları ziyaret edebilmelerini, yeni yerler deneyimleyebilmelerini ve farklı kültürleri yaşayabilmelerini sağlamaktır. Onun liderliğinde Piba Wings Travel:
+Misyonumuz net: seyahat engellerini ortadan kaldırmak ve dünyayı herkes için erişilebilir kılmak. Bu misyon doğrultusunda:
 
-- Engelli bireylerin ihtiyaçlarına uygun ulaşım ve konaklama çözümleri sağlar.
-- Müzelere ve tarihi mekanlara erişim için özel düzenlemeler yapar.
-- Refakatçilik ve tıbbi destek gibi tamamlayıcı hizmetlerle güven verir.
-- Her bireyin dünyayı keşfetme hakkına inanan sosyal sorumlu bir yaklaşımla hareket eder.
+*Turlarımızda engelsiz erişim sağlıyoruz,
+*Müzeler ve tarihi mekanlar için erişilebilir çözümler geliştiriyoruz,
+*Gerektiğinde refakatçilik ve tıbbi destek sağlıyoruz,
+*Her misafirimizin kendini güvende, özgür ve değerli hissetmesi için en küçük detay bile önemli.
 
-Pınar Siverek'in vizyonu nettir: "Seyahat engellerini ortadan kaldırmak ve Türkiye'yi ve dünyayı herkes için erişilebilir kılmak." Bu vizyon doğrultusunda Piba Wings Travel sadece bir turizm şirketi değil; aynı zamanda engelli bireylerin sosyal hayata aktif katılımını destekleyen bir girişimdir.
+Piba Wings Travel olarak vizyonumuz sadece Türkiye'de değil, küresel olarak da erişilebilir turizmin öncüsü olmak. Çünkü inanıyoruz ki: "Her yolculuk herkes için mümkün olmalı."
 
-Bugün Pınar Siverek, bilgisini ve yıllarca süren deneyimini kullanarak engelli bireylere güvenli ve bağımsız tatiller sunmaya devam ediyor. Onun liderliğinde Piba Wings Travel, engelleri aşmayı ve seyahati herkes için erişilebilir kılmayı hedefleyen bir markaya dönüştü.
+Piba Wings Travel Acentesi olarak seyahat arkadaşınız olmaktan mutluluk duyarız.
 
-Birlikte, hayallerinizin bavulunu taşıyoruz.`
+Pınar SİVEREK
+Kurucu & CEO
+Piba Wings Travel Acentesi`
     }
   }
 
@@ -99,12 +103,12 @@ Birlikte, hayallerinizin bavulunu taşıyoruz.`
           <div className="prose prose-lg max-w-none">
             <div className="text-gray-700 leading-relaxed space-y-6">
               {currentContent.content.split('\n\n').map((paragraph, index) => {
-                // Check if paragraph contains bullet points
-                if (paragraph.includes('- ')) {
+                // Check if paragraph contains bullet points (both - and *)
+                if (paragraph.includes('- ') || paragraph.includes('*')) {
                   const lines = paragraph.split('\n')
-                  const beforeBullets = lines.filter(line => !line.trim().startsWith('- '))
-                  const bullets = lines.filter(line => line.trim().startsWith('- '))
-                  
+                  const beforeBullets = lines.filter(line => !line.trim().startsWith('- ') && !line.trim().startsWith('*'))
+                  const bullets = lines.filter(line => line.trim().startsWith('- ') || line.trim().startsWith('*'))
+
                   return (
                     <div key={index}>
                       {beforeBullets.map((line, lineIndex) => (
@@ -116,14 +120,14 @@ Birlikte, hayallerinizin bavulunu taşıyoruz.`
                         {bullets.map((bullet, bulletIndex) => (
                           <li key={bulletIndex} className="text-lg leading-8 flex items-start">
                             <span className="text-blue-500 mr-3 mt-1">•</span>
-                            <span>{bullet.replace('- ', '')}</span>
+                            <span>{bullet.replace('- ', '').replace('*', '')}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   )
                 }
-                
+
                 return (
                   <p key={index} className="text-lg leading-8">
                     {paragraph}
@@ -140,13 +144,13 @@ Birlikte, hayallerinizin bavulunu taşıyoruz.`
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
               </svg>
               <p className="text-xl italic text-gray-700 font-medium">
-                {language === 'en' 
-                  ? '"Together, we carry the luggage of your dreams."'
-                  : '"Birlikte, hayallerinizin bavulunu taşıyoruz."'
+                {language === 'en'
+                  ? '"Every journey should be possible for everyone."'
+                  : '"Her yolculuk herkes için mümkün olmalı."'
                 }
               </p>
               <p className="text-sm text-gray-500 mt-4 font-semibold">
-                - Pınar Siverek
+                - Pınar Siverek, {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
               </p>
             </div>
           </div>
