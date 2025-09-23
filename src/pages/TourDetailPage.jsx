@@ -61,6 +61,7 @@ const TourDetailPage = () => {
       itinerary: 'Itinerary',
       accessibility: 'Accessibility',
       inclusions: 'Inclusions/Exclusions',
+      extraServices: 'Extra Services',
       reviews: 'Reviews',
       gallery: 'Gallery',
       duration: 'Duration',
@@ -84,6 +85,7 @@ const TourDetailPage = () => {
       itinerary: 'Program',
       accessibility: 'Erişilebilirlik',
       inclusions: 'Inclusions/Exclusions',
+      extraServices: 'Ekstra Hizmetler',
       reviews: 'Yorumlar',
       gallery: 'Galeri',
       duration: 'Süre',
@@ -119,6 +121,7 @@ const TourDetailPage = () => {
     { id: 'itinerary', label: currentContent.itinerary },
     { id: 'accessibility', label: currentContent.accessibility },
     { id: 'inclusions', label: currentContent.inclusions },
+    { id: 'extraServices', label: currentContent.extraServices },
     { id: 'reviews', label: currentContent.reviews },
     { id: 'gallery', label: currentContent.gallery }
   ]
@@ -616,6 +619,59 @@ const TourDetailPage = () => {
                       </div>
                     )}
                   </div>
+                </div>
+              )}
+
+              {activeTab === 'extraServices' && (
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                    {currentContent.extraServices}
+                  </h2>
+
+                  {tour.extraServices && tour.extraServices.length > 0 ? (
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {tour.extraServices.map((service, index) => (
+                        <div key={index} className="group bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                          <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-bold text-gray-900 mb-2 text-lg">
+                                {language === 'en' ? service.titleEn : service.title}
+                              </h3>
+                              <p className="text-gray-700 leading-relaxed mb-3">
+                                {language === 'en' ? service.descriptionEn : service.description}
+                              </p>
+                              {service.price && (
+                                <div className="flex items-center justify-between">
+                                  <span className="text-sm text-gray-600">
+                                    {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
+                                  </span>
+                                  <span className="font-bold text-purple-600 text-lg">
+                                    {service.price} {language === 'en' ? service.currencyEn : service.currency}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-12">
+                      <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                        </svg>
+                      </div>
+                      <p className="text-gray-500 text-lg">
+                        {language === 'en' ? 'No extra services available for this tour' : 'Bu tur için ekstra hizmet bulunmamaktadır'}
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
 

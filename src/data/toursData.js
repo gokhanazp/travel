@@ -241,6 +241,62 @@ export const toursData = [
     additionalServicesEn: [
       "We can provide all type of walkers, scooters, electric or manual wheelchair and assistance staff",
       "To accompany with an additional cost to support you throughout the tour"
+    ],
+    extraServices: [
+      {
+        title: "Özel Tekerlekli Sandalye Kiralama",
+        titleEn: "Private Wheelchair Rental",
+        description: "Hafif, katlanabilir ve konforlu tekerlekli sandalyeler. Günlük kiralama imkanı.",
+        descriptionEn: "Lightweight, foldable and comfortable wheelchairs. Daily rental available.",
+        price: "50",
+        currency: "TL/gün",
+        currencyEn: "TL/day"
+      },
+      {
+        title: "Kişisel Bakım Asistanı",
+        titleEn: "Personal Care Assistant",
+        description: "Deneyimli bakım personeli eşliğinde tur. Kişisel ihtiyaçlarınız için 7/24 destek.",
+        descriptionEn: "Tour with experienced care staff. 24/7 support for your personal needs.",
+        price: "200",
+        currency: "TL/gün",
+        currencyEn: "TL/day"
+      },
+      {
+        title: "İşaret Dili Tercümanı",
+        titleEn: "Sign Language Interpreter",
+        description: "Profesyonel işaret dili tercümanı eşliğinde tam tur deneyimi.",
+        descriptionEn: "Full tour experience with professional sign language interpreter.",
+        price: "300",
+        currency: "TL/tur",
+        currencyEn: "TL/tour"
+      },
+      {
+        title: "Özel Erişilebilir Araç",
+        titleEn: "Private Accessible Vehicle",
+        description: "Rampa ve asansör sistemli lüks araç. Tekerlekli sandalye dostu iç tasarım.",
+        descriptionEn: "Luxury vehicle with ramp and lift system. Wheelchair-friendly interior design.",
+        price: "400",
+        currency: "TL/gün",
+        currencyEn: "TL/day"
+      },
+      {
+        title: "Medikal Destek Paketi",
+        titleEn: "Medical Support Package",
+        description: "Hemşire eşliğinde tur. İlk yardım ve medikal destek hizmeti.",
+        descriptionEn: "Tour with nurse accompaniment. First aid and medical support service.",
+        price: "350",
+        currency: "TL/gün",
+        currencyEn: "TL/day"
+      },
+      {
+        title: "Özel Fotoğraf Çekimi",
+        titleEn: "Private Photography Session",
+        description: "Profesyonel fotoğrafçı eşliğinde anılarınızı ölümsüzleştirin.",
+        descriptionEn: "Immortalize your memories with professional photographer.",
+        price: "250",
+        currency: "TL/seans",
+        currencyEn: "TL/session"
+      }
     ]
   },
   {
