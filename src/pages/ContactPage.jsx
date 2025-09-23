@@ -14,6 +14,9 @@ const ContactPage = () => {
     accessibility: ''
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
   const content = {
     en: {
       title: 'Contact Us',
@@ -74,11 +77,46 @@ const ContactPage = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Form submission logic here
-    console.log('Form submitted:', formData)
-    alert(language === 'en' ? 'Message sent successfully!' : 'Mesaj başarıyla gönderildi!')
+    setIsSubmitting(true)
+
+    try {
+      // Form verilerini hazırla
+      const contactData = {
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        type: 'contact_form'
+      }
+
+      // API'ye gönder
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData)
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          accessibilityNeeds: ''
+        })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -273,11 +311,50 @@ const ContactPage = () => {
                 />
               </div>
 
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-green-800 font-medium">
+                      {language === 'en'
+                        ? 'Message sent successfully! We will get back to you soon.'
+                        : 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.'}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-red-800 font-medium">
+                      {language === 'en'
+                        ? 'There was an error sending your message. Please try again or contact us directly.'
+                        : 'Mesajınız gönderilirken bir hata oluştu. Lütfen tekrar deneyin veya doğrudan bizimle iletişime geçin.'}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 px-6 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                disabled={isSubmitting}
+                className={`w-full py-4 px-6 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
+                  isSubmitting
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transform hover:scale-105'
+                } text-white`}
               >
-                {currentContent.sendButton}
+                {isSubmitting
+                  ? (language === 'en' ? 'Sending...' : 'Gönderiliyor...')
+                  : currentContent.sendButton}
               </button>
             </form>
           </div>
