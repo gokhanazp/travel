@@ -6,6 +6,7 @@ import UnderConstruction from './components/UnderConstruction'
 import HomePage from './pages/HomePage'
 import ReservationPage from './pages/ReservationPage'
 import AboutPage from './pages/AboutPage'
+import PinarSiverekPage from './pages/PinarSiverekPage'
 import ContactPage from './pages/ContactPage'
 import TourDetailPage from './pages/TourDetailPage'
 import ToursPage from './pages/ToursPage'
@@ -40,6 +41,7 @@ function App() {
               <Route path="/reservation" element={<ReservationPage />} />
               <Route path="/rezervasyon" element={<ReservationPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/pinar-siverek" element={<PinarSiverekPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/tours" element={<ToursPage />} />
               <Route path="/vehicles" element={<VehiclesPage />} />

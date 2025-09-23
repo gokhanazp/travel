@@ -15,6 +15,7 @@ const translations = {
     // Header
     home: 'Home',
     about: 'About',
+    pinarSiverek: 'Pınar Siverek',
     tours: 'Tours',
     vehicles: 'Vehicles',
     gallery: 'Gallery',
@@ -157,6 +158,7 @@ const translations = {
     // Header
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
+    pinarSiverek: 'Pınar Siverek',
     tours: 'Turlar',
     vehicles: 'Araçlarımız',
     gallery: 'Galeri',
