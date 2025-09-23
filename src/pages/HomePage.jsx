@@ -454,8 +454,8 @@ const HomePage = () => {
                       </svg>
                     </div>
                     <div className="text-xs font-bold uppercase tracking-wider">TSE</div>
-                    <div className="text-xs opacity-90">Standartlarına Uygun</div>
-                    <div className="text-xs opacity-90">Araç Fılosu</div>
+                    <div className="text-xs opacity-90">Standards</div>
+                    <div className="text-xs opacity-90">Compliant</div>
                   </div>
                 </div>
               </div>
@@ -463,7 +463,7 @@ const HomePage = () => {
               {/* Vehicle Image */}
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                  src="https://www.hncotomotiv.com/resimler/268-.jpg"
                   alt="Accessible Vehicle"
                   className="w-full h-80 object-cover"
                 />
