@@ -81,11 +81,11 @@ Piba Wings Travel Acentesi`
           </svg>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Title */}
-          <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Hero Section with Photo */}
+          <div className="text-center mb-16">
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 mb-6">
+            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 mb-8">
               <svg className="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
@@ -93,65 +93,175 @@ Piba Wings Travel Acentesi`
                 {language === 'en' ? 'Founder & Visionary' : 'Kurucu & Vizyoner'}
               </span>
             </div>
-            
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
               {currentContent.title}
             </h1>
+
+            {/* Photo and Info Section */}
+            <div className="flex flex-col items-center space-y-8 mb-16">
+              {/* Professional Photo */}
+              <div className="relative">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white/50 backdrop-blur-sm">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Pınar Siverek - Founder & CEO"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Decorative ring */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-200/30 animate-pulse"></div>
+              </div>
+
+              {/* Name and Title - Vertical Layout */}
+              <div className="text-center space-y-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Pınar SİVEREK
+                </h2>
+                <div className="space-y-2">
+                  <p className="text-xl text-blue-600 font-semibold">
+                    {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                  </p>
+                  <p className="text-lg text-gray-600">
+                    Piba Wings Travel Agency
+                  </p>
+                </div>
+
+                {/* Professional Stats */}
+                <div className="flex flex-wrap justify-center gap-6 mt-6">
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl px-4 py-3 border border-blue-100">
+                    <div className="text-2xl font-bold text-blue-600">24+</div>
+                    <div className="text-sm text-gray-600">{language === 'en' ? 'Years Experience' : 'Yıl Deneyim'}</div>
+                  </div>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl px-4 py-3 border border-orange-100">
+                    <div className="text-2xl font-bold text-orange-600">1000+</div>
+                    <div className="text-sm text-gray-600">{language === 'en' ? 'Happy Travelers' : 'Mutlu Gezgin'}</div>
+                  </div>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl px-4 py-3 border border-green-100">
+                    <div className="text-2xl font-bold text-green-600">100%</div>
+                    <div className="text-sm text-gray-600">{language === 'en' ? 'Accessible Tours' : 'Erişilebilir Tur'}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg max-w-none">
-            <div className="text-gray-700 leading-relaxed space-y-6">
-              {currentContent.content.split('\n\n').map((paragraph, index) => {
-                // Check if paragraph contains bullet points (both - and *)
-                if (paragraph.includes('- ') || paragraph.includes('*')) {
-                  const lines = paragraph.split('\n')
-                  const beforeBullets = lines.filter(line => !line.trim().startsWith('- ') && !line.trim().startsWith('*'))
-                  const bullets = lines.filter(line => line.trim().startsWith('- ') || line.trim().startsWith('*'))
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/50">
+              <div className="text-gray-700 leading-relaxed space-y-8">
+                {currentContent.content.split('\n\n').map((paragraph, index) => {
+                  // Check if paragraph contains bullet points (both - and *)
+                  if (paragraph.includes('- ') || paragraph.includes('*')) {
+                    const lines = paragraph.split('\n')
+                    const beforeBullets = lines.filter(line => !line.trim().startsWith('- ') && !line.trim().startsWith('*'))
+                    const bullets = lines.filter(line => line.trim().startsWith('- ') || line.trim().startsWith('*'))
+
+                    return (
+                      <div key={index} className="space-y-6">
+                        {beforeBullets.map((line, lineIndex) => (
+                          <p key={lineIndex} className="text-lg leading-8 text-gray-700">
+                            {line}
+                          </p>
+                        ))}
+                        <div className="bg-blue-50/50 rounded-2xl p-6 border-l-4 border-blue-400">
+                          <ul className="space-y-4">
+                            {bullets.map((bullet, bulletIndex) => (
+                              <li key={bulletIndex} className="text-lg leading-8 flex items-start">
+                                <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700">{bullet.replace('- ', '').replace('*', '')}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )
+                  }
+
+                  // Skip signature lines (they'll be in the quote section)
+                  if (paragraph.includes('Pınar SİVEREK') || paragraph.includes('Kurucu & CEO') || paragraph.includes('Founder & CEO')) {
+                    return null
+                  }
 
                   return (
-                    <div key={index}>
-                      {beforeBullets.map((line, lineIndex) => (
-                        <p key={lineIndex} className="text-lg leading-8 mb-4">
-                          {line}
-                        </p>
-                      ))}
-                      <ul className="space-y-3 ml-6">
-                        {bullets.map((bullet, bulletIndex) => (
-                          <li key={bulletIndex} className="text-lg leading-8 flex items-start">
-                            <span className="text-blue-500 mr-3 mt-1">•</span>
-                            <span>{bullet.replace('- ', '').replace('*', '')}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <p key={index} className="text-lg leading-8 text-gray-700 first-letter:text-4xl first-letter:font-bold first-letter:text-blue-600 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                      {paragraph}
+                    </p>
                   )
-                }
-
-                return (
-                  <p key={index} className="text-lg leading-8">
-                    {paragraph}
-                  </p>
-                )
-              })}
+                })}
+              </div>
             </div>
           </div>
 
           {/* Quote Section */}
-          <div className="mt-12 text-center">
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-blue-100">
-              <svg className="w-8 h-8 text-blue-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-              </svg>
-              <p className="text-xl italic text-gray-700 font-medium">
+          <div className="mt-16 text-center">
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-orange-500/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/30 shadow-2xl">
+                <svg className="w-12 h-12 text-blue-400 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                </svg>
+                <p className="text-2xl md:text-3xl italic text-gray-800 font-medium leading-relaxed mb-8">
+                  {language === 'en'
+                    ? '"Every journey should be possible for everyone."'
+                    : '"Her yolculuk herkes için mümkün olmalı."'
+                  }
+                </p>
+
+                {/* Signature */}
+                <div className="border-t border-gray-200/50 pt-6">
+                  <p className="text-lg font-bold text-gray-800 mb-2">
+                    Pınar SİVEREK
+                  </p>
+                  <p className="text-blue-600 font-semibold">
+                    {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                  </p>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Piba Wings Travel Agency
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-16 text-center">
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {language === 'en'
-                  ? '"Every journey should be possible for everyone."'
-                  : '"Her yolculuk herkes için mümkün olmalı."'
+                  ? 'Ready to Start Your Accessible Journey?'
+                  : 'Erişilebilir Yolculuğunuza Başlamaya Hazır mısınız?'
+                }
+              </h3>
+              <p className="text-lg text-gray-600 mb-8">
+                {language === 'en'
+                  ? 'Let us be your travel companion and make your dreams come true.'
+                  : 'Seyahat arkadaşınız olalım ve hayallerinizi gerçekleştirelim.'
                 }
               </p>
-              <p className="text-sm text-gray-500 mt-4 font-semibold">
-                - Pınar Siverek, {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
-              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  {language === 'en' ? 'Contact Us' : 'İletişime Geçin'}
+                </a>
+                <a
+                  href="/tours"
+                  className="inline-flex items-center px-8 py-4 bg-white hover:bg-gray-50 text-blue-600 font-semibold rounded-full border-2 border-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  {language === 'en' ? 'View Tours' : 'Turları Görüntüle'}
+                </a>
+              </div>
             </div>
           </div>
         </div>
