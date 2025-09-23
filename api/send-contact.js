@@ -173,11 +173,10 @@ export default async function handler(req, res) {
       html: customerEmailHTML
     })
 
-    // Şirkete bildirim maili gönder
+    // Şirkete bildirim maili gönder (TEST - gokhanyildirim1905@gmail.com)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: 'info@pibawingstravel.com',
-      cc: 'reservations@pibawingstravel.com',
+      to: 'gokhanyildirim1905@gmail.com',
       subject: `📧 YENİ İLETİŞİM: ${contactData.name} - ${contactData.subject}`,
       html: companyEmailHTML
     })
