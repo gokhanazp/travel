@@ -37,29 +37,60 @@ Piba Wings Mobility olarak, erişilebilir turizmin önümüzdeki yıllarda büy�
   const currentContent = content[language]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-pink-50">
       <Header />
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">
-            {currentContent.title}
-          </h1>
+      {/* Content Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50 relative overflow-hidden">
+        {/* Dekoratif elementler */}
+        <div className="absolute top-10 left-10 text-blue-200 opacity-30">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
         </div>
 
-        {/* Content */}
-        <div className="prose prose-lg max-w-none">
-          <div className="text-gray-700 leading-relaxed space-y-6">
-            {currentContent.content.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-lg leading-8">
-                {paragraph}
-              </p>
-            ))}
+        <div className="absolute bottom-10 right-10 text-orange-200 opacity-20">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 opacity-10">
+          <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Title */}
+          <div className="text-center mb-12">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 mb-6">
+              <svg className="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Our Story' : 'Hikayemiz'}
+              </span>
+            </div>
+
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">
+              {currentContent.title}
+            </h1>
+          </div>
+
+          {/* Content */}
+          <div className="prose prose-lg max-w-none">
+            <div className="text-gray-700 leading-relaxed space-y-6">
+              {currentContent.content.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="text-lg leading-8">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
