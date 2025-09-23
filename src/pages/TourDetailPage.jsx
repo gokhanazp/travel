@@ -11,6 +11,7 @@ const TourDetailPage = () => {
   const [tour, setTour] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [selectedImage, setSelectedImage] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const foundTour = toursData.find(t => t.slug === slug)
@@ -203,28 +204,63 @@ const TourDetailPage = () => {
             {/* Enhanced Main Content */}
             <div className="lg:col-span-2">
               {/* Enhanced Navigation Tabs */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 mb-8 shadow-lg overflow-hidden">
-                <nav className="flex space-x-2 overflow-x-auto scrollbar-hide">
-                  {tabs.map((tab) => (
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl mb-8 shadow-lg">
+                {/* Mobile Dropdown */}
+                <div className="md:hidden p-4">
+                  <div className="relative">
                     <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`flex-shrink-0 py-3 px-4 md:py-4 md:px-6 rounded-xl font-semibold text-xs md:text-sm transition-all duration-300 whitespace-nowrap ${
-                        activeTab === tab.id
-                          ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
-                          : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
-                      }`}
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold"
                     >
-                      <div className="flex items-center justify-center space-x-1 md:space-x-2">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span className="hidden sm:inline">{tab.label}</span>
-                        <span className="sm:hidden">{tab.label.split('/')[0]}</span>
-                      </div>
+                      <span>{tabs.find(tab => tab.id === activeTab)?.label}</span>
+                      <svg className={`w-5 h-5 transition-transform duration-200 ${mobileMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </button>
-                  ))}
-                </nav>
+                    {mobileMenuOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 z-10">
+                        {tabs.map((tab) => (
+                          <button
+                            key={tab.id}
+                            onClick={() => {
+                              setActiveTab(tab.id);
+                              setMobileMenuOpen(false);
+                            }}
+                            className={`w-full text-left px-4 py-3 hover:bg-gray-50 first:rounded-t-xl last:rounded-b-xl transition-colors duration-200 ${
+                              activeTab === tab.id ? 'bg-orange-50 text-orange-600 font-semibold' : 'text-gray-700'
+                            }`}
+                          >
+                            {tab.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Desktop Tabs */}
+                <div className="hidden md:block p-2">
+                  <nav className="grid grid-cols-6 gap-2">
+                    {tabs.map((tab) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`py-4 px-3 rounded-xl font-semibold text-sm transition-all duration-300 text-center ${
+                          activeTab === tab.id
+                            ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
+                            : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
+                        }`}
+                      >
+                        <div className="flex flex-col items-center space-y-1">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span className="leading-tight">{tab.label}</span>
+                        </div>
+                      </button>
+                    ))}
+                  </nav>
+                </div>
               </div>
 
               {/* Enhanced Tab Content */}
