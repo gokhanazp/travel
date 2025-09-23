@@ -559,6 +559,174 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* About Us Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-orange-500/10 backdrop-blur-sm rounded-full border border-orange-500/20 mb-6">
+              <svg className="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">
+                {t('aboutUsHome')}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span dangerouslySetInnerHTML={{ __html: t('aboutUsHomeTitle') }} />
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {t('aboutUsHomeSubtitle')}
+            </p>
+          </div>
+
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <div className="space-y-8">
+              {/* Main Description */}
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border border-orange-100">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {t('aboutUsDescription')}
+                </p>
+              </div>
+
+              {/* Mission Box */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <svg className="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  {t('ourMission')}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {t('missionText')}
+                </p>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 text-center">
+                  <div className="text-2xl font-bold text-orange-500 mb-1">24+</div>
+                  <div className="text-sm text-gray-600">{t('experienceYears')}</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 text-center">
+                  <div className="text-2xl font-bold text-blue-500 mb-1">1000+</div>
+                  <div className="text-sm text-gray-600">{t('happyGuests')}</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 text-center">
+                  <div className="text-2xl font-bold text-green-500 mb-1">100%</div>
+                  <div className="text-sm text-gray-600">{t('accessibleTours')}</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 text-center">
+                  <div className="text-2xl font-bold text-purple-500 mb-1">★★★★★</div>
+                  <div className="text-sm text-gray-600">{t('professionalTeam')}</div>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {t('learnMore')}
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Images */}
+            <div className="relative">
+              {/* Accessibility Badge */}
+              <div className="absolute -top-4 -right-4 z-20">
+                <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-8 rounded-2xl shadow-lg transform rotate-3">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <div className="text-xs font-bold uppercase tracking-wider">
+                      {language === 'en' ? 'Accessible' : 'Erişilebilir'}
+                    </div>
+                    <div className="text-xs opacity-90">
+                      {language === 'en' ? 'Tourism' : 'Turizm'}
+                    </div>
+                    <div className="text-xs opacity-90">
+                      {language === 'en' ? 'Specialist' : 'Uzmanı'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Image */}
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+                  alt="Accessible Tourism"
+                  className="w-full h-auto object-cover"
+                />
+
+                {/* Overlay with accessibility icons */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                  <div className="flex items-center justify-center space-x-6">
+                    {/* Wheelchair Icon */}
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10 2a4 4 0 100 8 4 4 0 000-8zM8 11a6 6 0 016 6H2a6 6 0 016-6z"/>
+                        </svg>
+                      </div>
+                      <div className="text-xs text-gray-600 font-medium">
+                        {language === 'en' ? 'Wheelchair' : 'Tekerlekli'}
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'en' ? 'Accessible' : 'Sandalye'}
+                      </div>
+                    </div>
+
+                    {/* Guide Icon */}
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div className="text-xs text-gray-600 font-medium">
+                        {language === 'en' ? 'Professional' : 'Profesyonel'}
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'en' ? 'Guide' : 'Rehber'}
+                      </div>
+                    </div>
+
+                    {/* Safety Icon */}
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div className="text-xs text-gray-600 font-medium">
+                        {language === 'en' ? 'Safe &' : 'Güvenli &'}
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'en' ? 'Secure' : 'Emniyetli'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Photo Gallery Section - Temporarily disabled */}
       {/* <PhotoGallery /> */}
 
