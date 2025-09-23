@@ -465,7 +465,7 @@ const HomePage = () => {
                 <img
                   src="https://www.hncotomotiv.com/resimler/268-.jpg"
                   alt="Accessible Vehicle"
-                  className="w-full h-80 object-contain"
+                  className="w-full h-auto object-contain"
                 />
 
                 {/* Wheelchair Icon Overlay */}
