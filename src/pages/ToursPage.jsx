@@ -76,9 +76,39 @@ const ToursPage = () => {
 
 
       {/* Tours Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50 relative overflow-hidden">
+        {/* Dekoratif elementler */}
+        <div className="absolute top-10 left-10 text-blue-200 opacity-30">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+
+        <div className="absolute bottom-10 right-10 text-orange-200 opacity-20">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-100 opacity-10">
+          <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 mb-6">
+              <svg className="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Accessible Tours' : 'Erişilebilir Turlar'}
+              </span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{currentContent.title}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {currentContent.subtitle}
@@ -409,7 +439,7 @@ const ToursPage = () => {
             })}
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
