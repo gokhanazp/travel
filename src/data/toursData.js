@@ -2,26 +2,34 @@ export const toursData = [
   // New Tours - Our Main Accessible Istanbul Tours
   {
     id: 'PBWAI0021',
-    slug: "accessible-istanbul-4n5d",
-    title: "Erişilebilir İstanbul Turu (4G/5G)",
-    titleEn: "Accessible Istanbul Tour (4N/5D)",
-    shortDescription: "Tekerlekli sandalye ve erişilebilir van ile 4 gece 5 gün İstanbul'un tarihi ve kültürel mirasını keşfedin.",
-    shortDescriptionEn: "Discover Istanbul's historical and cultural heritage with wheelchair and accessible van for 4 nights 5 days.",
-    longDescription: "Fiziksel engelli bireyler için özel olarak tasarlanmış bu tur, İstanbul'u rahat bir şekilde seyahat etmek ve keşfetmek için ideal bir seçenektir. Tüm tur rotaları engelliler için erişilebilir olacak şekilde tasarlanmış ve engelliler için gerekli olanaklar sağlanmıştır. Tur boyunca özel rehberinizle tarihi ve kültürel yerleri ziyaret edecek, eşsiz lezzetleri tadacak ve İstanbul'un güzelliklerini hiçbir engelle karşılaşmadan deneyimleyeceksiniz.",
-    longDescriptionEn: "This tour is specially designed for people with physical disabilities to travel comfortably and discover Istanbul. All tour routes are designed to be accessible to the disabled and the necessary facilities are provided for the disabled. During the tour, you will visit historical and cultural places with your special guide, taste unique flavors and experience the beauties of Istanbul without any obstacles.",
+    slug: "accessible-istanbul-byzantine-ottoman-4n5d",
+    title: "Erişilebilir İstanbul - Bizans & Osmanlı Mirası (4G/5G)",
+    titleEn: "Accessible Istanbul - Byzantine & Ottoman Relics (4N/5D)",
+    shortDescription: "Bizans ve Osmanlı mirasını keşfedin, tarihi çarşıları deneyimleyin, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkarın.",
+    shortDescriptionEn: "Explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill.",
+    longDescription: "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle. Erişilebilir odalarda konaklama, asansörlü ve rampalı araçlarla ulaşım, her lokasyonda önceden erişilebilirlik kontrolleri yapılmış.",
+    longDescriptionEn: "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible. Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom, transportation by vehicles with lifts and ramps.",
     features: [
-      "Tekerlekli sandalye erişilebilir araç",
-      "Profesyonel İngilizce rehber",
-      "Erişilebilir konaklama",
-      "Öğle yemekleri dahil",
-      "Müze giriş ücretleri"
+      "Erişilebilir turlar deneyimli profesyonel İngilizce rehberlik",
+      "Fiziksel engelliler için özel hazırlanmış klimalı araçlar",
+      "Tekerlekli sandalye kullanıcıları ve engelliler için uygun otellerde 4 gece konaklama",
+      "Erişilebilir restoranlarda öğle yemekleri",
+      "Müze ve görülecek yerlere giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "İşitme engelliler için işaret dili tercüman desteği",
+      "Tur boyunca destek personeli",
+      "Sık dinlenme molaları"
     ],
     featuresEn: [
-      "Wheelchair accessible vehicle",
-      "Professional English guide",
-      "Accessible accommodation",
-      "Lunches included",
-      "Museum entrance fees"
+      "Accessible Tours Experienced Professional English Speaking guiding",
+      "Transportation with A/C vehicles specially prepared for the physically disabled",
+      "4 Nights accommodation in suitable hotels for wheelchair users and disabled people",
+      "Lunches at accessible restaurants",
+      "Admission to museums and sights",
+      "Parking, portage, toll roads",
+      "Sign language interpreter support for the hearing impaired",
+      "Support staff available throughout the tour",
+      "Frequent scheduled rest breaks"
     ],
     duration: "4 Gece / 5 Gün",
     durationEn: "4 Nights / 5 Days",
@@ -39,56 +47,66 @@ export const toursData = [
       "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ],
     highlights: [
-      "Sultanahmet Camii",
-      "Topkapı Sarayı",
-      "Ayasofya",
-      "Kapalıçarşı",
-      "Boğaz Turu",
-      "Dolmabahçe Sarayı"
+      "Hipodrom - Geniş ve düz açık meydan",
+      "Sultanahmet Camii - Rampalı giriş ve düz avlu",
+      "Topkapı Sarayı - Büyük avlular ve rampalar",
+      "Ayasofya - Geniş giriş kapıları ve rampalar",
+      "Kapalıçarşı - Düz ana yollar",
+      "Mısır Çarşısı - Tekerlekli sandalye erişilebilir ana yollar",
+      "Yerebatan Sarnıcı - Asansör ve rampalı giriş",
+      "Boğaz Turu - Rampa erişimli tekneler",
+      "Dolmabahçe Sarayı - Giriş kapısında asansör",
+      "Çamlıca Tepesi - Erişilebilir teraslar ve rampalar",
+      "Kadıköy - Düz ve erişilebilir sahil promenadı"
     ],
     highlightsEn: [
-      "Blue Mosque",
-      "Topkapi Palace",
-      "Hagia Sophia",
-      "Grand Bazaar",
-      "Bosphorus Tour",
-      "Dolmabahce Palace"
+      "Hippodrome - Wide and flat open square",
+      "Blue Mosque - Entrance ramp and flat courtyard",
+      "Topkapi Palace - Large courtyards and ramps",
+      "Hagia Sophia - Wide entrance doors and ramps",
+      "Grand Bazaar - Straight main roads",
+      "Spice Market - Wheelchair-accessible main roads",
+      "Basilica Cistern - Lift and ramped entrance",
+      "Bosphorus Cruise - Ramp accessible boats",
+      "Dolmabahce Palace - Lift at entrance gate",
+      "Çamlıca Hill - Accessible terraces and ramps",
+      "Kadıköy - Flat and accessible seaside promenade"
     ],
     itinerary: [
       {
         day: 1,
         title: "İstanbul Varış",
         titleEn: "Istanbul Arrival",
-        description: "Havaalanından özel erişilebilir araçla karşılama ve otele transfer. Gün serbest.",
-        descriptionEn: "Private guide and driver pick you from airport with specially designed van for wheelchair users and take you to your hotel. Rest of the day free."
+        description: "Özel rehber ve şoföriniz sizi havaalanından tekerlekli sandalye kullanıcıları için özel tasarlanmış van ile karşılayacak ve otelinize götürecektir. Günün geri kalanı serbest. İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "Your private guide and driver will pick you from airport with special designed van for wheelchair users and take you to your hotel. The rest of the day is on your own. Overnight in accessible-friendly hotel in Istanbul."
       },
       {
         day: 2,
-        title: "İstanbul Turu (Tekerlekli Sandalye ile)",
-        titleEn: "Istanbul Tour (With Wheelchair)",
-        description: "Antik Hipodrom, Topkapı Sarayı, Sultanahmet Camii, öğle yemeği, Kapalıçarşı",
-        descriptionEn: "Ancient Hippodrome, Topkapi Palace, Blue Mosque, lunch, Grand Bazaar"
+        title: "İstanbul (Tekerlekli Sandalye ile)",
+        titleEn: "Istanbul (With Wheelchair)",
+        description: "Özel rehberiniz sizi lobide karşılayacak ve tekerlekli sandalye ile yürüyüş turuna başlayacaksınız. Antik Hipodrom (Bizans Konstantinopolis'in merkezi), Topkapı Sarayı (Osmanlı İmparatorluğu'nun büyük sarayı), Sultanahmet Camii (İznik çinileri ile ünlü Mavi Cami). Erişilebilir yerel restoranda öğle yemeği. Kapalıçarşı'da serbest zaman ve alışveriş.",
+        descriptionEn: "Your private guide meet you in the lobby and you will begin your walking tour with wheelchair. Ancient Hippodrome (center of Byzantine Constantinople), Topkapi Palace (grand palace of Ottoman Empire), Blue Mosque (famous for beautiful Iznik tiles). Lunch at accessible local restaurant. Free time for shopping at Grand Bazaar."
       },
       {
         day: 3,
-        title: "İstanbul Turu (Tekerlekli Sandalye ile)",
-        titleEn: "Istanbul Tour (With Wheelchair)",
-        description: "Ayasofya, Yerebatan Sarnıcı, Haliç kıyısı, öğle yemeği, Boğaz Turu",
-        descriptionEn: "Hagia Sophia, Basilica Cistern, Golden Horn seaside, lunch, Bosphorus Ferry Tour"
+        title: "İstanbul (Tekerlekli Sandalye ile)",
+        titleEn: "Istanbul (With Wheelchair)",
+        description: "Ayasofya (1000 yıl Bizans katedrali, 500 yıl Osmanlı camii), 1500 yıllık Yerebatan Sarnıcı (Konstantinopolis'in su deposu, özel asansör ile erişim), Haliç kıyısında erişilebilir restoranda öğle yemeği. Boğaz Turu (1.5 saat, Avrupa ve Asya kıtalarını, 18. yüzyıl yalılarını ve Boğaz köprülerini göreceksiniz).",
+        descriptionEn: "Hagia Sophia (1000 years Byzantine cathedral, 500 years Ottoman mosque), 1500 years old Underground Cistern (water reservoir of Constantinople, accessible via dedicated lift), lunch at accessible local restaurant by seaside. Bosphorus tour (1.5 hours, see European and Asian continents, 18th century mansions and Bosphorus Bridges)."
       },
       {
         day: 4,
         title: "İstanbul (Özel Araçla)",
         titleEn: "Istanbul (With Private Van)",
-        description: "Dolmabahçe Sarayı, Çamlıca Tepesi, Kadıköy, öğle yemeği, Mısır Çarşısı",
-        descriptionEn: "Dolmabahce Palace, Çamlıca Hill, Kadıköy district, lunch, Spice Bazaar"
+        description: "Dolmabahçe Sarayı (Osmanlı İmparatorluğu'nun ikinci sarayı, Atatürk'ün son günlerini geçirdiği yer), Boğaz Köprüsü'nden Asya yakasına geçiş, Çamlıca Tepesi (Boğaz'ın en yüksek noktası, kuş bakışı manzara), Kadıköy ilçesi (Asya yakasının en büyük kasabası, sokak lezzetleri deneyimi), yerel restoranda öğle yemeği, Mısır Çarşısı (17. yüzyıldan kalma renkli baharat pazarı).",
+        descriptionEn: "Dolmabahce Palace (second palace of Ottoman Empire, where Ataturk spent his final days), crossing Bosphorus Bridge to Asian side, Çamlıca Hill (highest point of Bosphorus, bird's eye view), Kadıköy district (largest town on Asian side, Turkish street delicacies experience), lunch in local restaurant, Spice Bazaar (17th century colorful spice market)."
       },
       {
         day: 5,
         title: "Ayrılış",
         titleEn: "Departure",
-        description: "Havaalanına özel transfer ile uğurlama",
-        descriptionEn: "Private driver transfer to airport for return international flight"
+        description: "Şoföriniz sizi otelde özel erişilebilir araçla karşılayacak ve uluslararası dönüş uçuşunuz için İstanbul Havaalanı'na götürecektir. İstanbul'a veda etme zamanı. Turun sonu.",
+        descriptionEn: "Your driver will pick you up at your hotel with private accessible vehicle and take you to the Istanbul Airport for your return international flight. Time to say goodbye to Istanbul. End of the tour."
       }
     ],
     reviews: [
@@ -101,6 +119,102 @@ export const toursData = [
         commentEn: "Incredible experience! Every detail was perfectly planned for wheelchair accessibility. Our guide was amazing!",
         avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
       }
+    ],
+    accessibility: {
+      hippodrome: {
+        wheelchair: "Geniş ve düz, açık meydan",
+        wheelchairEn: "Wide and flat, open square",
+        hearing: "Görsel açıdan zengin, işaret dili tercümanı",
+        hearingEn: "Visually rich, sign language translator"
+      },
+      blueMosque: {
+        wheelchair: "Rampalı giriş ve düz avlu erişilebilir. İçeride halı zemin hareketi biraz engelleyebilir",
+        wheelchairEn: "Entrance ramp and flat courtyard accessible. Inside, carpet flooring may slightly hinder movement",
+        hearing: "Görsel tasarım (kubbeler, çiniler, hat sanatı), İşaret dili tercümanı",
+        hearingEn: "Visual design (domes, tiles, calligraphy), Sign language translator"
+      },
+      topkapiPalace: {
+        wheelchair: "Büyük avlular çoğunlukla düz. Bazı bölümler rampalar aracılığıyla erişilebilir. Bahçeler dinlenmek için uygundur",
+        wheelchairEn: "Large courtyards mostly flat. Some sections are accessible via ramps. Gardens are suitable for relaxation",
+        hearing: "Görsel mimari ve eserler. İşaret dili tercümanı",
+        hearingEn: "Visual architecture and artifacts. Sign language translator"
+      },
+      hagiaSophia: {
+        wheelchair: "Geniş giriş kapıları ve rampalar var. Zemin kat tamamen erişilebilir; üst galeri erişilebilir değil",
+        wheelchairEn: "There are wide entrance doors and ramps. Ground floor fully accessible; upper gallery not accessible",
+        hearing: "Çarpıcı görseller, ana deneyim mimari ve görsel. İşaret dili tercümanı",
+        hearingEn: "Stunning visuals, main experience is architectural and visual. Sign language translator"
+      },
+      grandBazaar: {
+        wheelchair: "Düz ana yollar var",
+        wheelchairEn: "There are straight main roads",
+        hearing: "İşaret dili rehberi/tercümanı",
+        hearingEn: "Sign language guide/translator",
+        visuallyImpaired: "Rehberli 'dokunarak alışveriş'",
+        visuallyImpairedEn: "Guided 'touch shopping'"
+      },
+      spiceBazaar: {
+        wheelchair: "Tekerlekli sandalye erişilebilir ana yollar",
+        wheelchairEn: "Wheelchair-accessible main roads",
+        hearing: "Pazar duyusal, görsel bir deneyimdir (baharatlar, renkler, mallar). İşaret dili rehberi/tercümanı",
+        hearingEn: "Market is a sensory, visual experience (spices, colors, goods). Sign language guide/translator",
+        visuallyImpaired: "Baharatları koku ile tanıtma",
+        visuallyImpairedEn: "Introducing spices by smell"
+      },
+      basilicaCistern: {
+        wheelchair: "Asansör ve rampalı giriş var",
+        wheelchairEn: "There is lift and ramped entrance",
+        hearing: "Güçlü aydınlatma ve dramatik görseller. İşaret dili rehberi/tercümanı",
+        hearingEn: "Strong lighting and dramatic visuals. Sign language guide/translator"
+      },
+      bosphorusCruise: {
+        wheelchair: "Halk feribotları ve birçok özel tekne rampa erişilebilir",
+        wheelchairEn: "Public ferries and many private boats ramp accessible",
+        hearing: "İşaret dili desteği",
+        hearingEn: "Sign language support"
+      },
+      dolmabahcePalace: {
+        wheelchair: "Ana salona giriş kapısında asansör. İç asansör yok",
+        wheelchairEn: "Lift at the entrance gate to the main hall. No interior lift",
+        hearing: "İşaret dili tercümanı",
+        hearingEn: "Sign language translator"
+      },
+      camlicaHill: {
+        wheelchair: "Erişilebilir teraslar ve rampalar. Tepede erişilebilir restoran var",
+        wheelchairEn: "Accessible terraces and ramps. There is accessible restaurant on the hill",
+        hearing: "Panoramik manzaralar, görsel deneyim",
+        hearingEn: "Panoramic views, visual experience"
+      },
+      kadikoy: {
+        wheelchair: "Sahil promenadı düz ve erişilebilir. Birçok kafe engelsiz",
+        wheelchairEn: "Seaside promenade is flat and accessible. Many cafes are barrier-free",
+        hearing: "Alışveriş, pazarlar ve kafeler görsel tabanlı. İşaret dili tercümanı",
+        hearingEn: "Shopping, markets and cafes are visually based. Sign language translator"
+      }
+    },
+    excludes: [
+      "Kişisel harcamalar",
+      "Akşam yemekleri",
+      "Öğle yemeklerinde içecekler",
+      "Rehber ve şoför bahşişleri",
+      "Tekerlekli sandalye kiralama",
+      "İsteğe bağlı programlar"
+    ],
+    excludesEn: [
+      "Personal expenses",
+      "Dinners",
+      "Beverages at lunches",
+      "Gratuities for the guide and driver",
+      "Wheelchair Rental",
+      "Optional programmes listed in the itinerary"
+    ],
+    additionalServices: [
+      "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve yardımcı personel ek ücretle sağlanabilir",
+      "Tur boyunca size destek olmak için ek maliyetle"
+    ],
+    additionalServicesEn: [
+      "We can provide all type of walkers, scooters, electric or manual wheelchair and assistance staff",
+      "To accompany with an additional cost to support you throughout the tour"
     ]
   },
   {
