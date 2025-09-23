@@ -87,7 +87,185 @@ const ToursPage = () => {
 
           {/* Tour Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {toursData.map((tour, index) => (
+            {toursData.map((tour, index) => {
+              // Special design for the first tour (PBWAI0021) - Featured Accessible Tour
+              if (tour.id === 'PBWAI0021') {
+                return (
+                  <div
+                    key={tour.id}
+                    className="lg:col-span-2 xl:col-span-3 group bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border-2 border-blue-200"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    {/* Featured Badge */}
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                        ⭐ {language === 'en' ? 'FEATURED ACCESSIBLE TOUR' : 'ÖNE ÇIKAN ERİŞİLEBİLİR TUR'}
+                      </div>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      {/* Left Side - Image */}
+                      <div className="relative h-96 lg:h-full overflow-hidden">
+                        <img
+                          src={tour.mainImage}
+                          alt={language === 'en' ? tour.titleEn : tour.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+
+                        {/* Tour Code Badge */}
+                        <div className="absolute top-16 left-4">
+                          <span className="px-4 py-2 bg-blue-600 text-white text-lg font-bold rounded-full shadow-lg">
+                            {tour.id}
+                          </span>
+                        </div>
+
+                        {/* Accessibility Badge */}
+                        <div className="absolute top-16 right-4">
+                          <span className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full shadow-lg">
+                            ♿ {language === 'en' ? tour.accessibilityEn : tour.accessibility}
+                          </span>
+                        </div>
+
+                        {/* Title Overlay */}
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                            {language === 'en' ? tour.titleEn : tour.title}
+                          </h3>
+                          <div className="flex items-center justify-between text-blue-200">
+                            <div className="flex items-center">
+                              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="text-lg font-medium">
+                                {language === 'en' ? tour.durationEn : tour.duration}
+                              </span>
+                            </div>
+                            <div className="flex items-center text-yellow-400">
+                              {'★'.repeat(5)}
+                              <span className="text-white text-lg ml-2">4.9</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right Side - Content */}
+                      <div className="p-8">
+                        {/* Description */}
+                        <p className="text-gray-700 mb-6 leading-relaxed text-base">
+                          {language === 'en' ? tour.longDescriptionEn : tour.longDescription}
+                        </p>
+
+                        {/* Accessibility Features */}
+                        {tour.accessibilityOverview && (
+                          <div className="mb-6">
+                            <h4 className="font-bold text-gray-900 mb-4 text-lg flex items-center">
+                              <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              {language === 'en' ? 'Accessibility Features' : 'Erişilebilirlik Özellikleri'}
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
+                                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-semibold text-gray-900">{language === 'en' ? 'Accommodation' : 'Konaklama'}</p>
+                                  <p className="text-xs text-gray-600">{language === 'en' ? 'Accessible rooms' : 'Erişilebilir odalar'}</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
+                                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-semibold text-gray-900">{language === 'en' ? 'Transportation' : 'Ulaşım'}</p>
+                                  <p className="text-xs text-gray-600">{language === 'en' ? 'Lift & ramp vehicles' : 'Asansörlü araçlar'}</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start space-x-3 p-3 bg-purple-50 rounded-lg">
+                                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-semibold text-gray-900">{language === 'en' ? 'Support Staff' : 'Destek Personeli'}</p>
+                                  <p className="text-xs text-gray-600">{language === 'en' ? '24/7 assistance' : '7/24 yardım'}</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start space-x-3 p-3 bg-orange-50 rounded-lg">
+                                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h4a1 1 0 011 1v2m-6 0h8m-8 0a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="text-sm font-semibold text-gray-900">{language === 'en' ? 'Sign Language' : 'İşaret Dili'}</p>
+                                  <p className="text-xs text-gray-600">{language === 'en' ? 'Interpreter support' : 'Tercüman desteği'}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Price Section */}
+                        <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-6 mb-6">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <span className="text-sm text-gray-600 block">{currentContent.price}</span>
+                              <span className="text-4xl font-bold text-blue-600">
+                                €{tour.price}
+                              </span>
+                              <span className="text-sm text-gray-500 ml-2">{currentContent.perPerson}</span>
+                            </div>
+                            <div className="text-right">
+                              <div className="flex items-center text-yellow-500 mb-2">
+                                {'★'.repeat(5)}
+                              </div>
+                              <span className="text-sm text-gray-600">4.9 (150+ {currentContent.reviews})</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="grid grid-cols-2 gap-4">
+                          <Link
+                            to={`/tour/${tour.slug}`}
+                            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 px-6 rounded-xl font-bold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group"
+                          >
+                            <span>{currentContent.viewDetails}</span>
+                            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          <Link
+                            to={`/reservation?tour=${tour.id}`}
+                            className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-4 px-6 rounded-xl font-bold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group"
+                          >
+                            <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>{currentContent.bookNow}</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+
+              // Regular tour cards for other tours
+              return (
               <div
                 key={tour.id}
                 className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
@@ -227,7 +405,8 @@ const ToursPage = () => {
                   </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
