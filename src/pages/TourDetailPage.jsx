@@ -248,53 +248,7 @@ const TourDetailPage = () => {
                       </p>
                     </div>
 
-                    {highlights && highlights.length > 0 && (
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                          {currentContent.highlights}
-                        </h3>
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {highlights.map((highlight, index) => (
-                            <div key={index} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                              <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                  </svg>
-                                </div>
-                                <div className="flex-1">
-                                  <span className="text-gray-800 font-semibold text-lg leading-relaxed">{highlight}</span>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
 
-                    {features && features.length > 0 && (
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                          {currentContent.features}
-                        </h3>
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {features.map((feature, index) => (
-                            <div key={index} className="group bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 hover:from-blue-100 hover:to-indigo-100 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
-                              <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                </div>
-                                <div className="flex-1">
-                                  <span className="text-gray-800 font-semibold text-lg leading-relaxed">{feature}</span>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
 
                     {/* Accessibility Overview Section */}
                     {tour.accessibilityOverview && (
