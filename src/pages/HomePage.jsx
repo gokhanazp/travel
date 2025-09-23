@@ -206,8 +206,8 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-72 rounded-2xl overflow-hidden shadow-xl">
                       <img
-                        src="https://istanbultarihi.ist/assets/uploads/files/cilt-8/topkapi-sarayi/3-topkapi-sarayi-gulhane-tarafindan.jpg"
-                        alt="Topkapı Palace"
+                        src="/pibawings2.jpeg"
+                        alt="Piba Wings Travel Services"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

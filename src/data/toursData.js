@@ -66,9 +66,9 @@ export const toursData = [
     currency: "€",
     currencyEn: "€",
     category: "historical",
-    mainImage: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    mainImage: "/pibawings-1.jpeg",
     gallery: [
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "/pibawings-1.jpeg",
       "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ],
@@ -400,7 +400,7 @@ export const toursData = [
     mainImage: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "/pibawings-1.jpeg",
       "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ],
     highlights: [
@@ -577,7 +577,7 @@ export const toursData = [
     mainImage: "https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg",
     gallery: [
       "https://itpweb.s3.eu-west-1.amazonaws.com/istnew%2Ftopkapi_palace1.jpg",
-      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "/pibawings-1.jpeg",
       "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     ],
     highlights: [
