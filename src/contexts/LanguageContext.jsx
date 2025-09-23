@@ -152,6 +152,16 @@ const translations = {
     bookThisVehicle: 'Book This Vehicle',
     contactForInfo: 'Contact for Info',
 
+    // Vehicle Features Section
+    ourVehicles: 'Our Vehicles',
+    vehicleFeaturesTitle: 'Our <span class="text-orange-500">Specialized</span> Vehicle Fleet',
+    vehicleFeaturesSubtitle: 'Modern and specially equipped vehicles designed to provide safe, comfortable and accessible transportation for all our guests.',
+    tseCompliant: 'TSE Standard Compliant Modifications',
+    disabilityFriendly: 'Disability-Friendly Special Solutions',
+    fastReliableService: 'Fast, Reliable & Professional Service',
+    turkeyFirstCompany: 'Turkey\'s First Disability Vehicle Conversion Company',
+    comfortDescription: 'We increase your travel freedom! We offer specially designed accessible vehicle solutions for disabled individuals, providing safe and comfortable transportation.',
+
     // Contact - using existing keys from above
   },
   tr: {
@@ -294,6 +304,16 @@ const translations = {
     climateControl: 'İklim Kontrolü',
     bookThisVehicle: 'Bu Aracı Rezerve Et',
     contactForInfo: 'Bilgi İçin İletişim',
+
+    // Vehicle Features Section
+    ourVehicles: 'Araçlarımız',
+    vehicleFeaturesTitle: '<span class="text-orange-500">Özel Donanımlı</span> Araç Filomuz',
+    vehicleFeaturesSubtitle: 'Tüm misafirlerimiz için güvenli, konforlu ve erişilebilir ulaşım sağlamak üzere tasarlanmış modern ve özel donanımlı araçlarımız.',
+    tseCompliant: 'TSE standartlarına uygun modifikasyonlar',
+    disabilityFriendly: 'Engelli bireylere özel yenilikçi çözümler',
+    fastReliableService: 'Hızlı, güvenilir ve profesyonel hizmet',
+    turkeyFirstCompany: 'Türkiye\'nin öncü engelli araç dönüşüm firması',
+    comfortDescription: 'Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış araç çözümlerimizle güvenli ve konforlu bir yolculuk sunuyoruz.',
 
     // Contact - using existing keys from above
   }
