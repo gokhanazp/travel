@@ -97,8 +97,8 @@ const ToursPage = () => {
                     style={{animationDelay: `${index * 0.1}s`}}
                   >
                     {/* Featured Badge */}
-                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-                      <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                      <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl border-4 border-white">
                         ⭐ {language === 'en' ? 'FEATURED ACCESSIBLE TOUR' : 'ÖNE ÇIKAN ERİŞİLEBİLİR TUR'}
                       </div>
                     </div>
@@ -115,14 +115,14 @@ const ToursPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
 
                         {/* Tour Code Badge */}
-                        <div className="absolute top-16 left-4">
+                        <div className="absolute top-20 left-4">
                           <span className="px-4 py-2 bg-blue-600 text-white text-lg font-bold rounded-full shadow-lg">
                             {tour.id}
                           </span>
                         </div>
 
                         {/* Accessibility Badge */}
-                        <div className="absolute top-16 right-4">
+                        <div className="absolute top-20 right-4">
                           <span className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full shadow-lg">
                             ♿ {language === 'en' ? tour.accessibilityEn : tour.accessibility}
                           </span>
