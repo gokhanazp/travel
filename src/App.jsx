@@ -41,15 +41,20 @@ function App() {
               <Route path="/reservation" element={<ReservationPage />} />
               <Route path="/rezervasyon" element={<ReservationPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/hakkimizda" element={<AboutPage />} />
               <Route path="/pinar-siverek" element={<PinarSiverekPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/iletisim" element={<ContactPage />} />
               <Route path="/tours" element={<ToursPage />} />
+              <Route path="/turlar" element={<ToursPage />} />
               <Route path="/vehicles" element={<VehiclesPage />} />
               <Route path="/araclarimiz" element={<VehiclesPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/galeri" element={<GalleryPage />} />
               <Route path="/tour/:slug" element={<TourDetailPage />} />
               <Route path="/tours/:slug" element={<TourDetailPage />} />
+              <Route path="/tur/:slug" element={<TourDetailPage />} />
+              <Route path="/turlar/:slug" element={<TourDetailPage />} />
             </Routes>
           </div>
         )}

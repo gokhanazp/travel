@@ -69,23 +69,23 @@ const MainHeader = () => {
             <Link to="/" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('home')}
             </Link>
-            <Link to="/tours" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
+            <Link to={language === 'tr' ? "/turlar" : "/tours"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('tours')}
             </Link>
-            <Link to="/vehicles" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
+            <Link to={language === 'tr' ? "/araclarimiz" : "/vehicles"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('vehicles')}
             </Link>
             {/* Temporarily disabled - will be enabled when our own photos are ready */}
-            {/* <Link to="/gallery" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
+            {/* <Link to={language === 'tr' ? "/galeri" : "/gallery"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('gallery')}
             </Link> */}
-            <Link to="/about" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
+            <Link to={language === 'tr' ? "/hakkimizda" : "/about"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('about')}
             </Link>
             <Link to="/pinar-siverek" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('pinarSiverek')}
             </Link>
-            <Link to="/contact" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
+            <Link to={language === 'tr' ? "/iletisim" : "/contact"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('contact')}
             </Link>
           </nav>
@@ -189,14 +189,14 @@ const MainHeader = () => {
                 {t('home')}
               </Link>
               <Link
-                to="/tours"
+                to={language === 'tr' ? "/turlar" : "/tours"}
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('tours')}
               </Link>
               <Link
-                to="/vehicles"
+                to={language === 'tr' ? "/araclarimiz" : "/vehicles"}
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -204,14 +204,14 @@ const MainHeader = () => {
               </Link>
               {/* Temporarily disabled - will be enabled when our own photos are ready */}
               {/* <Link
-                to="/gallery"
+                to={language === 'tr' ? "/galeri" : "/gallery"}
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('gallery')}
               </Link> */}
               <Link
-                to="/about"
+                to={language === 'tr' ? "/hakkimizda" : "/about"}
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -225,7 +225,7 @@ const MainHeader = () => {
                 {t('pinarSiverek')}
               </Link>
               <Link
-                to="/contact"
+                to={language === 'tr' ? "/iletisim" : "/contact"}
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
