@@ -348,11 +348,21 @@ const translations = {
 }
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState(() => {
+    // Initialize from localStorage if available
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('pibawings_language')
+      return saved || 'en'
+    }
+    return 'en'
+  })
 
   // Detect language from URL on mount and URL changes
   useEffect(() => {
     const detectLanguageFromURL = () => {
+      // Safety check for window object (SSR compatibility)
+      if (typeof window === 'undefined') return
+
       const path = window.location.pathname
       const turkishPaths = ['/turlar', '/araclarimiz', '/hakkimizda', '/iletisim', '/galeri']
       const isTurkishPath = turkishPaths.includes(path) ||
@@ -366,20 +376,36 @@ export const LanguageProvider = ({ children }) => {
       }
     }
 
-    // Detect on mount
-    detectLanguageFromURL()
+    // Detect on mount with delay for hydration
+    const timer = setTimeout(() => {
+      detectLanguageFromURL()
+    }, 100)
 
     // Listen for URL changes
     const handlePopState = () => {
       detectLanguageFromURL()
     }
 
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('popstate', handlePopState)
+    }
+
+    return () => {
+      clearTimeout(timer)
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('popstate', handlePopState)
+      }
+    }
   }, [language])
 
   const changeLanguage = (lang) => {
+    console.log('LanguageContext - changeLanguage called with:', lang)
     setLanguage(lang)
+
+    // Force re-render by updating localStorage (for debugging)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('pibawings_language', lang)
+    }
   }
 
   const t = (key) => {
