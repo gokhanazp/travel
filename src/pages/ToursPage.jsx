@@ -73,8 +73,6 @@ const ToursPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-pink-50">
       <Header />
 
-
-
       {/* Tours Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50 relative overflow-hidden">
         {/* Dekoratif elementler */}
