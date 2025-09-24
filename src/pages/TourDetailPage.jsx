@@ -119,7 +119,6 @@ const TourDetailPage = () => {
   const tabs = [
     { id: 'overview', label: currentContent.overview },
     { id: 'itinerary', label: currentContent.itinerary },
-    { id: 'inclusions', label: currentContent.inclusions },
     { id: 'extraServices', label: currentContent.extraServices },
     { id: 'reviews', label: currentContent.reviews },
     { id: 'gallery', label: currentContent.gallery }
@@ -726,6 +725,94 @@ const TourDetailPage = () => {
                         </div>
                       </div>
                     </div>
+
+                    {/* Inclusions/Exclusions Section */}
+                    <div className="mt-12">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                        {language === 'en' ? 'Inclusions/Exclusions' : 'Dahil Olan/Olmayan'}
+                      </h3>
+
+                      <div className="space-y-8">
+                        {/* Price Includes Section */}
+                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                          <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
+                          </h4>
+                          <div className="space-y-3">
+                            {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
+                              <div key={index} className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Price Excludes Section */}
+                        <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
+                          <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
+                          </h4>
+                          <div className="space-y-3">
+                            {tour.excludes && tour.excludes.length > 0 ? (
+                              (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
+                                <div key={index} className="flex items-start space-x-3">
+                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-gray-700 leading-relaxed">{exclude}</span>
+                                </div>
+                              ))
+                            ) : (
+                              <div className="space-y-3">
+                                <div className="flex items-start space-x-3">
+                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-gray-700 leading-relaxed">
+                                    {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
+                                  </span>
+                                </div>
+                                <div className="flex items-start space-x-3">
+                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-gray-700 leading-relaxed">
+                                    {language === 'en' ? 'Gratuities' : 'Bahşişler'}
+                                  </span>
+                                </div>
+                                <div className="flex items-start space-x-3">
+                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-gray-700 leading-relaxed">
+                                    {language === 'en' ? 'Optional activities not mentioned in the itinerary' : 'Programda belirtilmeyen opsiyonel aktiviteler'}
+                                  </span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
               )}
 
@@ -768,83 +855,7 @@ const TourDetailPage = () => {
 
 
 
-              {activeTab === 'inclusions' && (
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                    {currentContent.inclusions}
-                  </h2>
 
-                  <div className="space-y-8">
-                    {/* Price Includes Section */}
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                        <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {currentContent.priceIncludes}
-                      </h3>
-                      <div className="space-y-3">
-                        {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
-                          <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                            </div>
-                            <p className="text-gray-700">{feature}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Price Excludes Section */}
-                    <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                        <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {currentContent.priceExcludes}
-                      </h3>
-                      <div className="space-y-3">
-                        {(language === 'en' ? tour.excludesEn : tour.excludes)?.map((exclude, index) => (
-                          <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
-                            </div>
-                            <p className="text-gray-700">{exclude}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Additional Services Section */}
-                    {(tour.additionalServices || tour.additionalServicesEn) && (
-                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                          <svg className="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                          </svg>
-                          {currentContent.additionalServices}
-                        </h3>
-                        <div className="space-y-3">
-                          {(language === 'en' ? tour.additionalServicesEn : tour.additionalServices)?.map((service, index) => (
-                            <div key={index} className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                              </div>
-                              <p className="text-gray-700">{service}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
 
               {activeTab === 'extraServices' && (
                 <div>
