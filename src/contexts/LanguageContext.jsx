@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
 const LanguageContext = createContext()
 
@@ -351,39 +350,36 @@ const translations = {
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('en')
 
+  // Detect language from URL on mount and URL changes
+  useEffect(() => {
+    const detectLanguageFromURL = () => {
+      const path = window.location.pathname
+      const turkishPaths = ['/turlar', '/araclarimiz', '/hakkimizda', '/iletisim', '/galeri']
+      const isTurkishPath = turkishPaths.includes(path) ||
+                           path.startsWith('/tur/') ||
+                           path.startsWith('/turlar/')
+
+      if (isTurkishPath && language !== 'tr') {
+        setLanguage('tr')
+      } else if (!isTurkishPath && language !== 'en') {
+        setLanguage('en')
+      }
+    }
+
+    // Detect on mount
+    detectLanguageFromURL()
+
+    // Listen for URL changes
+    const handlePopState = () => {
+      detectLanguageFromURL()
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [language])
+
   const changeLanguage = (lang) => {
     setLanguage(lang)
-
-    // URL mapping for language switching
-    const currentPath = window.location.pathname
-    let newPath = currentPath
-
-    if (lang === 'tr') {
-      // Switch to Turkish URLs
-      if (currentPath === '/tours') newPath = '/turlar'
-      else if (currentPath === '/vehicles') newPath = '/araclarimiz'
-      else if (currentPath === '/about') newPath = '/hakkimizda'
-      else if (currentPath === '/contact') newPath = '/iletisim'
-      else if (currentPath === '/gallery') newPath = '/galeri'
-      else if (currentPath.startsWith('/tour/')) newPath = currentPath.replace('/tour/', '/tur/')
-      else if (currentPath.startsWith('/tours/')) newPath = currentPath.replace('/tours/', '/turlar/')
-    } else {
-      // Switch to English URLs
-      if (currentPath === '/turlar') newPath = '/tours'
-      else if (currentPath === '/araclarimiz') newPath = '/vehicles'
-      else if (currentPath === '/hakkimizda') newPath = '/about'
-      else if (currentPath === '/iletisim') newPath = '/contact'
-      else if (currentPath === '/galeri') newPath = '/gallery'
-      else if (currentPath.startsWith('/tur/')) newPath = currentPath.replace('/tur/', '/tour/')
-      else if (currentPath.startsWith('/turlar/')) newPath = currentPath.replace('/turlar/', '/tours/')
-    }
-
-    // Navigate to new URL if it changed
-    if (newPath !== currentPath) {
-      window.history.pushState({}, '', newPath)
-      // Trigger a popstate event to update React Router
-      window.dispatchEvent(new PopStateEvent('popstate'))
-    }
   }
 
   const t = (key) => {

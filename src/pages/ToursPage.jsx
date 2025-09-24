@@ -8,6 +8,8 @@ import { toursData } from '../data/toursData'
 const ToursPage = () => {
   const { language } = useLanguage()
 
+
+
   const content = {
     en: {
       title: 'Our Accessible Tours',
@@ -152,7 +154,10 @@ const ToursPage = () => {
                         {/* Accessibility Badge */}
                         <div className="absolute top-4 right-4">
                           <span className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full shadow-lg">
-                            ♿ {language === 'en' ? tour.accessibilityEn : tour.accessibility}
+                            ♿ {language === 'en' ?
+                                (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
+                                (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
+                              }
                           </span>
                         </div>
 
@@ -318,8 +323,14 @@ const ToursPage = () => {
 
                   {/* Accessibility Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${getAccessibilityColor(language === 'en' ? tour.accessibilityEn : tour.accessibility)}`}>
-                      ♿ {language === 'en' ? tour.accessibilityEn : tour.accessibility}
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${getAccessibilityColor(language === 'en' ?
+                        (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
+                        (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
+                      )}`}>
+                      ♿ {language === 'en' ?
+                          (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
+                          (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
+                        }
                     </span>
                   </div>
 
