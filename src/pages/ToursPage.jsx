@@ -270,7 +270,7 @@ const ToursPage = () => {
                         {/* Action Buttons */}
                         <div className="grid grid-cols-2 gap-4">
                           <Link
-                            to={`/tour/${tour.slug}`}
+                            to={language === 'tr' ? `/tur/${tour.slug}` : `/tour/${tour.slug}`}
                             className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 px-6 rounded-xl font-bold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group"
                           >
                             <span>{currentContent.viewDetails}</span>
@@ -415,7 +415,7 @@ const ToursPage = () => {
                   {/* Action Buttons */}
                   <div className="space-y-2">
                     <Link
-                      to={`/tour/${tour.slug}`}
+                      to={language === 'tr' ? `/tur/${tour.slug}` : `/tour/${tour.slug}`}
                       className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group text-sm"
                     >
                       <span>{currentContent.viewDetails}</span>

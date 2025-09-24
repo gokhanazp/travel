@@ -892,7 +892,7 @@ const TourDetailPage = () => {
                     </button>
 
                     <Link
-                      to="/tours"
+                      to={language === 'tr' ? "/turlar" : "/tours"}
                       className="w-full bg-white hover:bg-gray-50 text-gray-800 py-4 px-6 rounded-2xl font-semibold text-center transition-all duration-300 border-2 border-gray-200 hover:border-orange-300 block group"
                     >
                       <div className="flex items-center justify-center space-x-3">
