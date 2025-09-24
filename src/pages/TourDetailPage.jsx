@@ -120,7 +120,6 @@ const TourDetailPage = () => {
     { id: 'overview', label: currentContent.overview },
     { id: 'itinerary', label: currentContent.itinerary },
     { id: 'extraServices', label: currentContent.extraServices },
-    { id: 'reviews', label: currentContent.reviews },
     { id: 'gallery', label: currentContent.gallery }
   ]
 
@@ -248,23 +247,18 @@ const TourDetailPage = () => {
 
                 {/* Desktop Tabs */}
                 <div className="hidden md:block p-4">
-                  <nav className="grid grid-cols-3 gap-4 mb-4">
+                  <nav className="flex flex-wrap justify-center gap-3 mb-4">
                     {tabs.map((tab) => (
                       <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`py-6 px-6 rounded-xl font-bold text-base transition-all duration-300 text-center ${
+                        className={`py-3 px-6 rounded-lg font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
                           activeTab === tab.id
-                            ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
+                            ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-md'
                             : 'text-gray-700 hover:text-gray-900 hover:bg-white/70 bg-white/50'
                         }`}
                       >
-                        <div className="flex flex-col items-center space-y-2">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          <span className="leading-tight">{tab.label}</span>
-                        </div>
+                        {tab.label}
                       </button>
                     ))}
                   </nav>
@@ -972,55 +966,7 @@ const TourDetailPage = () => {
                 </div>
               )}
 
-              {activeTab === 'reviews' && (
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                    {currentContent.reviews}
-                  </h2>
-                  {reviews.length > 0 ? (
-                    <div className="space-y-6">
-                      {reviews.map((review) => (
-                        <div key={review.id} className="border-b border-gray-200 pb-6 last:border-b-0">
-                          <div className="flex items-start space-x-4">
-                            <img
-                              src={review.avatar}
-                              alt={review.name}
-                              className="w-12 h-12 rounded-full object-cover"
-                            />
-                            <div className="flex-1">
-                              <div className="flex items-center justify-between mb-2">
-                                <h4 className="font-semibold text-gray-900">{review.name}</h4>
-                                <div className="flex items-center">
-                                  {[...Array(5)].map((_, i) => (
-                                    <svg
-                                      key={i}
-                                      className={`w-4 h-4 ${
-                                        i < review.rating ? 'text-yellow-400' : 'text-gray-300'
-                                      }`}
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                    >
-                                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                    </svg>
-                                  ))}
-                                  <span className="ml-2 text-sm text-gray-500">{review.date}</span>
-                                </div>
-                              </div>
-                              <p className="text-gray-700">
-                                {language === 'en' ? review.commentEn : review.comment}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-gray-500 text-center py-8">
-                      {currentContent.noReviews}
-                    </p>
-                  )}
-                </div>
-              )}
+
 
               {activeTab === 'gallery' && (
                 <div>
