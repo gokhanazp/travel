@@ -148,30 +148,36 @@ const ToursPage = () => {
                         {/* Accessibility Icons */}
                         <div className="absolute top-4 right-4 flex gap-2">
                           {/* Wheelchair Accessibility */}
-                          <div className="bg-blue-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
-                            <img
-                              src="./tekerlikli.png"
-                              alt="Wheelchair Accessible"
-                              className="w-5 h-5 object-contain filter brightness-0 invert"
-                            />
+                          <div className="bg-blue-600 p-1 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+                            <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
+                              <img
+                                src="./tekerlikli.png"
+                                alt="Wheelchair Accessible"
+                                className="w-4 h-4 object-contain"
+                              />
+                            </div>
                           </div>
 
                           {/* Hearing Impaired Support */}
-                          <div className="bg-green-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
-                            <img
-                              src="./isitme.png"
-                              alt="Hearing Support"
-                              className="w-5 h-5 object-contain filter brightness-0 invert"
-                            />
+                          <div className="bg-green-600 p-1 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+                            <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
+                              <img
+                                src="./isitme.png"
+                                alt="Hearing Support"
+                                className="w-4 h-4 object-contain"
+                              />
+                            </div>
                           </div>
 
                           {/* Visually Impaired Support */}
-                          <div className="bg-purple-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
-                            <img
-                              src="./Gorme-engelli.png"
-                              alt="Visual Support"
-                              className="w-5 h-5 object-contain filter brightness-0 invert"
-                            />
+                          <div className="bg-purple-600 p-1 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+                            <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
+                              <img
+                                src="./Gorme-engelli.png"
+                                alt="Visual Support"
+                                className="w-4 h-4 object-contain"
+                              />
+                            </div>
                           </div>
                         </div>
 
