@@ -120,7 +120,6 @@ const ToursPage = () => {
             {toursData.map((tour, index) => {
               // All tours get the featured design
               return (
-                return (
                   <div
                     key={tour.id}
                     className="lg:col-span-2 xl:col-span-3 group bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border-2 border-blue-200 relative"
