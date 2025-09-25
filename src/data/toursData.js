@@ -485,6 +485,76 @@ export const toursData = [
       tr: "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz.",
       en: "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
     },
+    extraServices: [
+      {
+        title: "Refakatçi Desteği (Her 5-6 kişi için)",
+        titleEn: "Companion Support (For every 5-6 people)",
+        description: "Özel refakatçi desteğimizle seyahatiniz boyunca tüm ihtiyaçlarınızda yanınızdayız. Check-in, pasaport kontrolü, bagaj işlemleri, transfer yardımı, otel yerleşimi, ilaç hatırlatması, tekerlekli sandalye kullanımı ve özel ihtiyaçlar için destek.",
+        descriptionEn: "With our dedicated companion support, we are there for you with all your needs throughout your trip. Accompaniment during check-in, passport control, baggage handling, transfer assistance, hotel setup, medication reminders, wheelchair assistance, and special needs support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Check-in, pasaport kontrolü ve bagaj işlemleri eşliği",
+          "Transfer biniş-iniş, bagaj ve ekipman yardımı",
+          "Otel check-in, oda düzeni ve konaklama ihtiyaçları",
+          "İlaç hatırlatması, tekerlekli sandalye kullanımı yardımı",
+          "Rehberle iletişim kolaylığı ve sosyal etkinlik eşliği"
+        ],
+        featuresEn: [
+          "Accompaniment during check-in, passport control, and baggage handling",
+          "Transfer boarding and disembarkation, luggage, and equipment assistance",
+          "Facilitating hotel check-in, room setup, and needs during your stay",
+          "Medication reminders, assistance with wheelchair use, or special needs",
+          "Facilitating communication with the guide and accompanying social occasions"
+        ]
+      },
+      {
+        title: "Fotoğraf & Video Paketi",
+        titleEn: "Photo & Video Package",
+        description: "Turunuz sırasında yaşadığınız en özel anları profesyonel fotoğraf ve video çekimi ile ölümsüzleştiriyoruz. Böylece turunuz bittikten sonra da her anı yeniden yaşayabilir ve sevdiklerinizle paylaşabilirsiniz.",
+        descriptionEn: "We capture the most special moments you experience during your tour with professional photography and video. So, even after your tour is over, you can relive every moment and share it with your loved ones.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Gezi yerlerinizin ve özel anlarınızın profesyonel fotoğrafçılığı",
+          "Video hikaye editlemesi",
+          "Grup ve bireysel çekimler",
+          "Dijital teslimat"
+        ],
+        featuresEn: [
+          "Professional photography of your destinations and special moments",
+          "Video story editing",
+          "Group and individual shots",
+          "Digital delivery"
+        ]
+      },
+      {
+        title: "Medikal Destek",
+        titleEn: "Medical Support",
+        description: "Acil durum veya düzenli sağlık takibi gereken misafirler için. Hemşire/paramedik eşliğinde tur, ilaç ve tedavi takibi, acil durum müdahale desteği, medikal cihaz desteği.",
+        descriptionEn: "For guests who need emergency or regular health monitoring. Nurse/paramedic accompanying the tour, medication and treatment monitoring, emergency response support, medical device support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Tura eşlik eden hemşire/paramedik",
+          "İlaç ve tedavi takibi",
+          "Acil durum müdahale desteği",
+          "Medikal cihaz desteği"
+        ],
+        featuresEn: [
+          "Nurse/paramedic accompanying the tour",
+          "Medication and treatment monitoring",
+          "Emergency response support",
+          "Medical device support"
+        ]
+      }
+    ],
     reviews: [
       {
         id: 1,
@@ -648,6 +718,76 @@ export const toursData = [
       "Gratuities for the guide and driver",
       "Wheelchair Rental",
       "Optional programmes listed in the itinerary"
+    ],
+    extraServices: [
+      {
+        title: "Refakatçi Desteği (Her 5-6 kişi için)",
+        titleEn: "Companion Support (For every 5-6 people)",
+        description: "Özel refakatçi desteğimizle seyahatiniz boyunca tüm ihtiyaçlarınızda yanınızdayız. Check-in, pasaport kontrolü, bagaj işlemleri, transfer yardımı, otel yerleşimi, ilaç hatırlatması, tekerlekli sandalye kullanımı ve özel ihtiyaçlar için destek.",
+        descriptionEn: "With our dedicated companion support, we are there for you with all your needs throughout your trip. Accompaniment during check-in, passport control, baggage handling, transfer assistance, hotel setup, medication reminders, wheelchair assistance, and special needs support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Check-in, pasaport kontrolü ve bagaj işlemleri eşliği",
+          "Transfer biniş-iniş, bagaj ve ekipman yardımı",
+          "Otel check-in, oda düzeni ve konaklama ihtiyaçları",
+          "İlaç hatırlatması, tekerlekli sandalye kullanımı yardımı",
+          "Rehberle iletişim kolaylığı ve sosyal etkinlik eşliği"
+        ],
+        featuresEn: [
+          "Accompaniment during check-in, passport control, and baggage handling",
+          "Transfer boarding and disembarkation, luggage, and equipment assistance",
+          "Facilitating hotel check-in, room setup, and needs during your stay",
+          "Medication reminders, assistance with wheelchair use, or special needs",
+          "Facilitating communication with the guide and accompanying social occasions"
+        ]
+      },
+      {
+        title: "Fotoğraf & Video Paketi",
+        titleEn: "Photo & Video Package",
+        description: "Turunuz sırasında yaşadığınız en özel anları profesyonel fotoğraf ve video çekimi ile ölümsüzleştiriyoruz. Böylece turunuz bittikten sonra da her anı yeniden yaşayabilir ve sevdiklerinizle paylaşabilirsiniz.",
+        descriptionEn: "We capture the most special moments you experience during your tour with professional photography and video. So, even after your tour is over, you can relive every moment and share it with your loved ones.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Gezi yerlerinizin ve özel anlarınızın profesyonel fotoğrafçılığı",
+          "Video hikaye editlemesi",
+          "Grup ve bireysel çekimler",
+          "Dijital teslimat"
+        ],
+        featuresEn: [
+          "Professional photography of your destinations and special moments",
+          "Video story editing",
+          "Group and individual shots",
+          "Digital delivery"
+        ]
+      },
+      {
+        title: "Medikal Destek",
+        titleEn: "Medical Support",
+        description: "Acil durum veya düzenli sağlık takibi gereken misafirler için. Hemşire/paramedik eşliğinde tur, ilaç ve tedavi takibi, acil durum müdahale desteği, medikal cihaz desteği.",
+        descriptionEn: "For guests who need emergency or regular health monitoring. Nurse/paramedic accompanying the tour, medication and treatment monitoring, emergency response support, medical device support.",
+        price: "İletişime geçin",
+        currency: "",
+        currencyEn: "",
+        hasSelectButton: true,
+        features: [
+          "Tura eşlik eden hemşire/paramedik",
+          "İlaç ve tedavi takibi",
+          "Acil durum müdahale desteği",
+          "Medikal cihaz desteği"
+        ],
+        featuresEn: [
+          "Nurse/paramedic accompanying the tour",
+          "Medication and treatment monitoring",
+          "Emergency response support",
+          "Medical device support"
+        ]
+      }
     ],
     customerReviews: [
       {
