@@ -502,23 +502,23 @@ const TourDetailPage = () => {
                           <button
                             key={location.id}
                             onClick={() => setSelectedLocation(location)}
-                            className="bg-white rounded-xl shadow-md p-4 border border-gray-200 hover:shadow-lg hover:border-orange-300 transition-all duration-300 text-left group"
+                            className="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg hover:border-orange-300 transition-all duration-300 text-left group"
                           >
-                            <div className="flex items-center space-x-3">
-                              <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="flex items-center space-x-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>
                               </div>
                               <div className="flex-1 min-w-0">
-                                <h4 className="font-semibold text-gray-900 text-sm group-hover:text-orange-600 transition-colors duration-300 truncate">
+                                <h4 className="font-bold text-gray-900 text-base group-hover:text-orange-600 transition-colors duration-300">
                                   {language === 'en' ? location.nameEn : location.nameTr}
                                 </h4>
-                                <p className="text-xs text-gray-500 mt-1">
+                                <p className="text-sm text-gray-600 mt-2 font-medium">
                                   {language === 'en' ? 'Click for details' : 'Detaylar için tıklayın'}
                                 </p>
                               </div>
-                              <svg className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
                             </div>
