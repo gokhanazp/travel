@@ -430,28 +430,9 @@ const TourDetailPage = () => {
                 </h1>
 
                 {/* Description */}
-                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8 font-light text-center px-4">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto font-light text-center px-4">
                   {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                 </p>
-
-                {/* Price and CTA */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 px-4">
-                  <div className="text-white text-center">
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-1">
-                      {language === 'en' ? 'Contact for Price' : tour.price} {language === 'en' ? '' : (tour.currencyEn || tour.currency)}
-                    </div>
-                    <span className="text-sm sm:text-base opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-                    <button className="px-6 sm:px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-sm sm:text-base hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto">
-                      {language === 'en' ? 'Book Now' : 'Hemen Rezervasyon'}
-                    </button>
-                    <button className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300 border border-white/30 w-full sm:w-auto">
-                      {language === 'en' ? 'Ask Question' : 'Soru Sor'}
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
