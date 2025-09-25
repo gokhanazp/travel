@@ -393,22 +393,21 @@ const TourDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section - Mobil Optimized */}
       <div className="relative">
-        <div className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
-          {/* Background Image with Parallax Effect */}
+        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden">
+          {/* Background Image */}
           <div className="absolute inset-0">
             <img
               src={tour.image}
               alt={title}
-              className="w-full h-full object-cover transform scale-105 transition-transform duration-700 hover:scale-110"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
           </div>
 
-          {/* Floating Action Buttons */}
-          <div className="absolute top-6 right-6 z-20">
+          {/* Floating Action Buttons - Desktop Only */}
+          <div className="hidden md:block absolute top-6 right-6 z-20">
             <div className="flex space-x-3">
               <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 border border-white/20">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -420,68 +419,61 @@ const TourDetailPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                 </svg>
               </button>
-              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 border border-white/20">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </button>
             </div>
           </div>
 
-          {/* Accessibility Icons - Centered */}
-          <div className="absolute top-4 sm:top-6 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3">
-            {/* Wheelchair Accessibility */}
-            <div className="bg-blue-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
-              <img
-                src="/tekerlikli.png"
-                alt="Wheelchair Accessible"
-                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
-              />
-            </div>
-
-            {/* Hearing Impaired Support */}
-            <div className="bg-green-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
-              <img
-                src="/isitme.png"
-                alt="Hearing Support"
-                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
-              />
-            </div>
-
-            {/* Visually Impaired Support */}
-            <div className="bg-purple-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
-              <img
-                src="/Gorme-engelli.png"
-                alt="Visual Support"
-                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
-              />
-            </div>
-          </div>
-
-          {/* Enhanced Main Content */}
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full p-8 md:p-12">
-              <div className="max-w-5xl mx-auto">
-                {/* Tour Badges */}
-                <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-                  <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-sm font-semibold shadow-lg">
-                    {duration}
-                  </span>
-                  <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                    <div className="flex items-center text-yellow-400 mr-2">
-                      {'★'.repeat(5)}
-                    </div>
-                    <span className="text-white text-sm font-medium">(4.9)</span>
+          {/* Main Content */}
+          <div className="absolute inset-0 flex flex-col justify-end">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="max-w-4xl mx-auto text-center">
+                {/* Accessibility Icons - Compact for Mobile */}
+                <div className="flex justify-center gap-2 mb-4">
+                  <div className="bg-blue-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+                    <img
+                      src="/tekerlikli.png"
+                      alt="Wheelchair"
+                      className="w-4 h-4 object-contain filter brightness-0 invert"
+                    />
+                  </div>
+                  <div className="bg-green-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Hearing Support' : 'İşitme Desteği'}>
+                    <img
+                      src="/isitme.png"
+                      alt="Hearing"
+                      className="w-4 h-4 object-contain filter brightness-0 invert"
+                    />
+                  </div>
+                  <div className="bg-purple-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Visual Support' : 'Görme Desteği'}>
+                    <img
+                      src="/Gorme-engelli.png"
+                      alt="Visual"
+                      className="w-4 h-4 object-contain filter brightness-0 invert"
+                    />
                   </div>
                 </div>
 
-                {/* Main Title */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight text-center px-4">
+                {/* Title */}
+                <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-3 text-white leading-tight">
                   {title}
                 </h1>
 
-                {/* Description */}
-                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto font-light text-center px-4">
+                {/* Tour Info Badges */}
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                    {duration}
+                  </span>
+                  <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-3 py-1.5 border border-white/20">
+                    <div className="flex items-center text-yellow-400 mr-1">
+                      {'★'.repeat(5)}
+                    </div>
+                    <span className="text-white text-xs sm:text-sm font-medium">(4.9)</span>
+                  </div>
+                  <span className="px-3 py-1.5 bg-white/10 backdrop-blur-md text-white rounded-full text-xs sm:text-sm font-medium border border-white/20">
+                    {language === 'en' ? 'Fully Accessible' : 'Tam Erişilebilir'}
+                  </span>
+                </div>
+
+                {/* Description - Hidden on very small screens */}
+                <p className="hidden sm:block text-sm md:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto font-light">
                   {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                 </p>
               </div>
@@ -490,9 +482,69 @@ const TourDetailPage = () => {
         </div>
       </div>
 
+      {/* Mobile Quick Info Card */}
+      <div className="md:hidden -mt-8 relative z-10 mx-4 mb-6">
+        <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+          <div className="grid grid-cols-2 gap-4">
+            {/* Price */}
+            <div className="text-center">
+              <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                {typeof tour.price === 'number' ? `${tour.price}${tour.currency}` : tour.price}
+              </div>
+              <p className="text-xs text-gray-600">
+                {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
+              </p>
+            </div>
+
+            {/* Duration */}
+            <div className="text-center">
+              <div className="text-lg font-bold text-gray-900">
+                {duration}
+              </div>
+              <p className="text-xs text-gray-600">
+                {language === 'en' ? 'Duration' : 'Süre'}
+              </p>
+            </div>
+          </div>
+
+          {/* Description for mobile */}
+          <div className="mt-4 pt-4 border-t border-gray-100">
+            <p className="text-sm text-gray-700 leading-relaxed text-center">
+              {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
+            </p>
+          </div>
+
+          {/* Quick Action Buttons */}
+          <div className="flex gap-2 mt-4">
+            <button
+              onClick={() => setShowQuestionForm(true)}
+              className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150"
+            >
+              {language === 'en' ? 'Book Now' : 'Hemen Rezerve Et'}
+            </button>
+            <button
+              className="px-4 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all duration-150"
+              title={language === 'en' ? 'Add to Favorites' : 'Favorilere Ekle'}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button
+              className="px-4 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all duration-150"
+              title={language === 'en' ? 'Share' : 'Paylaş'}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Enhanced Content */}
       <div
-        className="relative py-20"
+        className="relative py-8 md:py-20"
         style={{
           backgroundImage: 'url(https://demo2.wpopal.com/havezic/wp-content/uploads/2024/07/h1_bg.png)',
           backgroundSize: 'cover',
@@ -504,7 +556,7 @@ const TourDetailPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-orange-50/90 to-pink-50/95"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-12">
             {/* Enhanced Main Content */}
             <div className="lg:col-span-2">
               {/* Enhanced Navigation Tabs - Mobil için sticky */}
