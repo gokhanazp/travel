@@ -228,13 +228,12 @@ const HomePage = () => {
       {/* Hero Section - Havezic Style with Masonry Gallery */}
       <section
         id="home"
-        className="relative overflow-hidden"
+        className="relative overflow-hidden min-h-screen"
         style={{
           backgroundImage: 'url(https://demo2.wpopal.com/havezic/wp-content/uploads/2024/07/h1_bg.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '100vh',
           marginTop: '-1rem'
         }}
       >
@@ -255,9 +254,9 @@ const HomePage = () => {
         </div>
 
         {/* Main Content Container */}
-        <div className="relative z-10 min-h-full flex items-center pt-4">
+        <div className="relative z-10 min-h-screen flex items-center py-8 sm:py-12 lg:py-0">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
               {/* Left Content */}
               <div className="text-center lg:text-left">
@@ -270,26 +269,26 @@ const HomePage = () => {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  <span className="block mb-2 relative animate-float-up">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                  <span className="block mb-1 sm:mb-2 relative animate-float-up">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 animate-subtle-glow">
                       "{t('heroSlogan')}"
                     </span>
-                    {/* Decorative elements */}
-                    <div className="absolute -top-2 -left-2 w-4 h-4 bg-orange-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0s'}}></div>
-                    <div className="absolute -top-1 -right-3 w-3 h-3 bg-pink-400 rounded-full opacity-50 animate-bounce" style={{animationDelay: '0.5s'}}></div>
-                    <div className="absolute -bottom-2 left-1/4 w-2 h-2 bg-red-400 rounded-full opacity-70 animate-bounce" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute -bottom-1 right-1/3 w-2 h-2 bg-orange-300 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1.5s'}}></div>
+                    {/* Decorative elements - Hidden on mobile */}
+                    <div className="hidden sm:block absolute -top-2 -left-2 w-4 h-4 bg-orange-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0s'}}></div>
+                    <div className="hidden sm:block absolute -top-1 -right-3 w-3 h-3 bg-pink-400 rounded-full opacity-50 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                    <div className="hidden sm:block absolute -bottom-2 left-1/4 w-2 h-2 bg-red-400 rounded-full opacity-70 animate-bounce" style={{animationDelay: '1s'}}></div>
+                    <div className="hidden sm:block absolute -bottom-1 right-1/3 w-2 h-2 bg-orange-300 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1.5s'}}></div>
                   </span>
-                  <span className="block text-gray-800 relative text-4xl md:text-5xl lg:text-6xl">
+                  <span className="block text-gray-800 relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                     PibaWings Mobility
                     {/* Subtle underline animation */}
-                    <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
+                    <div className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
                   </span>
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   {t('heroSubtitle')}
                 </p>
 
@@ -305,21 +304,21 @@ const HomePage = () => {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
                   <Link
                     to={language === 'tr' ? "/turlar" : "/tours"}
-                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
                   >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {t('exploreTours')}
                   </Link>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-900 font-semibold rounded-full border-2 border-gray-300 hover:bg-white hover:border-orange-500 hover:text-orange-600 transition-all duration-300"
+                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white/90 backdrop-blur-sm text-gray-900 font-semibold rounded-full border-2 border-gray-300 hover:bg-white hover:border-orange-500 hover:text-orange-600 transition-all duration-300 text-sm sm:text-base"
                   >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     {t('contactUs')}
@@ -327,32 +326,103 @@ const HomePage = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">500+</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wide">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-orange-500 mb-1 sm:mb-2">500+</div>
+                    <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide">
                       {t('happyTravelers')}
                     </div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">15+</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wide">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-orange-500 mb-1 sm:mb-2">15+</div>
+                    <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide">
                       {t('destinations')}
                     </div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">4.9</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wide">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-orange-500 mb-1 sm:mb-2">4.9</div>
+                    <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide">
                       {t('customerRating')}
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Right Content - Pinterest Style Masonry Gallery */}
+              {/* Right Content - Responsive Gallery */}
               <div className="relative">
-                {/* Masonry Grid - Pinterest Style */}
-                <div className="columns-2 gap-4 space-y-4">
+                {/* Mobile: Simple Grid, Desktop: Masonry */}
+                <div className="block lg:hidden">
+                  {/* Mobile Grid - 2 columns */}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="relative group">
+                        <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg"
+                            alt="İstanbul Erişilebilir Gezisi"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="relative h-24 sm:h-32 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="/pibawings3.jpeg"
+                            alt="Piba Wings Travel"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="relative h-28 sm:h-36 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="https://www.bencatur.com/wp-content/uploads/2021/02/950205793_1588435982.jpg"
+                            alt="Accessible Tourism Services"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="relative group">
+                        <div className="relative h-24 sm:h-32 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="https://yasadikca.com/wp-content/uploads/2007/12/Engelli-Turizmi-Yasadikca.jpg"
+                            alt="Engelli Turizmi"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="relative h-36 sm:h-44 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="/pibawings2.jpeg"
+                            alt="Piba Wings Travel Services"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="relative h-20 sm:h-28 rounded-2xl overflow-hidden shadow-xl">
+                          <img
+                            src="https://www.turizmguncel.com/img/-/sites/press/turizmguncel/uploads_arsiv/contents/6724/10155013082011.jpg"
+                            alt="Accessible Tourism Services"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop: Masonry Grid */}
+                <div className="hidden lg:block columns-2 gap-4 space-y-4">
                   {/* Image 1 - Tall - İstanbul Gezisi */}
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
