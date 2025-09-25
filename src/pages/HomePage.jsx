@@ -153,10 +153,6 @@ const HomePage = () => {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="font-bold text-lg">Istanbul Tour</h3>
-                        <p className="text-sm opacity-90">{t('accessibleTour')}</p>
-                      </div>
                     </div>
                   </div>
 
