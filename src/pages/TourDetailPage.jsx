@@ -272,6 +272,28 @@ const TourDetailPage = () => {
     }
   }, [selectedImage, tour?.gallery])
 
+  // Mobil dropdown menüsü için ESC tuşu ile kapatma
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+      // Mobil menü açıkken body scroll'u engelle
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
+
   if (!tour) {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -485,37 +507,72 @@ const TourDetailPage = () => {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Enhanced Main Content */}
             <div className="lg:col-span-2">
-              {/* Enhanced Navigation Tabs */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl mb-8 shadow-lg">
+              {/* Enhanced Navigation Tabs - Mobil için sticky */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl mb-8 shadow-lg sticky top-4 z-40">
                 {/* Mobile Dropdown */}
                 <div className="md:hidden p-4">
                   <div className="relative">
                     <button
                       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                      className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold"
+                      className="mobile-dropdown-button w-full flex items-center justify-between px-4 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold shadow-md active:scale-95 transition-transform duration-150 min-h-[48px]"
                     >
-                      <span>{tabs.find(tab => tab.id === activeTab)?.label}</span>
+                      <span className="text-sm sm:text-base">{tabs.find(tab => tab.id === activeTab)?.label}</span>
                       <svg className={`w-5 h-5 transition-transform duration-200 ${mobileMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
                     {mobileMenuOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 z-10">
-                        {tabs.map((tab) => (
-                          <button
-                            key={tab.id}
-                            onClick={() => {
-                              setActiveTab(tab.id);
-                              setMobileMenuOpen(false);
-                            }}
-                            className={`w-full text-left px-4 py-3 hover:bg-gray-50 first:rounded-t-xl last:rounded-b-xl transition-colors duration-200 ${
-                              activeTab === tab.id ? 'bg-orange-50 text-orange-600 font-semibold' : 'text-gray-700'
-                            }`}
-                          >
-                            {tab.label}
-                          </button>
-                        ))}
-                      </div>
+                      <>
+                        {/* Backdrop overlay */}
+                        <div
+                          className="fixed inset-0 bg-black/20 z-30"
+                          onClick={() => setMobileMenuOpen(false)}
+                        />
+                        {/* Dropdown menu */}
+                        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 max-h-80 overflow-y-auto">
+                          {tabs.map((tab, index) => (
+                            <button
+                              key={tab.id}
+                              onClick={() => {
+                                setActiveTab(tab.id);
+                                setMobileMenuOpen(false);
+                              }}
+                              className={`mobile-dropdown-item w-full text-left px-4 py-4 hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 ${
+                                index === 0 ? 'rounded-t-xl' : ''
+                              } ${
+                                index === tabs.length - 1 ? 'rounded-b-xl' : 'border-b border-gray-100'
+                              } ${
+                                activeTab === tab.id ? 'bg-orange-50 text-orange-600 font-semibold' : 'text-gray-700'
+                              }`}
+                            >
+                              <div className="flex items-center space-x-3">
+                                {/* Tab icons */}
+                                {tab.id === 'overview' && (
+                                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                  </svg>
+                                )}
+                                {tab.id === 'itinerary' && (
+                                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                )}
+                                {tab.id === 'extraServices' && (
+                                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                                  </svg>
+                                )}
+                                {tab.id === 'gallery' && (
+                                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                )}
+                                <span className="text-sm sm:text-base">{tab.label}</span>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -563,7 +620,7 @@ const TourDetailPage = () => {
               </div>
 
               {/* Enhanced Tab Content */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10">
                 {activeTab === 'overview' && (
                   <div className="space-y-8">
                     <div className="text-center mb-8">
@@ -1053,7 +1110,7 @@ const TourDetailPage = () => {
 
             {/* Enhanced Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 sticky top-8">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 sticky top-8">
                 <div className="space-y-8">
                   {/* Enhanced Price Section */}
                   <div className="text-center bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-6">
