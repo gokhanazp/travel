@@ -426,79 +426,237 @@ const TourDetailPage = () => {
                     {/* Main Description */}
                     <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-8">
                       <p className="text-gray-800 leading-relaxed text-lg md:text-xl mb-6">
-                        {language === 'en'
-                          ? "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible."
-                          : "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle."
+                        {tour?.id === 'PBWAI0019'
+                          ? (language === 'en'
+                              ? "A short and relaxed tour scheduled between 9.00 – 17.00 am. A route combining culture, history and shopping. Accessibility support."
+                              : "9.00-17.00 saatleri arasında planlanmış kısa ve rahat bir tur. Kültür, tarih ve alışverişi birleştiren bir rota. Erişilebilirlik desteği."
+                            )
+                          : (language === 'en'
+                              ? "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible."
+                              : "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle."
+                            )
                         }
                       </p>
 
-                      {/* Accessibility Features List */}
-                      <div className="space-y-3">
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom."
-                              : "Alçak yataklar, geniş kapılar ve banyoda tutunma barları olan erişilebilir odalarda konaklama."
-                            }
-                          </p>
+                      {tour?.id === 'PBWAI0019' && (
+                        <p className="text-gray-800 leading-relaxed text-lg mb-6">
+                          {language === 'en'
+                            ? "The tour includes important and popular touristic places such as Blue Mosque, Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome, and is organized in a way that disabled and elderly people can easily navigate. Access to historical places is provided with a guide and specially arranged routes, while a comfortable tour experience is offered with disabled-friendly services."
+                            : "Sultanahmet Camii, Ayasofya, Topkapı Sarayı, Kapalıçarşı ve Hipodrom gibi önemli ve popüler turistik yerleri içeren tur, engelli ve yaşlı kişilerin kolayca gezebileceği şekilde organize edilmiştir. Tarihi yerlere rehber eşliğinde ve özel düzenlenmiş rotalarla erişim sağlanırken, engelli dostu hizmetlerle konforlu bir tur deneyimi sunulmaktadır."
+                          }
+                        </p>
+                      )}
+
+                      {/* Tour Details for PBWAI0019 */}
+                      {tour?.id === 'PBWAI0019' && (
+                        <div className="space-y-4 mt-6">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-white rounded-xl p-6 shadow-md">
+                              <h4 className="font-bold text-gray-900 mb-3 flex items-center">
+                                <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {language === 'en' ? 'Duration' : 'Süre'}
+                              </h4>
+                              <p className="text-gray-700">8 hours</p>
+                            </div>
+                            <div className="bg-white rounded-xl p-6 shadow-md">
+                              <h4 className="font-bold text-gray-900 mb-3 flex items-center">
+                                <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {language === 'en' ? 'Starting Time' : 'Başlangıç Saati'}
+                              </h4>
+                              <p className="text-gray-700">9:00</p>
+                            </div>
+                          </div>
+
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 flex items-center">
+                              <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              {language === 'en' ? 'Tour Date' : 'Tur Tarihi'}
+                            </h4>
+                            <p className="text-gray-700">
+                              {language === 'en'
+                                ? "(Topkapı Palace closed on Tuesdays, Grand Bazaar closed on Sundays)"
+                                : "(Topkapı Sarayı Salı günleri kapalı, Kapalıçarşı Pazar günleri kapalı)"
+                              }
+                            </p>
+                          </div>
+
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 flex items-center">
+                              <svg className="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                              {language === 'en' ? 'Suitable for which type of disability' : 'Hangi engellilik türü için uygun'}
+                            </h4>
+                            <ul className="text-gray-700 space-y-1">
+                              <li>• {language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</li>
+                              <li>• {language === 'en' ? 'Wheelchair users' : 'Tekerlekli Sandalye Kullanıcıları'}</li>
+                              <li>• {language === 'en' ? 'Elderly people' : 'Yaşlı İnsanlar'}</li>
+                            </ul>
+                          </div>
                         </div>
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Transportation by vehicles with lifts and ramps."
-                              : "Asansörlü ve rampalı araçlarla ulaşım."
-                            }
-                          </p>
+                      )}
+
+                      {/* Accessibility Features List for PBWAI0021 */}
+                      {tour?.id === 'PBWAI0021' && (
+                        <div className="space-y-3">
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom."
+                                : "Alçak yataklar, geniş kapılar ve banyoda tutunma barları olan erişilebilir odalarda konaklama."
+                              }
+                            </p>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Transportation by vehicles with lifts and ramps."
+                                : "Asansörlü ve rampalı araçlarla ulaşım."
+                              }
+                            </p>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned."
+                                : "Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış."
+                              }
+                            </p>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Sign language interpreter support for the hearing impaired."
+                                : "İşitme engelliler için işaret dili tercüman desteği."
+                              }
+                            </p>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Support staff available throughout the tour to assist as needed."
+                                : "Tur boyunca gerektiğinde yardım etmek için destek personeli mevcuttur."
+                              }
+                            </p>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="text-orange-500 font-bold text-lg">*</span>
+                            <p className="text-gray-700 leading-relaxed">
+                              {language === 'en'
+                                ? "Frequent scheduled rest breaks."
+                                : "Sık planlanan dinlenme molaları."
+                              }
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned."
-                              : "Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış."
-                            }
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Sign language interpreter support for the hearing impaired."
-                              : "İşitme engelliler için işaret dili tercüman desteği."
-                            }
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Support staff available throughout the tour to assist as needed."
-                              : "Tur boyunca gerektiğinde yardım etmek için destek personeli mevcuttur."
-                            }
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <span className="text-orange-500 font-bold text-lg">*</span>
-                          <p className="text-gray-700 leading-relaxed">
-                            {language === 'en'
-                              ? "Frequent scheduled rest breaks."
-                              : "Sık planlanan dinlenme molaları."
-                            }
-                          </p>
-                        </div>
-                      </div>
+                      )}
                     </div>
 
                     {/* Accessibility Section */}
                     <div className="mt-12">
                       <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                        {language === 'en' ? 'Accessibility Information' : 'Erişilebilirlik Bilgileri'}
+                        {language === 'en' ? 'Accessibility' : 'Erişilebilirlik'}
                       </h3>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {accessibilityLocations.map((location) => (
+                      {tour?.id === 'PBWAI0019' ? (
+                        <div className="space-y-6">
+                          {/* Blue Mosque */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Blue Mosque' : 'Sultanahmet Camii'}
+                            </h4>
+                            <div className="space-y-2">
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Wheelchair Users:' : 'Tekerlekli Sandalye Kullanıcıları İçin:'}</span> {language === 'en' ? 'There is ramped entrance and large courtyard.' : 'Rampalı giriş ve büyük avlu vardır.'}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Hearing Impaired:' : 'İşitme Engelliler İçin:'}</span> {language === 'en' ? 'Sign language guide / translator.' : 'İşaret dili rehberi / tercümanı.'}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Hagia Sophia */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Hagia Sophia' : 'Ayasofya'}
+                            </h4>
+                            <div className="space-y-2">
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Wheelchair Users:' : 'Tekerlekli Sandalye Kullanıcıları İçin:'}</span> {language === 'en' ? 'There are wide entrance doors and ramps.' : 'Geniş giriş kapıları ve rampalar vardır.'}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Hearing Impaired:' : 'İşitme Engelliler İçin:'}</span> {language === 'en' ? 'Sign Language guide / translator.' : 'İşaret dili rehberi / tercümanı.'}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Topkapi Palace */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Topkapı Palace' : 'Topkapı Sarayı'}
+                            </h4>
+                            <div className="space-y-2">
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Wheelchair Users:' : 'Tekerlekli Sandalye Kullanıcıları İçin:'}</span> {language === 'en' ? 'Some sections are accessible via ramps. Gardens are suitable for relaxation.' : 'Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.'}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Hearing Impaired:' : 'İşitme Engelliler İçin:'}</span> {language === 'en' ? 'Sign Language guide / translator.' : 'İşaret dili rehberi / tercümanı.'}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Hippodrome */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Hippodrome' : 'Hipodrom'}
+                            </h4>
+                            <p className="text-gray-700">
+                              {language === 'en' ? 'Open area with flat ground. Seating benches available.' : 'Düz zemin ile açık alan. Oturma bankları mevcuttur.'}
+                            </p>
+                          </div>
+
+                          {/* Grand Bazaar */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Grand Bazaar' : 'Kapalıçarşı'}
+                            </h4>
+                            <div className="space-y-2">
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Wheelchair Users:' : 'Tekerlekli Sandalye Kullanıcıları İçin:'}</span> {language === 'en' ? 'Straight main roads.' : 'Düz ana yollar.'}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Hearing Impaired:' : 'İşitme Engelliler İçin:'}</span> {language === 'en' ? 'Sign language guide' : 'İşaret dili rehberi'}
+                              </p>
+                              <p className="text-gray-700">
+                                <span className="font-semibold">{language === 'en' ? 'For Visually Impaired:' : 'Görme Engelliler İçin:'}</span> {language === 'en' ? 'Guided "touch shopping".' : 'Rehberli "dokunarak alışveriş".'}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Restaurant */}
+                          <div className="bg-white rounded-xl p-6 shadow-md">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">
+                              {language === 'en' ? 'Restaurant' : 'Restoran'}
+                            </h4>
+                            <p className="text-gray-700">
+                              <span className="font-semibold">{language === 'en' ? 'For Wheelchair Users:' : 'Tekerlekli Sandalye Kullanıcıları İçin:'}</span> {language === 'en' ? 'Wheelchair-friendly table arrangement.' : 'Tekerlekli sandalye dostu masa düzenlemesi.'}
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {accessibilityLocations.map((location) => (
                           <button
                             key={location.id}
                             onClick={() => setSelectedLocation(location)}
@@ -523,18 +681,10 @@ const TourDetailPage = () => {
                               </svg>
                             </div>
                           </button>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-
-
-
-
-
-
-
-
-
 
 
                 </div>
@@ -545,36 +695,87 @@ const TourDetailPage = () => {
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     {currentContent.itinerary}
                   </h2>
-                  {itinerary.length > 0 ? (
-                    <div className="space-y-6">
-                      {itinerary.map((item, index) => (
-                        <div key={index} className="flex">
-                          <div className="flex-shrink-0 w-20 text-center">
-                            <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">
-                              {item.time}
-                            </div>
-                          </div>
-                          <div className="ml-6 flex-1">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                              {language === 'en' ? item.titleEn : item.title}
-                            </h3>
-                            <p
-                              className="text-gray-600 mb-2"
-                              dangerouslySetInnerHTML={{
-                                __html: language === 'en' ? item.descriptionEn : item.description
-                              }}
-                            ></p>
-                            <span className="text-sm text-gray-500">
-                              {item.duration} {currentContent.minutes}
-                            </span>
-                          </div>
-                        </div>
-                      ))}
+
+                  {tour?.id === 'PBWAI0019' ? (
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "Your private guide will meet you at the hotel. Then we will go to visit the Blue Mosque which was built by Sultan Ahmet in 17th century. We will enter the main area of the mosque using ramps designed for disabled people."
+                          : "Özel rehberiniz sizi otelde karşılayacak. Sonra 17. yüzyılda Sultan Ahmet tarafından inşa edilen Sultanahmet Camii'ni ziyaret etmek için gideceğiz. Engelliler için tasarlanmış rampalar kullanarak caminin ana alanına gireceğiz."
+                        }
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "We will continue our tour by visiting the magnificient ancient building of İstanbul, Hagia Sophia which was almost 1000 years used as a great church of Byzantine Empire and almost 500 years as a grand mosque of Ottoman Empire. İn this building we will visit the main magnificent area with a permission we received for the wheelchair users."
+                          : "Turumuza İstanbul'un muhteşem antik binası Ayasofya'yı ziyaret ederek devam edeceğiz. Bu bina yaklaşık 1000 yıl Bizans İmparatorluğu'nun büyük kilisesi ve yaklaşık 500 yıl Osmanlı İmparatorluğu'nun büyük camii olarak kullanıldı. Bu binada tekerlekli sandalye kullanıcıları için aldığımız izinle muhteşem ana alanı ziyaret edeceğiz."
+                        }
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en' ? "Lunch at a local accessible restaurant." : "Yerel erişilebilir restoranda öğle yemeği."}
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "Following the lunch we will continue our tour by visiting the Topkapi Palace ,the grand palace of the Ottoman Empire. For nearly 400 years this place served as the administrative center of the Ottoman Empire and as the place where sultans lived with their harems. Accompanied by our guide we will explore some sections using ramps and also take breaks in accessible rest areas."
+                          : "Öğle yemeğinden sonra turumuza Osmanlı İmparatorluğu'nun büyük sarayı Topkapı Sarayı'nı ziyaret ederek devam edeceğiz. Yaklaşık 400 yıl boyunca bu yer Osmanlı İmparatorluğu'nun idari merkezi ve padişahların haremlerle birlikte yaşadıkları yer olarak hizmet etti. Rehberimiz eşliğinde rampalar kullanarak bazı bölümleri keşfedeceğiz ve erişilebilir dinlenme alanlarında molalar vereceğiz."
+                        }
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "After visiting the palace we will go and see the chariot racing area of Constantinople which was called as Hippodrome in Byzantine period. There we will see Egyptian Obelisk, Serpent Column and Constantine Column.This place is a flat ground and our guide will explain us the history of the area and those columns."
+                          : "Sarayı ziyaret ettikten sonra gidip Bizans döneminde Hipodrom olarak adlandırılan Konstantinopolis'in araba yarışı alanını göreceğiz. Orada Mısır Dikilitaşı, Yılan Sütunu ve Konstantin Sütunu'nu göreceğiz. Bu yer düz bir zemin ve rehberimiz bize bölgenin ve bu sütunların tarihini anlatacak."
+                        }
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "After that we will go to the Grand Bazaar which is one of the oldest bazaars from 15th century. There you can enjoy shopping or just feel the atmosphere of the oldest shopping mall of the world. Here we will tour the Grand Bazaar on a wheelchair-friendly route, choosing flat main roads."
+                          : "Bundan sonra 15. yüzyıldan kalma en eski çarşılardan biri olan Kapalıçarşı'ya gideceğiz. Orada alışveriş yapabilir veya dünyanın en eski alışveriş merkezinin atmosferini hissedebilirsiniz. Burada Kapalıçarşı'yı tekerlekli sandalye dostu rotada, düz ana yolları seçerek geziyoruz."
+                        }
+                      </p>
+                      <br />
+                      <p className="text-gray-800 leading-relaxed text-lg">
+                        {language === 'en'
+                          ? "After Grand Bazaar visiting we drop you off at your hotel."
+                          : "Kapalıçarşı ziyaretinden sonra sizi otelinize bırakıyoruz."
+                        }
+                      </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500 text-center py-8">
-                      {language === 'en' ? 'Itinerary information coming soon.' : 'Program bilgileri yakında eklenecek.'}
-                    </p>
+                    itinerary.length > 0 ? (
+                      <div className="space-y-6">
+                        {itinerary.map((item, index) => (
+                          <div key={index} className="flex">
+                            <div className="flex-shrink-0 w-20 text-center">
+                              <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                {item.time}
+                              </div>
+                            </div>
+                            <div className="ml-6 flex-1">
+                              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                {language === 'en' ? item.titleEn : item.title}
+                              </h3>
+                              <p
+                                className="text-gray-600 mb-2"
+                                dangerouslySetInnerHTML={{
+                                  __html: language === 'en' ? item.descriptionEn : item.description
+                                }}
+                              ></p>
+                              <span className="text-sm text-gray-500">
+                                {item.duration} {currentContent.minutes}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-center py-8">
+                        {language === 'en' ? 'Itinerary information coming soon.' : 'Program bilgileri yakında eklenecek.'}
+                      </p>
+                    )
                   )}
 
                   {/* Inclusions/Exclusions Section */}
@@ -593,16 +794,71 @@ const TourDetailPage = () => {
                           {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
                         </h4>
                         <div className="space-y-3">
-                          {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
-                            <div key={index} className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          {tour?.id === 'PBWAI0019' ? (
+                            <>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Accessible-friendly Professional English Speaking guiding' : 'Erişilebilir dostu Profesyonel İngilizce rehberlik'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Lunch at accessible friendly restaurant' : 'Erişilebilir dostu restoranda öğle yemeği'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Admission fees to the museums and sights' : 'Müze ve görülecek yerlere giriş ücretleri'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Parking, portage, toll roads' : 'Park, hamaliye, geçiş ücretleri'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Coordination and attentive customer service throughout the tour by PİBA WINGS TRAVEL' : 'Tur boyunca PİBA WINGS TRAVEL koordinasyon ve özenli müşteri hizmeti'}
+                                </span>
+                              </div>
+                            </>
+                          ) : (
+                            (language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
+                              <div key={index} className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">{feature}</span>
                               </div>
-                              <span className="text-gray-700 leading-relaxed">{feature}</span>
-                            </div>
-                          ))}
+                            ))
+                          )}
                         </div>
                       </div>
 
@@ -615,18 +871,92 @@ const TourDetailPage = () => {
                           {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
                         </h4>
                         <div className="space-y-3">
-                          {tour.excludes && tour.excludes.length > 0 ? (
-                            (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
-                              <div key={index} className="flex items-start space-x-3">
+                          {tour?.id === 'PBWAI0019' ? (
+                            <>
+                              <div className="flex items-start space-x-3">
                                 <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                   <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                   </svg>
                                 </div>
-                                <span className="text-gray-700 leading-relaxed">{exclude}</span>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Accommodation' : 'Konaklama'}
+                                </span>
                               </div>
-                            ))
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Dinners' : 'Akşam yemekleri'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Beverages at lunches' : 'Öğle yemeklerinde içecekler'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Gratuities for the guide and driver' : 'Rehber ve şoför için bahşişler'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Wheelchair Rental' : 'Tekerlekli Sandalye Kiralama'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Optional programmes listed in the itinerary' : 'İtineraryda listelenen opsiyonel programlar'}
+                                </span>
+                              </div>
+                            </>
                           ) : (
+                            tour.excludes && tour.excludes.length > 0 ? (
+                              (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
+                                <div key={index} className="flex items-start space-x-3">
+                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-gray-700 leading-relaxed">{exclude}</span>
+                                </div>
+                              ))
+                            ) : (
                             <div className="space-y-3">
                               <div className="flex items-start space-x-3">
                                 <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -662,6 +992,18 @@ const TourDetailPage = () => {
                           )}
                         </div>
                       </div>
+
+                      {/* Additional Info for PBWAI0019 */}
+                      {tour?.id === 'PBWAI0019' && (
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                          <p className="text-gray-800 leading-relaxed">
+                            {language === 'en'
+                              ? "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
+                              : "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz."
+                            }
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
