@@ -685,6 +685,7 @@ const TourDetailPage = () => {
                                 </span>
                               </div>
                             </div>
+                          )}
                         </div>
                       </div>
 
