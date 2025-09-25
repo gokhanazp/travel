@@ -276,7 +276,7 @@ const TourDetailPage = () => {
       itinerary: 'Itinerary',
       accessibility: 'Accessibility',
       inclusions: 'Inclusions/Exclusions',
-      extraServices: 'Extra Services',
+      extraServices: 'Optional Services',
       reviews: 'Reviews',
       gallery: 'Gallery',
       duration: 'Duration',
@@ -300,7 +300,7 @@ const TourDetailPage = () => {
       itinerary: 'Program',
       accessibility: 'Erişilebilirlik',
       inclusions: 'Inclusions/Exclusions',
-      extraServices: 'Ekstra Hizmetler',
+      extraServices: 'Opsiyonel Hizmetler',
       reviews: 'Yorumlar',
       gallery: 'Galeri',
       duration: 'Süre',
@@ -965,7 +965,7 @@ const TourDetailPage = () => {
                         </svg>
                       </div>
                       <p className="text-gray-500 text-lg">
-                        {language === 'en' ? 'No extra services available for this tour' : 'Bu tur için ekstra hizmet bulunmamaktadır'}
+                        {language === 'en' ? 'No optional services available for this tour' : 'Bu tur için opsiyonel hizmet bulunmamaktadır'}
                       </p>
                     </div>
                   )}
