@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni İletişim Mesajı - Piba Wings Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4f46e5;
+        }
+        
+        .info-section h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section h3 span {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #555;
+            min-width: 100px;
+        }
+        
+        .info-value {
+            color: #333;
+            text-align: right;
+            flex: 1;
+        }
+        
+        .message-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .message-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .message-content {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .priority-high {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .priority-high h4 {
+            color: #721c24;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        .timestamp {
+            background: #e9ecef;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            color: #6c757d;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            margin: 20px 0;
+            border-radius: 1px;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .info-row {
+                flex-direction: column;
+            }
+            
+            .info-value {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📧 Yeni İletişim Mesajı</h1>
+            <p>{{from_name}} tarafından gönderildi</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Sender Info -->
+            <div class="info-section">
+                <h3><span>👤</span> Gönderen Bilgileri</h3>
+                <div class="info-row">
+                    <span class="info-label">Ad Soyad:</span>
+                    <span class="info-value">{{from_name}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">E-posta:</span>
+                    <span class="info-value">{{from_email}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Telefon:</span>
+                    <span class="info-value">{{phone}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Konu:</span>
+                    <span class="info-value">{{subject}}</span>
+                </div>
+            </div>
+            
+            <!-- Message Content -->
+            <div class="message-box">
+                <h4>💬 Mesaj İçeriği:</h4>
+                <div class="message-content">{{message}}</div>
+            </div>
+            
+            <!-- Timestamp -->
+            <div class="timestamp">
+                📅 Gönderim Tarihi: {{submission_date}} - {{submission_time}}
+            </div>
+            
+            <div class="divider"></div>
+            
+            <!-- Response Instructions -->
+            <div style="background: #d1ecf1; border: 1px solid #bee5eb; border-radius: 10px; padding: 20px; text-align: center;">
+                <h4 style="color: #0c5460; margin-bottom: 10px;">📞 Yanıt Verme Talimatları</h4>
+                <p style="color: #0c5460; margin-bottom: 10px;">
+                    Bu mesaja yanıt vermek için doğrudan <strong>{{from_email}}</strong> adresine mail gönderebilir
+                    veya <strong>{{phone}}</strong> numarasından arayabilirsiniz.
+                </p>
+                <p style="color: #0c5460; font-size: 14px;">
+                    ⏰ Müşteri yanıtı beklediği için mümkün olan en kısa sürede dönüş yapınız.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>© 2024 {{company_name}}</strong></p>
+            <p>İletişim Formu Otomatik Bildirim Sistemi</p>
+            <p>Bu e-posta otomatik olarak gönderilmiştir.</p>
+        </div>
+    </div>
+</body>
+</html>

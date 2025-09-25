@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervasyon Onayı - Piba Wings Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .info-section h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section h3 span {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .info-value {
+            color: #333;
+            text-align: right;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .contact-info {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .contact-info h3 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item strong {
+            min-width: 80px;
+            color: #155724;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            margin: 20px 0;
+            border-radius: 1px;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .info-row {
+                flex-direction: column;
+            }
+            
+            .info-value {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎉 Rezervasyon Onayı</h1>
+            <p>Sayın {{customer_name}}, rezervasyonunuz başarıyla alınmıştır!</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Customer Info -->
+            <div class="info-section">
+                <h3><span>👤</span> Müşteri Bilgileri</h3>
+                <div class="info-row">
+                    <span class="info-label">Ad Soyad:</span>
+                    <span class="info-value">{{customer_name}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">E-posta:</span>
+                    <span class="info-value">{{customer_email}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Telefon:</span>
+                    <span class="info-value">{{customer_phone}}</span>
+                </div>
+            </div>
+            
+            <!-- Tour Info -->
+            <div class="info-section">
+                <h3><span>🎯</span> Tur Bilgileri</h3>
+                <div class="info-row">
+                    <span class="info-label">Tur Adı:</span>
+                    <span class="info-value">{{tour_name}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Tarih:</span>
+                    <span class="info-value">{{tour_date}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Katılımcı Sayısı:</span>
+                    <span class="info-value">{{participants}} kişi</span>
+                </div>
+            </div>
+            
+            <!-- Accessibility Info -->
+            <div class="info-section">
+                <h3><span>♿</span> Erişilebilirlik Bilgileri</h3>
+                <div class="info-row">
+                    <span class="info-label">Özel İhtiyaçlar:</span>
+                    <span class="info-value">{{accessibility_needs}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Özel İstekler:</span>
+                    <span class="info-value">{{special_requests}}</span>
+                </div>
+            </div>
+            
+            <!-- Emergency Contact -->
+            <div class="info-section">
+                <h3><span>🚨</span> Acil Durum İletişim</h3>
+                <div class="info-row">
+                    <span class="info-label">İletişim Kişisi:</span>
+                    <span class="info-value">{{emergency_contact}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Telefon:</span>
+                    <span class="info-value">{{emergency_phone}}</span>
+                </div>
+            </div>
+            
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h3 style="margin-bottom: 10px;">✨ Rezervasyonunuz Onaylandı!</h3>
+                <p>En kısa sürede sizinle iletişime geçeceğiz ve tur detaylarını paylaşacağız.</p>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>📞 Bizimle İletişime Geçin</h3>
+                <div class="contact-item">
+                    <strong>Telefon:</strong> {{company_phone}}
+                </div>
+                <div class="contact-item">
+                    <strong>E-posta:</strong> {{company_email}}
+                </div>
+                <div class="contact-item">
+                    <strong>WhatsApp:</strong> {{company_whatsapp}}
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p style="text-align: center; color: #666; font-style: italic;">
+                Bu rezervasyon {{submission_date}} tarihinde {{submission_time}} saatinde oluşturulmuştur.
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>© 2024 {{company_name}}</strong></p>
+            <p>Engelli Dostu Turizm Hizmetleri</p>
+            <p>Bu e-posta otomatik olarak gönderilmiştir.</p>
+        </div>
+    </div>
+</body>
+</html>
