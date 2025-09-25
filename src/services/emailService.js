@@ -61,17 +61,20 @@ export const sendReservationEmail = async (reservationData) => {
     const tourDate = reservationData.tourDate || reservationData.date || 'Belirtilmedi'
     const participantCount = reservationData.participantCount || reservationData.participants || 1
 
-    // Özel ihtiyaçlar ve mesajları birleştir
-    const specialNeeds = []
-    if (reservationData.message && reservationData.message.trim()) {
-      specialNeeds.push(`Özel İstekler: ${reservationData.message}`)
-    }
-    if (reservationData.specialRequests && reservationData.specialRequests.trim()) {
-      specialNeeds.push(`Özel Talepler: ${reservationData.specialRequests}`)
-    }
-    if (reservationData.assistanceNeeded && reservationData.assistanceNeeded.trim()) {
-      specialNeeds.push(`Yardım Gereksinimleri: ${reservationData.assistanceNeeded}`)
-    }
+    // Özel ihtiyaçlar ve mesajları temizle
+    const userMessage = reservationData.message && reservationData.message.trim() ? reservationData.message.trim() : ''
+    const specialRequests = reservationData.specialRequests && reservationData.specialRequests.trim() ? reservationData.specialRequests.trim() : ''
+    const assistanceNeeded = reservationData.assistanceNeeded && reservationData.assistanceNeeded.trim() &&
+                            reservationData.assistanceNeeded !== 'Rezervasyon formundan gönderildi' ?
+                            reservationData.assistanceNeeded.trim() : ''
+
+    // Sadece gerçek verileri birleştir
+    const accessibilityInfo = []
+    if (userMessage) accessibilityInfo.push(userMessage)
+    if (specialRequests && specialRequests !== userMessage) accessibilityInfo.push(specialRequests)
+    if (assistanceNeeded) accessibilityInfo.push(assistanceNeeded)
+
+    const finalAccessibilityNeeds = accessibilityInfo.length > 0 ? accessibilityInfo.join(' | ') : 'Belirtilmedi'
 
     // Seçilen servisleri ekle
     let servicesInfo = ''
@@ -102,7 +105,7 @@ export const sendReservationEmail = async (reservationData) => {
 • Katılımcı Sayısı: ${participantCount} kişi${servicesInfo}
 
 ♿ Özel İhtiyaçlar ve İstekler:
-${specialNeeds.length > 0 ? specialNeeds.join('\n') : '• Özel istek belirtilmedi'}
+• ${finalAccessibilityNeeds}
 
 📅 Gönderim: ${new Date().toLocaleDateString('tr-TR')} ${new Date().toLocaleTimeString('tr-TR')}
 
@@ -117,8 +120,8 @@ Bu rezervasyon talebi otomatik olarak Piba Wings Travel rezervasyon sisteminden 
       tour_name: tourName,
       tour_date: tourDate,
       participants: participantCount,
-      accessibility_needs: specialNeeds.length > 0 ? specialNeeds.join(', ') : 'Belirtilmedi',
-      special_requests: reservationData.message || reservationData.specialRequests || 'Yok',
+      accessibility_needs: finalAccessibilityNeeds,
+      special_requests: userMessage || 'Yok',
       emergency_contact: reservationData.emergencyContact || 'Belirtilmedi',
       emergency_phone: reservationData.emergencyPhone || 'Belirtilmedi',
       submission_date: new Date().toLocaleDateString('tr-TR'),
