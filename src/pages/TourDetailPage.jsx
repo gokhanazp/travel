@@ -344,7 +344,7 @@ const TourDetailPage = () => {
       
       {/* Enhanced Hero Section */}
       <div className="relative">
-        <div className="relative h-[500px] overflow-hidden">
+        <div className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
           {/* Background Image with Parallax Effect */}
           <div className="absolute inset-0">
             <img
@@ -378,31 +378,31 @@ const TourDetailPage = () => {
           </div>
 
           {/* Accessibility Icons - Centered */}
-          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex gap-3">
+          <div className="absolute top-4 sm:top-6 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3">
             {/* Wheelchair Accessibility */}
-            <div className="bg-blue-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+            <div className="bg-blue-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
               <img
                 src="/tekerlikli.png"
                 alt="Wheelchair Accessible"
-                className="w-4 h-4 object-contain filter brightness-0 invert"
+                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
               />
             </div>
 
             {/* Hearing Impaired Support */}
-            <div className="bg-green-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+            <div className="bg-green-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
               <img
                 src="/isitme.png"
                 alt="Hearing Support"
-                className="w-4 h-4 object-contain filter brightness-0 invert"
+                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
               />
             </div>
 
             {/* Visually Impaired Support */}
-            <div className="bg-purple-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+            <div className="bg-purple-600 p-1.5 sm:p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
               <img
                 src="/Gorme-engelli.png"
                 alt="Visual Support"
-                className="w-4 h-4 object-contain filter brightness-0 invert"
+                className="w-3 h-3 sm:w-4 sm:h-4 object-contain filter brightness-0 invert"
               />
             </div>
           </div>
@@ -425,29 +425,29 @@ const TourDetailPage = () => {
                 </div>
 
                 {/* Main Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight text-center">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight text-center px-4">
                   {title}
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto mb-8 font-light text-center">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8 font-light text-center px-4">
                   {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                 </p>
 
                 {/* Price and CTA */}
-                <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center gap-4 md:gap-6 px-4">
                   <div className="text-white text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-orange-400 mb-1">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-1">
                       {language === 'en' ? 'Contact for Price' : tour.price} {language === 'en' ? '' : (tour.currencyEn || tour.currency)}
                     </div>
-                    <span className="text-base opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
+                    <span className="text-sm sm:text-base opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-base hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                  <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+                    <button className="px-6 sm:px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-sm sm:text-base hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto">
                       {language === 'en' ? 'Book Now' : 'Hemen Rezervasyon'}
                     </button>
-                    <button className="px-8 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-base hover:bg-white/20 transition-all duration-300 border border-white/30">
+                    <button className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300 border border-white/30 w-full sm:w-auto">
                       {language === 'en' ? 'Ask Question' : 'Soru Sor'}
                     </button>
                   </div>
