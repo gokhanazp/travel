@@ -558,9 +558,12 @@ const TourDetailPage = () => {
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">
                               {language === 'en' ? item.titleEn : item.title}
                             </h3>
-                            <p className="text-gray-600 mb-2">
-                              {language === 'en' ? item.descriptionEn : item.description}
-                            </p>
+                            <p
+                              className="text-gray-600 mb-2"
+                              dangerouslySetInnerHTML={{
+                                __html: language === 'en' ? item.descriptionEn : item.description
+                              }}
+                            ></p>
                             <span className="text-sm text-gray-500">
                               {item.duration} {currentContent.minutes}
                             </span>
