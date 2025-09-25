@@ -61,6 +61,28 @@ export const sendReservationEmail = async (reservationData) => {
     const tourDate = reservationData.tourDate || reservationData.date || 'Belirtilmedi'
     const participantCount = reservationData.participantCount || reservationData.participants || 1
 
+    // Özel ihtiyaçlar ve mesajları birleştir
+    const specialNeeds = []
+    if (reservationData.message && reservationData.message.trim()) {
+      specialNeeds.push(`Özel İstekler: ${reservationData.message}`)
+    }
+    if (reservationData.specialRequests && reservationData.specialRequests.trim()) {
+      specialNeeds.push(`Özel Talepler: ${reservationData.specialRequests}`)
+    }
+    if (reservationData.assistanceNeeded && reservationData.assistanceNeeded.trim()) {
+      specialNeeds.push(`Yardım Gereksinimleri: ${reservationData.assistanceNeeded}`)
+    }
+
+    // Seçilen servisleri ekle
+    let servicesInfo = ''
+    if (reservationData.tourInfo?.services && reservationData.tourInfo.services.length > 0) {
+      servicesInfo = '\n🎯 Seçilen Ek Hizmetler:\n'
+      reservationData.tourInfo.services.forEach(service => {
+        servicesInfo += `• ${service.name || service.title} (${service.quantity || 1} adet) - ${service.totalPrice || service.price}€\n`
+      })
+      servicesInfo += `💰 Toplam Ek Hizmet: ${reservationData.tourInfo.servicesTotal || 0}€\n`
+    }
+
     const templateParams = {
       // Temel bilgiler (EmailJS default template için)
       from_name: customerName,
@@ -77,13 +99,15 @@ export const sendReservationEmail = async (reservationData) => {
 🎪 Tur Bilgileri:
 • Tur: ${tourName}
 • Tarih: ${tourDate}
-• Katılımcı Sayısı: ${participantCount} kişi
+• Katılımcı Sayısı: ${participantCount} kişi${servicesInfo}
 
-♿ Özel İhtiyaçlar:
-• Erişilebilirlik: ${reservationData.assistanceNeeded || 'Belirtilmedi'}
-• Özel İstekler: ${reservationData.specialRequests || reservationData.message || 'Yok'}
+♿ Özel İhtiyaçlar ve İstekler:
+${specialNeeds.length > 0 ? specialNeeds.join('\n') : '• Özel istek belirtilmedi'}
 
 📅 Gönderim: ${new Date().toLocaleDateString('tr-TR')} ${new Date().toLocaleTimeString('tr-TR')}
+
+---
+Bu rezervasyon talebi otomatik olarak Piba Wings Travel rezervasyon sisteminden gönderilmiştir.
       `,
 
       // Detaylı bilgiler (özel template için)
@@ -93,8 +117,8 @@ export const sendReservationEmail = async (reservationData) => {
       tour_name: tourName,
       tour_date: tourDate,
       participants: participantCount,
-      accessibility_needs: reservationData.assistanceNeeded || 'Belirtilmedi',
-      special_requests: reservationData.specialRequests || reservationData.message || 'Yok',
+      accessibility_needs: specialNeeds.length > 0 ? specialNeeds.join(', ') : 'Belirtilmedi',
+      special_requests: reservationData.message || reservationData.specialRequests || 'Yok',
       emergency_contact: reservationData.emergencyContact || 'Belirtilmedi',
       emergency_phone: reservationData.emergencyPhone || 'Belirtilmedi',
       submission_date: new Date().toLocaleDateString('tr-TR'),
