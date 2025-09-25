@@ -156,18 +156,22 @@ const ToursPage = () => {
                             />
                           </div>
 
-                          {/* Hearing Impaired Support - Ear Icon */}
+                          {/* Hearing Impaired Support */}
                           <div className="bg-green-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
-                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M17,20C17,21.1 16.1,22 15,22H9C7.9,22 7,21.1 7,20V19H17V20M6,18V16.5C6,15.1 7.1,14 8.5,14H15.5C16.9,14 18,15.1 18,16.5V18H6M12,13C9.8,13 8,11.2 8,9V4C8,1.8 9.8,0 12,0S16,1.8 16,4V9C16,11.2 14.2,13 12,13M12,2C10.9,2 10,2.9 10,4V9C10,10.1 10.9,11 12,11S14,10.1 14,9V4C14,2.9 13.1,2 12,2Z"/>
-                            </svg>
+                            <img
+                              src="/isitme.png"
+                              alt="Hearing Support"
+                              className="w-5 h-5 filter brightness-0 invert"
+                            />
                           </div>
 
-                          {/* Visually Impaired Support - Person with Cane */}
+                          {/* Visually Impaired Support */}
                           <div className="bg-purple-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
-                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M9.5,3A1.5,1.5 0 0,1 11,4.5A1.5,1.5 0 0,1 9.5,6A1.5,1.5 0 0,1 8,4.5A1.5,1.5 0 0,1 9.5,3M14,17V7H12V17H14M9,17V12H7V17H9M12,18.5L9,16V22H7V14.5L9.5,15.5V7H11.5L12.5,8.5C13.1,9.4 14.1,10 15.2,10V8C14.7,8 14.2,7.8 13.9,7.3L13.1,6.1C12.6,5.3 11.7,4.8 10.8,4.8H7.8C7.3,4.8 6.8,5 6.5,5.3C6.2,5.6 6,6.1 6,6.6V14.5C6,15.1 6.2,15.6 6.5,15.9L9,18.5L12,18.5Z"/>
-                            </svg>
+                            <img
+                              src="/Gorme-engelli.png"
+                              alt="Visual Support"
+                              className="w-5 h-5 filter brightness-0 invert"
+                            />
                           </div>
                         </div>
 
