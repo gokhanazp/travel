@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { sendReservationEmail } from '../services/emailService'
 
 const ReservationModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -56,26 +57,28 @@ const ReservationModal = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       // Form verilerini hazırla
       const reservationData = {
         ...formData,
         submittedAt: new Date().toISOString(),
-        tourInfo: tours.find(tour => tour.id === formData.selectedTour)
+        tourInfo: {
+          name: formData.selectedTour,
+          date: formData.tourDate,
+          participants: formData.participantCount
+        }
       }
 
-      // EmailJS ile mail gönder (gerçek projede backend API kullanılır)
-      const response = await fetch('/api/send-reservation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(reservationData)
-      })
+      console.log('Rezervasyon verisi hazırlandı:', reservationData)
 
-      if (response.ok) {
+      // EmailJS ile mail gönder
+      const result = await sendReservationEmail(reservationData)
+
+      if (result.success) {
         setSubmitStatus('success')
+        console.log('Rezervasyon maili başarıyla gönderildi!')
+
         // Form'u temizle
         setFormData({
           firstName: '', lastName: '', email: '', phone: '',
@@ -85,6 +88,7 @@ const ReservationModal = ({ isOpen, onClose }) => {
         })
       } else {
         setSubmitStatus('error')
+        console.error('Rezervasyon maili gönderilemedi:', result.message)
       }
     } catch (error) {
       console.error('Rezervasyon gönderme hatası:', error)
