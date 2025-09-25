@@ -149,9 +149,11 @@ const ToursPage = () => {
                         <div className="absolute top-4 right-4 flex gap-2">
                           {/* Wheelchair Accessibility */}
                           <div className="bg-blue-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
-                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9V7H15L13.5 7.5C13.1 7.7 12.6 7.8 12.2 7.8S11.3 7.7 10.9 7.5L9.5 7H3V9H7.5L9 12.5L7.5 16H9.5L11 13L12.5 16H14.5L13 12.5L14.5 9H21M12.5 11.5C13.3 11.5 14 12.2 14 13S13.3 14.5 12.5 14.5 11 13.8 11 13 11.7 11.5 12.5 11.5M8 20C9.1 20 10 19.1 10 18S9.1 16 8 16 6 16.9 6 18 6.9 20 8 20Z"/>
-                            </svg>
+                            <img
+                              src="https://w7.pngwing.com/pngs/88/603/png-transparent-disability-disabled-parking-permit-international-symbol-of-access-wheelchair-wheelchair-text-logo-wheelchair-thumbnail.png"
+                              alt="Wheelchair Accessible"
+                              className="w-5 h-5 filter brightness-0 invert"
+                            />
                           </div>
 
                           {/* Hearing Impaired Support - Ear Icon */}
