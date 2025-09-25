@@ -149,29 +149,23 @@ const ToursPage = () => {
                         <div className="absolute top-4 right-4 flex gap-2">
                           {/* Wheelchair Accessibility */}
                           <div className="bg-blue-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
-                            <img
-                              src="https://w7.pngwing.com/pngs/88/603/png-transparent-disability-disabled-parking-permit-international-symbol-of-access-wheelchair-wheelchair-text-logo-wheelchair-thumbnail.png"
-                              alt="Wheelchair Accessible"
-                              className="w-5 h-5 filter brightness-0 invert"
-                            />
+                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9V7H15L13.5 7.5C13.1 7.7 12.6 7.8 12.2 7.8S11.3 7.7 10.9 7.5L9.5 7H3V9H7.5L9 12.5L7.5 16H9.5L11 13L12.5 16H14.5L13 12.5L14.5 9H21M12.5 11.5C13.3 11.5 14 12.2 14 13S13.3 14.5 12.5 14.5 11 13.8 11 13 11.7 11.5 12.5 11.5M8 20C9.1 20 10 19.1 10 18S9.1 16 8 16 6 16.9 6 18 6.9 20 8 20Z"/>
+                            </svg>
                           </div>
 
                           {/* Hearing Impaired Support */}
                           <div className="bg-green-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
-                            <img
-                              src="/isitme.png"
-                              alt="Hearing Support"
-                              className="w-5 h-5 filter brightness-0 invert"
-                            />
+                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M6.03 3.2C7.15 2.44 8.51 2 10 2C13.31 2 16 4.69 16 8V14C16 17.31 13.31 20 10 20C8.51 20 7.15 19.56 6.03 18.8L7.83 16.74C8.46 17.22 9.21 17.5 10 17.5C11.93 17.5 13.5 15.93 13.5 14V8C13.5 6.07 11.93 4.5 10 4.5C9.21 4.5 8.46 4.78 7.83 5.26L6.03 3.2M2 6.27L3.11 5L20 21.89L18.73 23.16L15.54 20H10C6.69 20 4 17.31 4 14V8C4 7.37 4.1 6.76 4.27 6.18L2 6.27Z"/>
+                            </svg>
                           </div>
 
                           {/* Visually Impaired Support */}
                           <div className="bg-purple-600 p-2 rounded-full shadow-lg" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
-                            <img
-                              src="/Gorme-engelli.png"
-                              alt="Visual Support"
-                              className="w-5 h-5 filter brightness-0 invert"
-                            />
+                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M9.5,3A1.5,1.5 0 0,1 11,4.5A1.5,1.5 0 0,1 9.5,6A1.5,1.5 0 0,1 8,4.5A1.5,1.5 0 0,1 9.5,3M14,17V7H12V17H14M9,17V12H7V17H9M12,18.5L9,16V22H7V14.5L9.5,15.5V7H11.5L12.5,8.5C13.1,9.4 14.1,10 15.2,10V8C14.7,8 14.2,7.8 13.9,7.3L13.1,6.1C12.6,5.3 11.7,4.8 10.8,4.8H7.8C7.3,4.8 6.8,5 6.5,5.3C6.2,5.6 6,6.1 6,6.6V14.5C6,15.1 6.2,15.6 6.5,15.9L9,18.5L12,18.5Z"/>
+                            </svg>
                           </div>
                         </div>
 
