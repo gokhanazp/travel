@@ -70,14 +70,17 @@ const ReservationModal = ({ isOpen, onClose }) => {
         }
       }
 
-      console.log('Rezervasyon verisi hazırlandı:', reservationData)
+      console.log('📋 Rezervasyon verisi hazırlandı:', reservationData)
 
       // EmailJS ile mail gönder
+      console.log('🚀 EmailJS mail gönderimi başlatılıyor...')
       const result = await sendReservationEmail(reservationData)
+
+      console.log('📧 Mail gönderim sonucu:', result)
 
       if (result.success) {
         setSubmitStatus('success')
-        console.log('Rezervasyon maili başarıyla gönderildi!')
+        console.log('✅ Rezervasyon maili başarıyla gönderildi!')
 
         // Form'u temizle
         setFormData({
@@ -88,10 +91,12 @@ const ReservationModal = ({ isOpen, onClose }) => {
         })
       } else {
         setSubmitStatus('error')
-        console.error('Rezervasyon maili gönderilemedi:', result.message)
+        console.error('❌ Rezervasyon maili gönderilemedi!')
+        console.error('❌ Hata mesajı:', result.message)
+        console.error('❌ Hata detayları:', result.error)
       }
     } catch (error) {
-      console.error('Rezervasyon gönderme hatası:', error)
+      console.error('❌ Rezervasyon gönderme hatası:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

@@ -55,39 +55,51 @@ export const sendReservationEmail = async (reservationData) => {
       }
     }
 
-    // Template için veri hazırla
+    // Template için veri hazırla - Basit parametreler
     const templateParams = {
-      // Müşteri bilgileri
+      // Temel bilgiler (EmailJS default template için)
+      from_name: `${reservationData.firstName} ${reservationData.lastName}`,
+      from_email: reservationData.email,
+      to_name: 'Piba Wings Travel',
+      message: `
+Yeni Rezervasyon Talebi:
+
+Müşteri: ${reservationData.firstName} ${reservationData.lastName}
+Email: ${reservationData.email}
+Telefon: ${reservationData.phone}
+Tur: ${reservationData.tourInfo?.name || reservationData.selectedTour}
+Tarih: ${reservationData.tourDate}
+Katılımcı: ${reservationData.participantCount}
+Özel İhtiyaçlar: ${reservationData.assistanceNeeded || 'Yok'}
+Mesaj: ${reservationData.specialRequests || 'Yok'}
+      `,
+
+      // Detaylı bilgiler (özel template için)
       customer_name: `${reservationData.firstName} ${reservationData.lastName}`,
       customer_email: reservationData.email,
       customer_phone: reservationData.phone,
-      
-      // Tur bilgileri
       tour_name: reservationData.tourInfo?.name || reservationData.selectedTour,
-      tour_date: reservationData.preferredDate,
-      participants: reservationData.participants,
-      
-      // Özel ihtiyaçlar
-      accessibility_needs: reservationData.accessibilityNeeds || 'Belirtilmedi',
+      tour_date: reservationData.tourDate,
+      participants: reservationData.participantCount,
+      accessibility_needs: reservationData.assistanceNeeded || 'Belirtilmedi',
       special_requests: reservationData.specialRequests || 'Yok',
-      
-      // Acil durum bilgileri
       emergency_contact: reservationData.emergencyContact || 'Belirtilmedi',
       emergency_phone: reservationData.emergencyPhone || 'Belirtilmedi',
-      
-      // Ek bilgiler
-      message: reservationData.message || 'Ek mesaj yok',
       submission_date: new Date().toLocaleDateString('tr-TR'),
       submission_time: new Date().toLocaleTimeString('tr-TR'),
-      
-      // Şirket bilgileri (template'de kullanılacak)
       company_name: 'Piba Wings Travel',
       company_email: 'info@pibawingstravel.com',
       company_phone: '+90 212 123 45 67',
       company_whatsapp: '+90 532 123 45 67'
     }
 
-    console.log('Rezervasyon maili gönderiliyor...', templateParams)
+    console.log('📧 Rezervasyon maili gönderiliyor...')
+    console.log('🔧 EmailJS Config:', {
+      SERVICE_ID: EMAILJS_CONFIG.SERVICE_ID,
+      TEMPLATE_ID: EMAILJS_CONFIG.TEMPLATE_ID_RESERVATION,
+      PUBLIC_KEY: EMAILJS_CONFIG.PUBLIC_KEY ? '***' + EMAILJS_CONFIG.PUBLIC_KEY.slice(-4) : 'NOT_SET'
+    })
+    console.log('📝 Template Parameters:', templateParams)
 
     // EmailJS ile mail gönder
     const response = await emailjs.send(
@@ -95,6 +107,8 @@ export const sendReservationEmail = async (reservationData) => {
       EMAILJS_CONFIG.TEMPLATE_ID_RESERVATION,
       templateParams
     )
+
+    console.log('✅ EmailJS Response:', response)
 
     console.log('Rezervasyon maili başarıyla gönderildi:', response)
     return {
@@ -104,11 +118,36 @@ export const sendReservationEmail = async (reservationData) => {
     }
 
   } catch (error) {
-    console.error('Rezervasyon maili gönderilirken hata:', error)
+    console.error('❌ Rezervasyon maili gönderilirken hata:', error)
+    console.error('❌ Hata detayları:', {
+      name: error.name,
+      message: error.message,
+      status: error.status,
+      text: error.text
+    })
+
+    // EmailJS spesifik hata mesajları
+    let errorMessage = 'Mail gönderilirken bir hata oluştu. Lütfen tekrar deneyin.'
+
+    if (error.status === 400) {
+      errorMessage = 'Template parametreleri hatalı. Lütfen formu kontrol edin.'
+    } else if (error.status === 401) {
+      errorMessage = 'EmailJS kimlik doğrulama hatası. Public Key kontrol edilmeli.'
+    } else if (error.status === 404) {
+      errorMessage = 'Template veya Service bulunamadı. Konfigürasyon kontrol edilmeli.'
+    } else if (error.status === 429) {
+      errorMessage = 'Çok fazla mail gönderim denemesi. Lütfen biraz bekleyin.'
+    }
+
     return {
       success: false,
-      message: 'Mail gönderilirken bir hata oluştu. Lütfen tekrar deneyin.',
-      error
+      message: errorMessage,
+      error: {
+        name: error.name,
+        message: error.message,
+        status: error.status,
+        text: error.text
+      }
     }
   }
 }
