@@ -8,16 +8,24 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 // import { toursData } from '../data/toursData' // Tours removed from homepage
 
+// Import vehicle images from assets
+import vehicle1 from '../assets/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpeg'
+import vehicle2 from '../assets/40967285-7162-45c6-b24c-7ccac9126504-min.jpeg'
+import vehicle3 from '../assets/b36f1069-f66f-432d-b302-1a22021bdb58-min.jpeg'
+import vehicle4 from '../assets/c3394750-8887-43b0-aee6-13fdfe28f056-min.jpeg'
+import vehicle5 from '../assets/e1ff3bb4-5e16-46a5-8cfc-1b416b5b7b11-min.jpeg'
+import vehicle6 from '../assets/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpg'
+
 // Vehicle Slider Component
 const VehicleSlider = () => {
   const { language } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // Vehicle data with new local images
+  // Vehicle data with assets images
   const vehicles = [
     {
       id: 1,
-      image: '/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpeg',
+      image: vehicle1,
       title: language === 'en' ? 'Accessible Transport Vehicle' : 'Erişilebilir Ulaşım Aracı',
       model: 'Fiat Doblo XL',
       features: [
@@ -28,7 +36,7 @@ const VehicleSlider = () => {
     },
     {
       id: 2,
-      image: '/40967285-7162-45c6-b24c-7ccac9126504-min.jpeg',
+      image: vehicle2,
       title: language === 'en' ? 'Comfort Transport Vehicle' : 'Konfor Ulaşım Aracı',
       model: 'Mercedes Sprinter',
       features: [
@@ -39,7 +47,7 @@ const VehicleSlider = () => {
     },
     {
       id: 3,
-      image: '/b36f1069-f66f-432d-b302-1a22021bdb58-min.jpeg',
+      image: vehicle3,
       title: language === 'en' ? 'Special Needs Vehicle' : 'Özel İhtiyaç Aracı',
       model: 'Ford Transit',
       features: [
@@ -50,7 +58,7 @@ const VehicleSlider = () => {
     },
     {
       id: 4,
-      image: '/c3394750-8887-43b0-aee6-13fdfe28f056-min.jpeg',
+      image: vehicle4,
       title: language === 'en' ? 'Premium Accessible Vehicle' : 'Premium Erişilebilir Araç',
       model: 'Volkswagen Crafter',
       features: [
@@ -61,7 +69,7 @@ const VehicleSlider = () => {
     },
     {
       id: 5,
-      image: '/e1ff3bb4-5e16-46a5-8cfc-1b416b5b7b11-min.jpeg',
+      image: vehicle5,
       title: language === 'en' ? 'Multi-Purpose Vehicle' : 'Çok Amaçlı Araç',
       model: 'Iveco Daily',
       features: [
@@ -72,7 +80,7 @@ const VehicleSlider = () => {
     },
     {
       id: 6,
-      image: '/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpg',
+      image: vehicle6,
       title: language === 'en' ? 'Executive Transport' : 'Yönetici Ulaşımı',
       model: 'Mercedes V-Class',
       features: [
