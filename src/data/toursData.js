@@ -552,7 +552,7 @@ export const toursData = [
         en: "Frequent scheduled rest breaks"
       }
     },
-    image: "/pibawings-1.jpeg",
+    image: "https://visitturkey.in/wp-content/uploads/2024/07/accessible-tourism-in-turkey.webp",
     price: "Fiyat için iletişime geçin",
     priceEn: "Contact for Price",
     currency: "",
