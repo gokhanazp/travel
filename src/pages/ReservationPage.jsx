@@ -16,12 +16,45 @@ const ReservationPage = () => {
     date: '',
     participants: 1,
     message: '',
-    selectedServices: [] // Seçilen optional services
+    selectedServices: {} // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
   })
 
   // Seçilen tura göre optional services'i al
   const selectedTour = toursData.find(tour => tour.id === formData.tour)
-  const availableServices = selectedTour?.extraServices || []
+
+  // Sabit optional services listesi
+  const availableServices = [
+    {
+      title: "Refakatçi Desteği (Her 5-6 kişi için)",
+      titleEn: "Companion Support (For every 5-6 people)",
+      price: "50",
+      currency: "€"
+    },
+    {
+      title: "Özel Yemek Menüsü (Diyabet)",
+      titleEn: "Special Meal Menu (Diabetes)",
+      price: "25",
+      currency: "€"
+    },
+    {
+      title: "Fotoğraf & Video Paketi",
+      titleEn: "Photo & Video Package",
+      price: "75",
+      currency: "€"
+    },
+    {
+      title: "Tıbbi Destek",
+      titleEn: "Medical Support",
+      price: "100",
+      currency: "€"
+    },
+    {
+      title: "Tekerlekli Sandalye ve Ekipman Kiralama",
+      titleEn: "Wheelchair and Equipment Rental",
+      price: "30",
+      currency: "€"
+    }
+  ]
 
   // URL parametrelerinden tur ID'sini al ve otomatik seç
   useEffect(() => {
@@ -36,10 +69,41 @@ const ReservationPage = () => {
   const handleServiceToggle = (serviceIndex) => {
     setFormData(prev => ({
       ...prev,
-      selectedServices: prev.selectedServices.includes(serviceIndex)
-        ? prev.selectedServices.filter(index => index !== serviceIndex)
-        : [...prev.selectedServices, serviceIndex]
+      selectedServices: {
+        ...prev.selectedServices,
+        [serviceIndex]: prev.selectedServices[serviceIndex]?.selected
+          ? { ...prev.selectedServices[serviceIndex], selected: false }
+          : { selected: true, quantity: 1 }
+      }
     }))
+  }
+
+  // Service quantity değiştirme handler'ı
+  const handleServiceQuantityChange = (serviceIndex, quantity) => {
+    if (quantity < 1) return
+
+    setFormData(prev => ({
+      ...prev,
+      selectedServices: {
+        ...prev.selectedServices,
+        [serviceIndex]: {
+          ...prev.selectedServices[serviceIndex],
+          quantity: parseInt(quantity)
+        }
+      }
+    }))
+  }
+
+  // Seçilen servislerin toplam fiyatını hesapla
+  const calculateServicesTotal = () => {
+    return Object.entries(formData.selectedServices).reduce((total, [index, service]) => {
+      if (service.selected) {
+        const serviceData = availableServices[parseInt(index)]
+        const price = parseFloat(serviceData.price) || 0
+        return total + (price * service.quantity)
+      }
+      return total
+    }, 0)
   }
 
   const content = {
@@ -121,14 +185,19 @@ const ReservationPage = () => {
     e.preventDefault()
 
     // Seçilen servislerin detaylarını ekle
-    const selectedServiceDetails = formData.selectedServices.map(index => ({
-      ...availableServices[index],
-      index
-    }))
+    const selectedServiceDetails = Object.entries(formData.selectedServices)
+      .filter(([index, service]) => service.selected)
+      .map(([index, service]) => ({
+        ...availableServices[parseInt(index)],
+        quantity: service.quantity,
+        totalPrice: (parseFloat(availableServices[parseInt(index)].price) || 0) * service.quantity,
+        index: parseInt(index)
+      }))
 
     const submissionData = {
       ...formData,
       selectedServiceDetails,
+      servicesTotal: calculateServicesTotal(),
       tourDetails: selectedTour
     }
 
@@ -262,8 +331,8 @@ const ReservationPage = () => {
                 </div>
               </div>
 
-              {/* Optional Services */}
-              {availableServices.length > 0 && (
+              {/* Optional Services - Her zaman göster */}
+              {(
                 <div className="border-t pt-8">
                   <div className="mb-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -275,77 +344,142 @@ const ReservationPage = () => {
                   </div>
 
                   <div className="space-y-4">
-                    {availableServices.map((service, index) => (
-                      <div
-                        key={index}
-                        className={`border rounded-lg p-4 transition-all duration-300 cursor-pointer ${
-                          formData.selectedServices.includes(index)
-                            ? 'border-orange-500 bg-orange-50'
-                            : 'border-gray-200 hover:border-orange-300'
-                        }`}
-                        onClick={() => handleServiceToggle(index)}
-                      >
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <div className="flex items-center mb-2">
+                    {availableServices.map((service, index) => {
+                      const isSelected = formData.selectedServices[index]?.selected || false
+                      const quantity = formData.selectedServices[index]?.quantity || 1
+
+                      return (
+                        <div
+                          key={index}
+                          className={`border rounded-lg p-4 transition-all duration-300 ${
+                            isSelected
+                              ? 'border-orange-500 bg-orange-50 shadow-md'
+                              : 'border-gray-200 hover:border-orange-300 hover:shadow-sm'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center flex-1">
                               <input
                                 type="checkbox"
-                                checked={formData.selectedServices.includes(index)}
+                                checked={isSelected}
                                 onChange={() => handleServiceToggle(index)}
-                                className="mr-3 h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                                className="mr-3 h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
                               />
-                              <h4 className="font-semibold text-gray-900">
+                              <h4 className="font-semibold text-gray-900 text-base">
                                 {language === 'en' ? service.titleEn : service.title}
                               </h4>
                             </div>
-                            <p className="text-gray-600 text-sm mb-3">
-                              {language === 'en' ? service.descriptionEn : service.description}
-                            </p>
 
-                            {/* Service Features */}
-                            {service.features && service.features.length > 0 && (
-                              <div className="mb-3">
-                                <ul className="text-sm text-gray-600 space-y-1">
-                                  {(language === 'en' ? service.featuresEn : service.features)?.map((feature, featureIndex) => (
-                                    <li key={featureIndex} className="flex items-center">
-                                      <svg className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                      </svg>
-                                      {feature}
-                                    </li>
-                                  ))}
-                                </ul>
+
+                            {/* Quantity Selector - Sadece seçili servislerde göster */}
+                            {isSelected && (
+                              <div className="flex items-center space-x-2 ml-4">
+                                <label className="text-sm font-medium text-gray-700">
+                                  {language === 'en' ? 'Qty:' : 'Adet:'}
+                                </label>
+                                <div className="flex items-center border border-gray-300 rounded">
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      handleServiceQuantityChange(index, quantity - 1)
+                                    }}
+                                    className="px-2 py-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                                    disabled={quantity <= 1}
+                                  >
+                                    -
+                                  </button>
+                                  <input
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    value={quantity}
+                                    onChange={(e) => {
+                                      e.stopPropagation()
+                                      handleServiceQuantityChange(index, e.target.value)
+                                    }}
+                                    className="w-12 px-1 py-1 text-center border-0 focus:ring-0 text-sm"
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      handleServiceQuantityChange(index, quantity + 1)
+                                    }}
+                                    className="px-2 py-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                                    disabled={quantity >= 10}
+                                  >
+                                    +
+                                  </button>
+                                </div>
                               </div>
                             )}
-                          </div>
 
-                          {/* Price */}
-                          <div className="ml-4 text-right">
-                            <div className="font-bold text-lg text-gray-900">
-                              {service.price} {service.currency}
+                            {/* Price */}
+                            <div className="ml-6 text-right">
+                              <div className="font-bold text-xl text-gray-900 mb-1">
+                                {service.price} {service.currency}
+                              </div>
+                              {isSelected && quantity > 1 && (
+                                <div className="text-sm text-gray-600">
+                                  {quantity} x {service.price} = {(parseFloat(service.price) || 0) * quantity} {service.currency}
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
 
                   {/* Selected Services Summary */}
-                  {formData.selectedServices.length > 0 && (
-                    <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                  {Object.values(formData.selectedServices).some(service => service.selected) && (
+                    <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl shadow-sm">
+                      <h4 className="font-bold text-green-800 mb-4 text-lg">
                         {currentContent.selectedServices}:
                       </h4>
-                      <ul className="text-sm text-green-700 space-y-1">
-                        {formData.selectedServices.map(index => (
-                          <li key={index} className="flex items-center">
-                            <svg className="w-3 h-3 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            {language === 'en' ? availableServices[index].titleEn : availableServices[index].title}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="space-y-3">
+                        {Object.entries(formData.selectedServices).map(([index, service]) => {
+                          if (!service.selected) return null
+                          const serviceData = availableServices[parseInt(index)]
+                          const totalPrice = `${(parseFloat(serviceData.price) || 0) * service.quantity} ${serviceData.currency}`
+
+                          return (
+                            <div key={index} className="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                              <div className="flex items-center">
+                                <svg className="w-4 h-4 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                                <div>
+                                  <div className="font-medium text-gray-900">
+                                    {language === 'en' ? serviceData.titleEn : serviceData.title}
+                                  </div>
+                                  <div className="text-sm text-gray-600">
+                                    {language === 'en' ? 'Quantity' : 'Miktar'}: {service.quantity}
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="font-bold text-green-700">
+                                {totalPrice}
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+
+                      {/* Total Services Price */}
+                      {calculateServicesTotal() > 0 && (
+                        <div className="mt-4 pt-4 border-t border-green-200">
+                          <div className="flex justify-between items-center">
+                            <span className="font-bold text-green-800 text-lg">
+                              {language === 'en' ? 'Services Total:' : 'Hizmetler Toplamı:'}
+                            </span>
+                            <span className="font-bold text-green-800 text-xl">
+                              {calculateServicesTotal()} {availableServices[0]?.currency || '€'}
+                            </span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
