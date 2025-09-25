@@ -13,11 +13,11 @@ const VehicleSlider = () => {
   const { language } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // Vehicle data with local images
+  // Vehicle data with new local images
   const vehicles = [
     {
       id: 1,
-      image: '/pibawings-1.jpeg',
+      image: '/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpeg',
       title: language === 'en' ? 'Accessible Transport Vehicle' : 'Erişilebilir Ulaşım Aracı',
       model: 'Fiat Doblo XL',
       features: [
@@ -28,7 +28,7 @@ const VehicleSlider = () => {
     },
     {
       id: 2,
-      image: '/pibawings2.jpeg',
+      image: '/40967285-7162-45c6-b24c-7ccac9126504-min.jpeg',
       title: language === 'en' ? 'Comfort Transport Vehicle' : 'Konfor Ulaşım Aracı',
       model: 'Mercedes Sprinter',
       features: [
@@ -39,13 +39,46 @@ const VehicleSlider = () => {
     },
     {
       id: 3,
-      image: '/pibawings3.jpeg',
+      image: '/b36f1069-f66f-432d-b302-1a22021bdb58-min.jpeg',
       title: language === 'en' ? 'Special Needs Vehicle' : 'Özel İhtiyaç Aracı',
       model: 'Ford Transit',
       features: [
         language === 'en' ? 'Medical Equipment Ready' : 'Tıbbi Ekipman Hazır',
         language === 'en' ? 'Emergency Systems' : 'Acil Durum Sistemleri',
         language === 'en' ? 'Professional Service' : 'Profesyonel Hizmet'
+      ]
+    },
+    {
+      id: 4,
+      image: '/c3394750-8887-43b0-aee6-13fdfe28f056-min.jpeg',
+      title: language === 'en' ? 'Premium Accessible Vehicle' : 'Premium Erişilebilir Araç',
+      model: 'Volkswagen Crafter',
+      features: [
+        language === 'en' ? 'Luxury Interior' : 'Lüks İç Mekan',
+        language === 'en' ? 'Advanced Safety' : 'Gelişmiş Güvenlik',
+        language === 'en' ? 'Climate Control' : 'İklim Kontrolü'
+      ]
+    },
+    {
+      id: 5,
+      image: '/e1ff3bb4-5e16-46a5-8cfc-1b416b5b7b11-min.jpeg',
+      title: language === 'en' ? 'Multi-Purpose Vehicle' : 'Çok Amaçlı Araç',
+      model: 'Iveco Daily',
+      features: [
+        language === 'en' ? 'Flexible Configuration' : 'Esnek Konfigürasyon',
+        language === 'en' ? 'High Capacity' : 'Yüksek Kapasite',
+        language === 'en' ? 'Reliable Performance' : 'Güvenilir Performans'
+      ]
+    },
+    {
+      id: 6,
+      image: '/491dbc1a-2ddd-4a3c-a8db-c47bd2ac388f-min.jpg',
+      title: language === 'en' ? 'Executive Transport' : 'Yönetici Ulaşımı',
+      model: 'Mercedes V-Class',
+      features: [
+        language === 'en' ? 'Executive Comfort' : 'Yönetici Konforu',
+        language === 'en' ? 'Premium Materials' : 'Premium Malzemeler',
+        language === 'en' ? 'Advanced Technology' : 'İleri Teknoloji'
       ]
     }
   ]
