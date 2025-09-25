@@ -792,10 +792,10 @@ export const toursData = [
     price: "Fiyat için iletişime geçin",
     priceEn: "Contact for pricing",
     currency: "USD",
-    image: "/pibawings-1.jpeg",
+    image: "/pibawings2.jpeg",
     gallery: [
-      "/pibawings-1.jpeg",
       "/pibawings2.jpeg",
+      "/pibawings-1.jpeg",
       "/pibawings3.jpeg"
     ],
     category: "Erişilebilir Turlar",
@@ -860,58 +860,6 @@ export const toursData = [
       tr: "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz.",
       en: "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
     },
-    accessibility: [
-      {
-        location: "Sultanahmet Camii",
-        locationEn: "Blue Mosque",
-        wheelchairEn: "There is ramped entrance and large courtyard.",
-        wheelchairTr: "Rampalı giriş ve büyük avlu vardır.",
-        hearingEn: "Sign language guide / translator.",
-        hearingTr: "İşaret dili rehberi / tercümanı."
-      },
-      {
-        location: "Ayasofya",
-        locationEn: "Hagia Sophia",
-        wheelchairEn: "There are wide entrance doors and ramps.",
-        wheelchairTr: "Geniş giriş kapıları ve rampalar vardır.",
-        hearingEn: "Sign Language guide / translator.",
-        hearingTr: "İşaret dili rehberi / tercümanı."
-      },
-      {
-        location: "Topkapı Sarayı",
-        locationEn: "Topkapı Palace",
-        wheelchairEn: "Some sections are accessible via ramps. Gardens are suitable for relaxation.",
-        wheelchairTr: "Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.",
-        hearingEn: "Sign Language guide / translator.",
-        hearingTr: "İşaret dili rehberi / tercümanı."
-      },
-      {
-        location: "Hipodrom",
-        locationEn: "Hippodrome",
-        wheelchairEn: "Open area with flat ground. Seating benches available.",
-        wheelchairTr: "Düz zemin ile açık alan. Oturma bankları mevcuttur.",
-        hearingEn: "Visual experience with guide explanation.",
-        hearingTr: "Rehber açıklaması ile görsel deneyim."
-      },
-      {
-        location: "Kapalıçarşı",
-        locationEn: "Grand Bazaar",
-        wheelchairEn: "Straight main roads.",
-        wheelchairTr: "Düz ana yollar.",
-        hearingEn: "Sign language guide",
-        hearingTr: "İşaret dili rehberi",
-        visuallyImpairedEn: "Guided \"touch shopping\".",
-        visuallyImpairedTr: "Rehberli \"dokunarak alışveriş\"."
-      },
-      {
-        location: "Restoran",
-        locationEn: "Restaurant",
-        wheelchairEn: "Wheelchair-friendly table arrangment.",
-        wheelchairTr: "Tekerlekli sandalye dostu masa düzenlemesi.",
-        hearingEn: "Visual menu and sign language support.",
-        hearingTr: "Görsel menü ve işaret dili desteği."
-      }
-    ],
     reviews: [
       {
         id: 1,
