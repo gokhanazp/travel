@@ -125,12 +125,7 @@ const ToursPage = () => {
                     className="lg:col-span-2 xl:col-span-3 group bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border-2 border-blue-200 relative"
                     style={{animationDelay: `${index * 0.1}s`}}
                   >
-                    {/* Featured Badge - Moved to top left corner inside card */}
-                    <div className="absolute top-4 left-4 z-20">
-                      <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
-                        ⭐ {language === 'en' ? 'FEATURED' : 'ÖNE ÇIKAN'}
-                      </div>
-                    </div>
+
 
                     <div className="grid lg:grid-cols-2 gap-0">
                       {/* Left Side - Image */}
@@ -150,11 +145,28 @@ const ToursPage = () => {
                           </span>
                         </div>
 
-                        {/* Accessibility Badge */}
-                        <div className="absolute top-4 right-4">
-                          <span className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full shadow-lg">
-                            ♿ {language === 'en' ? 'Fully accessible' : 'Tam erişilebilir'}
-                          </span>
+                        {/* Accessibility Icons */}
+                        <div className="absolute top-4 right-4 flex gap-2">
+                          {/* Wheelchair Accessibility */}
+                          <div className="bg-blue-600 text-white p-2 rounded-full shadow-lg" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9V7H15L13.5 7.5C13.1 7.7 12.6 7.8 12.2 7.8S11.3 7.7 10.9 7.5L9.5 7H3V9H7.5L9 12.5L7.5 16H9.5L11 13L12.5 16H14.5L13 12.5L14.5 9H21M12.5 11.5C13.3 11.5 14 12.2 14 13S13.3 14.5 12.5 14.5 11 13.8 11 13 11.7 11.5 12.5 11.5M8 20C9.1 20 10 19.1 10 18S9.1 16 8 16 6 16.9 6 18 6.9 20 8 20Z"/>
+                            </svg>
+                          </div>
+
+                          {/* Hearing Impaired Support */}
+                          <div className="bg-green-600 text-white p-2 rounded-full shadow-lg" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17,20C17,21.1 16.1,22 15,22H9C7.9,22 7,21.1 7,20V19H17V20M6,18V16.5C6,15.1 7.1,14 8.5,14H15.5C16.9,14 18,15.1 18,16.5V18H6M12,13C9.8,13 8,11.2 8,9V4C8,1.8 9.8,0 12,0S16,1.8 16,4V9C16,11.2 14.2,13 12,13M12,2C10.9,2 10,2.9 10,4V9C10,10.1 10.9,11 12,11S14,10.1 14,9V4C14,2.9 13.1,2 12,2Z"/>
+                            </svg>
+                          </div>
+
+                          {/* Visually Impaired Support */}
+                          <div className="bg-purple-600 text-white p-2 rounded-full shadow-lg" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                            </svg>
+                          </div>
                         </div>
 
                         {/* Title Overlay */}
