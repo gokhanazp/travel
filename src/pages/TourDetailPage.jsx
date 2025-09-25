@@ -651,7 +651,8 @@ const TourDetailPage = () => {
                                 </div>
                                 <span className="text-gray-700 leading-relaxed">{exclude}</span>
                               </div>
-                            )) : (
+                            ))
+                          ) : (
                             <div className="space-y-3">
                               <div className="flex items-start space-x-3">
                                 <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
