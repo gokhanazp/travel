@@ -342,64 +342,117 @@ const TourDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Refined Hero Section */}
+      {/* Enhanced Hero Section */}
       <div className="relative">
-        <div className="relative h-96 overflow-hidden">
-          <img
-            src={tour.image}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+        <div className="relative h-[500px] overflow-hidden">
+          {/* Background Image with Parallax Effect */}
+          <div className="absolute inset-0">
+            <img
+              src={tour.image}
+              alt={title}
+              className="w-full h-full object-cover transform scale-105 transition-transform duration-700 hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+          </div>
 
-          {/* Floating Elements */}
-          <div className="absolute top-6 right-6">
-            <div className="flex space-x-2">
-              <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {/* Floating Action Buttons */}
+          <div className="absolute top-6 right-6 z-20">
+            <div className="flex space-x-3">
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </button>
-              <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                </svg>
+              </button>
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </button>
             </div>
           </div>
 
-          {/* Accessibility Badge */}
-          <div className="absolute top-6 left-6">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">
-              ♿ {accessibility}
-            </span>
+          {/* Accessibility Icons */}
+          <div className="absolute top-6 left-6 flex gap-2">
+            {/* Wheelchair Accessibility */}
+            <div className="bg-blue-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+              <img
+                src="/tekerlikli.png"
+                alt="Wheelchair Accessible"
+                className="w-4 h-4 object-contain filter brightness-0 invert"
+              />
+            </div>
+
+            {/* Hearing Impaired Support */}
+            <div className="bg-green-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+              <img
+                src="/isitme.png"
+                alt="Hearing Support"
+                className="w-4 h-4 object-contain filter brightness-0 invert"
+              />
+            </div>
+
+            {/* Visually Impaired Support */}
+            <div className="bg-purple-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+              <img
+                src="/Gorme-engelli.png"
+                alt="Visual Support"
+                className="w-4 h-4 object-contain filter brightness-0 invert"
+              />
+            </div>
           </div>
 
-          {/* Main Content */}
-          <div className="absolute inset-0 flex items-end">
-            <div className="w-full p-6 md:p-8">
-              <div className="max-w-4xl">
-                <div className="flex items-center space-x-3 mb-4">
-                  <span className="px-3 py-1 bg-orange-500 text-white rounded-full text-sm font-medium">
+          {/* Enhanced Main Content */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full p-8 md:p-12">
+              <div className="max-w-5xl mx-auto">
+                {/* Tour Badges */}
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-sm font-semibold shadow-lg">
                     {duration}
                   </span>
-                  <div className="flex items-center text-yellow-400">
-                    {'★'.repeat(5)}
-                    <span className="text-white ml-2 text-sm">(4.9)</span>
+                  <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
+                    <div className="flex items-center text-yellow-400 mr-2">
+                      {'★'.repeat(5)}
+                    </div>
+                    <span className="text-white text-sm font-medium">(4.9)</span>
                   </div>
+                  <span className="px-4 py-2 bg-green-500/90 text-white rounded-full text-sm font-semibold shadow-lg">
+                    {language === 'en' ? 'Fully Accessible' : 'Tam Erişilebilir'}
+                  </span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">{title}</h1>
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mb-4">
+                {/* Main Title */}
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                  {title}
+                </h1>
+
+                {/* Description */}
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mb-8 font-light">
                   {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                 </p>
 
-                <div className="flex items-center space-x-4">
+                {/* Price and CTA */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                   <div className="text-white">
-                    <span className="text-2xl md:text-3xl font-bold text-orange-400">
+                    <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-1">
                       {language === 'en' ? 'Contact for Price' : tour.price} {language === 'en' ? '' : (tour.currencyEn || tour.currency)}
-                    </span>
-                    <span className="text-sm ml-2 opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
+                    </div>
+                    <span className="text-lg opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                      {language === 'en' ? 'Book Now' : 'Hemen Rezervasyon'}
+                    </button>
+                    <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/30">
+                      {language === 'en' ? 'Ask Question' : 'Soru Sor'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1012,7 +1065,34 @@ const TourDetailPage = () => {
                           </div>
                           <span className="text-gray-700 font-medium">{currentContent.accessibility}</span>
                         </div>
-                        <span className="font-bold text-green-600 text-lg">♿ {accessibility}</span>
+                        <div className="flex gap-2">
+                          {/* Wheelchair Accessibility */}
+                          <div className="bg-blue-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+                            <img
+                              src="/tekerlikli.png"
+                              alt="Wheelchair Accessible"
+                              className="w-3 h-3 object-contain filter brightness-0 invert"
+                            />
+                          </div>
+
+                          {/* Hearing Impaired Support */}
+                          <div className="bg-green-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+                            <img
+                              src="/isitme.png"
+                              alt="Hearing Support"
+                              className="w-3 h-3 object-contain filter brightness-0 invert"
+                            />
+                          </div>
+
+                          {/* Visually Impaired Support */}
+                          <div className="bg-purple-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+                            <img
+                              src="/Gorme-engelli.png"
+                              alt="Visual Support"
+                              className="w-3 h-3 object-contain filter brightness-0 invert"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
