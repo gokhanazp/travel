@@ -13,6 +13,126 @@ const TourDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
+  const [selectedLocation, setSelectedLocation] = useState(null)
+
+  // Accessibility locations data
+  const accessibilityLocations = [
+    {
+      id: 'hippodrome',
+      nameEn: 'Hippodrome',
+      nameTr: 'Hipodrom',
+      image: '/accessibility/hippodrome.jpg',
+      wheelchairEn: 'Wide and flat, open square',
+      wheelchairTr: 'Geniş ve düz, açık meydan',
+      hearingEn: 'Visually rich, sign language translator',
+      hearingTr: 'Görsel açıdan zengin, işaret dili tercümanı'
+    },
+    {
+      id: 'blue-mosque',
+      nameEn: 'Blue Mosque',
+      nameTr: 'Sultanahmet Camii',
+      image: '/accessibility/blue-mosque.jpg',
+      wheelchairEn: 'Entrance ramp and flat courtyard accessible. Inside, carpet flooring may slightly hinder movement.',
+      wheelchairTr: 'Giriş rampası ve düz avlu erişilebilir. İçeride halı zemin hareketi biraz engelleyebilir.',
+      hearingEn: 'Visual design (domes, tiles, calligraphy), Sign language translator.',
+      hearingTr: 'Görsel tasarım (kubbeler, çiniler, hat sanatı), İşaret dili tercümanı.'
+    },
+    {
+      id: 'topkapi-palace',
+      nameEn: 'Topkapi Palace',
+      nameTr: 'Topkapı Sarayı',
+      image: '/accessibility/topkapi-palace.jpg',
+      wheelchairEn: 'Large courtyards mostly flat. Some sections are accessible via ramps. Gardens are suitable for relaxation.',
+      wheelchairTr: 'Büyük avlular çoğunlukla düz. Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.',
+      hearingEn: 'Visual architecture and artifacts. Sign language translator',
+      hearingTr: 'Görsel mimari ve eserler. İşaret dili tercümanı'
+    },
+    {
+      id: 'hagia-sophia',
+      nameEn: 'Hagia Sophia',
+      nameTr: 'Ayasofya',
+      image: '/accessibility/hagia-sophia.jpg',
+      wheelchairEn: 'There are wide entrance doors and ramps. Ground floor fully accessible; upper gallery not accessible. Large, open space suitable for wheelchairs.',
+      wheelchairTr: 'Geniş giriş kapıları ve rampalar var. Zemin kat tamamen erişilebilir; üst galeri erişilebilir değil. Tekerlekli sandalyeler için uygun geniş, açık alan.',
+      hearingEn: 'Stunning visuals, main experience is architectural and visual. Sign language translator.',
+      hearingTr: 'Muhteşem görseller, ana deneyim mimari ve görseldir. İşaret dili tercümanı.'
+    },
+    {
+      id: 'grand-bazaar',
+      nameEn: 'Grand Bazaar',
+      nameTr: 'Kapalıçarşı',
+      image: '/accessibility/grand-bazaar.jpg',
+      wheelchairEn: 'There are straight main roads.',
+      wheelchairTr: 'Düz ana yollar vardır.',
+      hearingEn: 'Sign language guide/translator',
+      hearingTr: 'İşaret dili rehberi/tercümanı',
+      visuallyImpairedEn: 'Guided "touch shopping".',
+      visuallyImpairedTr: 'Rehberli "dokunarak alışveriş".'
+    },
+    {
+      id: 'spice-market',
+      nameEn: 'Spice Market',
+      nameTr: 'Mısır Çarşısı',
+      image: '/accessibility/spice-market.jpg',
+      wheelchairEn: 'Wheelchair-accessible main roads.',
+      wheelchairTr: 'Tekerlekli sandalye erişilebilir ana yollar.',
+      hearingEn: 'Market is a sensory, visual experience (spices, colors, goods). Seller shouting is not essential to enjoy. Sign language guide/translator.',
+      hearingTr: 'Çarşı duyusal, görsel bir deneyimdir (baharatlar, renkler, mallar). Satıcı bağırması keyif almak için gerekli değildir. İşaret dili rehberi/tercümanı.',
+      visuallyImpairedEn: 'Introducing spices by smell.',
+      visuallyImpairedTr: 'Baharatları koku ile tanıtma.'
+    },
+    {
+      id: 'basilica-cistern',
+      nameEn: 'Basilica Cistern',
+      nameTr: 'Yerebatan Sarnıcı',
+      image: '/accessibility/basilica-cistern.jpg',
+      wheelchairEn: 'There is lift and ramped entrance.',
+      wheelchairTr: 'Asansör ve rampalı giriş vardır.',
+      hearingEn: 'Strong lighting and dramatic visuals. Sign language guide / translator',
+      hearingTr: 'Güçlü aydınlatma ve dramatik görseller. İşaret dili rehberi / tercümanı'
+    },
+    {
+      id: 'bosphorus-cruise',
+      nameEn: 'Bosphorus Cruise',
+      nameTr: 'Boğaz Turu',
+      image: '/accessibility/bosphorus-cruise.jpg',
+      wheelchairEn: 'Public ferries and many private boats ramp accessible.',
+      wheelchairTr: 'Halk vapurları ve birçok özel tekne rampa erişilebilir.',
+      hearingEn: 'Sign language support.',
+      hearingTr: 'İşaret dili desteği.'
+    },
+    {
+      id: 'dolmabahce-palace',
+      nameEn: 'Dolmabahce Palace',
+      nameTr: 'Dolmabahçe Sarayı',
+      image: '/accessibility/dolmabahce-palace.jpg',
+      wheelchairEn: 'Lift at the entrance gate to the main hall. No interior lift.',
+      wheelchairTr: 'Giriş kapısından ana salona asansör. İç asansör yok.',
+      hearingEn: 'Sign language translator.',
+      hearingTr: 'İşaret dili tercümanı.'
+    },
+    {
+      id: 'camlica-hill',
+      nameEn: 'Çamlıca Hill',
+      nameTr: 'Çamlıca Tepesi',
+      image: '/accessibility/camlica-hill.jpg',
+      wheelchairEn: 'Accessible terraces and ramps. There is accessible restaurant on the hill.',
+      wheelchairTr: 'Erişilebilir teraslar ve rampalar. Tepede erişilebilir restoran vardır.',
+      hearingEn: 'Panoramic views, visual experience.',
+      hearingTr: 'Panoramik manzaralar, görsel deneyim.'
+    },
+    {
+      id: 'kadikoy',
+      nameEn: 'Kadıköy Town',
+      nameTr: 'Kadıköy',
+      image: '/accessibility/kadikoy.jpg',
+      wheelchairEn: 'Seaside promenade is flat and accessible. Many cafes are barrier-free.',
+      wheelchairTr: 'Sahil promenadı düz ve erişilebilir. Birçok kafe engelsizdir.',
+      hearingEn: 'Shopping, markets and cafes are visually based. Sign language translator.',
+      hearingTr: 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'
+    }
+  ]
+
   const [questionForm, setQuestionForm] = useState({
     name: '',
     email: '',
@@ -377,458 +497,46 @@ const TourDetailPage = () => {
                         {language === 'en' ? 'Accessibility Information' : 'Erişilebilirlik Bilgileri'}
                       </h3>
 
-                      <div className="space-y-6">
-                        {/* Hippodrome */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Hippodrome' : 'Hipodrom'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {accessibilityLocations.map((location) => (
+                          <button
+                            key={location.id}
+                            onClick={() => setSelectedLocation(location)}
+                            className="bg-white rounded-xl shadow-md p-4 border border-gray-200 hover:shadow-lg hover:border-orange-300 transition-all duration-300 text-left group"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>
                               </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Wide and flat, open square' : 'Geniş ve düz, açık meydan'}</p>
+                              <div className="flex-1 min-w-0">
+                                <h4 className="font-semibold text-gray-900 text-sm group-hover:text-orange-600 transition-colors duration-300 truncate">
+                                  {language === 'en' ? location.nameEn : location.nameTr}
+                                </h4>
+                                <p className="text-xs text-gray-500 mt-1">
+                                  {language === 'en' ? 'Click for details' : 'Detaylar için tıklayın'}
+                                </p>
                               </div>
+                              <svg className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
                             </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Visually rich, sign language translator' : 'Görsel açıdan zengin, işaret dili tercümanı'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Topkapi Palace */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Topkapi Palace' : 'Topkapı Sarayı'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Large courtyards mostly flat. Some sections are accessible via ramps. Gardens are suitable for relaxation.' : 'Büyük avlular çoğunlukla düz. Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Visual architecture and artifacts. Sign language translator' : 'Görsel mimari ve eserler. İşaret dili tercümanı'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Hagia Sophia */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Hagia Sophia' : 'Ayasofya'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'There are wide entrance doors and ramps. Ground floor fully accessible; upper gallery not accessible. Large, open space suitable for wheelchairs.' : 'Geniş giriş kapıları ve rampalar var. Zemin kat tamamen erişilebilir; üst galeri erişilebilir değil. Tekerlekli sandalyeler için uygun geniş, açık alan.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Stunning visuals, main experience is architectural and visual. Sign language translator.' : 'Muhteşem görseller, ana deneyim mimari ve görseldir. İşaret dili tercümanı.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Grand Bazaar */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Grand Bazaar' : 'Kapalıçarşı'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'There are straight main roads.' : 'Düz ana yollar vardır.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Sign language guide/translator' : 'İşaret dili rehberi/tercümanı'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Visually Impaired' : 'Görme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Guided "touch shopping".' : 'Rehberli "dokunarak alışveriş".'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Spice Market */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Spice Market' : 'Mısır Çarşısı'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Wheelchair-accessible main roads.' : 'Tekerlekli sandalye erişilebilir ana yollar.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Market is a sensory, visual experience (spices, colors, goods). Seller shouting is not essential to enjoy. Sign language guide/translator.' : 'Çarşı duyusal, görsel bir deneyimdir (baharatlar, renkler, mallar). Satıcı bağırması keyif almak için gerekli değildir. İşaret dili rehberi/tercümanı.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Visually Impaired' : 'Görme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Introducing spices by smell.' : 'Baharatları koku ile tanıtma.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Basilica Cistern */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Basilica Cistern' : 'Yerebatan Sarnıcı'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'There is lift and ramped entrance.' : 'Asansör ve rampalı giriş vardır.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Strong lighting and dramatic visuals. Sign language guide / translator' : 'Güçlü aydınlatma ve dramatik görseller. İşaret dili rehberi / tercümanı'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Bosphorus Cruise */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Bosphorus Cruise' : 'Boğaz Turu'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Public ferries and many private boats ramp accessible.' : 'Halk vapurları ve birçok özel tekne rampa erişilebilir.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Sign language support.' : 'İşaret dili desteği.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Dolmabahce Palace */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Dolmabahce Palace' : 'Dolmabahçe Sarayı'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Lift at the entrance gate to the main hall. No interior lift.' : 'Giriş kapısından ana salona asansör. İç asansör yok.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Sign language translator.' : 'İşaret dili tercümanı.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Çamlıca Hill */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Çamlıca Hill' : 'Çamlıca Tepesi'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Accessible terraces and ramps. There is accessible restaurant on the hill.' : 'Erişilebilir teraslar ve rampalar. Tepede erişilebilir restoran vardır.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Panoramic views, visual experience.' : 'Panoramik manzaralar, görsel deneyim.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Kadıköy Town */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            </svg>
-                            {language === 'en' ? 'Kadıköy Town' : 'Kadıköy'}
-                          </h4>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Seaside promenade is flat and accessible. Many cafes are barrier-free.' : 'Sahil promenadı düz ve erişilebilir. Birçok kafe engelsizdir.'}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <div>
-                                <p className="font-medium text-gray-900 text-sm">{language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}</p>
-                                <p className="text-gray-700 text-sm">{language === 'en' ? 'Shopping, markets and cafes are visually based. Sign language translator.' : 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                          </button>
+                        ))}
                       </div>
                     </div>
 
-                    {/* Inclusions/Exclusions Section */}
-                    <div className="mt-12">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                        {language === 'en' ? 'Inclusions/Exclusions' : 'Dahil Olan/Olmayan'}
-                      </h3>
 
-                      <div className="space-y-8">
-                        {/* Price Includes Section */}
-                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                          <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
-                          </h4>
-                          <div className="space-y-3">
-                            {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
-                              <div key={index} className="flex items-start space-x-3">
-                                <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                  </svg>
-                                </div>
-                                <span className="text-gray-700 leading-relaxed">{feature}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
 
-                        {/* Price Excludes Section */}
-                        <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
-                          <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                            <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                            {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
-                          </h4>
-                          <div className="space-y-3">
-                            {tour.excludes && tour.excludes.length > 0 ? (
-                              (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
-                                <div key={index} className="flex items-start space-x-3">
-                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                  </div>
-                                  <span className="text-gray-700 leading-relaxed">{exclude}</span>
-                                </div>
-                              ))
-                            ) : (
-                              <div className="space-y-3">
-                                <div className="flex items-start space-x-3">
-                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                  </div>
-                                  <span className="text-gray-700 leading-relaxed">
-                                    {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
-                                  </span>
-                                </div>
-                                <div className="flex items-start space-x-3">
-                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                  </div>
-                                  <span className="text-gray-700 leading-relaxed">
-                                    {language === 'en' ? 'Gratuities' : 'Bahşişler'}
-                                  </span>
-                                </div>
-                                <div className="flex items-start space-x-3">
-                                  <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                  </div>
-                                  <span className="text-gray-700 leading-relaxed">
-                                    {language === 'en' ? 'Optional activities not mentioned in the itinerary' : 'Programda belirtilmeyen opsiyonel aktiviteler'}
-                                  </span>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+
+
+
+
+
+
+
                 </div>
               )}
 
@@ -865,6 +573,94 @@ const TourDetailPage = () => {
                       {language === 'en' ? 'Itinerary information coming soon.' : 'Program bilgileri yakında eklenecek.'}
                     </p>
                   )}
+
+                  {/* Inclusions/Exclusions Section */}
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                      {language === 'en' ? 'Inclusions/Exclusions' : 'Dahil Olan/Olmayan'}
+                    </h3>
+
+                    <div className="space-y-8">
+                      {/* Price Includes Section */}
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
+                        </h4>
+                        <div className="space-y-3">
+                          {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
+                            <div key={index} className="flex items-start space-x-3">
+                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span className="text-gray-700 leading-relaxed">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Price Excludes Section */}
+                      <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
+                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                          {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
+                        </h4>
+                        <div className="space-y-3">
+                          {tour.excludes && tour.excludes.length > 0 ? (
+                            (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
+                              <div key={index} className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">{exclude}</span>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="space-y-3">
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Gratuities' : 'Bahşişler'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Optional activities not mentioned in the itinerary' : 'Programda belirtilmeyen opsiyonel aktiviteler'}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -1201,6 +997,112 @@ const TourDetailPage = () => {
       </div>
 
       <Footer />
+
+      {/* Accessibility Location Modal */}
+      {selectedLocation && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="relative">
+              <img
+                src={selectedLocation.image}
+                alt={language === 'en' ? selectedLocation.nameEn : selectedLocation.nameTr}
+                className="w-full h-64 object-cover rounded-t-2xl"
+                onError={(e) => {
+                  e.target.src = '/placeholder-accessibility.jpg'
+                }}
+              />
+              <button
+                onClick={() => setSelectedLocation(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {language === 'en' ? selectedLocation.nameEn : selectedLocation.nameTr}
+              </h3>
+
+              <div className="space-y-6">
+                {/* Wheelchair Users */}
+                <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        {language === 'en' ? 'Wheelchair Users' : 'Tekerlekli Sandalye Kullanıcıları'}
+                      </h4>
+                      <p className="text-green-700 leading-relaxed">
+                        {language === 'en' ? selectedLocation.wheelchairEn : selectedLocation.wheelchairTr}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hearing Impaired */}
+                <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        {language === 'en' ? 'Hearing Impaired' : 'İşitme Engelliler'}
+                      </h4>
+                      <p className="text-blue-700 leading-relaxed">
+                        {language === 'en' ? selectedLocation.hearingEn : selectedLocation.hearingTr}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Visually Impaired (if available) */}
+                {(selectedLocation.visuallyImpairedEn || selectedLocation.visuallyImpairedTr) && (
+                  <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-purple-800 mb-2">
+                          {language === 'en' ? 'Visually Impaired' : 'Görme Engelliler'}
+                        </h4>
+                        <p className="text-purple-700 leading-relaxed">
+                          {language === 'en' ? selectedLocation.visuallyImpairedEn : selectedLocation.visuallyImpairedTr}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Close Button */}
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setSelectedLocation(null)}
+                  className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                >
+                  {language === 'en' ? 'Close' : 'Kapat'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
