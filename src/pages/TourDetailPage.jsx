@@ -16,7 +16,7 @@ const TourDetailPage = () => {
   const [selectedLocation, setSelectedLocation] = useState(null)
 
   // Accessibility locations data
-  const accessibilityLocations = tour?.id === 'PBWAI0019' ? [
+  const accessibilityLocations = (tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') ? [
     {
       id: 'blue-mosque',
       nameEn: 'Blue Mosque',
@@ -68,6 +68,38 @@ const TourDetailPage = () => {
       hearingTr: 'İşaret dili rehberi',
       visuallyImpairedEn: 'Guided "touch shopping".',
       visuallyImpairedTr: 'Rehberli "dokunarak alışveriş".'
+    },
+    {
+      id: 'underground-cistern',
+      nameEn: 'Underground Cistern',
+      nameTr: 'Yerebatan Sarnıcı',
+      image: '/accessibility/cistern.jpg',
+      wheelchairEn: 'There is lift and ramped entrance.',
+      wheelchairTr: 'Asansör ve rampalı giriş vardır.',
+      hearingEn: 'Sign language guide / translator',
+      hearingTr: 'İşaret dili rehberi / tercümanı'
+    },
+    {
+      id: 'spice-market',
+      nameEn: 'Spice Market',
+      nameTr: 'Mısır Çarşısı',
+      image: '/accessibility/spice-market.jpg',
+      wheelchairEn: 'Wheelchair-accessible main roads.',
+      wheelchairTr: 'Tekerlekli sandalye erişilebilir ana yollar.',
+      hearingEn: '',
+      hearingTr: '',
+      visuallyImpairedEn: 'Introducing spices by smell.',
+      visuallyImpairedTr: 'Baharatları koku ile tanıtma.'
+    },
+    {
+      id: 'bosphorus-cruise',
+      nameEn: 'Bosphorus Cruise',
+      nameTr: 'Boğaz Turu',
+      image: '/accessibility/bosphorus.jpg',
+      wheelchairEn: 'Accessible boat',
+      wheelchairTr: 'Erişilebilir tekne',
+      hearingEn: 'Sign language support',
+      hearingTr: 'İşaret dili desteği'
     },
     {
       id: 'restaurant',
@@ -494,6 +526,11 @@ const TourDetailPage = () => {
                               ? "A short and relaxed tour scheduled between 9.00 – 17.00 am. A route combining culture, history and shopping. Accessibility support. The tour includes important and popular touristic places such as Blue Mosque, Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome, and is organized in a way that disabled and elderly people can easily navigate. Access to historical places is provided with a guide and specially arranged routes, while a comfortable tour experience is offered with disabled-friendly services."
                               : "9.00-17.00 saatleri arasında planlanmış kısa ve rahat bir tur. Kültür, tarih ve alışverişi birleştiren bir rota. Erişilebilirlik desteği. Sultanahmet Camii, Ayasofya, Topkapı Sarayı, Kapalıçarşı ve Hipodrom gibi önemli ve popüler turistik yerleri içeren tur, engelli ve yaşlı kişilerin kolayca gezebileceği şekilde organize edilmiştir. Tarihi yerlere rehber eşliğinde ve özel düzenlenmiş rotalarla erişim sağlanırken, engelli dostu hizmetlerle konforlu bir tur deneyimi sunulmaktadır."
                             )
+                          : tour?.id === 'PBWAI0020'
+                          ? (language === 'en'
+                              ? "A 3 Nights 4 Days tour offering historical and cultural insights of Istanbul in an accessible way. It brings together shopping, nature and social interaction. This tour program includes points designed for disabled access, covers popular points such as Topkapi Palace, Hagia Sophia, Sultanahmet Mosque, Basilica Cistern, Grand Bazaar, Bosphorus tour, Spice Bazaar and Hippodrome."
+                              : "3 Gece 4 Gün İstanbul'un tarihi ve kültürel özelliklerini erişilebilir bir şekilde sunan tur. Alışveriş, doğa ve sosyal etkileşimi bir araya getiriyor. Bu tur programı engelli erişimi için tasarlanmış noktaları içerir, Topkapı Sarayı, Ayasofya, Sultanahmet Camii, Yerebatan Sarnıcı, Kapalıçarşı, Boğaz turu, Mısır Çarşısı ve Hipodrom gibi popüler noktaları kapsar."
+                            )
                           : (language === 'en'
                               ? "Guests will explore Byzantine and Ottoman heritage, experience historic bazaars, enjoy scenic views from the Bosphorus and Çamlıca Hill, and discover modern vibrant neighborhood Kadıköy - all with barrier-free access wherever possible."
                               : "Misafirlerimiz Bizans ve Osmanlı mirasını keşfedecek, tarihi çarşıları deneyimleyecek, Boğaz ve Çamlıca Tepesi'nden manzaraların tadını çıkaracak ve modern canlı mahalle Kadıköy'ü keşfedecekler - mümkün olan her yerde engelsiz erişimle."
@@ -511,6 +548,11 @@ const TourDetailPage = () => {
                                   ? "Duration: 8 hours"
                                   : "Süre: 8 saat"
                                 )
+                              : tour?.id === 'PBWAI0020'
+                              ? (language === 'en'
+                                  ? "Duration: 3 Nights 4 Days"
+                                  : "Süre: 3 Gece 4 Gün"
+                                )
                               : (language === 'en'
                                   ? "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom."
                                   : "Alçak yataklar, geniş kapılar ve banyoda tutunma barları olan erişilebilir odalarda konaklama."
@@ -525,6 +567,11 @@ const TourDetailPage = () => {
                               ? (language === 'en'
                                   ? "Tour Date: (Topkapı Palace closed on Tuesdays, Grand Bazaar closed on Sundays)"
                                   : "Tur Tarihi: (Topkapı Sarayı Salı günleri kapalı, Kapalıçarşı Pazar günleri kapalı)"
+                                )
+                              : tour?.id === 'PBWAI0020'
+                              ? (language === 'en'
+                                  ? "Accommodation: Accessible rooms with low beds, wide doors and grab bars"
+                                  : "Konaklama: Alçak yataklar, geniş kapılar ve tutunma barları olan erişilebilir odalar"
                                 )
                               : (language === 'en'
                                   ? "Transportation by vehicles with lifts and ramps."
@@ -541,6 +588,11 @@ const TourDetailPage = () => {
                                   ? "Starting Time: 9.00"
                                   : "Başlangıç Saati: 9.00"
                                 )
+                              : tour?.id === 'PBWAI0020'
+                              ? (language === 'en'
+                                  ? "Transportation: Vehicles with lifts and ramps for wheelchair users"
+                                  : "Ulaşım: Tekerlekli sandalye kullanıcıları için asansörlü ve rampalı araçlar"
+                                )
                               : (language === 'en'
                                   ? "Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned."
                                   : "Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış."
@@ -555,6 +607,11 @@ const TourDetailPage = () => {
                               ? (language === 'en'
                                   ? "Suitable for which type of disability: • Hearing Impaired • Wheelchair users • Elderly people"
                                   : "Hangi engellilik türü için uygun: • İşitme Engelliler • Tekerlekli Sandalye Kullanıcıları • Yaşlı İnsanlar"
+                                )
+                              : tour?.id === 'PBWAI0020'
+                              ? (language === 'en'
+                                  ? "Suitable for: • Wheelchair users • Hearing Impaired • Visually Impaired • Elderly people"
+                                  : "Uygun olan: • Tekerlekli Sandalye Kullanıcıları • İşitme Engelliler • Görme Engelliler • Yaşlı İnsanlar"
                                 )
                               : (language === 'en'
                                   ? "Sign language interpreter support for the hearing impaired."
@@ -752,8 +809,8 @@ const TourDetailPage = () => {
                         </div>
                       </div>
 
-                      {/* Additional Info for PBWAI0019 */}
-                      {tour?.id === 'PBWAI0019' && (
+                      {/* Additional Info for PBWAI0019 and PBWAI0020 */}
+                      {(tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') && (
                         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
                           <p className="text-gray-800 leading-relaxed">
                             {language === 'en'

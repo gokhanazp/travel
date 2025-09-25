@@ -514,5 +514,169 @@ export const toursData = [
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
       }
     ]
+  },
+
+  // PBWAI0020 - Accessible Istanbul Tour 3N/4D
+  {
+    id: 'PBWAI0020',
+    slug: "accessible-istanbul-tour-3n4d",
+    title: "Erişilebilir İstanbul Turu (3G/4G)",
+    titleEn: "Accessible Istanbul Tour (3N/4D)",
+    shortDescription: "3 Gece 4 Gün İstanbul'un tarihi ve kültürel özelliklerini erişilebilir bir şekilde sunan tur. Alışveriş, doğa ve sosyal etkileşimi bir araya getiriyor.",
+    shortDescriptionEn: "A 3 Nights 4 Days tour offering historical and cultural insights of Istanbul in an accessible way. It brings together shopping, nature and social interaction.",
+    longDescription: "Erişilebilir odalarda konaklama, asansörlü ve rampalı araçlarla ulaşım. Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış. İşitme engelliler için işaret dili tercümanı desteği ve tur boyunca destek personeli mevcuttur.",
+    longDescriptionEn: "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom. Transportation by vehicles with lifts and ramps. Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned. Sign language interpreter support for the hearing impaired. Support staff available throughout the tour to assist as needed.",
+    accessibilityOverview: {
+      accommodation: {
+        tr: "Alçak yataklar, geniş kapılar ve banyoda tutunma barları olan erişilebilir odalarda konaklama",
+        en: "Accommodation in accessible rooms with low beds, wide doors and grab bars in the bathroom"
+      },
+      transportation: {
+        tr: "Asansörlü ve rampalı araçlarla ulaşım",
+        en: "Transportation by vehicles with lifts and ramps"
+      },
+      accessibility: {
+        tr: "Her lokasyonda önceden erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış",
+        en: "Accessibility checks have been made in each location in advance, ramps and alternative entrances have been planned"
+      },
+      signLanguage: {
+        tr: "İşitme engelliler için işaret dili tercümanı desteği",
+        en: "Sign language interpreter support for the hearing impaired"
+      },
+      supportStaff: {
+        tr: "Gerektiğinde yardım etmek için tur boyunca destek personeli mevcuttur",
+        en: "Support staff available throughout the tour to assist as needed"
+      },
+      restBreaks: {
+        tr: "Sık sık planlanan dinlenme molaları",
+        en: "Frequent scheduled rest breaks"
+      }
+    },
+    image: "/pibawings-1.jpeg",
+    price: "Fiyat için iletişime geçin",
+    priceEn: "Contact for Price",
+    currency: "",
+    currencyEn: "",
+    duration: "3 Gece 4 Gün",
+    durationEn: "3 Nights 4 Days",
+    groupSize: "Özel Tur",
+    groupSizeEn: "Private Tour",
+    difficulty: "Kolay",
+    difficultyEn: "Easy",
+    category: "Kültürel Tur",
+    categoryEn: "Cultural Tour",
+    highlights: [
+      "Topkapı Sarayı ziyareti",
+      "Ayasofya ve Sultanahmet Camii",
+      "Yerebatan Sarnıcı",
+      "Kapalıçarşı alışverişi",
+      "Boğaz turu",
+      "Mısır Çarşısı",
+      "Hipodrom alanı"
+    ],
+    highlightsEn: [
+      "Topkapi Palace visit",
+      "Hagia Sophia and Blue Mosque",
+      "Basilica Cistern",
+      "Grand Bazaar shopping",
+      "Bosphorus cruise",
+      "Spice Bazaar",
+      "Hippodrome area"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "İstanbul Varış",
+        titleEn: "Istanbul Arrival",
+        description: "Özel rehberiniz ve şoföründüz sizi havaalanından tekerlekli sandalye kullanıcıları için özel tasarlanmış van ile alacak ve otelinize götürecektir.<br><br>Günün geri kalanı serbest zamanınızdır.<br><br>İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "Your private guide and driver will pick you from airport with special designed van for wheelchair users and take you to your hotel.<br><br>The rest of the day is on your own.<br><br>Overnight in accessible-friendly hotel in Istanbul."
+      },
+      {
+        day: 2,
+        title: "İstanbul Şehir Turu",
+        titleEn: "Istanbul City Tour",
+        description: "Saat 9.30'da özel rehberiniz sizi otelin lobisinde karşılayacak ve tekerlekli sandalye yürüyüş turunuz başlayacaktır.<br><br>Sabah 17. yüzyılda Sultan Ahmet tarafından inşa edilen Sultanahmet Camii'ni ziyaret edeceksiniz. Engelli bireyler için tasarlanmış rampalar kullanarak caminin ana alanına gireceğiz.<br><br>Turumuza İstanbul'un muhteşem antik yapısı Ayasofya'yı ziyaret ederek devam edeceğiz. Bu yapı yaklaşık 1000 yıl Bizans İmparatorluğu'nun büyük kilisesi, yaklaşık 500 yıl da Osmanlı İmparatorluğu'nun büyük camisi olarak kullanılmıştır.<br><br>Yerel erişilebilir restoranda öğle yemeği.<br><br>Öğle yemeğinden sonra Yerebatan Sarnıcı'nı ziyaret edeceğiz; İstanbul'daki Bizans dönemi yeraltı sarnıçlarının en büyüğü. Sarnıçta asansör ve rampalı giriş bulunmaktadır.<br><br>Daha sonra Bizans döneminde Hipodrom olarak adlandırılan Konstantinopolis'in araba yarışı alanını göreceğiz. Burada Mısır Dikilitaşı, Yılan Sütunu ve Konstantin Sütunu'nu göreceğiz.<br><br>Ardından 15. yüzyıldan kalma en eski çarşılardan biri olan Kapalıçarşı'ya gideceğiz. Burada tekerlekli sandalye dostu rotada, düz ana yolları seçerek Kapalıçarşı'yı gezeceksiniz.<br><br>İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "At 9.30 your private guide will meet you in the lobby at your hotel. And your wheelchair walking tour begins.<br><br>In the morning you will visit the Blue Mosque which was built by Sultan Ahmet in 17th century. We will enter the main area of the mosque using ramps designed for disabled people.<br><br>We will continue our tour by visiting the magnificent ancient building of Istanbul, Hagia Sophia which was almost 1000 years used as a great church of Byzantine Empire and almost 500 years as a grand mosque of Ottoman Empire. In this building we will visit the main magnificent area with a permission we received for the wheelchair users.<br><br>Lunch at a local accessible restaurant.<br><br>Following lunch we will visit the Underground Cistern; the largest of the Byzantine-era underground cisterns in Istanbul built by the Byzantine Emperor Justinian in 532. The Underground Cistern has a lift and ramped entrance. While the cistern is accessible via multi-step staircase, wheelchair access is provided by a dedicated lift inside.<br><br>Next we will go and see the chariot racing area of Constantinople which was called as Hippodrome in Byzantine period. There we will see Egyptian Obelisk, Serpent Column and Constantine Column. This place is a flat ground and our guide will explain us the history of the area and those columns.<br><br>After that we will go to the Grand Bazaar which is one of the oldest bazaars from 15th century. There you can enjoy shopping or just feel the atmosphere of the oldest shopping mall of the world. Here we will tour the Grand Bazaar on a wheelchair-friendly route, choosing flat main roads.<br><br>Overnight in accessible-friendly hotel in Istanbul."
+      },
+      {
+        day: 3,
+        title: "İstanbul Devam",
+        titleEn: "Istanbul Continued",
+        description: "Özel rehberiniz sabah otelde sizi karşılayacak ve tekerlekli sandalye ile yürüyüş turunuz başlayacaktır.<br><br>Bugün ilk olarak Osmanlı İmparatorluğu'nun büyük sarayı Topkapı Sarayı'nı ziyaret edeceksiniz. Yaklaşık 400 yıl boyunca bu yer Osmanlı İmparatorluğu'nun idari merkezi ve padişahların haremlerle birlikte yaşadıkları yer olarak hizmet etmiştir. Rehberimiz eşliğinde rampalar kullanarak bazı bölümleri keşfedeceğiz ve erişilebilir dinlenme alanlarında molalar vereceğiz.<br><br>Osmanlı İmparatorluğu'nun büyük sarayını ziyaret ettikten sonra içinde farklı baharatlar, otlar, bitkisel çaylar bulacağınız Mısır Çarşısı'na yürüyerek devam edeceğiz. Bu baharat kokulu, 400 yıllık renkli çarşıda çeşitli baharatları ve Türk Lokumlarını tadabilirsiniz.<br><br>Deniz kenarında yerel erişilebilir restoranda öğle yemeği.<br><br>Öğleden sonra erişilebilir teknemize bineceğiz ve 1,5 saatlik Boğaz turuna çıkacağız. Türk çayımızı yudumlayacağız ve asma köprüler, yalılar ve saraylarla süslenmiş Boğaz'ın büyüleyici güzelliğinde nefes alacağız.<br><br>İstanbul'da erişilebilir dostu otelde geceleme.",
+        descriptionEn: "Your private guide will meet you at the hotel in the morning. And your walking tour with wheelchair begins.<br><br>Today first you will visit the Topkapi Palace, the grand palace of the Ottoman Empire. For nearly 400 years this place served as the administrative center of the Ottoman Empire and as the place where sultans lived with their harems. Accompanied by our guide we will explore some sections using ramps and also take breaks in accessible rest areas.<br><br>After visiting the grand palace of the Ottoman Empire we will continue walking to the Spice market where you will find different spices, herbs, verbal teas inside. You can taste various spices and Turkish Delights in this spice-scented, 400 hundred years old colorful market.<br><br>Lunch at a local accessible restaurant at the seaside.<br><br>In the afternoon, we will board our accessible boat and embark on a 1.5-houred Bosphorus tour. We will sip our Turkish tea and take breath in the stunning beauty of the Bosphorus adorned with suspension bridges, mansions and palaces.<br><br>Overnight in accessible-friendly hotel in Istanbul."
+      },
+      {
+        day: 4,
+        title: "Ayrılış",
+        titleEn: "Departure",
+        description: "Özel şoföründüz sizi otelinizden alacak ve tekerlekli sandalye kullanıcıları için özel tasarlanmış van ile dönüş uluslararası uçuşunuz için İstanbul havaalanına götürecektir.<br><br>Turun sonu...",
+        descriptionEn: "Your private driver will pick you up at your hotel and take you to the Istanbul airport for your return international flight with special designed van for wheelchair users.<br><br>End of the tour..."
+      }
+    ],
+    features: [
+      "Erişilebilir Turlar Deneyimli Profesyonel İngilizce Konuşan Rehberlik",
+      "Fiziksel engelliler ve refakatçileri için özel hazırlanmış klimalı araçlarla havaalanı transferi",
+      "Tekerlekli sandalye kullanıcıları ve engelli bireyler için uygun otellerde konaklama",
+      "Tur sırasında öğle yemekleri",
+      "Müze, feribot ve görülecek yerlere giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "Seyahat sigortası",
+      "PİBA WINGS TRAVEL tarafından tur boyunca koordinasyon ve özenli müşteri hizmetleri"
+    ],
+    featuresEn: [
+      "Accessible Tours Experienced Professional English Speaking guiding",
+      "Airport transportation with A/C vehicles specially prepared for the physically disabled and for their companions",
+      "Accommodation in the suitable hotels for wheelchair users and disabled people",
+      "Lunches on tour",
+      "Admission to the museums, ferry and sights",
+      "Parking, portage, toll roads",
+      "Travel insurance",
+      "Coordination and attentive customer service throughout the tour by PIBA WINGS TRAVEL"
+    ],
+    excludes: [
+      "Kişisel harcamalar",
+      "Akşam yemekleri",
+      "Öğle yemeklerinde içecekler",
+      "Rehber ve şoför için bahşişler",
+      "Tekerlekli Sandalye Kiralama",
+      "İtineraryda listelenen opsiyonel programlar"
+    ],
+    excludesEn: [
+      "Personal expenses",
+      "Dinners",
+      "Beverages at lunches",
+      "Gratuities for the guide and driver",
+      "Wheelchair Rental",
+      "Optional programmes listed in the itinerary"
+    ],
+    customerReviews: [
+      {
+        id: 1,
+        name: "Sarah Johnson",
+        rating: 5,
+        date: "2024-03-15",
+        comment: "4 günlük tur mükemmeldi! Her detay erişilebilirlik açısından düşünülmüş. Özellikle Boğaz turu unutulmazdı.",
+        commentEn: "The 4-day tour was perfect! Every detail was considered for accessibility. The Bosphorus cruise was especially unforgettable.",
+        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      },
+      {
+        id: 2,
+        name: "David Martinez",
+        rating: 5,
+        date: "2024-02-28",
+        comment: "Rehber çok bilgiliydi ve erişilebilir rotalar mükemmel planlanmıştı. Topkapı Sarayı ziyareti harikaydi!",
+        commentEn: "The guide was very knowledgeable and the accessible routes were perfectly planned. The Topkapi Palace visit was amazing!",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      },
+      {
+        id: 3,
+        name: "Lisa Thompson",
+        rating: 5,
+        date: "2024-02-10",
+        comment: "Otel konaklaması çok rahattı ve tüm yerler gerçekten erişilebilirdi. Teşekkürler Piba Wings!",
+        commentEn: "The hotel accommodation was very comfortable and all places were truly accessible. Thank you Piba Wings!",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      }
+    ]
   }
 ]
