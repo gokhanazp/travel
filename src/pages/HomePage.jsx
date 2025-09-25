@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -7,6 +7,174 @@ import { useLanguage } from '../contexts/LanguageContext'
 // import TestimonialsSection from '../components/TestimonialsSection' // Guest Comments temporarily disabled
 
 // import { toursData } from '../data/toursData' // Tours removed from homepage
+
+// Vehicle Slider Component
+const VehicleSlider = () => {
+  const { language } = useLanguage()
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Vehicle data with local images
+  const vehicles = [
+    {
+      id: 1,
+      image: '/pibawings-1.jpeg',
+      title: language === 'en' ? 'Accessible Transport Vehicle' : 'Erişilebilir Ulaşım Aracı',
+      model: 'Fiat Doblo XL',
+      features: [
+        language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir',
+        language === 'en' ? 'Lift System' : 'Lift Sistemi',
+        language === 'en' ? 'Air Conditioning' : 'Klima Sistemi'
+      ]
+    },
+    {
+      id: 2,
+      image: '/pibawings2.jpeg',
+      title: language === 'en' ? 'Comfort Transport Vehicle' : 'Konfor Ulaşım Aracı',
+      model: 'Mercedes Sprinter',
+      features: [
+        language === 'en' ? 'Spacious Interior' : 'Geniş İç Mekan',
+        language === 'en' ? 'Premium Comfort' : 'Premium Konfor',
+        language === 'en' ? 'Safety Systems' : 'Güvenlik Sistemleri'
+      ]
+    },
+    {
+      id: 3,
+      image: '/pibawings3.jpeg',
+      title: language === 'en' ? 'Special Needs Vehicle' : 'Özel İhtiyaç Aracı',
+      model: 'Ford Transit',
+      features: [
+        language === 'en' ? 'Medical Equipment Ready' : 'Tıbbi Ekipman Hazır',
+        language === 'en' ? 'Emergency Systems' : 'Acil Durum Sistemleri',
+        language === 'en' ? 'Professional Service' : 'Profesyonel Hizmet'
+      ]
+    }
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % vehicles.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + vehicles.length) % vehicles.length)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index)
+  }
+
+  // Auto-play slider
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="relative">
+      {/* Navigation Buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 flex items-center justify-center text-gray-700 hover:text-orange-600"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 flex items-center justify-center text-gray-700 hover:text-orange-600"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Slider Container */}
+      <div className="overflow-hidden rounded-3xl">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {vehicles.map((vehicle) => (
+            <div key={vehicle.id} className="w-full flex-shrink-0">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-gradient-to-r from-orange-50 to-red-50 p-8 rounded-3xl">
+                {/* Vehicle Image */}
+                <div className="relative">
+                  <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <img
+                      src={vehicle.image}
+                      alt={vehicle.title}
+                      className="w-full h-64 md:h-80 object-cover"
+                    />
+
+                    {/* Accessibility Badge */}
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {language === 'en' ? 'Accessible' : 'Erişilebilir'}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vehicle Info */}
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                      {vehicle.title}
+                    </h3>
+                    <p className="text-xl text-orange-600 font-semibold">
+                      {vehicle.model}
+                    </p>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-3">
+                    {vehicle.features.map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="pt-4">
+                    <Link
+                      to="/vehicles"
+                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                      {language === 'en' ? 'View All Vehicles' : 'Tüm Araçları Görüntüle'}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center mt-8 space-x-2">
+        {vehicles.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-orange-600 w-8'
+                : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const HomePage = () => {
   const { t, language } = useLanguage()
@@ -540,6 +708,40 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Vehicles Slider Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-orange-500/10 backdrop-blur-sm rounded-full border border-orange-500/20 mb-6">
+              <svg className="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+              <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Our Fleet' : 'Araç Filomuz'}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {language === 'en' ? (
+                <>Our <span className="text-orange-600">Vehicles</span></>
+              ) : (
+                <><span className="text-orange-600">Araçlarımız</span></>
+              )}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {language === 'en'
+                ? 'Specially equipped vehicles designed for comfort, safety and accessibility for all our guests.'
+                : 'Tüm misafirlerimiz için konfor, güvenlik ve erişilebilirlik düşünülerek tasarlanmış özel donanımlı araçlarımız.'
+              }
+            </p>
+          </div>
+
+          <VehicleSlider />
         </div>
       </section>
 
