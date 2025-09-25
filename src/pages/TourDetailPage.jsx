@@ -10,7 +10,7 @@ const TourDetailPage = () => {
   const { language } = useLanguage()
   const [tour, setTour] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
-  const [selectedImage, setSelectedImage] = useState(0)
+  const [selectedImage, setSelectedImage] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState(null)
@@ -239,9 +239,38 @@ const TourDetailPage = () => {
     const foundTour = toursData.find(t => t.slug === slug)
     setTour(foundTour)
     if (foundTour) {
-      setSelectedImage(0)
+      setSelectedImage(null) // Gallery modal kapalı olarak başlasın
     }
   }, [slug])
+
+  // Gallery modal için keyboard navigation ve body scroll lock
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedImage !== null && tour?.gallery) {
+        if (e.key === 'Escape') {
+          setSelectedImage(null)
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault()
+          setSelectedImage(selectedImage > 0 ? selectedImage - 1 : tour.gallery.length - 1)
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault()
+          setSelectedImage(selectedImage < tour.gallery.length - 1 ? selectedImage + 1 : 0)
+        }
+      }
+    }
+
+    if (selectedImage !== null) {
+      document.body.style.overflow = 'hidden'
+      document.addEventListener('keydown', handleKeyDown)
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage, tour?.gallery])
 
   if (!tour) {
     return (
@@ -979,22 +1008,44 @@ const TourDetailPage = () => {
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     {currentContent.gallery}
                   </h2>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {tour.gallery.map((image, index) => (
-                      <div
-                        key={index}
-                        className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
-                        onClick={() => setSelectedImage(index)}
-                      >
-                        <img
-                          src={image}
-                          alt={`${title} - ${index + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-                      </div>
-                    ))}
-                  </div>
+                  {tour.gallery && tour.gallery.length > 0 ? (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {tour.gallery.map((image, index) => (
+                        <div
+                          key={index}
+                          className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                          onClick={() => setSelectedImage(index)}
+                        >
+                          <img
+                            src={image}
+                            alt={`${title} - ${index + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            onError={(e) => {
+                              e.target.src = '/placeholder-image.jpg'
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-16">
+                      <div className="text-6xl mb-4">📷</div>
+                      <p className="text-gray-500 text-lg">
+                        {language === 'en'
+                          ? 'No photos available for this tour'
+                          : 'Bu tur için fotoğraf bulunmuyor'
+                        }
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -1212,6 +1263,75 @@ const TourDetailPage = () => {
       </div>
 
       <Footer />
+
+      {/* Gallery Lightbox Modal */}
+      {activeTab === 'gallery' && selectedImage !== null && tour.gallery && tour.gallery[selectedImage] && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors duration-200 z-10"
+              aria-label={language === 'en' ? 'Close' : 'Kapat'}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Navigation buttons */}
+            {tour.gallery.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setSelectedImage(selectedImage > 0 ? selectedImage - 1 : tour.gallery.length - 1)
+                  }}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
+                  aria-label={language === 'en' ? 'Previous image' : 'Önceki resim'}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setSelectedImage(selectedImage < tour.gallery.length - 1 ? selectedImage + 1 : 0)
+                  }}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
+                  aria-label={language === 'en' ? 'Next image' : 'Sonraki resim'}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            )}
+
+            {/* Image */}
+            <img
+              src={tour.gallery[selectedImage]}
+              alt={`${title} - ${selectedImage + 1}`}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+              onError={(e) => {
+                e.target.src = '/placeholder-image.jpg'
+              }}
+            />
+
+            {/* Image counter */}
+            {tour.gallery.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+                {selectedImage + 1} / {tour.gallery.length}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Accessibility Location Modal */}
       {selectedLocation && (
