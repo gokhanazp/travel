@@ -733,5 +733,213 @@ export const toursData = [
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
       }
     ]
+  },
+  {
+    id: 'PBWAI0019',
+    slug: "accessible-daily-istanbul",
+    title: "Erişilebilir Günlük İstanbul",
+    titleEn: "Accessible Daily Istanbul",
+    shortDescription: "9.00-17.00 saatleri arasında planlanmış kısa ve rahat bir tur. Kültür, tarih ve alışverişi birleştiren bir rota. Erişilebilirlik desteği.",
+    shortDescriptionEn: "A short and relaxed tour scheduled between 9.00 – 17.00 am. A route combining culture, history and shopping. Accessibility support.",
+    longDescription: "Sultanahmet Camii, Ayasofya, Topkapı Sarayı, Kapalıçarşı ve Hipodrom gibi önemli ve popüler turistik yerleri içeren tur, engelli ve yaşlı kişilerin kolayca gezebileceği şekilde organize edilmiştir. Tarihi yerlere rehber eşliğinde ve özel düzenlenmiş rotalarla erişim sağlanırken, engelli dostu hizmetlerle konforlu bir tur deneyimi sunulmaktadır.",
+    longDescriptionEn: "The tour includes important and popular touristic places such as Blue Mosque, Hagia Sophia, Topkapi Palace, Grand Bazaar and Hippodrome, and is organized in a way that disabled and elderly people can easily navigate. Access to historical places is provided with a guide and specially arranged routes, while a comfortable tour experience is offered with disabled-friendly services.",
+    accessibilityOverview: {
+      accommodation: {
+        tr: "Günlük tur - konaklama dahil değil",
+        en: "Daily tour - accommodation not included"
+      },
+      transportation: {
+        tr: "Özel rehber ve şoför ile erişilebilir araç",
+        en: "Private guide and driver with accessible vehicle"
+      },
+      accessibility: {
+        tr: "Tüm lokasyonlarda erişilebilirlik kontrolleri yapılmış, rampalar ve alternatif girişler planlanmış",
+        en: "Accessibility checks have been made at all locations, ramps and alternative entrances have been planned"
+      },
+      signLanguage: {
+        tr: "İşitme engelliler için işaret dili tercümanı desteği",
+        en: "Sign language interpreter support for the hearing impaired"
+      },
+      supportStaff: {
+        tr: "Tur boyunca profesyonel destek personeli",
+        en: "Professional support staff throughout the tour"
+      },
+      restBreaks: {
+        tr: "Erişilebilir dinlenme alanlarında molalar",
+        en: "Breaks in accessible rest areas"
+      }
+    },
+    features: [
+      "Erişilebilir dostu Profesyonel İngilizce rehberlik",
+      "Erişilebilir dostu restoranda öğle yemeği",
+      "Müze ve görülecek yerlere giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "Tur boyunca PİBA WINGS TRAVEL koordinasyon ve özenli müşteri hizmeti"
+    ],
+    featuresEn: [
+      "Accessible-friendly Professional English Speaking guiding",
+      "Lunch at accessible friendly restaurant",
+      "Admission fees to the museums and sights",
+      "Parking, portage, toll roads",
+      "Coordination and attentive customer service throughout the tour by PİBA WINGS TRAVEL"
+    ],
+    duration: "8 saat",
+    durationEn: "8 hours",
+    groupSize: "Özel tur",
+    groupSizeEn: "Private tour",
+    difficulty: "Kolay",
+    difficultyEn: "Easy",
+    price: "Fiyat için iletişime geçin",
+    priceEn: "Contact for pricing",
+    currency: "USD",
+    image: "/pibawings-1.jpeg",
+    gallery: [
+      "/pibawings-1.jpeg",
+      "/pibawings2.jpeg",
+      "/pibawings3.jpeg"
+    ],
+    category: "Erişilebilir Turlar",
+    categoryEn: "Accessible Tours",
+    location: "İstanbul",
+    locationEn: "Istanbul",
+    startingTime: "09:00",
+    tourDate: "Topkapı Sarayı Salı günleri kapalı, Kapalıçarşı Pazar günleri kapalı",
+    tourDateEn: "Topkapı Palace closed on Tuesdays, Grand Bazaar closed on Sundays",
+    suitableFor: [
+      "İşitme Engelliler",
+      "Tekerlekli Sandalye Kullanıcıları",
+      "Yaşlı İnsanlar"
+    ],
+    suitableForEn: [
+      "Hearing Impaired",
+      "Wheelchair users",
+      "Elderly people"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Günlük İstanbul Turu",
+        titleEn: "Daily Istanbul Tour",
+        description: "Özel rehberiniz sizi otelde karşılayacak. Sonra 17. yüzyılda Sultan Ahmet tarafından inşa edilen Sultanahmet Camii'ni ziyaret etmek için gideceğiz. Engelliler için tasarlanmış rampalar kullanarak caminin ana alanına gireceğiz.<br><br>Turumuza İstanbul'un muhteşem antik binası Ayasofya'yı ziyaret ederek devam edeceğiz. Bu bina yaklaşık 1000 yıl Bizans İmparatorluğu'nun büyük kilisesi ve yaklaşık 500 yıl Osmanlı İmparatorluğu'nun büyük camii olarak kullanıldı. Bu binada tekerlekli sandalye kullanıcıları için aldığımız izinle muhteşem ana alanı ziyaret edeceğiz.<br><br>Yerel erişilebilir restoranda öğle yemeği.<br><br>Öğle yemeğinden sonra turumuza Osmanlı İmparatorluğu'nun büyük sarayı Topkapı Sarayı'nı ziyaret ederek devam edeceğiz. Yaklaşık 400 yıl boyunca bu yer Osmanlı İmparatorluğu'nun idari merkezi ve padişahların haremlerle birlikte yaşadıkları yer olarak hizmet etti. Rehberimiz eşliğinde rampalar kullanarak bazı bölümleri keşfedeceğiz ve erişilebilir dinlenme alanlarında molalar vereceğiz.<br><br>Sarayı ziyaret ettikten sonra gidip Bizans döneminde Hipodrom olarak adlandırılan Konstantinopolis'in araba yarışı alanını göreceğiz. Orada Mısır Dikilitaşı, Yılan Sütunu ve Konstantin Sütunu'nu göreceğiz. Bu yer düz bir zemin ve rehberimiz bize bölgenin ve bu sütunların tarihini anlatacak.<br><br>Bundan sonra 15. yüzyıldan kalma en eski çarşılardan biri olan Kapalıçarşı'ya gideceğiz. Orada alışveriş yapabilir veya dünyanın en eski alışveriş merkezinin atmosferini hissedebilirsiniz. Burada Kapalıçarşı'yı tekerlekli sandalye dostu rotada, düz ana yolları seçerek geziyoruz.<br><br>Kapalıçarşı ziyaretinden sonra sizi otelinize bırakıyoruz.",
+        descriptionEn: "Your private guide will meet you at the hotel. Then we will go to visit the Blue Mosque which was built by Sultan Ahmet in 17th century. We will enter the main area of the mosque using ramps designed for disabled people.<br><br>We will continue our tour by visiting the magnificient ancient building of İstanbul, Hagia Sophia which was almost 1000 years used as a great church of Byzantine Empire and almost 500 years as a grand mosque of Ottoman Empire. İn this building we will visit the main magnificent area with a permission we received for the wheelchair users.<br><br>Lunch at a local accessible restaurant.<br><br>Following the lunch we will continue our tour by visiting the Topkapi Palace ,the grand palace of the Ottoman Empire. For nearly 400 years this place served as the administrative center of the Ottoman Empire and as the place where sultans lived with their harems. Accompanied by our guide we will explore some sections using ramps and also take breaks in accessible rest areas.<br><br>After visiting the palace we will go and see the chariot racing area of Constantinople which was called as Hippodrome in Byzantine period. There we will see Egyptian Obelisk, Serpent Column and Constantine Column.This place is a flat ground and our guide will explain us the history of the area and those columns.<br><br>After that we will go to the Grand Bazaar which is one of the oldest bazaars from 15th century. There you can enjoy shopping or just feel the atmosphere of the oldest shopping mall of the world. Here we will tour the Grand Bazaar on a wheelchair-friendly route, choosing flat main roads.<br><br>After Grand Bazaar visiting we drop you off at your hotel."
+      }
+    ],
+    inclusions: [
+      "Erişilebilir dostu Profesyonel İngilizce rehberlik",
+      "Erişilebilir dostu restoranda öğle yemeği",
+      "Müze ve görülecek yerlere giriş ücretleri",
+      "Park, hamaliye, geçiş ücretleri",
+      "Tur boyunca PİBA WINGS TRAVEL koordinasyon ve özenli müşteri hizmeti"
+    ],
+    inclusionsEn: [
+      "Accessible-friendly Professional English Speaking guiding",
+      "Lunch at accessible friendly restaurant",
+      "Admission fees to the museums and sights",
+      "Parking, portage, toll roads",
+      "Coordination and attentive customer service throughout the tour by PİBA WINGS TRAVEL"
+    ],
+    exclusions: [
+      "Konaklama",
+      "Kişisel harcamalar",
+      "Akşam yemekleri",
+      "Öğle yemeklerinde içecekler",
+      "Rehber ve şoför için bahşişler",
+      "Tekerlekli Sandalye Kiralama",
+      "İtineraryda listelenen opsiyonel programlar"
+    ],
+    exclusionsEn: [
+      "Accomodation",
+      "Personal expenses",
+      "Dinners",
+      "Beverages at lunches",
+      "Gratuities for the guide and driver",
+      "Wheelchair Rental",
+      "Optional programmes listed in the itinerary"
+    ],
+    additionalInfo: {
+      tr: "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz.",
+      en: "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
+    },
+    accessibility: [
+      {
+        location: "Sultanahmet Camii",
+        locationEn: "Blue Mosque",
+        wheelchairEn: "There is ramped entrance and large courtyard.",
+        wheelchairTr: "Rampalı giriş ve büyük avlu vardır.",
+        hearingEn: "Sign language guide / translator.",
+        hearingTr: "İşaret dili rehberi / tercümanı."
+      },
+      {
+        location: "Ayasofya",
+        locationEn: "Hagia Sophia",
+        wheelchairEn: "There are wide entrance doors and ramps.",
+        wheelchairTr: "Geniş giriş kapıları ve rampalar vardır.",
+        hearingEn: "Sign Language guide / translator.",
+        hearingTr: "İşaret dili rehberi / tercümanı."
+      },
+      {
+        location: "Topkapı Sarayı",
+        locationEn: "Topkapı Palace",
+        wheelchairEn: "Some sections are accessible via ramps. Gardens are suitable for relaxation.",
+        wheelchairTr: "Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.",
+        hearingEn: "Sign Language guide / translator.",
+        hearingTr: "İşaret dili rehberi / tercümanı."
+      },
+      {
+        location: "Hipodrom",
+        locationEn: "Hippodrome",
+        wheelchairEn: "Open area with flat ground. Seating benches available.",
+        wheelchairTr: "Düz zemin ile açık alan. Oturma bankları mevcuttur.",
+        hearingEn: "Visual experience with guide explanation.",
+        hearingTr: "Rehber açıklaması ile görsel deneyim."
+      },
+      {
+        location: "Kapalıçarşı",
+        locationEn: "Grand Bazaar",
+        wheelchairEn: "Straight main roads.",
+        wheelchairTr: "Düz ana yollar.",
+        hearingEn: "Sign language guide",
+        hearingTr: "İşaret dili rehberi",
+        visuallyImpairedEn: "Guided \"touch shopping\".",
+        visuallyImpairedTr: "Rehberli \"dokunarak alışveriş\"."
+      },
+      {
+        location: "Restoran",
+        locationEn: "Restaurant",
+        wheelchairEn: "Wheelchair-friendly table arrangment.",
+        wheelchairTr: "Tekerlekli sandalye dostu masa düzenlemesi.",
+        hearingEn: "Visual menu and sign language support.",
+        hearingTr: "Görsel menü ve işaret dili desteği."
+      }
+    ],
+    reviews: [
+      {
+        id: 1,
+        name: "Sarah Johnson",
+        rating: 5,
+        date: "2024-02-15",
+        comment: "Mükemmel bir günlük tur! Rehberimiz çok bilgiliydi ve tüm lokasyonlar erişilebilirdi. Kesinlikle tavsiye ederim!",
+        commentEn: "Perfect daily tour! Our guide was very knowledgeable and all locations were accessible. Definitely recommend!",
+        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      },
+      {
+        id: 2,
+        name: "Michael Chen",
+        rating: 5,
+        date: "2024-02-10",
+        comment: "Harika organize edilmiş tur. Erişilebilirlik konusunda gerçekten düşünülmüş. Teşekkürler Piba Wings!",
+        commentEn: "Wonderfully organized tour. Really thoughtful about accessibility. Thank you Piba Wings!",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      },
+      {
+        id: 3,
+        name: "Emma Wilson",
+        rating: 5,
+        date: "2024-01-28",
+        comment: "8 saatlik tur hiç yorucu değildi. Molalar ve erişilebilir restoran mükemmeldi!",
+        commentEn: "The 8-hour tour wasn't tiring at all. The breaks and accessible restaurant were perfect!",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      }
+    ]
   }
 ]
