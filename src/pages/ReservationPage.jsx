@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 import { toursData } from '../data/toursData'
+import { sendReservationEmail } from '../services/emailService'
 
 const ReservationPage = () => {
   const { t, language } = useLanguage()
@@ -18,6 +19,9 @@ const ReservationPage = () => {
     message: '',
     selectedServices: {} // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
   })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   // Seçilen tura göre optional services'i al
   const selectedTour = toursData.find(tour => tour.id === formData.tour)
@@ -181,28 +185,99 @@ const ReservationPage = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
 
-    // Seçilen servislerin detaylarını ekle
-    const selectedServiceDetails = Object.entries(formData.selectedServices)
-      .filter(([index, service]) => service.selected)
-      .map(([index, service]) => ({
-        ...availableServices[parseInt(index)],
-        quantity: service.quantity,
-        totalPrice: (parseFloat(availableServices[parseInt(index)].price) || 0) * service.quantity,
-        index: parseInt(index)
-      }))
+    try {
+      // Seçilen servislerin detaylarını ekle
+      const selectedServiceDetails = Object.entries(formData.selectedServices)
+        .filter(([index, service]) => service.selected)
+        .map(([index, service]) => ({
+          ...availableServices[parseInt(index)],
+          quantity: service.quantity,
+          totalPrice: (parseFloat(availableServices[parseInt(index)].price) || 0) * service.quantity,
+          index: parseInt(index)
+        }))
 
-    const submissionData = {
-      ...formData,
-      selectedServiceDetails,
-      servicesTotal: calculateServicesTotal(),
-      tourDetails: selectedTour
+      const submissionData = {
+        ...formData,
+        selectedServiceDetails,
+        servicesTotal: calculateServicesTotal(),
+        tourDetails: selectedTour
+      }
+
+      console.log('📋 Form submitted:', submissionData)
+
+      // EmailJS için veri formatını dönüştür
+      const emailData = {
+        // Ad soyadı ayır
+        firstName: formData.name.split(' ')[0] || '',
+        lastName: formData.name.split(' ').slice(1).join(' ') || '',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+
+        // Tur bilgileri
+        selectedTour: selectedTour?.title || formData.tour,
+        tourDate: formData.date,
+        participantCount: formData.participants,
+        participants: formData.participants,
+
+        // Mesaj ve özel istekler
+        message: formData.message,
+        specialRequests: formData.message,
+        assistanceNeeded: 'Rezervasyon formundan gönderildi',
+
+        // Tur detayları
+        tourInfo: {
+          name: selectedTour?.title || formData.tour,
+          date: formData.date,
+          participants: formData.participants,
+          services: selectedServiceDetails,
+          servicesTotal: calculateServicesTotal()
+        },
+
+        // Ek bilgiler
+        submittedAt: new Date().toISOString(),
+        emergencyContact: 'Belirtilmedi',
+        emergencyPhone: 'Belirtilmedi'
+      }
+
+      console.log('📧 EmailJS için hazırlanan veri:', emailData)
+
+      // EmailJS ile mail gönder
+      const result = await sendReservationEmail(emailData)
+
+      console.log('📧 Mail gönderim sonucu:', result)
+
+      if (result.success) {
+        setSubmitStatus('success')
+        console.log('✅ Rezervasyon maili başarıyla gönderildi!')
+
+        // Form'u temizle
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          tour: '',
+          date: '',
+          participants: 1,
+          message: '',
+          selectedServices: {}
+        })
+      } else {
+        setSubmitStatus('error')
+        console.error('❌ Mail gönderilemedi:', result.message)
+      }
+
+    } catch (error) {
+      console.error('❌ Form gönderme hatası:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
     }
-
-    console.log('Form submitted:', submissionData)
-    alert(currentContent.successMessage)
   }
 
   return (
@@ -505,13 +580,57 @@ const ReservationPage = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center mx-auto"
                 >
-                  {currentContent.submitButton}
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      {language === 'en' ? 'Sending...' : 'Gönderiliyor...'}
+                    </>
+                  ) : (
+                    currentContent.submitButton
+                  )}
                 </button>
                 <p className="text-sm text-gray-500 mt-4">
                   {currentContent.submitNote}
                 </p>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <div className="flex items-center">
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-semibold">
+                        {language === 'en'
+                          ? 'Reservation sent successfully! We will contact you soon.'
+                          : 'Rezervasyon başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.'
+                        }
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                    <div className="flex items-center">
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-semibold">
+                        {language === 'en'
+                          ? 'An error occurred while sending. Please try again.'
+                          : 'Gönderilirken bir hata oluştu. Lütfen tekrar deneyin.'
+                        }
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </form>
           </div>

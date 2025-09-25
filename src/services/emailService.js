@@ -55,34 +55,46 @@ export const sendReservationEmail = async (reservationData) => {
       }
     }
 
-    // Template için veri hazırla - Basit parametreler
+    // Template için veri hazırla - Esnek format
+    const customerName = reservationData.name || `${reservationData.firstName || ''} ${reservationData.lastName || ''}`.trim()
+    const tourName = reservationData.tourInfo?.name || reservationData.selectedTour || 'Belirtilmedi'
+    const tourDate = reservationData.tourDate || reservationData.date || 'Belirtilmedi'
+    const participantCount = reservationData.participantCount || reservationData.participants || 1
+
     const templateParams = {
       // Temel bilgiler (EmailJS default template için)
-      from_name: `${reservationData.firstName} ${reservationData.lastName}`,
+      from_name: customerName,
       from_email: reservationData.email,
       to_name: 'Piba Wings Travel',
       message: `
-Yeni Rezervasyon Talebi:
+🎯 YENİ REZERVASYON TALEBİ
 
-Müşteri: ${reservationData.firstName} ${reservationData.lastName}
-Email: ${reservationData.email}
-Telefon: ${reservationData.phone}
-Tur: ${reservationData.tourInfo?.name || reservationData.selectedTour}
-Tarih: ${reservationData.tourDate}
-Katılımcı: ${reservationData.participantCount}
-Özel İhtiyaçlar: ${reservationData.assistanceNeeded || 'Yok'}
-Mesaj: ${reservationData.specialRequests || 'Yok'}
+👤 Müşteri Bilgileri:
+• Ad Soyad: ${customerName}
+• E-posta: ${reservationData.email}
+• Telefon: ${reservationData.phone}
+
+🎪 Tur Bilgileri:
+• Tur: ${tourName}
+• Tarih: ${tourDate}
+• Katılımcı Sayısı: ${participantCount} kişi
+
+♿ Özel İhtiyaçlar:
+• Erişilebilirlik: ${reservationData.assistanceNeeded || 'Belirtilmedi'}
+• Özel İstekler: ${reservationData.specialRequests || reservationData.message || 'Yok'}
+
+📅 Gönderim: ${new Date().toLocaleDateString('tr-TR')} ${new Date().toLocaleTimeString('tr-TR')}
       `,
 
       // Detaylı bilgiler (özel template için)
-      customer_name: `${reservationData.firstName} ${reservationData.lastName}`,
+      customer_name: customerName,
       customer_email: reservationData.email,
       customer_phone: reservationData.phone,
-      tour_name: reservationData.tourInfo?.name || reservationData.selectedTour,
-      tour_date: reservationData.tourDate,
-      participants: reservationData.participantCount,
+      tour_name: tourName,
+      tour_date: tourDate,
+      participants: participantCount,
       accessibility_needs: reservationData.assistanceNeeded || 'Belirtilmedi',
-      special_requests: reservationData.specialRequests || 'Yok',
+      special_requests: reservationData.specialRequests || reservationData.message || 'Yok',
       emergency_contact: reservationData.emergencyContact || 'Belirtilmedi',
       emergency_phone: reservationData.emergencyPhone || 'Belirtilmedi',
       submission_date: new Date().toLocaleDateString('tr-TR'),
