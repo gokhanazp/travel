@@ -137,7 +137,7 @@ const ToursPage = () => {
                       {/* Left Side - Image */}
                       <div className="relative h-96 lg:h-full overflow-hidden">
                         <img
-                          src={tour.mainImage}
+                          src={tour.image}
                           alt={language === 'en' ? tour.titleEn : tour.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
@@ -154,10 +154,7 @@ const ToursPage = () => {
                         {/* Accessibility Badge */}
                         <div className="absolute top-4 right-4">
                           <span className="px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full shadow-lg">
-                            ♿ {language === 'en' ?
-                                (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
-                                (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
-                              }
+                            ♿ {language === 'en' ? 'Fully accessible' : 'Tam erişilebilir'}
                           </span>
                         </div>
 
@@ -256,8 +253,8 @@ const ToursPage = () => {
                           <div className="flex items-center justify-between">
                             <div>
                               <span className="text-sm text-gray-600 block">{currentContent.price}</span>
-                              <span className="text-4xl font-bold text-blue-600">
-                                €{tour.price}
+                              <span className="text-2xl font-bold text-blue-600">
+                                {language === 'en' ? tour.priceEn : tour.price}
                               </span>
                               <span className="text-sm text-gray-500 ml-2">{currentContent.perPerson}</span>
                             </div>
@@ -307,7 +304,7 @@ const ToursPage = () => {
                 {/* Tour Image */}
                 <div className="relative h-72 overflow-hidden">
                   <img
-                    src={tour.mainImage}
+                    src={tour.image}
                     alt={language === 'en' ? tour.titleEn : tour.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
@@ -323,14 +320,8 @@ const ToursPage = () => {
 
                   {/* Accessibility Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${getAccessibilityColor(language === 'en' ?
-                        (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
-                        (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
-                      )}`}>
-                      ♿ {language === 'en' ?
-                          (typeof tour.accessibilityEn === 'string' ? tour.accessibilityEn : 'Fully accessible') :
-                          (typeof tour.accessibility === 'string' ? tour.accessibility : 'Tam erişilebilir')
-                        }
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm ${getAccessibilityColor(language === 'en' ? 'Fully accessible' : 'Tam erişilebilir')}`}>
+                      ♿ {language === 'en' ? 'Fully accessible' : 'Tam erişilebilir'}
                     </span>
                   </div>
 
@@ -390,8 +381,8 @@ const ToursPage = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-xs text-gray-600 block">{currentContent.price}</span>
-                        <span className="text-2xl font-bold text-orange-600">
-                          €{tour.price}
+                        <span className="text-xl font-bold text-orange-600">
+                          {language === 'en' ? tour.priceEn : tour.price}
                         </span>
                         <span className="text-xs text-gray-500 ml-1">{currentContent.perPerson}</span>
                       </div>
@@ -408,14 +399,14 @@ const ToursPage = () => {
                   <div className="mb-6">
                     <h4 className="font-bold text-gray-900 mb-3 text-sm">{currentContent.highlights}:</h4>
                     <div className="space-y-2">
-                      {(language === 'en' ? tour.highlightsEn : tour.highlights).slice(0, 2).map((highlight, idx) => (
+                      {(language === 'en' ? tour.featuresEn : tour.features).slice(0, 2).map((feature, idx) => (
                         <div key={idx} className="flex items-start">
                           <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
                             <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
-                          <span className="text-gray-700 text-xs leading-relaxed">{highlight}</span>
+                          <span className="text-gray-700 text-xs leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
