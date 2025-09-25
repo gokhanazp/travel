@@ -377,8 +377,8 @@ const TourDetailPage = () => {
             </div>
           </div>
 
-          {/* Accessibility Icons */}
-          <div className="absolute top-6 left-6 flex gap-2">
+          {/* Accessibility Icons - Centered */}
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex gap-3">
             {/* Wheelchair Accessibility */}
             <div className="bg-blue-600 p-2 rounded-full shadow-lg flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
               <img
@@ -412,7 +412,7 @@ const TourDetailPage = () => {
             <div className="w-full p-8 md:p-12">
               <div className="max-w-5xl mx-auto">
                 {/* Tour Badges */}
-                <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
                   <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-sm font-semibold shadow-lg">
                     {duration}
                   </span>
@@ -422,35 +422,32 @@ const TourDetailPage = () => {
                     </div>
                     <span className="text-white text-sm font-medium">(4.9)</span>
                   </div>
-                  <span className="px-4 py-2 bg-green-500/90 text-white rounded-full text-sm font-semibold shadow-lg">
-                    {language === 'en' ? 'Fully Accessible' : 'Tam Erişilebilir'}
-                  </span>
                 </div>
 
                 {/* Main Title */}
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight text-center">
                   {title}
                 </h1>
 
                 {/* Description */}
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mb-8 font-light">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto mb-8 font-light text-center">
                   {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                 </p>
 
                 {/* Price and CTA */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                  <div className="text-white">
-                    <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-1">
+                <div className="flex flex-col items-center gap-6">
+                  <div className="text-white text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-orange-400 mb-1">
                       {language === 'en' ? 'Contact for Price' : tour.price} {language === 'en' ? '' : (tour.currencyEn || tour.currency)}
                     </div>
-                    <span className="text-lg opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
+                    <span className="text-base opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
                   </div>
 
-                  <div className="flex gap-4">
-                    <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold text-base hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                       {language === 'en' ? 'Book Now' : 'Hemen Rezervasyon'}
                     </button>
-                    <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/30">
+                    <button className="px-8 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-base hover:bg-white/20 transition-all duration-300 border border-white/30">
                       {language === 'en' ? 'Ask Question' : 'Soru Sor'}
                     </button>
                   </div>
