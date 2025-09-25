@@ -314,7 +314,7 @@ const TourDetailPage = () => {
       <div className="relative">
         <div className="relative h-96 overflow-hidden">
           <img
-            src={tour.mainImage}
+            src={tour.image}
             alt={title}
             className="w-full h-full object-cover"
           />
@@ -365,7 +365,7 @@ const TourDetailPage = () => {
                 <div className="flex items-center space-x-4">
                   <div className="text-white">
                     <span className="text-2xl md:text-3xl font-bold text-orange-400">
-                      {tour.price} {language === 'en' ? tour.currencyEn : tour.currency}
+                      {language === 'en' ? 'Contact for Price' : tour.price} {language === 'en' ? '' : (tour.currencyEn || tour.currency)}
                     </span>
                     <span className="text-sm ml-2 opacity-80">{language === 'en' ? 'per person' : 'kişi başı'}</span>
                   </div>
@@ -920,7 +920,7 @@ const TourDetailPage = () => {
                   <div className="text-center bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-6">
                     <span className="text-sm text-gray-600 block mb-2">Starting from</span>
                     <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                      {tour.price} {language === 'en' ? tour.currencyEn : tour.currency}
+                      {language === 'en' ? 'Contact for Price' : tour.price}
                     </div>
                     <p className="text-gray-600 font-medium">{language === 'en' ? 'per person' : 'kişi başı'}</p>
                     <div className="flex items-center justify-center mt-4 text-yellow-500">
