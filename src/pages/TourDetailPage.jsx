@@ -16,7 +16,70 @@ const TourDetailPage = () => {
   const [selectedLocation, setSelectedLocation] = useState(null)
 
   // Accessibility locations data
-  const accessibilityLocations = [
+  const accessibilityLocations = tour?.id === 'PBWAI0019' ? [
+    {
+      id: 'blue-mosque',
+      nameEn: 'Blue Mosque',
+      nameTr: 'Sultanahmet Camii',
+      image: 'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg',
+      wheelchairEn: 'There is ramped entrance and large courtyard.',
+      wheelchairTr: 'Rampalı giriş ve büyük avlu vardır.',
+      hearingEn: 'Sign language guide / translator.',
+      hearingTr: 'İşaret dili rehberi / tercümanı.'
+    },
+    {
+      id: 'hagia-sophia',
+      nameEn: 'Hagia Sophia',
+      nameTr: 'Ayasofya',
+      image: '/accessibility/hagia-sophia.jpg',
+      wheelchairEn: 'There are wide entrance doors and ramps.',
+      wheelchairTr: 'Geniş giriş kapıları ve rampalar vardır.',
+      hearingEn: 'Sign Language guide / translator.',
+      hearingTr: 'İşaret dili rehberi / tercümanı.'
+    },
+    {
+      id: 'topkapi-palace',
+      nameEn: 'Topkapı Palace',
+      nameTr: 'Topkapı Sarayı',
+      image: '/accessibility/topkapi-palace.jpg',
+      wheelchairEn: 'Some sections are accessible via ramps. Gardens are suitable for relaxation.',
+      wheelchairTr: 'Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.',
+      hearingEn: 'Sign Language guide / translator.',
+      hearingTr: 'İşaret dili rehberi / tercümanı.'
+    },
+    {
+      id: 'hippodrome',
+      nameEn: 'Hippodrome',
+      nameTr: 'Hipodrom',
+      image: '/accessibility/hippodrome.jpg',
+      wheelchairEn: 'Open area with flat ground. Seating benches available.',
+      wheelchairTr: 'Düz zemin ile açık alan. Oturma bankları mevcuttur.',
+      hearingEn: '',
+      hearingTr: ''
+    },
+    {
+      id: 'grand-bazaar',
+      nameEn: 'Grand Bazaar',
+      nameTr: 'Kapalıçarşı',
+      image: '/accessibility/grand-bazaar.jpg',
+      wheelchairEn: 'Straight main roads.',
+      wheelchairTr: 'Düz ana yollar.',
+      hearingEn: 'Sign language guide',
+      hearingTr: 'İşaret dili rehberi',
+      visuallyImpairedEn: 'Guided "touch shopping".',
+      visuallyImpairedTr: 'Rehberli "dokunarak alışveriş".'
+    },
+    {
+      id: 'restaurant',
+      nameEn: 'Restaurant',
+      nameTr: 'Restoran',
+      image: '/accessibility/restaurant.jpg',
+      wheelchairEn: 'Wheelchair-friendly table arrangement.',
+      wheelchairTr: 'Tekerlekli sandalye dostu masa düzenlemesi.',
+      hearingEn: '',
+      hearingTr: ''
+    }
+  ] : [
     {
       id: 'hippodrome',
       nameEn: 'Hippodrome',
