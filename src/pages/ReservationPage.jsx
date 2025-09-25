@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
+import { toursData } from '../data/toursData'
 
 const ReservationPage = () => {
   const { t, language } = useLanguage()
@@ -14,8 +15,13 @@ const ReservationPage = () => {
     tour: '',
     date: '',
     participants: 1,
-    message: ''
+    message: '',
+    selectedServices: [] // Seçilen optional services
   })
+
+  // Seçilen tura göre optional services'i al
+  const selectedTour = toursData.find(tour => tour.id === formData.tour)
+  const availableServices = selectedTour?.extraServices || []
 
   // URL parametrelerinden tur ID'sini al ve otomatik seç
   useEffect(() => {
@@ -25,6 +31,16 @@ const ReservationPage = () => {
       setFormData(prev => ({ ...prev, tour: tourId }))
     }
   }, [location.search])
+
+  // Optional service seçimi için handler
+  const handleServiceToggle = (serviceIndex) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedServices: prev.selectedServices.includes(serviceIndex)
+        ? prev.selectedServices.filter(index => index !== serviceIndex)
+        : [...prev.selectedServices, serviceIndex]
+    }))
+  }
 
   const content = {
     en: {
@@ -48,6 +64,10 @@ const ReservationPage = () => {
       contactTitle: 'Contact Us Immediately',
       contactSubtitle: 'You can contact us directly for urgent matters',
       successMessage: 'Your reservation request has been received! We will get back to you as soon as possible.',
+      optionalServicesTitle: 'Optional Services',
+      optionalServicesSubtitle: 'Enhance your tour experience with our additional services',
+      selectService: 'Select Service',
+      selectedServices: 'Selected Services',
       tours: [
         { id: 'PBWAI0021', name: 'Accessible Istanbul Tour (4N/5D)', price: '€450', code: 'PBWAI0021' },
         { id: 'PBWAI0020', name: 'Accessible Istanbul Tour (3N/4D)', price: '€350', code: 'PBWAI0020' },
@@ -75,6 +95,10 @@ const ReservationPage = () => {
       contactTitle: 'Hemen İletişime Geçin',
       contactSubtitle: 'Acil durumlar için doğrudan bizimle iletişime geçebilirsiniz',
       successMessage: 'Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.',
+      optionalServicesTitle: 'Opsiyonel Hizmetler',
+      optionalServicesSubtitle: 'Ek hizmetlerimizle tur deneyiminizi zenginleştirin',
+      selectService: 'Hizmeti Seç',
+      selectedServices: 'Seçilen Hizmetler',
       tours: [
         { id: 'PBWAI0021', name: 'Erişilebilir İstanbul Turu (4G/5G)', price: '€450', code: 'PBWAI0021' },
         { id: 'PBWAI0020', name: 'Erişilebilir İstanbul Turu (3G/4G)', price: '€350', code: 'PBWAI0020' },
@@ -95,7 +119,20 @@ const ReservationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+
+    // Seçilen servislerin detaylarını ekle
+    const selectedServiceDetails = formData.selectedServices.map(index => ({
+      ...availableServices[index],
+      index
+    }))
+
+    const submissionData = {
+      ...formData,
+      selectedServiceDetails,
+      tourDetails: selectedTour
+    }
+
+    console.log('Form submitted:', submissionData)
     alert(currentContent.successMessage)
   }
 
@@ -224,6 +261,95 @@ const ReservationPage = () => {
                   />
                 </div>
               </div>
+
+              {/* Optional Services */}
+              {availableServices.length > 0 && (
+                <div className="border-t pt-8">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {currentContent.optionalServicesTitle}
+                    </h3>
+                    <p className="text-gray-600">
+                      {currentContent.optionalServicesSubtitle}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {availableServices.map((service, index) => (
+                      <div
+                        key={index}
+                        className={`border rounded-lg p-4 transition-all duration-300 cursor-pointer ${
+                          formData.selectedServices.includes(index)
+                            ? 'border-orange-500 bg-orange-50'
+                            : 'border-gray-200 hover:border-orange-300'
+                        }`}
+                        onClick={() => handleServiceToggle(index)}
+                      >
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center mb-2">
+                              <input
+                                type="checkbox"
+                                checked={formData.selectedServices.includes(index)}
+                                onChange={() => handleServiceToggle(index)}
+                                className="mr-3 h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                              />
+                              <h4 className="font-semibold text-gray-900">
+                                {language === 'en' ? service.titleEn : service.title}
+                              </h4>
+                            </div>
+                            <p className="text-gray-600 text-sm mb-3">
+                              {language === 'en' ? service.descriptionEn : service.description}
+                            </p>
+
+                            {/* Service Features */}
+                            {service.features && service.features.length > 0 && (
+                              <div className="mb-3">
+                                <ul className="text-sm text-gray-600 space-y-1">
+                                  {(language === 'en' ? service.featuresEn : service.features)?.map((feature, featureIndex) => (
+                                    <li key={featureIndex} className="flex items-center">
+                                      <svg className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                      </svg>
+                                      {feature}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Price */}
+                          <div className="ml-4 text-right">
+                            <div className="font-bold text-lg text-gray-900">
+                              {service.price} {service.currency}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Selected Services Summary */}
+                  {formData.selectedServices.length > 0 && (
+                    <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        {currentContent.selectedServices}:
+                      </h4>
+                      <ul className="text-sm text-green-700 space-y-1">
+                        {formData.selectedServices.map(index => (
+                          <li key={index} className="flex items-center">
+                            <svg className="w-3 h-3 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {language === 'en' ? availableServices[index].titleEn : availableServices[index].title}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Additional Message */}
               <div>
