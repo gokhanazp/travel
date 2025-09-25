@@ -82,9 +82,6 @@ const MainHeader = () => {
             <Link to={language === 'tr' ? "/hakkimizda" : "/about"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('about')}
             </Link>
-            <Link to="/pinar-siverek" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
-              {t('pinarSiverek')}
-            </Link>
             <Link to={language === 'tr' ? "/iletisim" : "/contact"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('contact')}
             </Link>
@@ -216,13 +213,6 @@ const MainHeader = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('about')}
-              </Link>
-              <Link
-                to="/pinar-siverek"
-                className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('pinarSiverek')}
               </Link>
               <Link
                 to={language === 'tr' ? "/iletisim" : "/contact"}

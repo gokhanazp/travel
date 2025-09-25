@@ -711,6 +711,141 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Pınar Siverek Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 mb-6">
+              <svg className="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Founder & Visionary' : 'Kurucu & Vizyoner'}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {language === 'en' ? (
+                <>Who is <span className="text-blue-600">Pınar Siverek</span>?</>
+              ) : (
+                <><span className="text-blue-600">Pınar Siverek</span> Kim?</>
+              )}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {language === 'en'
+                ? 'Meet the visionary behind accessible tourism in Turkey - 24 years of experience, thousands of dreams fulfilled.'
+                : 'Türkiye\'de erişilebilir turizmin öncüsü ile tanışın - 24 yıllık deneyim, binlerce gerçekleşen hayal.'
+              }
+            </p>
+          </div>
+
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Photo */}
+            <div className="relative">
+              {/* Main Photo Container */}
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-6">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616c9c0e8e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    alt="Pınar Siverek"
+                    className="w-full h-96 object-cover rounded-2xl"
+                  />
+
+                  {/* Professional Badge */}
+                  <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-4 rounded-2xl shadow-lg">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">24</div>
+                      <div className="text-xs uppercase tracking-wider">
+                        {language === 'en' ? 'Years' : 'Yıl'}
+                      </div>
+                      <div className="text-xs opacity-90">
+                        {language === 'en' ? 'Experience' : 'Deneyim'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-6 -left-6 bg-white rounded-2xl shadow-lg p-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-gray-900">
+                      {language === 'en' ? 'Licensed' : 'Lisanslı'}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      {language === 'en' ? 'Tour Guide' : 'Turist Rehberi'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="space-y-8">
+              {/* Name and Title */}
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  Pınar SİVEREK
+                </h3>
+                <p className="text-xl text-blue-600 font-semibold mb-1">
+                  {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                </p>
+                <p className="text-lg text-gray-600">
+                  Piba Wings Travel Agency
+                </p>
+              </div>
+
+              {/* Description */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {language === 'en'
+                    ? 'For 24 years, I\'ve been a professional tour guide, accompanying thousands of travelers to their dreams. I\'ve seen that traveling isn\'t just a vacation; it\'s about freedom, happiness, and enjoying life. However, the challenges faced by people with disabilities and the elderly in traveling have always captured my attention.'
+                    : '24 yıldır profesyonel turist rehberi olarak binlerce gezgini hayallerine eşlik ettim. Seyahat etmenin sadece bir tatil olmadığını; özgürlük, mutluluk ve hayatın tadını çıkarma olduğunu gördüm. Ancak engelli ve yaşlı bireylerin seyahatte yaşadığı zorluklar hep dikkatimi çekti.'
+                  }
+                </p>
+              </div>
+
+              {/* Mission Statement */}
+              <div className="space-y-4">
+                <h4 className="text-xl font-bold text-gray-900">
+                  {language === 'en' ? 'Our Mission' : 'Misyonumuz'}
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  {language === 'en'
+                    ? 'As Piba Wings Travel, our vision is to be a pioneer in accessible tourism not only in Turkey but globally. Because we believe: "Every journey should be possible for everyone."'
+                    : 'Piba Wings Travel olarak vizyonumuz sadece Türkiye\'de değil, küresel olarak da erişilebilir turizmin öncüsü olmak. Çünkü inanıyoruz ki: "Her yolculuk herkes için mümkün olmalı."'
+                  }
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  to="/pinar-siverek"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  {language === 'en' ? 'Read Full Story' : 'Tam Hikayeyi Oku'}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Photo Gallery Section - Temporarily disabled */}
       {/* <PhotoGallery /> */}
 
