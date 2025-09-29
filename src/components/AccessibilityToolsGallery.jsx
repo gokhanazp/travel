@@ -739,7 +739,7 @@ const AccessibilityToolsGallery = () => {
                 setCurrentPhotoIndex(photo.id - 1)
               }}
             >
-              {/* Fotoğraf */}
+              {/* Fotoğraf - Tam kart */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={photo.image}
@@ -747,13 +747,8 @@ const AccessibilityToolsGallery = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-bold text-lg mb-2">{photo.title}</h3>
-                    <p className="text-white/90 text-sm line-clamp-2">{photo.description}</p>
-                  </div>
-                </div>
+                {/* Hover Overlay - Sadece zoom efekti */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Zoom Icon */}
                 <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -763,11 +758,7 @@ const AccessibilityToolsGallery = () => {
                 </div>
               </div>
 
-              {/* Fotoğraf Bilgisi */}
-              <div className="p-4">
-                <h3 className="font-bold text-gray-900 text-lg mb-2 line-clamp-1">{photo.title}</h3>
-                <p className="text-gray-600 text-sm line-clamp-2">{photo.description}</p>
-              </div>
+
             </div>
           ))}
           </div>
@@ -816,40 +807,17 @@ const AccessibilityToolsGallery = () => {
                 </svg>
               </button>
 
-              {/* Main Image */}
-              <div className="relative h-96 md:h-[500px]">
+              {/* Main Image - Tam ekran */}
+              <div className="relative h-[80vh] md:h-[85vh]">
                 <img
                   src={selectedPhoto.image}
-                  alt={selectedPhoto.title}
-                  className="w-full h-full object-cover"
+                  alt="Vehicle Photo"
+                  className="w-full h-full object-contain bg-gray-100"
                 />
-              </div>
 
-              {/* Photo Info */}
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-3xl font-bold text-gray-900">{selectedPhoto.title}</h3>
-                  <div className="text-sm text-gray-500">
-                    {currentPhotoIndex + 1} / {vehiclePhotos.length}
-                  </div>
-                </div>
-
-                <p className="text-lg text-gray-700 mb-6">{selectedPhoto.description}</p>
-
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-6 rounded-xl font-bold hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    <svg className="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a4 4 0 118 0v4m-4 8a2 2 0 100-4 2 2 0 000 4zm0 0v4a2 2 0 002 2h6a2 2 0 002-2v-4" />
-                    </svg>
-                    {language === 'en' ? 'Book This Vehicle' : 'Bu Aracı Rezerve Et'}
-                  </button>
-                  <button className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-xl font-bold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    <svg className="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    {language === 'en' ? 'Contact for Info' : 'Bilgi İçin İletişim'}
-                  </button>
+                {/* Fotoğraf sayacı - sağ alt köşe */}
+                <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                  {currentPhotoIndex + 1} / {vehiclePhotos.length}
                 </div>
               </div>
             </div>
