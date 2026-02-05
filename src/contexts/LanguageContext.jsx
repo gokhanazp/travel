@@ -18,6 +18,7 @@ const translations = {
     pinarSiverek: 'Pınar Siverek',
     tours: 'Tours',
     vehicles: 'Vehicles',
+    planYourTrip: 'Plan Your Trip',
     gallery: 'Gallery',
     accessibility: 'Accessibility',
     destinations: 'Destinations',
@@ -28,7 +29,7 @@ const translations = {
     // Hero Section
     accessibleTravel: 'Accessible Travel Experience',
     discoverWorld: 'Discover The World With Us',
-    heroSubtitle: 'Experience barrier-free travel with our specially designed accessible tours and destinations. Safe, comfortable, and unforgettable journeys for everyone.',
+    heroSubtitle: 'Specially designed accessible and small-group tours for comfortable, worry-free journeys.',
     heroSlogan: 'Free Your Soul',
     // Alternative slogans (for future use)
     sloganOptions: [
@@ -38,6 +39,7 @@ const translations = {
       'Accessible Holidays, Unique Memories'
     ],
     exploreTours: 'Explore Tours',
+    viewTours: 'View Tours',
     
     // Stats
     happyTravelers: 'Happy Travelers',
@@ -60,6 +62,8 @@ const translations = {
     viewAllTours: 'View All Tours',
     viewDetails: 'View Details',
     reserveTour: 'Reserve Tour',
+    mostPopular: 'Most Popular',
+    priceFrom: 'Price from',
 
     // Accessibility Features
     wheelchairRamps: 'Wheelchair Ramps',
@@ -91,14 +95,14 @@ const translations = {
     price: 'Price',
     rating: 'Rating',
     quickInfo: 'Quick Info',
-    contactUs: 'Contact Us',
-    questions: 'Have questions?',
-    contactTeam: 'Contact our expert team',
+    contactUs: 'Get In Touch',
+    questions: 'Let’s plan Your Trip Together',
+    contactTeam: 'Talk To Our Expert',
     
     // Why Choose Us
     whyChooseUs: 'Why Choose Us',
-    whyChooseUsTitle: 'Turkey\'s <span class="text-orange-500">First & Only</span><br/>Accessible Tours Agency',
-    whyChooseUsSubtitle: 'WE ARE HERE TO INCREASE YOUR TRAVEL FREEDOM! We offer safe and comfortable travel opportunities with our tours and equipment specially designed for disabled individuals.',
+    whyChooseUsTitle: 'Turkey\'s <span class="text-orange-500">First & Leading</span><br/>Accessible Travel Agency',
+    whyChooseUsSubtitle: 'We are here to enhance your travel freedom! We provide safe and comfortable travel experiences with our tours and equipment, specially designed for individuals with disabilities.',
     happyCustomers: 'Happy Guests',
     yearsExperience: 'Years Experience',
     customerScore: 'Recommendation Rate',
@@ -159,8 +163,12 @@ const translations = {
     tseCompliant: 'TSE Standard Compliant Modifications',
     disabilityFriendly: 'Disability-Friendly Special Solutions',
     fastReliableService: 'Fast, Reliable & Professional Service',
-    turkeyFirstCompany: 'Turkey\'s First Disability Vehicle Conversion Company',
+    turkeyFirstCompany: 'Turkey\'s First & Leading Accessible Travel Agency',
     comfortDescription: 'We increase your travel freedom! We offer specially designed accessible vehicle solutions for disabled individuals, providing safe and comfortable transportation.',
+
+    ourVehiclesTitle: 'Our <span class="text-orange-500">Vehicles</span>',
+    ourVehiclesSubtitle: 'We offer a fleet of modern, specially-equipped vehicles to ensure safe, comfortable, and accessible transportation for all our guests.',
+    viewAllVehicles: 'View All Vehicles',
 
     // About Us Section
     aboutUsHome: 'About Us',
@@ -176,6 +184,21 @@ const translations = {
     professionalTeam: 'Professional Team',
     learnMore: 'Learn More About Us',
 
+    // About Page
+    about_title: 'Travel Without Barriers',
+    about_subtitle: 'Turkey’s first and leading accessible travel agency',
+    about_desc_1: 'As Piba Wings Mobility, we are dedicated to breaking down barriers and making travel a reality for everyone. We specialize in creating custom tour experiences for individuals with disabilities, seniors, and those with limited mobility.',
+    about_desc_2: 'Our mission is to provide safe, comfortable, and enriching travel experiences. From fully accessible vehicles to meticulously planned itineraries and professional, caring guides, we handle every detail to ensure a worry-free journey.',
+    about_desc_3: 'We believe that the joy of discovery should be accessible to all. Join us to explore the rich history and vibrant culture of Turkey without limits.',
+    about_meet_founder: 'Meet Our Founder',
+    why_choose_us_1: '24 Years Experience',
+    why_choose_us_2: 'Licensed Guides',
+    why_choose_us_3: 'Fully Accessible Vehicles',
+    why_choose_us_4: 'Personalized Service',
+    why_choose_us_5: 'Multilingual Support',
+    why_choose_us_6: '1000+ Happy Guests',
+    about_cta: 'Ready to Explore İstanbul without barriers?',
+
     // Contact - using existing keys from above
   },
   tr: {
@@ -185,6 +208,7 @@ const translations = {
     pinarSiverek: 'Pınar Siverek',
     tours: 'Turlar',
     vehicles: 'Araçlarımız',
+    planYourTrip: 'Seyahatinizi Planlayın',
     gallery: 'Galeri',
     accessibility: 'Erişilebilirlik',
     destinations: 'Destinasyonlar',
@@ -195,7 +219,7 @@ const translations = {
     // Hero Section
     accessibleTravel: 'Erişilebilir Seyahat Deneyimi',
     discoverWorld: 'Dünyayı Bizimle Keşfedin',
-    heroSubtitle: 'Özel olarak tasarlanmış erişilebilir turlarımız ve destinasyonlarımızla engelsiz seyahat deneyimi yaşayın. Herkes için güvenli, konforlu ve unutulmaz yolculuklar.',
+    heroSubtitle: 'Konforlu ve endişesiz yolculuklar için özel olarak tasarlanmış erişilebilir ve küçük grup turları.',
     heroSlogan: 'Ruhunuzu Özgür Bırakın',
     // Alternative slogans (for future use)
     sloganOptions: [
@@ -205,6 +229,7 @@ const translations = {
       'Engelsiz Tatiller, Eşsiz Anılar'
     ],
     exploreTours: 'Turları Keşfet',
+    viewTours: 'Turları Görüntüle',
     
     // Stats
     happyTravelers: 'Mutlu Gezgin',
@@ -227,6 +252,8 @@ const translations = {
     viewAllTours: 'Tüm Turları Görüntüle',
     viewDetails: 'Detayları Gör',
     reserveTour: 'Tur Rezervasyonu',
+    mostPopular: 'En Popüler',
+    priceFrom: 'Fiyat',
 
     // Accessibility Features
     wheelchairRamps: 'Tekerlekli Sandalye Rampaları',
@@ -258,14 +285,14 @@ const translations = {
     price: 'Fiyat',
     rating: 'Puan',
     quickInfo: 'Hızlı Bilgi',
-    contactUs: 'İletişime Geçin',
-    questions: 'Sorularınız mı var?',
-    contactTeam: 'Uzman ekibimizle iletişime geçin',
+    contactUs: 'Bize Ulaşın',
+    questions: 'Gelin Seyahatinizi Birlikte Planlayalım',
+    contactTeam: 'Uzmanımızla Görüşün',
     
     // Why Choose Us
     whyChooseUs: 'Neden Bizi Seçmelisiniz',
-    whyChooseUsTitle: 'Türkiye\'nin <span class="text-orange-500">İlk ve Tek</span><br/>Engelli Turlar Acentası',
-    whyChooseUsSubtitle: 'SEYAHAT ÖZGÜRLÜĞÜNÜZÜ ARTIRMAK İÇİN BURADAYIZ! Engelli bireyler için özel olarak tasarlanmış turlarımız ve ekipmanlarımızla güvenli ve konforlu seyahat imkanı sunuyoruz.',
+    whyChooseUsTitle: 'Türkiye\'nin <span class="text-orange-500">İlk ve Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
+    whyChooseUsSubtitle: 'Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış turlarımız ve ekipmanlarımızla güvenli ve konforlu seyahat deneyimleri sunuyoruz.',
     happyCustomers: 'Mutlu Misafir',
     yearsExperience: 'Yıl Deneyim',
     customerScore: 'Tavsiye Oranı',
@@ -326,8 +353,12 @@ const translations = {
     tseCompliant: 'TSE standartlarına uygun modifikasyonlar',
     disabilityFriendly: 'Engelli bireylere özel yenilikçi çözümler',
     fastReliableService: 'Hızlı, güvenilir ve profesyonel hizmet',
-    turkeyFirstCompany: 'Türkiye\'nin öncü engelli araç dönüşüm firması',
+    turkeyFirstCompany: 'Türkiye\'nin İlk ve Önde Gelen Erişilebilir Seyahat Acentesi',
     comfortDescription: 'Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış araç çözümlerimizle güvenli ve konforlu bir yolculuk sunuyoruz.',
+
+    ourVehiclesTitle: 'Araç <span class="text-orange-500">Filomuz</span>',
+    ourVehiclesSubtitle: 'Tüm misafirlerimiz için güvenli, konforlu ve erişilebilir ulaşım sağlamak üzere tasarlanmış modern ve özel donanımlı araç filomuzla hizmetinizdeyiz.',
+    viewAllVehicles: 'Tüm Araçları Görüntüle',
 
     // About Us Section
     aboutUsHome: 'Hakkımızda',
@@ -342,6 +373,21 @@ const translations = {
     accessibleTours: '%100 Erişilebilir Turlar',
     professionalTeam: 'Profesyonel Ekip',
     learnMore: 'Hakkımızda Daha Fazla Bilgi',
+
+    // About Page
+    about_title: 'Engelsiz Seyahat',
+    about_subtitle: 'Türkiye’nin ilk ve lider erişilebilir seyahat acentesi',
+    about_desc_1: 'Piba Wings Mobility olarak, engelleri kaldırmaya ve seyahati herkes için bir gerçeğe dönüştürmeye adadık. Engelli bireyler, yaşlılar ve hareket kabiliyeti kısıtlı olanlar için özel tur deneyimleri yaratmada uzmanız.',
+    about_desc_2: 'Misyonumuz güvenli, konforlu ve zenginleştirici seyahat deneyimleri sunmaktır. Tam erişilebilir araçlardan titizlikle planlanmış güzergahlara ve profesyonel, ilgili rehberlere kadar, endişesiz bir yolculuk sağlamak için her ayrıntıyı biz hallediyoruz.',
+    about_desc_3: 'Keşfetmenin keyfinin herkese açık olması gerektiğine inanıyoruz. Türkiye\'nin zengin tarihini ve canlı kültürünü sınırsızca keşfetmek için bize katılın.',
+    about_meet_founder: 'Kurucumuzla Tanışın',
+    why_choose_us_1: '24 Yıllık Deneyim',
+    why_choose_us_2: 'Lisanslı Rehberler',
+    why_choose_us_3: 'Tam Erişilebilir Araçlar',
+    why_choose_us_4: 'Kişiselleştirilmiş Hizmet',
+    why_choose_us_5: 'Çok Dilli Destek',
+    why_choose_us_6: '1000+ Mutlu Misafir',
+    about_cta: 'İstanbul\'u engelsiz keşfetmeye hazır mısınız?',
 
     // Contact - using existing keys from above
   }

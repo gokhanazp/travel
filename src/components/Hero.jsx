@@ -1,4 +1,8 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="home"
@@ -31,16 +35,16 @@ const Hero = () => {
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
               <span className="block mb-2">
-                Engelliler İçin
+                {t('accessibleTravel')}
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piba-yellow via-piba-orange to-piba-yellow">
-                Özel Turlar
+                {t('discoverWorld')}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
-              Herkes için erişilebilir, güvenli ve unutulmaz İstanbul deneyimleri
+              {t('heroSubtitle')}
             </p>
 
             {/* CTA Buttons */}
@@ -49,7 +53,7 @@ const Hero = () => {
                 href="#tours"
                 className="group relative bg-gradient-to-r from-piba-orange to-piba-yellow hover:from-piba-yellow hover:to-piba-orange text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-piba-yellow/50 inline-flex items-center justify-center overflow-hidden"
               >
-                <span className="relative z-10 mr-3">Turlarımızı İnceleyin</span>
+                <span className="relative z-10 mr-3">{t('viewTours')}</span>
                 <svg className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
