@@ -200,6 +200,33 @@ const translations = {
     about_cta: 'Ready to Explore İstanbul without barriers?',
 
     // Contact - using existing keys from above
+
+    // Tours Page
+    toursPageTitle: '“Accessible & Private Tours” Planned With Care',
+    whatAllToursInclude: 'What All Tours Include',
+    featureHotels: 'Accessible Hotels',
+    featureVehicles: 'Wheelchair-accessible vehicles',
+    featureRestaurants: 'Accessible Restaurants',
+    featureGuides: 'Experienced licensed guides',
+    featurePacing: 'Flexible pacing & private groups',
+    featureAssistance: 'Assistance whenever needed',
+
+    // Footer
+    footerDescription: 'We offer specially designed tours and professional services for individuals with disabilities to experience safe, comfortable and unforgettable travel experiences.',
+    footerQuickLinks: 'Quick Links',
+    footerHome: 'Home',
+    footerOurTours: 'Our Tours',
+    footerAccessibility: 'Accessibility',
+    footerReservation: 'Reservation',
+    footerFollowUs: 'Follow Us',
+    footerSocialMedia: 'Follow our social media accounts for current tours and special offers.',
+    footerSpecialOffers: 'Special Offers',
+    footerNewsletter: 'Stay informed about our accessible tours',
+    footerYourEmail: 'Your email address',
+    footerCopyright: '© 2024 pibawingsmobility.com. All rights reserved.',
+    footerPrivacyPolicy: 'Privacy Policy',
+    footerTermsOfService: 'Terms of Service',
+    footerGDRP: 'GDPR',
   },
   tr: {
     // Header
@@ -390,6 +417,33 @@ const translations = {
     about_cta: 'İstanbul\'u engelsiz keşfetmeye hazır mısınız?',
 
     // Contact - using existing keys from above
+
+    // Tours Page
+    toursPageTitle: 'Özenle Planlanmış “Erişilebilir & Özel Turlar”',
+    whatAllToursInclude: 'Tüm Turlara Neler Dahil',
+    featureHotels: 'Erişilebilir Oteller',
+    featureVehicles: 'Tekerlekli sandalye erişimli araçlar',
+    featureRestaurants: 'Erişilebilir Restoranlar',
+    featureGuides: 'Deneyimli lisanslı rehberler',
+    featurePacing: 'Esnek tempo ve özel gruplar',
+    featureAssistance: 'İhtiyaç duyulduğunda yardım',
+
+    // Footer
+    footerDescription: 'Engelli bireylerin güvenli, konforlu ve unutulmaz seyahat deneyimleri yaşamaları için özel olarak tasarlanmış turlar ve profesyonel hizmetler sunuyoruz.',
+    footerQuickLinks: 'Hızlı Bağlantılar',
+    footerHome: 'Ana Sayfa',
+    footerOurTours: 'Turlarımız',
+    footerAccessibility: 'Erişilebilirlik',
+    footerReservation: 'Rezervasyon',
+    footerFollowUs: 'Bizi Takip Edin',
+    footerSocialMedia: 'Güncel turlar ve özel teklifler için sosyal medya hesaplarımızı takip edin.',
+    footerSpecialOffers: 'Özel Teklifler',
+    footerNewsletter: 'Erişilebilir turlarımızdan haberdar olun',
+    footerYourEmail: 'E-posta adresiniz',
+    footerCopyright: '© 2024 pibawingsmobility.com. Tüm hakları saklıdır.',
+    footerPrivacyPolicy: 'Gizlilik Politikası',
+    footerTermsOfService: 'Hizmet Şartları',
+    footerGDRP: 'KVKK',
   }
 }
 
@@ -442,7 +496,7 @@ export const LanguageProvider = ({ children }) => {
         window.removeEventListener('popstate', handlePopState)
       }
     }
-  }, [language])
+  }, []) // Removed `language` dependency to prevent overriding manual selection
 
   const changeLanguage = (lang) => {
     console.log('LanguageContext - changeLanguage called with:', lang)

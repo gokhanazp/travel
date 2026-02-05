@@ -9,12 +9,12 @@ const ToursPage = () => {
   const { t } = useLanguage();
 
   const includedFeatures = [
-    { text: 'Accessible Hotels' },
-    { text: 'Wheelchair-accessible vehicles' },
-    { text: 'Accessible Restaurants' },
-    { text: 'Experienced licensed guides' },
-    { text: 'Flexible pacing & private groups' },
-    { text: 'Assistance whenever needed' },
+    { text: t('featureHotels') },
+    { text: t('featureVehicles') },
+    { text: t('featureRestaurants') },
+    { text: t('featureGuides') },
+    { text: t('featurePacing') },
+    { text: t('featureAssistance') },
   ];
 
   return (
@@ -26,7 +26,7 @@ const ToursPage = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              “Accessible & Private Tours” Planned With Care
+              {t('toursPageTitle')}
             </h1>
           </div>
         </section>
@@ -35,7 +35,7 @@ const ToursPage = () => {
         <section className="py-16 bg-blue-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
-              What All Tours Include
+              {t('whatAllToursInclude')}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {includedFeatures.map((feature, index) => (

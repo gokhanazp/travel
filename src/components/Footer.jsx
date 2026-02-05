@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Footer = () => {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
   return (
     <footer className="bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900 text-white py-16">
       
@@ -24,8 +24,7 @@ const Footer = () => {
             </div>
 
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              We offer specially designed tours and professional services for individuals with disabilities
-              to experience safe, comfortable and unforgettable travel experiences.
+              {t('footerDescription')}
             </p>
 
             <div className="space-y-3">
@@ -62,42 +61,42 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+            <h4 className="text-xl font-bold mb-6">{t('footerQuickLinks')}</h4>
             <ul className="space-y-3">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
-                <span>Home</span>
+                <span>{t('footerHome')}</span>
               </Link></li>
               <li><Link to={language === 'tr' ? "/turlar" : "/tours"} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                <span>{language === 'tr' ? 'Turlarımız' : 'Our Tours'}</span>
+                <span>{t('footerOurTours')}</span>
               </Link></li>
               <li><a href="/#accessibility" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                <span>Accessibility</span>
+                <span>{t('footerAccessibility')}</span>
               </a></li>
               <li><Link to="/rezervasyon" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4h3a1 1 0 011 1v8a1 1 0 01-1 1h-3v3a1 1 0 01-1 1H9a1 1 0 01-1-1v-3H5a1 1 0 01-1-1V8a1 1 0 011-1h3z" />
                 </svg>
-                <span>Reservation</span>
+                <span>{t('footerReservation')}</span>
               </Link></li>
             </ul>
           </div>
 
           {/* Social Media and Contact */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Follow Us</h4>
+            <h4 className="text-xl font-bold mb-6">{t('footerFollowUs')}</h4>
 
             <div className="space-y-4 mb-6">
               <p className="text-gray-300 text-sm">
-                Follow our social media accounts for current tours and special offers.
+                {t('footerSocialMedia')}
               </p>
               
               {/* Sosyal Medya */}
@@ -132,14 +131,14 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-              <h5 className="font-semibold mb-3">Special Offers</h5>
+              <h5 className="font-semibold mb-3">{t('footerSpecialOffers')}</h5>
               <p className="text-sm text-gray-300 mb-3">
-                Stay informed about our accessible tours
+                {t('footerNewsletter')}
               </p>
               <div className="flex">
                 <input
                   type="email"
-                  placeholder="Your email address"
+                  placeholder={t('footerYourEmail')}
                   className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-l-lg text-white placeholder-gray-300 focus:outline-none focus:border-blue-400"
                 />
                 <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition-colors duration-300">
@@ -156,18 +155,18 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-300 text-sm">
-              © 2024 pibawingsmobility.com. All rights reserved.
+              {t('footerCopyright')}
             </div>
 
             <div className="flex items-center space-x-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Privacy Policy
+                {t('footerPrivacyPolicy')}
               </a>
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Terms of Service
+                {t('footerTermsOfService')}
               </a>
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                GDPR
+                {t('footerGDRP')}
               </a>
             </div>
             

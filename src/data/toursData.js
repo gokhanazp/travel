@@ -12,6 +12,13 @@ export const toursData = [
     priceEn: "Request a Quote",
     image: "/tur-fotolari/6a459363-0be7-4450-8ecf-84ebf41c1b21.jpeg",
     isPopular: false,
+    gallery: [
+      "/tur-fotolari/6a459363-0be7-4450-8ecf-84ebf41c1b21.jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42 (1).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42 (2).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42.jpeg",
+      "/tur-fotolari/bfe85794-a30b-418c-b981-6638be9edc4e.jpeg"
+    ],
   },
   {
     id: 'PBWAI0020',
@@ -26,6 +33,13 @@ export const toursData = [
     priceEn: "Request a Quote",
     image: "/tur-fotolari/9ac7af68-9ab3-438e-8209-26fe87a0df52.jpeg",
     isPopular: false,
+    gallery: [
+      "/tur-fotolari/9ac7af68-9ab3-438e-8209-26fe87a0df52.jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (1).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (2).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (3).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.44 (1).jpeg"
+    ],
   },
   {
     id: 'PBWAI0021',
@@ -40,6 +54,13 @@ export const toursData = [
     priceEn: "Request a Quote",
     image: "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
     isPopular: true,
+    gallery: [
+        "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
+        "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (4).jpeg",
+        "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (5).jpeg",
+        "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (6).jpeg",
+        "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.44.jpeg"
+    ],
   },
   {
     id: 'plan-your-tour',
@@ -54,5 +75,11 @@ export const toursData = [
     priceEn: "",
     image: "/tur-fotolari/ba245809-a9f0-4080-80e4-f53646218055.jpeg",
     isCustom: true,
+    gallery: [
+      "/tur-fotolari/ba245809-a9f0-4080-80e4-f53646218055.jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (7).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (8).jpeg",
+      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43.jpeg"
+    ],
   },
 ];
