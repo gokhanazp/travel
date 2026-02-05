@@ -14,7 +14,7 @@ import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
 
 function App() {
-  const [isUnderConstruction, setIsUnderConstruction] = useState(true)
+  const [isUnderConstruction, setIsUnderConstruction] = useState(false)
 
   useEffect(() => {
     // Preview mode kontrolü
