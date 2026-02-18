@@ -113,6 +113,54 @@ export const toursData = [
         duration: "30"
       }
     ],
+    accessibilityInfo: [
+      {
+        location: "Sultanahmet Camii",
+        locationEn: "Blue Mosque",
+        wheelchair: "Rampadan giriş ve geniş avlu mevcuttur.",
+        wheelchairEn: "There is ramped entrance and large courtyard.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Ayasofya",
+        locationEn: "Hagia Sophia",
+        wheelchair: "Geniş giriş kapıları ve rampalar mevcuttur.",
+        wheelchairEn: "There are wide entrance doors and ramps.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Topkapı Sarayı",
+        locationEn: "Topkapi Palace",
+        wheelchair: "Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.",
+        wheelchairEn: "Some sections are accessible via ramps. Gardens are suitable for relaxation.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Hipodrom",
+        locationEn: "Hippodrome",
+        wheelchair: "Düz zemine sahip açık alan. Oturma bankları mevcuttur.",
+        wheelchairEn: "Open area with flat ground. Seating benches available."
+      },
+      {
+        location: "Kapalıçarşı",
+        locationEn: "Grand Bazaar",
+        wheelchair: "Düz ana yollar.",
+        wheelchairEn: "Straight main roads.",
+        hearingImpaired: "İşaret dili rehberi.",
+        hearingImpairedEn: "Sign language guide.",
+        visuallyImpaired: "Rehberli 'dokunarak alışveriş'.",
+        visuallyImpairedEn: "Guided 'touch shopping'."
+      },
+      {
+        location: "Restoran",
+        locationEn: "Restaurant",
+        wheelchair: "Tekerlekli sandalye dostu masa düzeni.",
+        wheelchairEn: "Wheelchair-friendly table arrangement."
+      }
+    ],
     extraServices: [
       {
         title: "Yürüteç, Scooter veya Tekerlekli Sandalye Kiralama",

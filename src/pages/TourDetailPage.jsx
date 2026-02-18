@@ -15,102 +15,26 @@ const TourDetailPage = () => {
   const [selectedLocation, setSelectedLocation] = useState(null)
 
   // Accessibility locations data
-  const accessibilityLocations = (tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') ? [
-    {
-      id: 'blue-mosque',
-      nameEn: 'Blue Mosque',
-      nameTr: 'Sultanahmet Camii',
-      image: 'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg',
-      wheelchairEn: 'There is ramped entrance and large courtyard.',
-      wheelchairTr: 'Rampalı giriş ve büyük avlu vardır.',
-      hearingEn: 'Sign language guide / translator.',
-      hearingTr: 'İşaret dili rehberi / tercümanı.'
-    },
-    {
-      id: 'hagia-sophia',
-      nameEn: 'Hagia Sophia',
-      nameTr: 'Ayasofya',
-      image: '/accessibility/hagia-sophia.jpg',
-      wheelchairEn: 'There are wide entrance doors and ramps.',
-      wheelchairTr: 'Geniş giriş kapıları ve rampalar vardır.',
-      hearingEn: 'Sign Language guide / translator.',
-      hearingTr: 'İşaret dili rehberi / tercümanı.'
-    },
-    {
-      id: 'topkapi-palace',
-      nameEn: 'Topkapı Palace',
-      nameTr: 'Topkapı Sarayı',
-      image: 'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg',
-      wheelchairEn: 'Some sections are accessible via ramps. Gardens are suitable for relaxation.',
-      wheelchairTr: 'Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.',
-      hearingEn: 'Sign Language guide / translator.',
-      hearingTr: 'İşaret dili rehberi / tercümanı.'
-    },
-    {
-      id: 'hippodrome',
-      nameEn: 'Hippodrome',
-      nameTr: 'Hipodrom',
-      image: 'https://www.istanbul.com/img/hippodrome_l.jpg',
-      wheelchairEn: 'Open area with flat ground. Seating benches available.',
-      wheelchairTr: 'Düz zemin ile açık alan. Oturma bankları mevcuttur.',
-      hearingEn: '',
-      hearingTr: ''
-    },
-    {
-      id: 'grand-bazaar',
-      nameEn: 'Grand Bazaar',
-      nameTr: 'Kapalıçarşı',
-      image: '/accessibility/grand-bazaar.jpg',
-      wheelchairEn: 'Straight main roads.',
-      wheelchairTr: 'Düz ana yollar.',
-      hearingEn: 'Sign language guide',
-      hearingTr: 'İşaret dili rehberi',
-      visuallyImpairedEn: 'Guided "touch shopping".',
-      visuallyImpairedTr: 'Rehberli "dokunarak alışveriş".'
-    },
-    {
-      id: 'underground-cistern',
-      nameEn: 'Underground Cistern',
-      nameTr: 'Yerebatan Sarnıcı',
-      image: 'https://istanbultourstudio.s3.amazonaws.com/uploads/media_content/picture/1200/medium_Underground_Cistern_3.jpg',
-      wheelchairEn: 'There is lift and ramped entrance.',
-      wheelchairTr: 'Asansör ve rampalı giriş vardır.',
-      hearingEn: 'Sign language guide / translator',
-      hearingTr: 'İşaret dili rehberi / tercümanı'
-    },
-    {
-      id: 'spice-market',
-      nameEn: 'Spice Market',
-      nameTr: 'Mısır Çarşısı',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dfUIgZDddRr_Uk3QZRBjHe79XL3b-mR2nQ&s',
-      wheelchairEn: 'Wheelchair-accessible main roads.',
-      wheelchairTr: 'Tekerlekli sandalye erişilebilir ana yollar.',
-      hearingEn: '',
-      hearingTr: '',
-      visuallyImpairedEn: 'Introducing spices by smell.',
-      visuallyImpairedTr: 'Baharatları koku ile tanıtma.'
-    },
-    {
-      id: 'bosphorus-cruise',
-      nameEn: 'Bosphorus Cruise',
-      nameTr: 'Boğaz Turu',
-      image: 'https://sealandtrip.com/wp-content/uploads/2023/05/Istanbul-Bosphorus-Tour-1.jpg',
-      wheelchairEn: 'Accessible boat',
-      wheelchairTr: 'Erişilebilir tekne',
-      hearingEn: 'Sign language support',
-      hearingTr: 'İşaret dili desteği'
-    },
-    {
-      id: 'restaurant',
-      nameEn: 'Restaurant',
-      nameTr: 'Restoran',
-      image: 'https://istanbul.intercontinental.com/resources/images/Dosya-1724332145756.png',
-      wheelchairEn: 'Wheelchair-friendly table arrangement.',
-      wheelchairTr: 'Tekerlekli sandalye dostu masa düzenlemesi.',
-      hearingEn: '',
-      hearingTr: ''
-    }
-  ] : [
+  // PBWAI0019 için accessibilityInfo varsa onu kullan, yoksa default locations
+  const accessibilityLocations = tour?.id === 'PBWAI0019' && tour?.accessibilityInfo ? 
+    tour.accessibilityInfo.map((info, index) => ({
+      id: info.locationEn.toLowerCase().replace(/\s+/g, '-'),
+      nameEn: info.locationEn,
+      nameTr: info.location,
+      image: index === 0 ? 'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg' 
+           : index === 1 ? 'https://cdn-imgix.headout.com/media/images/db8d8e671a6ca9af5cffcc208f8a7846-11984-Istanbul-HistorianGuidedTourofHagiaSophia-10.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&ar=7%3A4&crop=faces&fit=crop'
+           : index === 2 ? 'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg'
+           : index === 3 ? 'https://www.istanbul.com/img/hippodrome_l.jpg'
+           : index === 4 ? 'https://istanbulapartmentsforsale.com/wp-content/uploads/2020/04/grand-bazaar2.jpg'
+           : 'https://istanbul.intercontinental.com/resources/images/Dosya-1724332145756.png',
+      wheelchairEn: info.wheelchairEn,
+      wheelchairTr: info.wheelchair,
+      hearingEn: info.hearingImpairedEn || '',
+      hearingTr: info.hearingImpaired || '',
+      visuallyImpairedEn: info.visuallyImpairedEn || '',
+      visuallyImpairedTr: info.visuallyImpaired || ''
+    }))
+  : (tour?.id === 'PBWAI0020') ? [
     {
       id: 'hippodrome',
       nameEn: 'Hippodrome',
@@ -225,7 +149,7 @@ const TourDetailPage = () => {
       hearingEn: 'Shopping, markets and cafes are visually based. Sign language translator.',
       hearingTr: 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'
     }
-  ]
+  ] : []
 
   useEffect(() => {
     const foundTour = toursData.find(t => t.slug === slug)
