@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
+import pinarSiverekImg from '../assets/pinar-siverek.jpeg'
 
 const PinarSiverekPage = () => {
   const { language } = useLanguage()
@@ -104,7 +105,7 @@ Piba Wings Travel Acentesi`
               <div className="relative">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white/50 backdrop-blur-sm">
                   <img
-                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    src={pinarSiverekImg}
                     alt="Pınar Siverek - Founder & CEO"
                     className="w-full h-full object-cover"
                   />

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import { toursData } from '../data/toursData';
-import pinarSiverekImg from '../assets/pinar-siverek.jpeg';
+import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg';
 
 
 
@@ -204,9 +204,10 @@ const TourSlider = () => {
                     {/* Tour Info */}
                     <div className="p-8 lg:p-12 space-y-6">
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                          {language === 'en' ? tour.titleEn : tour.title}
-                        </h3>
+                        <h3
+                          className="text-2xl md:text-3xl font-bold text-gray-900 mb-3"
+                          dangerouslySetInnerHTML={{ __html: language === 'en' ? tour.titleEn : tour.title }}
+                        />
                         <p className="text-gray-600 leading-relaxed mb-6">
                           {language === 'en' ? tour.shortDescriptionEn : tour.shortDescription}
                         </p>

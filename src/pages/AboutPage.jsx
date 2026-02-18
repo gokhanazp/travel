@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
-import pinarSiverekImg from '../assets/pinar-siverek.jpeg'; // Placeholder, will be replaced
+import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg';
 
 const AboutPage = () => {
   const { t, language } = useLanguage();
