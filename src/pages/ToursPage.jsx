@@ -23,11 +23,33 @@ const ToursPage = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {t('toursPageTitle')}
-            </h1>
+            <div className="inline-block">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                "Accessible & Private Tours"
+              </h1>
+              <div className="flex items-center justify-center gap-3 mt-4">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-orange-500"></div>
+                <p className="text-2xl md:text-3xl font-semibold text-orange-500 italic">
+                  Planned With Care
+                </p>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-orange-500"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Tours Grid */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {toursData
+                .filter(tour => !tour.isCustom)
+                .map((tour, index) => (
+                  <TourCard key={tour.id} tour={tour} index={index} />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -47,19 +69,6 @@ const ToursPage = () => {
                   </div>
                   <span className="text-gray-700 font-medium">{feature.text}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Tours Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {toursData
-                .filter(tour => !tour.isCustom)
-                .map((tour, index) => (
-                  <TourCard key={tour.id} tour={tour} index={index} />
               ))}
             </div>
           </div>

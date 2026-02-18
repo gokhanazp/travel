@@ -39,10 +39,11 @@ const TourCard = ({ tour, index = 0 }) => {
         )}
 
         {/* Title */}
-        <div className="absolute bottom-0 left-0 p-4">
-          <h3 className="text-xl font-bold text-white leading-tight">
-            {title}
-          </h3>
+        <div className="absolute bottom-0 left-0 p-4 w-full">
+          <h3
+            className="text-base md:text-lg font-bold text-white leading-snug line-clamp-2"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
         </div>
       </div>
 

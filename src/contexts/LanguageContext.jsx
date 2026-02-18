@@ -24,7 +24,7 @@ const translations = {
     destinations: 'Destinations',
     contact: 'Contact',
     phone: 'Phone',
-    bookNow: 'Book Now',
+    bookNow: 'Confirm Reservation',
     
     // Hero Section
     accessibleTravel: 'Accessible Travel Experience',
