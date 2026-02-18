@@ -12,7 +12,6 @@ const TourDetailPage = () => {
   const [activeTab, setActiveTab] = useState('itinerary')
   const [selectedImage, setSelectedImage] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showQuestionForm, setShowQuestionForm] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState(null)
 
   // Accessibility locations data
@@ -227,13 +226,6 @@ const TourDetailPage = () => {
       hearingTr: 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'
     }
   ]
-
-  const [questionForm, setQuestionForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    question: ''
-  })
 
   useEffect(() => {
     const foundTour = toursData.find(t => t.slug === slug)
@@ -529,12 +521,12 @@ const TourDetailPage = () => {
 
           {/* Quick Action Buttons */}
           <div className="flex gap-2 mt-4">
-            <button
-              onClick={() => setShowQuestionForm(true)}
-              className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150"
+            <Link
+              to="/reservation"
+              className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150 flex items-center justify-center"
             >
               {language === 'en' ? 'Confirm Reservation' : 'Rezervasyonu Onayla'}
-            </button>
+            </Link>
             <button
               className="px-4 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all duration-150"
               title={language === 'en' ? 'Add to Favorites' : 'Favorilere Ekle'}
@@ -1493,18 +1485,20 @@ const TourDetailPage = () => {
                       </div>
                     </Link>
 
-                    {/* Ask a Question Button */}
-                    <button
-                      onClick={() => setShowQuestionForm(!showQuestionForm)}
-                      className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white py-4 px-6 rounded-2xl font-semibold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group"
+                    {/* WhatsApp Contact Button */}
+                    <a
+                      href="https://wa.me/905325433673"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-4 px-6 rounded-2xl font-semibold text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group block"
                     >
                       <div className="flex items-center justify-center space-x-3">
-                        <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        <span>{language === 'en' ? 'Ask a Question' : 'Soru Sor'}</span>
+                        <span>{language === 'en' ? 'WhatsApp Contact' : 'WhatsApp İletişim'}</span>
                       </div>
-                    </button>
+                    </a>
 
                     <Link
                       to={language === 'tr' ? "/turlar" : "/tours"}
@@ -1520,93 +1514,6 @@ const TourDetailPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Question Form */}
-              {showQuestionForm && (
-                <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                    {language === 'en' ? 'Ask a Question' : 'Soru Sor'}
-                  </h3>
-                  <form className="space-y-4" onSubmit={(e) => {
-                    e.preventDefault();
-                    // Form submission logic here
-                    alert(language === 'en' ? 'Question submitted successfully!' : 'Sorunuz başarıyla gönderildi!');
-                    setQuestionForm({ name: '', email: '', phone: '', question: '' });
-                    setShowQuestionForm(false);
-                  }}>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {language === 'en' ? 'Full Name' : 'Ad Soyad'} *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={questionForm.name}
-                        onChange={(e) => setQuestionForm({...questionForm, name: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
-                        placeholder={language === 'en' ? 'Enter your full name' : 'Adınızı ve soyadınızı girin'}
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {language === 'en' ? 'Email Address' : 'E-posta Adresi'} *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={questionForm.email}
-                        onChange={(e) => setQuestionForm({...questionForm, email: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
-                        placeholder={language === 'en' ? 'Enter your email address' : 'E-posta adresinizi girin'}
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {language === 'en' ? 'Phone Number' : 'Telefon Numarası'}
-                      </label>
-                      <input
-                        type="tel"
-                        value={questionForm.phone}
-                        onChange={(e) => setQuestionForm({...questionForm, phone: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
-                        placeholder={language === 'en' ? 'Enter your phone number' : 'Telefon numaranızı girin'}
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {language === 'en' ? 'Your Question' : 'Sorunuz'} *
-                      </label>
-                      <textarea
-                        required
-                        rows={4}
-                        value={questionForm.question}
-                        onChange={(e) => setQuestionForm({...questionForm, question: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 resize-none"
-                        placeholder={language === 'en' ? 'Please write your question about this tour...' : 'Bu tur hakkındaki sorunuzu yazın...'}
-                      />
-                    </div>
-
-                    <div className="flex space-x-3">
-                      <button
-                        type="submit"
-                        className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
-                      >
-                        {language === 'en' ? 'Send Question' : 'Soruyu Gönder'}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setShowQuestionForm(false)}
-                        className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-6 rounded-xl font-semibold transition-all duration-300"
-                      >
-                        {language === 'en' ? 'Cancel' : 'İptal'}
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              )}
             </div>
           </div>
         </div>
