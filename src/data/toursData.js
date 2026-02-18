@@ -60,16 +60,16 @@ export const toursData = [
         time: "09:00",
         title: "Otel Karşılama ve Sultanahmet Camii",
         titleEn: "Hotel Pick-up and Blue Mosque",
-        description: "Özel rehberiniz sizi otelde karşılayacak. Ardından 17. yüzyılda Sultan Ahmet tarafından inşa edilen Sultanahmet Camii'ni ziyaret etmek için yola çıkacağız. Engelli bireyler için tasarlanmış rampalar kullanarak caminin ana alanına gireceğiz. Ünlü mavi İznik çinileri ve kademeli kubbeler altında Osmanlı mimarisini, sembolizmini ve dini geleneklerini keşfedeceğiz. Tempo, tekerlekli sandalye kullanıcılarının rahatlığına göre ayarlanacaktır.",
-        descriptionEn: "Your private guide will meet you at the hotel. Then we will depart to visit the Blue Mosque which was built by Sultan Ahmet in 17th century. We will enter the main area of the mosque using ramps designed for disabled people. Inside, beneath the famous blue İznik tiles and cascading domes, we explore Ottoman architecture, symbolism and religious traditions. Pacing will be adjusted according to the comfort of wheelchair users.",
+        description: "Özel rehberiniz sizi otelde karşılayacak. Ardından 17. yüzyılda Sultan Ahmet tarafından inşa edilen <strong>Sultanahmet Camii</strong>'ni ziyaret etmek için yola çıkacağız.<br/><br/>Engelli bireyler için tasarlanmış rampalar kullanarak caminin ana alanına gireceğiz. Ünlü mavi İznik çinileri ve kademeli kubbeler altında Osmanlı mimarisini, sembolizmini ve dini geleneklerini keşfedeceğiz. Tempo, tekerlekli sandalye kullanıcılarının rahatlığına göre ayarlanacaktır.",
+        descriptionEn: "Your private guide will meet you at the hotel. Then we will depart to visit the <strong>Blue Mosque</strong> which was built by Sultan Ahmet in 17th century.<br/><br/>We will enter the main area of the mosque using ramps designed for disabled people. Inside, beneath the famous blue İznik tiles and cascading domes, we explore Ottoman architecture, symbolism and religious traditions. Pacing will be adjusted according to the comfort of wheelchair users.",
         duration: "60"
       },
       {
         time: "10:00",
         title: "Ayasofya",
         titleEn: "Hagia Sophia",
-        description: "İstanbul'un muhteşem antik yapısı Ayasofya'yı ziyaret ederek turumuza devam edeceğiz. Bu yapı yaklaşık 1000 yıl Bizans İmparatorluğu'nun büyük kilisesi ve yaklaşık 500 yıl Osmanlı İmparatorluğu'nun büyük camisi olarak kullanılmıştır. Giriş planlaması bekleme süresini en aza indirecek şekilde düzenlenmiştir. Rehberimiz tarafından misafirlerimiz net konumlandırma yapılacak, böylece her misafir mimari önemli noktaları rahatça deneyimleyebilecektir.",
-        descriptionEn: "We will continue our tour by visiting the magnificent ancient building of İstanbul, Hagia Sophia which was almost 1000 years used as a great church of Byzantine Empire and almost 500 years as a grand mosque of Ottoman Empire. Entry planning is arranged to minimize waiting time. Our guests will have clear positioning by our guide so every guest can comfortably experience the architectural highlights.",
+        description: "İstanbul'un muhteşem antik yapısı <strong>Ayasofya</strong>'yı ziyaret ederek turumuza devam edeceğiz. Bu yapı yaklaşık 1000 yıl Bizans İmparatorluğu'nun büyük kilisesi ve yaklaşık 500 yıl Osmanlı İmparatorluğu'nun büyük camisi olarak kullanılmıştır.<br/><br/>Giriş planlaması bekleme süresini en aza indirecek şekilde düzenlenmiştir. Rehberimiz tarafından misafirlerimiz net konumlandırma yapılacak, böylece her misafir mimari önemli noktaları rahatça deneyimleyebilecektir.",
+        descriptionEn: "We will continue our tour by visiting the magnificent ancient building of İstanbul, <strong>Hagia Sophia</strong> which was almost 1000 years used as a great church of Byzantine Empire and almost 500 years as a grand mosque of Ottoman Empire.<br/><br/>Entry planning is arranged to minimize waiting time. Our guests will have clear positioning by our guide so every guest can comfortably experience the architectural highlights.",
         duration: "60"
       },
       {
@@ -84,32 +84,32 @@ export const toursData = [
         time: "13:00",
         title: "Topkapı Sarayı",
         titleEn: "Topkapi Palace",
-        description: "Öğle yemeğinin ardından Osmanlı İmparatorluğu'nun büyük sarayı Topkapı Sarayı'nı ziyaret ederek turumuza devam edeceğiz. Yaklaşık 400 yıl boyunca bu yer Osmanlı İmparatorluğu'nun idari merkezi ve sultanların haremlerle birlikte yaşadıkları yer olarak hizmet vermiştir. Rehberimiz eşliğinde bazı bölümleri rampalar kullanarak keşfedeceğiz ve erişilebilir dinlenme alanlarında molalar vereceğiz. Ziyaretimiz esnek bir ritimde olacak ve tur boyunca konfor sağlanacaktır.",
-        descriptionEn: "Following the lunch we will continue our tour by visiting the Topkapi Palace, the grand palace of the Ottoman Empire. For nearly 400 years this place served as the administrative center of the Ottoman Empire and as the place where sultans lived with their harems. Accompanied by our guide we will explore some sections using ramps and also take breaks in accessible rest areas. Our visit will be at a flexible rhythm, ensuring comfort throughout.",
+        description: "Öğle yemeğinin ardından Osmanlı İmparatorluğu'nun büyük sarayı <strong>Topkapı Sarayı</strong>'nı ziyaret ederek turumuza devam edeceğiz. Yaklaşık 400 yıl boyunca bu yer Osmanlı İmparatorluğu'nun idari merkezi ve sultanların haremlerle birlikte yaşadıkları yer olarak hizmet vermiştir.<br/><br/>Rehberimiz eşliğinde bazı bölümleri rampalar kullanarak keşfedeceğiz ve erişilebilir dinlenme alanlarında molalar vereceğiz. Ziyaretimiz esnek bir ritimde olacak ve tur boyunca konfor sağlanacaktır.",
+        descriptionEn: "Following the lunch we will continue our tour by visiting the <strong>Topkapi Palace</strong>, the grand palace of the Ottoman Empire. For nearly 400 years this place served as the administrative center of the Ottoman Empire and as the place where sultans lived with their harems.<br/><br/>Accompanied by our guide we will explore some sections using ramps and also take breaks in accessible rest areas. Our visit will be at a flexible rhythm, ensuring comfort throughout.",
         duration: "90"
       },
       {
         time: "14:30",
         title: "Hipodrom",
         titleEn: "Hippodrome",
-        description: "Sarayı ziyaret ettikten sonra Bizans döneminde Hipodrom olarak adlandırılan Konstantinopolis'in araba yarışı alanını görmek için yola çıkacağız. Orada Mısır Dikilitaşı, Yılanlı Sütun ve Alman Çeşmesi'ni göreceğiz. Bu yer düz bir zemine sahiptir ve rehberimiz bize bölgenin ve bu sütunların tarihini anlatacaktır.",
-        descriptionEn: "After visiting the palace we will head to see the chariot racing area of Constantinople which was called as Hippodrome in Byzantine period. There we will see Egyptian Obelisk, Serpent Column and German Fountain. This place is a flat ground and our guide will explain us the history of the area and those columns.",
+        description: "Sarayı ziyaret ettikten sonra Bizans döneminde <strong>Hipodrom</strong> olarak adlandırılan Konstantinopolis'in araba yarışı alanını görmek için yola çıkacağız. Orada <strong>Mısır Dikilitaşı</strong>, <strong>Yılanlı Sütun</strong> ve <strong>Alman Çeşmesi</strong>'ni göreceğiz.<br/><br/>Bu yer düz bir zemine sahiptir ve rehberimiz bize bölgenin ve bu sütunların tarihini anlatacaktır.",
+        descriptionEn: "After visiting the palace we will head to see the chariot racing area of Constantinople which was called as <strong>Hippodrome</strong> in Byzantine period. There we will see <strong>Egyptian Obelisk</strong>, <strong>Serpent Column</strong> and <strong>German Fountain</strong>.<br/><br/>This place is a flat ground and our guide will explain us the history of the area and those columns.",
         duration: "30"
       },
       {
         time: "15:00",
         title: "Kapalıçarşı",
         titleEn: "Grand Bazaar",
-        description: "Son durağımız 15. yüzyıldan kalma en eski çarşılardan biri olan efsanevi Kapalıçarşı. Daha uygun kapılardan birinden girerek alışveriş yapabilir veya dünyanın en eski alışveriş merkezinin atmosferini hissedebilirsiniz. Burada Kapalıçarşı'yı tekerlekli sandalye dostu bir rotada, düz ana yolları seçerek geziyoruz.",
-        descriptionEn: "Our final stop is the legendary Grand Bazaar which is one of the oldest bazaars from 15th century, entering through one of more convenient gates. There you can enjoy shopping or just feel the atmosphere of the oldest shopping mall of the world. Here we will tour the Grand Bazaar on a wheelchair-friendly route, choosing flat main roads.",
+        description: "Son durağımız 15. yüzyıldan kalma en eski çarşılardan biri olan efsanevi <strong>Kapalıçarşı</strong>. Daha uygun kapılardan birinden girerek alışveriş yapabilir veya dünyanın en eski alışveriş merkezinin atmosferini hissedebilirsiniz.<br/><br/>Burada Kapalıçarşı'yı tekerlekli sandalye dostu bir rotada, düz ana yolları seçerek geziyoruz.",
+        descriptionEn: "Our final stop is the legendary <strong>Grand Bazaar</strong> which is one of the oldest bazaars from 15th century, entering through one of more convenient gates. There you can enjoy shopping or just feel the atmosphere of the oldest shopping mall of the world.<br/><br/>Here we will tour the Grand Bazaar on a wheelchair-friendly route, choosing flat main roads.",
         duration: "60"
       },
       {
         time: "17:00",
         title: "Otel Dönüşü",
         titleEn: "Hotel Drop-off",
-        description: "Kapalıçarşı'dan sonra sizi otelinize rahatça bırakıyoruz. Turun sonu. Sizi başka bir engelsiz Piba Wings yolculuğu için tekrar ağırlamayı umuyoruz.",
-        descriptionEn: "After Grand Bazaar we comfortably drop you off at your hotel. End of the tour. We hope to welcome you again for another barrier-free Piba Wings journey.",
+        description: "Kapalıçarşı'dan sonra sizi otelinize rahatça bırakıyoruz.<br/><br/>Turun sonu. Sizi başka bir engelsiz Piba Wings yolculuğu için tekrar ağırlamayı umuyoruz.",
+        descriptionEn: "After Grand Bazaar we comfortably drop you off at your hotel.<br/><br/>End of the tour. We hope to welcome you again for another barrier-free Piba Wings journey.",
         duration: "30"
       }
     ],
