@@ -64,7 +64,11 @@ const VehicleSlider = () => {
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[320px]">
             {currentVehicles.map((vehicle) => (
-              <div key={vehicle.id} className="group bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 animate-fade-in">
+              <Link
+                key={vehicle.id}
+                to="/vehicles"
+                className="group bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 animate-fade-in cursor-pointer"
+              >
                 <div className="h-64 bg-gray-100 p-4">
                   <img
                     src={vehicle.image}
@@ -75,7 +79,7 @@ const VehicleSlider = () => {
                 <div className="p-5 text-center">
                   <h3 className="text-lg font-bold text-gray-800">{vehicle.name}</h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           
