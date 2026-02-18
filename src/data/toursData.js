@@ -274,6 +274,78 @@ export const toursData = [
         duration: "Yarım gün"
       }
     ],
+    accessibilityInfo: [
+      {
+        location: "Sultanahmet Camii",
+        locationEn: "Blue Mosque",
+        wheelchair: "Rampadan giriş ve geniş avlu mevcuttur.",
+        wheelchairEn: "There is ramped entrance and large courtyard.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Ayasofya",
+        locationEn: "Hagia Sophia",
+        wheelchair: "Geniş giriş kapıları ve rampalar mevcuttur.",
+        wheelchairEn: "There are wide entrance doors and ramps.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Topkapı Sarayı",
+        locationEn: "Topkapi Palace",
+        wheelchair: "Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.",
+        wheelchairEn: "Some sections are accessible via ramps. Gardens are suitable for relaxation.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Hipodrom",
+        locationEn: "Hippodrome",
+        wheelchair: "Düz zemine sahip açık alan. Oturma bankları mevcuttur.",
+        wheelchairEn: "Open area with flat ground. Seating benches available."
+      },
+      {
+        location: "Kapalıçarşı",
+        locationEn: "Grand Bazaar",
+        wheelchair: "Düz ana yollar.",
+        wheelchairEn: "There are straight main roads.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator.",
+        visuallyImpaired: "Rehberli 'dokunarak alışveriş'.",
+        visuallyImpairedEn: "Guided 'touch shopping'."
+      },
+      {
+        location: "Yerebatan Sarnıcı",
+        locationEn: "Underground Cistern",
+        wheelchair: "Asansör ve rampadan giriş mevcuttur.",
+        wheelchairEn: "There is lift and ramped entrance.",
+        hearingImpaired: "İşaret dili rehberi / tercüman.",
+        hearingImpairedEn: "Sign language guide / translator."
+      },
+      {
+        location: "Mısır Çarşısı",
+        locationEn: "Spice Market",
+        wheelchair: "Tekerlekli sandalye erişilebilir ana yollar.",
+        wheelchairEn: "Wheelchair-accessible main roads.",
+        visuallyImpaired: "Baharatları koku ile tanıtma.",
+        visuallyImpairedEn: "Introducing spices by smell."
+      },
+      {
+        location: "Boğaz Turu",
+        locationEn: "Bosphorus Cruise",
+        wheelchair: "Erişilebilir tekne.",
+        wheelchairEn: "Accessible boat.",
+        hearingImpaired: "İşaret dili desteği.",
+        hearingImpairedEn: "Sign language support."
+      },
+      {
+        location: "Restoran",
+        locationEn: "Restaurant",
+        wheelchair: "Tekerlekli sandalye dostu masa düzeni.",
+        wheelchairEn: "Wheelchair-friendly table arrangement."
+      }
+    ],
     extraServices: [
       {
         title: "Yürüteç, Scooter veya Tekerlekli Sandalye Kiralama",

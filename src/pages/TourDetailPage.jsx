@@ -15,26 +15,48 @@ const TourDetailPage = () => {
   const [selectedLocation, setSelectedLocation] = useState(null)
 
   // Accessibility locations data
-  // PBWAI0019 için accessibilityInfo varsa onu kullan, yoksa default locations
-  const accessibilityLocations = tour?.id === 'PBWAI0019' && tour?.accessibilityInfo ? 
-    tour.accessibilityInfo.map((info, index) => ({
-      id: info.locationEn.toLowerCase().replace(/\s+/g, '-'),
-      nameEn: info.locationEn,
-      nameTr: info.location,
-      image: index === 0 ? 'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg' 
-           : index === 1 ? 'https://cdn-imgix.headout.com/media/images/db8d8e671a6ca9af5cffcc208f8a7846-11984-Istanbul-HistorianGuidedTourofHagiaSophia-10.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&ar=7%3A4&crop=faces&fit=crop'
-           : index === 2 ? 'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg'
-           : index === 3 ? 'https://www.istanbul.com/img/hippodrome_l.jpg'
-           : index === 4 ? 'https://istanbulapartmentsforsale.com/wp-content/uploads/2020/04/grand-bazaar2.jpg'
-           : 'https://istanbul.intercontinental.com/resources/images/Dosya-1724332145756.png',
-      wheelchairEn: info.wheelchairEn,
-      wheelchairTr: info.wheelchair,
-      hearingEn: info.hearingImpairedEn || '',
-      hearingTr: info.hearingImpaired || '',
-      visuallyImpairedEn: info.visuallyImpairedEn || '',
-      visuallyImpairedTr: info.visuallyImpaired || ''
-    }))
-  : (tour?.id === 'PBWAI0020') ? [
+  // PBWAI0019 ve PBWAI0020 için accessibilityInfo varsa onu kullan
+  const accessibilityLocations = (tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') && tour?.accessibilityInfo ?
+    tour.accessibilityInfo.map((info, index) => {
+      // PBWAI0019 için görseller (6 lokasyon)
+      const pbwai0019Images = [
+        'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg',
+        'https://cdn-imgix.headout.com/media/images/db8d8e671a6ca9af5cffcc208f8a7846-11984-Istanbul-HistorianGuidedTourofHagiaSophia-10.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&ar=7%3A4&crop=faces&fit=crop',
+        'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg',
+        'https://www.istanbul.com/img/hippodrome_l.jpg',
+        'https://istanbulapartmentsforsale.com/wp-content/uploads/2020/04/grand-bazaar2.jpg',
+        'https://istanbul.intercontinental.com/resources/images/Dosya-1724332145756.png'
+      ];
+      
+      // PBWAI0020 için görseller (9 lokasyon)
+      const pbwai0020Images = [
+        'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg',
+        'https://cdn-imgix.headout.com/media/images/db8d8e671a6ca9af5cffcc208f8a7846-11984-Istanbul-HistorianGuidedTourofHagiaSophia-10.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&ar=7%3A4&crop=faces&fit=crop',
+        'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg',
+        'https://www.istanbul.com/img/hippodrome_l.jpg',
+        'https://istanbulapartmentsforsale.com/wp-content/uploads/2020/04/grand-bazaar2.jpg',
+        'https://istanbultourstudio.s3.amazonaws.com/uploads/media_content/picture/1200/medium_Underground_Cistern_3.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dfUIgZDddRr_Uk3QZRBjHe79XL3b-mR2nQ&s',
+        'https://sealandtrip.com/wp-content/uploads/2023/05/Istanbul-Bosphorus-Tour-1.jpg',
+        'https://istanbul.intercontinental.com/resources/images/Dosya-1724332145756.png'
+      ];
+      
+      const images = tour.id === 'PBWAI0019' ? pbwai0019Images : pbwai0020Images;
+      
+      return {
+        id: info.locationEn.toLowerCase().replace(/\s+/g, '-'),
+        nameEn: info.locationEn,
+        nameTr: info.location,
+        image: images[index] || images[images.length - 1],
+        wheelchairEn: info.wheelchairEn,
+        wheelchairTr: info.wheelchair,
+        hearingEn: info.hearingImpairedEn || '',
+        hearingTr: info.hearingImpaired || '',
+        visuallyImpairedEn: info.visuallyImpairedEn || '',
+        visuallyImpairedTr: info.visuallyImpaired || ''
+      };
+    })
+  : (tour?.id === 'PBWAI0021' || tour?.id === 'PBWAI0022') ? [
     {
       id: 'hippodrome',
       nameEn: 'Hippodrome',
