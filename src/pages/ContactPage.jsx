@@ -19,7 +19,7 @@ const ContactPage = () => {
 
   const content = {
     en: {
-      title: 'Contact Us',
+      title: 'Getting touch with us',
       subtitle: 'Get in touch with our expert team for your accessible travel needs',
       contactInfo: 'Contact Information',
       office: 'Our Office',

@@ -12,6 +12,7 @@ import TourDetailPage from './pages/TourDetailPage'
 import ToursPage from './pages/ToursPage'
 import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 
 function App() {
   const [isUnderConstruction, setIsUnderConstruction] = useState(false)
@@ -55,6 +56,8 @@ function App() {
               <Route path="/tours/:slug" element={<TourDetailPage />} />
               <Route path="/tur/:slug" element={<TourDetailPage />} />
               <Route path="/turlar/:slug" element={<TourDetailPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/gizlilik-politikasi" element={<PrivacyPolicyPage />} />
             </Routes>
           </div>
         )}

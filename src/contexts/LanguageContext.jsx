@@ -95,12 +95,12 @@ const translations = {
     price: 'Price',
     rating: 'Rating',
     quickInfo: 'Quick Info',
-    contactUs: 'Get In Touch',
+    contactUs: 'Getting touch with us',
     questions: 'Let’s plan Your Trip Together',
     contactTeam: 'Talk To Our Expert',
     
     // Why Choose Us
-    whyChooseUs: 'Why Choose Us',
+    whyChooseUs: 'Why Piba Wings',
     whyChooseUsTitle: 'Turkey\'s <span class="text-orange-500">First & Leading</span><br/>Accessible Travel Agency',
     whyChooseUsSubtitle: 'We are here to enhance your travel freedom! We provide safe and comfortable travel experiences with our tours and equipment, specially designed for individuals with disabilities.',
     happyCustomers: 'Happy Guests',
@@ -190,7 +190,7 @@ const translations = {
     about_desc_1: 'As Piba Wings Mobility, we are dedicated to breaking down barriers and making travel a reality for everyone. We specialize in creating custom tour experiences for individuals with disabilities, seniors, and those with limited mobility.',
     about_desc_2: 'Our mission is to provide safe, comfortable, and enriching travel experiences. From fully accessible vehicles to meticulously planned itineraries and professional, caring guides, we handle every detail to ensure a worry-free journey.',
     about_desc_3: 'We believe that the joy of discovery should be accessible to all. Join us to explore the rich history and vibrant culture of Turkey without limits.',
-    about_meet_founder: 'Meet Our Founder',
+    about_meet_founder: 'Our Founder',
     why_choose_us_1: '24 Years Experience',
     why_choose_us_2: 'Licensed Guides',
     why_choose_us_3: 'Fully Accessible Vehicles',
