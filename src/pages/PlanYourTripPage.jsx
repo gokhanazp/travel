@@ -143,8 +143,9 @@ const PlanYourTripPage = () => {
       tourPlaceholder: 'Choose a tour',
       dateLabel: 'Estimated Travel Date',
       airportTransferLabel: 'Airport Transfer Needed?',
-      yes: 'Yes',
-      no: 'No',
+      no: 'No Transfer Needed',
+      ist: 'Istanbul Airport (IST)',
+      saw: 'Sabiha Gökçen Airport (SAW)',
       messageLabel: 'Your Interests & Requirements',
       messagePlaceholder: 'Tell us about the places you want to see, your accessibility needs, and any other special requests...',
       submitButton: 'Start My Trip Planning',
@@ -175,8 +176,9 @@ const PlanYourTripPage = () => {
       tourPlaceholder: 'Tur seçiniz',
       dateLabel: 'Tahmini Seyahat Tarihi',
       airportTransferLabel: 'Havaalanı Transferi Gerekiyor mu?',
-      yes: 'Evet',
-      no: 'Hayır',
+      no: 'Transfer İstemiyorum',
+      ist: 'İstanbul Havalimanı (IST)',
+      saw: 'Sabiha Gökçen Havalimanı (SAW)',
       messageLabel: 'İlgi Alanlarınız ve Gereksinimleriniz',
       messagePlaceholder: 'Görmek istediğiniz yerler, erişilebilirlik ihtiyaçlarınız ve diğer özel isteklerinizden bahsedin...',
       submitButton: 'Seyahat Planlamamı Başlat',
@@ -408,33 +410,20 @@ const PlanYourTripPage = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="airportTransfer" className="block text-sm font-medium text-gray-700 mb-2">
                     {currentContent.airportTransferLabel}
                   </label>
-                  <div className="flex space-x-4 h-[50px] items-center">
-                    <label className="inline-flex items-center">
-                      <input
-                        type="radio"
-                        name="airportTransfer"
-                        value="Yes"
-                        checked={formData.airportTransfer === 'Yes'}
-                        onChange={handleInputChange}
-                        className="text-orange-500 focus:ring-orange-500"
-                      />
-                      <span className="ml-2">{currentContent.yes}</span>
-                    </label>
-                    <label className="inline-flex items-center">
-                      <input
-                        type="radio"
-                        name="airportTransfer"
-                        value="No"
-                        checked={formData.airportTransfer === 'No'}
-                        onChange={handleInputChange}
-                        className="text-orange-500 focus:ring-orange-500"
-                      />
-                      <span className="ml-2">{currentContent.no}</span>
-                    </label>
-                  </div>
+                  <select
+                    id="airportTransfer"
+                    name="airportTransfer"
+                    value={formData.airportTransfer}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
+                  >
+                    <option value="No">{currentContent.no}</option>
+                    <option value="Istanbul Airport (IST)">{currentContent.ist}</option>
+                    <option value="Sabiha Gökçen Airport (SAW)">{currentContent.saw}</option>
+                  </select>
                 </div>
               </div>
 
