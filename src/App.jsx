@@ -12,7 +12,10 @@ import TourDetailPage from './pages/TourDetailPage'
 import ToursPage from './pages/ToursPage'
 import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
+import PlanYourTripPage from './pages/PlanYourTripPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   const [isUnderConstruction, setIsUnderConstruction] = useState(false)
@@ -58,7 +61,11 @@ function App() {
               <Route path="/turlar/:slug" element={<TourDetailPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/gizlilik-politikasi" element={<PrivacyPolicyPage />} />
+              <Route path="/plan-trip" element={<PlanYourTripPage />} />
+              <Route path="/plan-your-trip" element={<PlanYourTripPage />} />
+              <Route path="/seyahat-planla" element={<PlanYourTripPage />} />
             </Routes>
+            <WhatsAppButton />
           </div>
         )}
       </Router>

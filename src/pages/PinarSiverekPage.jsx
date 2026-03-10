@@ -8,7 +8,7 @@ const PinarSiverekPage = () => {
 
   const content = {
     en: {
-      title: 'WHO IS PINAR SİVEREK?',
+      title: 'About the founder',
       content: `Hello, I'm Pınar Siverek. For 24 years, I've been a professional tour guide, accompanying thousands of travelers to their dreams. During these journeys, I've seen that traveling isn't just a vacation; it's also about freedom, happiness, and enjoying life. However, throughout my career, one thing has always captured my attention: the challenges faced by people with disabilities and the elderly in traveling.
 
 Unfortunately, people with disabilities and the elderly face numerous obstacles in achieving this freedom. Museums, historical sites, and most historical and touristic destinations are not designed to meet the needs of people with disabilities. I've repeatedly seen many people who long to see a place but are denied it due to their physical limitations. In those moments, my feeling is this: "Freedom to travel is everyone's right."

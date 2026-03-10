@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import pibawingsLogo from '../assets/pibawings-logo.png'
+import pibaMainLogo from '../assets/pibalogo-300x279.webp'
+import tursabLogo from '../assets/tursab-logosu.png'
 
 const Footer = () => {
   const { language, t } = useLanguage()
@@ -13,49 +15,70 @@ const Footer = () => {
           
           {/* Company Information */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 inline-block shadow-lg">
-                <img
-                  src={pibawingsLogo}
-                  alt="PibaWings Travel Logo"
-                  className="h-12 md:h-16 w-auto max-w-[250px] object-contain"
-                  loading="lazy"
-                />
+            <div className="mb-6 space-y-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
+                  <img
+                    src={pibawingsLogo}
+                    alt="PibaWings Travel Logo"
+                    className="h-10 md:h-12 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
+                  <img
+                    src={pibaMainLogo}
+                    alt="Piba Wings Main Logo"
+                    className="h-10 md:h-12 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
 
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-300 leading-relaxed mb-8 max-w-md text-sm md:text-base">
               {t('footerDescription')}
             </p>
 
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div className="text-gray-300">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3 group">
+                <div className="mt-1 bg-blue-500/20 p-2 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div className="text-gray-300 text-sm">
+                  <div className="font-semibold text-white mb-1">Office</div>
                   <div>Ataköy 7-8-9-10. Kısım Çobançeşme</div>
                   <div>E5 Yanyol Caddesi A No: 22/1 217</div>
                   <div>Bakırköy – İSTANBUL</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div className="text-gray-300">
+              <div className="flex items-start space-x-3 group">
+                <div className="mt-1 bg-blue-500/20 p-2 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="text-gray-300 text-sm">
+                  <div className="font-semibold text-white mb-1">Direct Contact</div>
                   <div>Pınar SİVEREK</div>
-                  <div>📱 +90 532 543 36 73</div>
+                  <div className="hover:text-white transition-colors">📱 +90 532 543 36 73</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="text-gray-300">info@pibawingstravel.com</span>
+              <div className="flex items-start space-x-3 group">
+                <div className="mt-1 bg-blue-500/20 p-2 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-gray-300 text-sm">
+                   <div className="font-semibold text-white mb-1">Email</div>
+                   <span className="hover:text-white transition-colors cursor-pointer">info@pibawingstravel.com</span>
+                </div>
               </div>
             </div>
           </div>
@@ -159,19 +182,28 @@ const Footer = () => {
               {t('footerCopyright')}
             </div>
 
-            <div className="flex items-center space-x-6 text-sm">
-              <Link to={language === 'tr' ? "/gizlilik-politikasi" : "/privacy-policy"} className="text-gray-300 hover:text-white transition-colors duration-300">
-                {t('footerPrivacyPolicy')}
-              </Link>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                {t('footerTermsOfService')}
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                {t('footerGDRP')}
-              </a>
+            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+              <div className="flex items-center space-x-6 text-sm">
+                <Link to={language === 'tr' ? "/gizlilik-politikasi" : "/privacy-policy"} className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {t('footerPrivacyPolicy')}
+                </Link>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {t('footerTermsOfService')}
+                </a>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {t('footerGDRP')}
+                </a>
+              </div>
+              
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1.5 shadow-lg">
+                <img
+                  src={tursabLogo}
+                  alt="TÜRSAB Logo"
+                  className="h-10 w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            
-
           </div>
         </div>
       </div>

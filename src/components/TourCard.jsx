@@ -75,10 +75,10 @@ const TourCard = ({ tour, index = 0 }) => {
               <div></div> // Empty div to maintain layout for the custom card
             )}
             <Link
-              to={isCustomTour ? '/contact' : `/tour/${tour.slug}`}
+              to={isCustomTour ? '/plan-trip' : `/tour/${tour.slug}`}
               className="bg-orange-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-orange-600 transition-colors duration-300 text-center"
             >
-              {isCustomTour ? (t('planYourTour') || 'Plan Your Tour') : (t('viewDetails') || 'View Details')}
+              {isCustomTour ? 'Start My Trip Planning' : (t('viewDetails') || 'View Details')}
             </Link>
           </div>
         </div>

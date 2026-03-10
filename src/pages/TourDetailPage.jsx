@@ -265,7 +265,7 @@ const TourDetailPage = () => {
       itinerary: 'Itinerary',
       accessibility: 'Accessibility',
       inclusions: 'Inclusions/Exclusions',
-      extraServices: 'Extra Services',
+      extraServices: 'Additional Services',
       reviews: 'Reviews',
       gallery: 'Gallery',
       duration: 'Duration',
@@ -282,8 +282,9 @@ const TourDetailPage = () => {
       noReviews: 'No reviews yet',
       priceIncludes: 'Price Includes',
       priceExcludes: 'Price Excludes',
-      additionalServices: 'Additional Services',
-      accessibilityDetails: 'View Accessibility Details'
+      additionalServices: 'Our Additional Services',
+      accessibilityDetails: 'View Accessibility Details',
+      accessibilityNotice: 'At Piba Wings we carefully analyze each location to ensure comfortable access for wheelchair users and guests with limited mobility. Click below to see accessibility details for each site on this tour.'
     },
     tr: {
       overview: 'Öne Çıkanlar',
@@ -307,8 +308,9 @@ const TourDetailPage = () => {
       noReviews: 'Henüz yorum yok',
       priceIncludes: 'Fiyata Dahil',
       priceExcludes: 'Fiyata Dahil Değil',
-      additionalServices: 'Ek Hizmetler',
-      accessibilityDetails: 'Erişilebilirlik Detaylarını Görüntüle'
+      additionalServices: 'Ek Hizmetlerimiz',
+      accessibilityDetails: 'Erişilebilirlik Detaylarını Görüntüle',
+      accessibilityNotice: 'Piba Wings olarak, tekerlekli sandalye kullanıcıları ve hareket kısıtlılığı olan misafirlerimiz için konforlu erişim sağlamak amacıyla her lokasyonu dikkatle analiz ediyoruz. Bu turdaki her bir alanın erişilebilirlik detaylarını görmek için aşağıya tıklayın.'
     }
   }
 
@@ -799,10 +801,15 @@ const TourDetailPage = () => {
                           </button>
                         ))}
                       </div>
+                      
+                      {/* Accessibility Notice */}
+                      <div className="mt-8 p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
+                        <p className="text-gray-700 leading-relaxed text-center italic">
+                          {currentContent.accessibilityNotice}
+                        </p>
+                      </div>
                     </div>
-
-
-                </div>
+                  </div>
               )}
 
               {activeTab === 'itinerary' && (
@@ -1179,7 +1186,7 @@ const TourDetailPage = () => {
                   {/* Header Section */}
                   <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                      {language === 'en' ? 'OUR EXTRA SERVICES' : 'EK HİZMETLERİMİZ'}
+                      {language === 'en' ? 'OUR ADDITIONAL SERVICES' : 'EK HİZMETLERİMİZ'}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
                       {language === 'en'
@@ -1192,7 +1199,7 @@ const TourDetailPage = () => {
                   {tour.extraServices && tour.extraServices.length > 0 ? (
                     <div className="space-y-8">
                       <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                        {language === 'en' ? 'Our Extra Services:' : 'Ek Hizmetlerimiz:'}
+                        {language === 'en' ? 'Our Additional Services:' : 'Ek Hizmetlerimiz:'}
                       </h3>
 
                       {tour.extraServices.map((service, index) => (
@@ -1249,7 +1256,7 @@ const TourDetailPage = () => {
                                     {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
                                   </span>
                                   <span className="font-bold text-blue-600 text-lg">
-                                    {service.price} {language === 'en' ? service.currencyEn : service.currency}
+                                    {service.currency || service.currencyEn || '$'}{service.price} {service.duration ? `/ ${language === 'en' ? service.durationEn : service.duration}` : ''}
                                   </span>
                                 </div>
                               </div>
