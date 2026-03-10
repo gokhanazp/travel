@@ -2,9 +2,23 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 import pinarSiverekImg from '../assets/pinar-siverek.jpeg'
+import { useEffect } from 'react'
 
 const PinarSiverekPage = () => {
-  const { language } = useLanguage()
+  const { t, language } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "About Pınar Siverek | Founder of Piba Wings Mobility" 
+      : "Pınar Siverek Hakkında | Piba Wings Mobility Kurucusu";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Meet Pınar Siverek, the visionary founder of Piba Wings Mobility and a pioneer in accessible tourism in Turkey with over 24 years of experience."
+        : "Türkiye'de erişilebilir turizmin öncüsü ve Piba Wings Mobility'nin vizyon sahibi kurucusu, 24 yılı aşkın turizm tecrübesine sahip Pınar Siverek ile tanışın.");
+    }
+  }, [language]);
 
   const content = {
     en: {

@@ -178,8 +178,19 @@ const TourDetailPage = () => {
     setTour(foundTour)
     if (foundTour) {
       setSelectedImage(null) // Gallery modal kapalı olarak başlasın
+      
+      // SEO Updates
+      const tourTitle = language === 'en' ? (foundTour.titleEn || foundTour.title) : (foundTour.title || foundTour.titleEn);
+      const cleanTitle = tourTitle.replace(/<br\/>/g, ' ');
+      document.title = `${cleanTitle} | Piba Wings Mobility`;
+      
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        const shortDesc = (language === 'en' ? foundTour.shortDescriptionEn : foundTour.shortDescription) || '';
+        metaDescription.setAttribute('content', shortDesc);
+      }
     }
-  }, [slug])
+  }, [slug, language])
 
   // Gallery modal için keyboard navigation ve body scroll lock
   useEffect(() => {

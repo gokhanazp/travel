@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -7,6 +7,19 @@ import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg
 
 const AboutPage = () => {
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "About Us | Piba Wings Mobility - Accessible Tourism Experts" 
+      : "Hakkımızda | Piba Wings Mobility - Erişilebilir Turizm Uzmanları";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Learn about Piba Wings Mobility, our 24 years of experience in tourism, and our commitment to providing accessible travel solutions in Turkey for everyone."
+        : "Piba Wings Mobility hakkında bilgi edinin. Turizmdeki 24 yıllık tecrübemiz ve herkes için Türkiye'de erişilebilir seyahat çözümleri sunma taahhüdümüz.");
+    }
+  }, [language]);
 
   const whyChooseUsItems = [
     {

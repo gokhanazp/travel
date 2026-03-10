@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TourCard from '../components/TourCard';
@@ -6,7 +6,20 @@ import { toursData } from '../data/toursData';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ToursPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Accessible & Private Turkey Tours | Piba Wings Mobility" 
+      : "Erişilebilir & Özel Türkiye Turları | Piba Wings Mobility";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Browse our range of fully accessible tours across Istanbul and Turkey. Carefully planned routes for wheelchair users and those with limited mobility."
+        : "İstanbul ve Türkiye genelindeki tam erişilebilir turlarımıza göz atın. Tekerlekli sandalye kullanıcıları ve hareket kısıtlılığı olanlar için özenle planlanmış rotalar.");
+    }
+  }, [language]);
 
   const includedFeatures = [
     { text: t('featureHotels') },

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
+  <url><loc>https://pibawingsmobility.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://pibawingsmobility.com/tours</loc><priority>0.9</priority></url>
+  <url><loc>https://pibawingsmobility.com/turlar</loc><priority>0.9</priority></url>
+  <url><loc>https://pibawingsmobility.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/hakkimizda</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/iletisim</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/vehicles</loc><priority>0.7</priority></url>
+  <url><loc>https://pibawingsmobility.com/araclarimiz</loc><priority>0.7</priority></url>
+  <url><loc>https://pibawingsmobility.com/gallery</loc><priority>0.7</priority></url>
+  <url><loc>https://pibawingsmobility.com/galeri</loc><priority>0.7</priority></url>
+  <url><loc>https://pibawingsmobility.com/plan-trip</loc><priority>0.9</priority></url>
+  <url><loc>https://pibawingsmobility.com/seyahat-planla</loc><priority>0.9</priority></url>
+  <url><loc>https://pibawingsmobility.com/pinar-siverek</loc><priority>0.6</priority></url>
+  
+  <!-- Dynamic Tours -->
+  <url><loc>https://pibawingsmobility.com/tour/accessible-istanbul-day-tour</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tur/accessible-istanbul-day-tour</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tour/accessible-istanbul-classic-3n4d</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tur/accessible-istanbul-classic-3n4d</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tour/accessible-istanbul-grand-tour-4n5d</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tur/accessible-istanbul-grand-tour-4n5d</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tour/accessible-istanbul-signature-tour-6n7d</loc><priority>0.8</priority></url>
+  <url><loc>https://pibawingsmobility.com/tur/accessible-istanbul-signature-tour-6n7d</loc><priority>0.8</priority></url>
+</urlset>

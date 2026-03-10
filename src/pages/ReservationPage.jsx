@@ -8,6 +8,19 @@ import { sendReservationEmail } from '../services/emailService'
 
 const ReservationPage = () => {
   const { t, language } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Book Your Accessible Tour | Piba Wings Mobility" 
+      : "Tur Rezervasyonu Yapın | Piba Wings Mobility";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Secure your spot for our range of accessible and private tours in Istanbul. Easy online booking for wheelchair friendly experiences."
+        : "İstanbul'daki erişilebilir ve özel turlarımızda yerinizi ayırtın. Tekerlekli sandalye dostu deneyimler için kolay online rezervasyon.");
+    }
+  }, [language]);
   const location = useLocation()
   const [formData, setFormData] = useState({
     name: '',

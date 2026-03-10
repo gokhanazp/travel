@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Site under construction - Do not index
-# pibawingsmobility.com - Accessible Tourism Solutions
+# Sitemaps
+Sitemap: https://pibawingsmobility.com/sitemap.xml

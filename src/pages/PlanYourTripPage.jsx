@@ -8,6 +8,19 @@ import { sendReservationEmail } from '../services/emailService'
 
 const PlanYourTripPage = () => {
   const { t, language } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Plan Your Accessible Trip to Turkey | Piba Wings Mobility" 
+      : "Size Özel Erişilebilir Yolculuk Planlayın | Piba Wings Mobility";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Custom-design your perfect accessible holiday in Turkey. Tell us your needs and we'll create a tailor-made journey for you."
+        : "Türkiye'de size özel mükemmel erişilebilir tatilinizi tasarlayın. İhtiyaçlarınızı belirtin, size özel bir yolculuk oluşturalım.");
+    }
+  }, [language]);
   const location = useLocation()
   const [formData, setFormData] = useState({
     name: '',

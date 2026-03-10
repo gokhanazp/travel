@@ -192,7 +192,7 @@ const TourSlider = () => {
                     <div className="relative h-80 lg:h-96">
                       <img
                         src={tour.image}
-                        alt={language === 'en' ? tour.titleEn : tour.title}
+                        alt={(language === 'en' ? tour.titleEn : tour.title).replace(/<br\s*\/?>/g, ' ')}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -264,6 +264,19 @@ const TourSlider = () => {
 
 const HomePage = () => {
   const { t, language } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Accessible Turkey Tours | Piba Wings Mobility - Wheelchair Travel" 
+      : "Türkiye Engelli Tur & Seyahat | Piba Wings Mobility - Erişilebilir İstanbul Turları";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Explore Turkey without barriers with Piba Wings Mobility. Specialized accessible tours, wheelchair-friendly vehicles, and expert guides for a worry-free journey."
+        : "Piba Wings Mobility ile engelleri aşın. Türkiye'de engelli dostu turlar, tekerlekli sandalye erişimli araçlar ve uzman rehberlerle unutulmaz bir seyahat deneyimi.");
+    }
+  }, [language]);
 
   return (
     <div className="min-h-screen bg-white">

@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const GalleryPage = () => {
   const { language, t } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Accessible Tour Gallery | Piba Wings Mobility - Visual Journey" 
+      : "Erişilebilir Tur Galerisi | Piba Wings Mobility - Görsel Yolculuk";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Explore our gallery of accessible tourism experiences in Istanbul and Turkey. Real photos from our tekerlekli sandalye dostu (wheelchair friendly) tours."
+        : "İstanbul ve Türkiye'deki erişilebilir turizm deneyimlerimizin galerisini keşfedin. Tekerlekli sandalye dostu turlarımızdan gerçek fotoğraflar.");
+    }
+  }, [language]);
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const [activeFilter, setActiveFilter] = useState('all')
 

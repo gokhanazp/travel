@@ -1,10 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const ContactPage = () => {
   const { t, language } = useLanguage()
+
+  useEffect(() => {
+    document.title = language === 'en' 
+      ? "Contact Us | Piba Wings Mobility - Accessible Travel Support" 
+      : "İletişim | Piba Wings Mobility - Erişilebilir Seyahat Desteği";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', language === 'en'
+        ? "Contact Piba Wings Mobility for your accessible travel needs in Turkey. Our expert team is ready to help you plan your perfect barrier-free journey."
+        : "Türkiye'deki erişilebilir seyahat ihtiyaçlarınız için Piba Wings Mobility ile iletişime geçin. Uzman ekibimiz, mükemmel engelsiz yolculuğunuzu planlamanıza yardımcı olmaya hazır.");
+    }
+  }, [language]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
