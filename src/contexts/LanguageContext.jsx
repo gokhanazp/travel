@@ -250,7 +250,7 @@ const translations = {
     featureHotels: "Accessible Hotels",
     featureVehicles: "Wheelchair-accessible vehicles",
     featureRestaurants: "Accessible Restaurants",
-    featureGuides: "Experienced licensed guides",
+    featureGuides: "Licensed Professional Tour Guides",
     featurePacing: "Flexible pacing & private groups",
     featureAssistance: "Assistance whenever needed",
 
@@ -513,7 +513,7 @@ const translations = {
     featureHotels: "Erişilebilir Oteller",
     featureVehicles: "Tekerlekli sandalye erişimli araçlar",
     featureRestaurants: "Erişilebilir Restoranlar",
-    featureGuides: "Deneyimli lisanslı rehberler",
+    featureGuides: "Lisanslı Profesyonel Tur Rehberleri",
     featurePacing: "Esnek tempo ve özel gruplar",
     featureAssistance: "İhtiyaç duyulduğunda yardım",
 
