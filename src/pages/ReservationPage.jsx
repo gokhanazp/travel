@@ -26,9 +26,11 @@ const ReservationPage = () => {
     name: '',
     email: '',
     phone: '',
+    country: '',
     tour: '',
     date: '',
     participants: 1,
+    airportTransfer: 'No',
     message: '',
     selectedServices: {} // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
   })
@@ -142,18 +144,14 @@ const ReservationPage = () => {
       messagePlaceholder: 'Your special needs, accessibility requirements or questions...',
       submitButton: 'Send Reservation Request',
       submitNote: '* Your reservation request will be reviewed within 24 hours.',
-      contactTitle: 'Contact Us Immediately',
-      contactSubtitle: 'You can contact us directly for urgent matters',
       successMessage: 'Your reservation request has been received! We will get back to you as soon as possible.',
       optionalServicesTitle: 'Optional Services',
       optionalServicesSubtitle: 'Enhance your tour experience with our additional services',
-      selectService: 'Select Service',
-      selectedServices: 'Selected Services',
-      tours: [
-        { id: 'PBWAI0021', name: 'Accessible Istanbul Tour (4N/5D)', price: '€450', code: 'PBWAI0021' },
-        { id: 'PBWAI0020', name: 'Accessible Istanbul Tour (3N/4D)', price: '€350', code: 'PBWAI0020' },
-        { id: 'PBWAI0019', name: 'Accessible Istanbul One Day', price: '€120', code: 'PBWAI0019' }
-      ]
+      airportTransferLabel: 'Airport Transfer Needed?',
+      no: 'No Transfer Needed',
+      ist: 'Istanbul Airport (IST)',
+      saw: 'Sabiha Gökçen Airport (SAW)',
+      tours: toursData.map(t => ({ id: t.id, name: t.titleEn.replace('<br/>', ' '), price: t.priceEn, code: t.id }))
     },
     tr: {
       title: 'Rezervasyon Yap',
@@ -173,18 +171,14 @@ const ReservationPage = () => {
       messagePlaceholder: 'Özel ihtiyaçlarınız, erişilebilirlik gereksinimleri veya sorularınız...',
       submitButton: 'Rezervasyon Talebini Gönder',
       submitNote: '* Rezervasyon talebiniz 24 saat içinde değerlendirilecektir.',
-      contactTitle: 'Hemen İletişime Geçin',
-      contactSubtitle: 'Acil durumlar için doğrudan bizimle iletişime geçebilirsiniz',
       successMessage: 'Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.',
       optionalServicesTitle: 'Opsiyonel Hizmetler',
       optionalServicesSubtitle: 'Ek hizmetlerimizle tur deneyiminizi zenginleştirin',
-      selectService: 'Hizmeti Seç',
-      selectedServices: 'Seçilen Hizmetler',
-      tours: [
-        { id: 'PBWAI0021', name: 'Erişilebilir İstanbul Turu (4G/5G)', price: '€450', code: 'PBWAI0021' },
-        { id: 'PBWAI0020', name: 'Erişilebilir İstanbul Turu (3G/4G)', price: '€350', code: 'PBWAI0020' },
-        { id: 'PBWAI0019', name: 'Erişilebilir İstanbul Tek Gün', price: '€120', code: 'PBWAI0019' }
-      ]
+      airportTransferLabel: 'Havaalanı Transferi Gerekiyor mu?',
+      no: 'Transfer İstemiyorum',
+      ist: 'İstanbul Havalimanı (IST)',
+      saw: 'Sabiha Gökçen Havalimanı (SAW)',
+      tours: toursData.map(t => ({ id: t.id, name: (t.title || t.titleEn).replace('<br/>', ' '), price: t.price, code: t.id }))
     }
   }
 
@@ -231,6 +225,8 @@ const ReservationPage = () => {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
+        country: formData.country,
+        airportTransfer: formData.airportTransfer,
 
         // Tur bilgileri
         selectedTour: selectedTour?.title || formData.tour,
@@ -274,9 +270,11 @@ const ReservationPage = () => {
           name: '',
           email: '',
           phone: '',
+          country: '',
           tour: '',
           date: '',
           participants: 1,
+          airportTransfer: 'No',
           message: '',
           selectedServices: {}
         })
@@ -373,9 +371,43 @@ const ReservationPage = () => {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   >
-                    {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                    {[1,2,3,4,5,6,7,8,9,10, '10+'].map(num => (
                       <option key={num} value={num}>{num} {currentContent.participantsOption}</option>
                     ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'en' ? 'Country' : 'Ülke'} *
+                  </label>
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    required
+                    value={formData.country}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder={language === 'en' ? 'Your country' : 'Bulunduğunuz ülke'}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="airportTransfer" className="block text-sm font-medium text-gray-700 mb-2">
+                    {currentContent.airportTransferLabel}
+                  </label>
+                  <select
+                    id="airportTransfer"
+                    name="airportTransfer"
+                    value={formData.airportTransfer}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  >
+                    <option value="No">{currentContent.no}</option>
+                    <option value="Istanbul Airport (IST)">{currentContent.ist}</option>
+                    <option value="Sabiha Gökçen Airport (SAW)">{currentContent.saw}</option>
                   </select>
                 </div>
               </div>
