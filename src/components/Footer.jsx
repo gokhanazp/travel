@@ -184,10 +184,9 @@ const Footer = () => {
                 href="https://www.gokhan-yildirim.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-xs text-gray-500 hover:text-white transition-colors flex items-center gap-1"
+                className="text-xs text-gray-500 hover:text-white transition-colors"
               >
-                <span>{language === 'tr' ? 'Yazılım & Tasarım:' : 'Developed by'}</span>
-                <span className="font-medium">www.gokhan-yildirim.com</span>
+                {language === 'tr' ? 'Yazılım & Tasarım' : 'Developed by'}
               </a>
             </div>
 
