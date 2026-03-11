@@ -178,8 +178,17 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-300 text-sm">
-              {t('footerCopyright')}
+            <div className="text-gray-300 text-sm flex flex-col items-center md:items-start gap-1">
+              <span>{t('footerCopyright')}</span>
+              <a 
+                href="https://www.gokhan-yildirim.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs text-gray-500 hover:text-white transition-colors flex items-center gap-1"
+              >
+                <span>{language === 'tr' ? 'Yazılım & Tasarım:' : 'Developed by'}</span>
+                <span className="font-medium">www.gokhan-yildirim.com</span>
+              </a>
             </div>
 
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
