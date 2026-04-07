@@ -25,6 +25,8 @@ const translations = {
     contact: "Contact",
     phone: "Phone",
     bookNow: "Confirm Reservation",
+    blog: "Blog",
+    readMore: "Read More",
 
     // Hero Section
     accessibleTravel: "Accessible Travel Experience",
@@ -535,6 +537,8 @@ const translations = {
     footerPrivacyPolicy: "Gizlilik Politikası",
     footerTermsOfService: "Hizmet Şartları",
     footerGDRP: "KVKK",
+    blog: "Blog",
+    readMore: "Devamını Oku",
   },
 };
 

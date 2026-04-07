@@ -14,6 +14,8 @@ import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
 import PlanYourTripPage from './pages/PlanYourTripPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import BlogPage from './pages/BlogPage'
+import BlogDetailPage from './pages/BlogDetailPage'
 
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -64,6 +66,10 @@ function App() {
               <Route path="/plan-trip" element={<PlanYourTripPage />} />
               <Route path="/plan-your-trip" element={<PlanYourTripPage />} />
               <Route path="/seyahat-planla" element={<PlanYourTripPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/yazilar" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogDetailPage />} />
+              <Route path="/yazilar/:slug" element={<BlogDetailPage />} />
             </Routes>
             <WhatsAppButton />
           </div>
