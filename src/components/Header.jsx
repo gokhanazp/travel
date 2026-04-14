@@ -76,9 +76,7 @@ const MainHeader = () => {
             <Link to={language === 'tr' ? "/yazilar" : "/blog"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('blog')}
             </Link>
-            <Link to={language === 'tr' ? "/iletisim" : "/contact"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
-              {t('planYourTrip')}
-            </Link>
+
             {/* Temporarily disabled - will be enabled when our own photos are ready */}
             {/* <Link to={language === 'tr' ? "/galeri" : "/gallery"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base">
               {t('gallery')}
@@ -203,13 +201,7 @@ const MainHeader = () => {
               >
                 {t('blog')}
               </Link>
-              <Link
-                to={language === 'tr' ? "/iletisim" : "/contact"}
-                className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('planYourTrip')}
-              </Link>
+
               {/* Temporarily disabled - will be enabled when our own photos are ready */}
               {/* <Link
                 to={language === 'tr' ? "/galeri" : "/gallery"}

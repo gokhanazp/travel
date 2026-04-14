@@ -1378,9 +1378,9 @@ export const toursData = [
     tags: ["Flexible", "Tailor-made"],
     tagsEn: ["Flexible", "Tailor-made"],
     shortDescription:
-      "Tell us your needs and interests- we design the perfect accessible journey just for you.",
+      "Mobilite ihtiyaçlarınızı, seyahat tarzınızı ve ilgi alanlarınızı bize anlatın. Sadece sizin için tamamen erişilebilir, kişiselleştirilmiş bir İstanbul deneyimi tasarlıyoruz.",
     shortDescriptionEn:
-      "Tell us your needs and interests- we design the perfect accessible journey just for you.",
+      "Tell us about your mobility needs, travel style and interests. We design a fully accessible, personalized Istanbul experience just for you.",
     price: "",
     priceEn: "",
     image: "/tur-fotolari/ba245809-a9f0-4080-80e4-f53646218055.jpeg",

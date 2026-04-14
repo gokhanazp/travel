@@ -24,7 +24,7 @@ const translations = {
     destinations: "Destinations",
     contact: "Contact",
     phone: "Phone",
-    bookNow: "Confirm Reservation",
+    bookNow: "Plan Your Trip",
     blog: "Blog",
     readMore: "Read More",
 
@@ -108,7 +108,7 @@ const translations = {
     // Why Choose Us
     whyChooseUs: "Why Piba Wings",
     whyChooseUsTitle:
-      'Turkey\'s <span class="text-orange-500">First & Leading</span><br/>Accessible Travel Agency',
+      'A Leading <span class="text-orange-500">Accessible</span> Travel Agency<br/>in Turkey',
     whyChooseUsSubtitle:
       "We are here to enhance your travel freedom! We provide safe and comfortable travel experiences with our tours and equipment, specially designed for individuals with disabilities.",
     happyCustomers: "Happy Guests",
@@ -199,7 +199,7 @@ const translations = {
     tseCompliant: "TSE Standard Compliant Modifications",
     disabilityFriendly: "Disability-Friendly Special Solutions",
     fastReliableService: "Fast, Reliable & Professional Service",
-    turkeyFirstCompany: "Turkey's First & Leading Accessible Travel Agency",
+    turkeyFirstCompany: "A Leading Accessible Travel Agency in Turkey",
     comfortDescription:
       "We increase your travel freedom! We offer specially designed accessible vehicle solutions for disabled individuals, providing safe and comfortable transportation.",
 
@@ -211,11 +211,11 @@ const translations = {
     // About Us Section
     aboutUsHome: "About Us",
     aboutUsHomeTitle:
-      'Turkey\'s <span class="text-orange-500">First & Leading</span><br/>Accessible Travel Agency',
+      'A <span class="text-orange-500">Leading</span> Accessible Travel Agency<br/>in Turkey',
     aboutUsHomeSubtitle:
       "Specially designed for people with disabilities, elderly, and those with limited mobility",
     aboutUsDescription:
-      "As Piba Wings Mobility, we are Turkey's first and leading travel agency, offering specially designed tours and professional team to make life easier for people with disabilities, the elderly, people with limited mobility, and those with hearing impairments.",
+      "As Piba Wings Mobility, we are a leading travel agency in Turkey, offering specially designed tours and professional team to make life easier for people with disabilities, the elderly, people with limited mobility, and those with hearing impairments.",
     ourMission: "Our Mission",
     missionText:
       "To eliminate travel barriers and make the world accessible to everyone, regardless of physical limitations. We believe accessible tourism will grow and individuals with disabilities will be seen more frequently in historical sites and museums.",
@@ -228,7 +228,7 @@ const translations = {
 
     // About Page
     about_title: "Travel Without Barriers",
-    about_subtitle: "Turkey’s first and leading accessible travel agency",
+    about_subtitle: "A leading accessible travel agency in Turkey",
     about_desc_1:
       "As Piba Wings Mobility, we are dedicated to breaking down barriers and making travel a reality for everyone. We specialize in creating custom tour experiences for individuals with disabilities, seniors, and those with limited mobility.",
     about_desc_2:
@@ -288,7 +288,7 @@ const translations = {
     destinations: "Destinasyonlar",
     contact: "İletişim",
     phone: "Telefon",
-    bookNow: "Hemen Rezerve Et",
+    bookNow: "Seyahatinizi Planlayın",
 
     // Hero Section
     accessibleTravel: "Erişilebilir Seyahat Deneyimi",
@@ -370,7 +370,7 @@ const translations = {
     // Why Choose Us
     whyChooseUs: "Neden Bizi Seçmelisiniz",
     whyChooseUsTitle:
-      'Türkiye\'nin <span class="text-orange-500">İlk ve Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
+      'Türkiye\'nin <span class="text-orange-500">Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
     whyChooseUsSubtitle:
       "Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış turlarımız ve ekipmanlarımızla güvenli ve konforlu seyahat deneyimleri sunuyoruz.",
     happyCustomers: "Mutlu Misafir",
@@ -461,8 +461,7 @@ const translations = {
     tseCompliant: "TSE standartlarına uygun modifikasyonlar",
     disabilityFriendly: "Engelli bireylere özel yenilikçi çözümler",
     fastReliableService: "Hızlı, güvenilir ve profesyonel hizmet",
-    turkeyFirstCompany:
-      "Türkiye'nin İlk ve Önde Gelen Erişilebilir Seyahat Acentesi",
+    turkeyFirstCompany: "Türkiye'nin Önde Gelen Erişilebilir Seyahat Acentesi",
     comfortDescription:
       "Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış araç çözümlerimizle güvenli ve konforlu bir yolculuk sunuyoruz.",
 
@@ -474,11 +473,11 @@ const translations = {
     // About Us Section
     aboutUsHome: "Hakkımızda",
     aboutUsHomeTitle:
-      'Türkiye\'nin <span class="text-orange-500">İlk ve Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
+      'Türkiye\'nin <span class="text-orange-500">Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
     aboutUsHomeSubtitle:
       "Engelli bireyler, yaşlılar ve hareket kabiliyeti kısıtlı kişiler için özel olarak tasarlandı",
     aboutUsDescription:
-      "Piba Wings Mobility olarak, Türkiye'nin ilk ve önde gelen seyahat acentesi olarak, engelli bireyler, yaşlılar, hareket kabiliyeti kısıtlı kişiler ve işitme engelliler için özel olarak tasarlanmış turlar ve profesyonel bir ekip sunuyoruz.",
+      "Piba Wings Mobility olarak, Türkiye'nin önde gelen seyahat acentesi olarak, engelli bireyler, yaşlılar, hareket kabiliyeti kısıtlı kişiler ve işitme engelliler için özel olarak tasarlanmış turlar ve profesyonel bir ekip sunuyoruz.",
     ourMission: "Misyonumuz",
     missionText:
       "Seyahat engellerini ortadan kaldırmak ve fiziksel sınırlamalar ne olursa olsun dünyayı herkes için erişilebilir kılmak. Erişilebilir turizmin büyüyeceğine ve engelli bireylerin tarihi mekanlar ve müzelerde daha sık görüleceğine inanıyoruz.",
@@ -491,7 +490,7 @@ const translations = {
 
     // About Page
     about_title: "Engelsiz Seyahat",
-    about_subtitle: "Türkiye’nin ilk ve lider erişilebilir seyahat acentesi",
+    about_subtitle: "Türkiye’nin lider erişilebilir seyahat acentesi",
     about_desc_1:
       "Piba Wings Mobility olarak, engelleri kaldırmaya ve seyahati herkes için bir gerçeğe dönüştürmeye adadık. Engelli bireyler, yaşlılar ve hareket kabiliyeti kısıtlı olanlar için özel tur deneyimleri yaratmada uzmanız.",
     about_desc_2:

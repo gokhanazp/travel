@@ -40,12 +40,14 @@ const ToursPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-block">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                "Accessible & Private Tours"
+                {language === 'tr' ? "İstanbul'da Erişilebilir & Özel Turlar" : "Accessible & Private Tours in Istanbul"}
               </h1>
               <div className="flex items-center justify-center gap-3 mt-4">
                 <div className="h-px w-12 bg-gradient-to-r from-transparent to-orange-500"></div>
-                <p className="text-2xl md:text-3xl font-semibold text-orange-500 italic">
-                  Planned With Care
+                <p className="text-xl md:text-2xl font-semibold text-orange-500 italic text-center">
+                  {language === 'tr' 
+                    ? "Özenle Tasarlandı. Tamamen Erişilebilir. Size Özel." 
+                    : "Carefully Designed. Fully accessible. Truly Personal."}
                 </p>
                 <div className="h-px w-12 bg-gradient-to-l from-transparent to-orange-500"></div>
               </div>

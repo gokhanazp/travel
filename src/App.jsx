@@ -14,6 +14,8 @@ import VehiclesPage from './pages/VehiclesPage'
 import GalleryPage from './pages/GalleryPage'
 import PlanYourTripPage from './pages/PlanYourTripPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsOfServicePage from './pages/TermsOfServicePage'
+import PaymentPolicyPage from './pages/PaymentPolicyPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailPage from './pages/BlogDetailPage'
 
@@ -63,6 +65,10 @@ function App() {
               <Route path="/turlar/:slug" element={<TourDetailPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/gizlilik-politikasi" element={<PrivacyPolicyPage />} />
+              <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+              <Route path="/hizmet-sartlari" element={<TermsOfServicePage />} />
+              <Route path="/payment-policy" element={<PaymentPolicyPage />} />
+              <Route path="/odeme-politikasi" element={<PaymentPolicyPage />} />
               <Route path="/plan-trip" element={<PlanYourTripPage />} />
               <Route path="/plan-your-trip" element={<PlanYourTripPage />} />
               <Route path="/seyahat-planla" element={<PlanYourTripPage />} />

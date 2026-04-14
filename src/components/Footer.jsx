@@ -201,21 +201,32 @@ const Footer = () => {
                 <Link to={language === 'tr' ? "/gizlilik-politikasi" : "/privacy-policy"} className="text-gray-300 hover:text-white transition-colors duration-300">
                   {t('footerPrivacyPolicy')}
                 </Link>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
+                <Link to={language === 'tr' ? "/hizmet-sartlari" : "/terms-of-service"} className="text-gray-300 hover:text-white transition-colors duration-300">
                   {t('footerTermsOfService')}
-                </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  {t('footerGDRP')}
-                </a>
+                </Link>
+                <Link to={language === 'tr' ? "/odeme-politikasi" : "/payment-policy"} className="text-gray-300 hover:text-white transition-colors duration-300">
+                  {language === 'tr' ? 'Ödeme & İptal' : 'Payment Policy'}
+                </Link>
               </div>
               
-              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-1.5 shadow-lg">
-                <img
-                  src={tursabLogo}
-                  alt="TÜRSAB Logo"
-                  className="h-10 w-auto object-contain"
-                  loading="lazy"
-                />
+              <div className="flex flex-col items-center md:items-end space-y-2 mt-4 md:mt-0">
+                <a 
+                  href="https://www.tursab.org.tr/tr/ddsv" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg inline-block transition-transform hover:scale-105"
+                >
+                  <img
+                    src="/tursab-dds-17842.webp"
+                    alt="TÜRSAB Dijital Doğrulama Sistemi"
+                    className="h-14 md:h-16 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </a>
+                <div className="text-[10px] md:text-xs text-gray-400 text-center md:text-right leading-tight">
+                  <p>{language === 'tr' ? 'Yaptırdığınız turlar TÜRSAB güvencesindedir.' : 'We are a registered travel agency'}</p>
+                  <p>{language === 'tr' ? 'Belge No: 17842' : 'under TURSAB (License No. 17842)'}</p>
+                </div>
               </div>
             </div>
           </div>

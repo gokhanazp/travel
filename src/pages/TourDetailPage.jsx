@@ -283,7 +283,7 @@ const TourDetailPage = () => {
       price: 'Price',
       features: 'Features',
       highlights: 'Highlights',
-      bookNow: 'Confirm Reservation',
+      bookNow: 'Plan Your Trip',
       backToTours: 'Back to Tours',
       participantPhotos: 'Participant Photos',
       readMore: 'Read More',
@@ -309,7 +309,7 @@ const TourDetailPage = () => {
       price: 'Fiyat',
       features: 'Özellikler',
       highlights: 'Öne Çıkanlar',
-      bookNow: 'Rezervasyon Yap',
+      bookNow: 'Seyahatinizi Planlayın',
       backToTours: 'Turlara Dön',
       participantPhotos: 'Katılımcı Fotoğrafları',
       readMore: 'Devamını Oku',
@@ -484,7 +484,7 @@ const TourDetailPage = () => {
               to="/reservation"
               className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150 flex items-center justify-center"
             >
-              {language === 'en' ? 'Confirm Reservation' : 'Rezervasyonu Onayla'}
+              {language === 'en' ? 'Plan Your Trip' : 'Seyahatinizi Planlayın'}
             </Link>
             <button
               className="px-4 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all duration-150"
@@ -863,6 +863,106 @@ const TourDetailPage = () => {
                     </p>
                   )}
 
+                  {/* Inclusions/Exclusions Section - Moved to Itinerary Tab */}
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                      {language === 'en' ? 'Inclusions/Exclusions' : 'Dahil Olan/Olmayan'}
+                    </h3>
+
+                    <div className="space-y-8">
+                      {/* Price Includes Section */}
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
+                        </h4>
+                        <div className="space-y-3">
+                          {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
+                            <div key={index} className="flex items-start space-x-3">
+                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span className="text-gray-700 leading-relaxed">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Price Excludes Section */}
+                      <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
+                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                          {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
+                        </h4>
+                        <div className="space-y-3">
+                          {tour.excludes && tour.excludes.length > 0 ? (
+                            (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
+                              <div key={index} className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">{exclude}</span>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="space-y-3">
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Gratuities' : 'Bahşişler'}
+                                </span>
+                              </div>
+                              <div className="flex items-start space-x-3">
+                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                                <span className="text-gray-700 leading-relaxed">
+                                  {language === 'en' ? 'Optional activities not mentioned in the itinerary' : 'Programda belirtilmeyen opsiyonel aktiviteler'}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Additional Info for PBWAI0019 and PBWAI0020 */}
+                      {(tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') && (
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                          <p className="text-gray-800 leading-relaxed">
+                            {language === 'en'
+                              ? "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
+                              : "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz."
+                            }
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
                   {/* Why Piba Wings Mobility Section */}
                   <div className="mt-12">
                     <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
@@ -985,106 +1085,6 @@ const TourDetailPage = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Inclusions/Exclusions Section - Moved to Itinerary Tab */}
-                  <div className="mt-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                      {language === 'en' ? 'Inclusions/Exclusions' : 'Dahil Olan/Olmayan'}
-                    </h3>
-
-                    <div className="space-y-8">
-                      {/* Price Includes Section */}
-                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                          <svg className="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          {language === 'en' ? 'Price Includes' : 'Fiyata Dahil'}
-                        </h4>
-                        <div className="space-y-3">
-                          {(language === 'en' ? tour.featuresEn : tour.features)?.map((feature, index) => (
-                            <div key={index} className="flex items-start space-x-3">
-                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span className="text-gray-700 leading-relaxed">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Price Excludes Section */}
-                      <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
-                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                          <svg className="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                          {language === 'en' ? 'Price Excludes' : 'Fiyata Dahil Değil'}
-                        </h4>
-                        <div className="space-y-3">
-                          {tour.excludes && tour.excludes.length > 0 ? (
-                            (language === 'en' ? tour.excludesEn || tour.excludes : tour.excludes).map((exclude, index) => (
-                              <div key={index} className="flex items-start space-x-3">
-                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                  </svg>
-                                </div>
-                                <span className="text-gray-700 leading-relaxed">{exclude}</span>
-                              </div>
-                            ))
-                          ) : (
-                            <div className="space-y-3">
-                              <div className="flex items-start space-x-3">
-                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                  </svg>
-                                </div>
-                                <span className="text-gray-700 leading-relaxed">
-                                  {language === 'en' ? 'Personal expenses' : 'Kişisel harcamalar'}
-                                </span>
-                              </div>
-                              <div className="flex items-start space-x-3">
-                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                  </svg>
-                                </div>
-                                <span className="text-gray-700 leading-relaxed">
-                                  {language === 'en' ? 'Gratuities' : 'Bahşişler'}
-                                </span>
-                              </div>
-                              <div className="flex items-start space-x-3">
-                                <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                  </svg>
-                                </div>
-                                <span className="text-gray-700 leading-relaxed">
-                                  {language === 'en' ? 'Optional activities not mentioned in the itinerary' : 'Programda belirtilmeyen opsiyonel aktiviteler'}
-                                </span>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Additional Info for PBWAI0019 and PBWAI0020 */}
-                      {(tour?.id === 'PBWAI0019' || tour?.id === 'PBWAI0020') && (
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
-                          <p className="text-gray-800 leading-relaxed">
-                            {language === 'en'
-                              ? "We can provide all type of walkers, scooters, electric or manuel wheelchair and assistance staff to accompany with an additional cost to support you throughout the tour."
-                              : "Her türlü yürüteç, scooter, elektrikli veya manuel tekerlekli sandalye ve tur boyunca size destek olmak için eşlik edecek yardımcı personeli ek ücret karşılığında sağlayabiliriz."
-                            }
-                          </p>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
