@@ -170,6 +170,56 @@ const TourDetailPage = () => {
       wheelchairTr: 'Sahil promenadı düz ve erişilebilir. Birçok kafe engelsizdir.',
       hearingEn: 'Shopping, markets and cafes are visually based. Sign language translator.',
       hearingTr: 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'
+    },
+    {
+      id: 'archeology-museum',
+      nameEn: 'Istanbul Archeology Museums',
+      nameTr: 'İstanbul Arkeoloji Müzeleri',
+      image: 'https://muze.gov.tr/s3/MysFileContainer/istanbul_arkeoloji_muzeleri_638166547630761367.jpg',
+      wheelchairEn: 'The museum complex is accessible via ramps between buildings and an elevator. Exhibition halls are wheelchair-friendly.',
+      wheelchairTr: 'Müze kompleksi, binalar arasında rampalar ve asansörle erişilebilir. Sergi salonları tekerlekli sandalye dostudur.',
+      hearingEn: 'Visual exhibits, artifacts. Sign language support.',
+      hearingTr: 'Görsel sergiler, eserler. İşaret dili desteği.'
+    },
+    {
+      id: 'taksim-square',
+      nameEn: 'Taksim Square & Istiklal Street',
+      nameTr: 'Taksim Meydanı & İstiklal Caddesi',
+      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/4b/5d/c8/taksim-square.jpg?w=1200&h=-1&s=1',
+      wheelchairEn: 'Spacious flat-ground area. İstiklal Street has accessible flat paths and low curbs.',
+      wheelchairTr: 'Geniş düz zeminli alan. İstiklal Caddesi erişilebilir düz yollara ve alçak kaldırımlara sahiptir.',
+      hearingEn: 'Lively atmosphere, visual street life.',
+      hearingTr: 'Canlı atmosfer, görsel sokak hayatı.'
+    },
+    {
+      id: 'galata-tower',
+      nameEn: 'Galata Tower (Outside)',
+      nameTr: 'Galata Kulesi (Dışarıdan)',
+      image: 'https://img.ulubat.com/i/galata-tower-istanbul.jpg',
+      wheelchairEn: 'Tower and surroundings are visible from outside; surrounding streets can be visited with a wheelchair.',
+      wheelchairTr: 'Kule ve çevresi dışarıdan görülebilir; çevresindeki sokaklar tekerlekli sandalye ile ziyaret edilebilir.',
+      hearingEn: 'Architectural visual experience.',
+      hearingTr: 'Mimari görsel deneyim.'
+    },
+    {
+      id: 'pierre-loti',
+      nameEn: 'Pierre Loti Hill',
+      nameTr: 'Pierre Loti Tepesi',
+      image: 'https://istanbeautiful.com/wp-content/uploads/pierre-loti-hill-istanbul.jpg',
+      wheelchairEn: 'The cafe area and viewing terrace at the top are wheelchair accessible.',
+      wheelchairTr: 'Tepedeki kafeterya alanı ve seyir terası tekerlekli sandalye ile erişilebilir durumdadır.',
+      hearingEn: 'Panoramic visual views.',
+      hearingTr: 'Panoramik görsel manzaralar.'
+    },
+    {
+      id: 'eyup-sultan',
+      nameEn: 'Eyup Sultan Mosque',
+      nameTr: 'Eyüp Sultan Camii',
+      image: 'https://www.istanbul.com/img/eyup_sultan_mosque_istanbul_l.jpg',
+      wheelchairEn: 'Flat courtyard and wheelchair-friendly entrance available.',
+      wheelchairTr: 'Düz avlu ve tekerlekli sandalye dostu giriş mevcuttur.',
+      hearingEn: 'Visual architecture, spiritual atmosphere.',
+      hearingTr: 'Görsel mimari, manevi atmosfer.'
     }
   ] : []
 
@@ -650,6 +700,26 @@ const TourDetailPage = () => {
                         {currentContent.overview}
                       </h2>
                     </div>
+
+                    {/* Highlights List Section */}
+                    {highlights && highlights.length > 0 && (
+                      <div className="mb-10">
+                        <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                          <svg className="w-6 h-6 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                          </svg>
+                          {language === 'en' ? 'Tour Highlights' : 'Turun Öne Çıkanları'}
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {highlights.map((item, index) => (
+                            <div key={index} className="flex items-center space-x-3 bg-white p-3 rounded-xl border border-orange-100 shadow-sm">
+                              <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-700 font-medium text-sm md:text-base">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Main Description */}
                     <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-8">

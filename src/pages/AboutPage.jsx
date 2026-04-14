@@ -55,15 +55,15 @@ const AboutPage = () => {
       {/* --- Banner Section --- */}
       <section
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1966&auto=format&fit=crop')` }}
+        style={{ backgroundImage: `url('/about-hero-clear.png')` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight animate-fade-in-down">
-            {t('about_title', 'Travel Without Barriers')}
+            {language === 'tr' ? 'İstanbul\'da Erişilebilir Seyahat' : 'Accessible Travel in İstanbul'}
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            {t('about_subtitle', 'Turkey’s first and leading accessible travel agency')}
+            {language === 'tr' ? 'Kişiselleştirilmiş erişilebilir turlar' : 'Personalized accessible tours'}
           </p>
         </div>
       </section>
@@ -82,27 +82,26 @@ const AboutPage = () => {
             </div>
 
             {/* Right Side: Description & Founder Link */}
-            <div className="space-y-8 animate-slide-in-right">
+            <div className="space-y-6 animate-slide-in-right">
+              <h2 className="text-3xl font-bold text-gray-900">
+                {language === 'tr' ? 'Rehberinizle Tanışın / Kurucumuzla Tanışın' : 'Meet Your Guide / Meet the Founder'}
+              </h2>
               <div className="space-y-4 text-lg text-gray-700">
                 <p>
-                  {t('about_desc_1', 'As Piba Wings Mobility, we are dedicated to breaking down barriers and making travel a reality for everyone. We specialize in creating custom tour experiences for individuals with disabilities, seniors, and those with limited mobility.')}
-                </p>
-                <p>
-                  {t('about_desc_2', 'Our mission is to provide safe, comfortable, and enriching travel experiences. From fully accessible vehicles to meticulously planned itineraries and professional, caring guides, we handle every detail to ensure a worry-free journey.')}
-                </p>
-                <p>
-                  {t('about_desc_3', 'We believe that the joy of discovery should be accessible to all. Join us to explore the rich history and vibrant culture of Turkey without limits.')}
+                  {language === 'tr' 
+                    ? 'Pınar Siverek, Türkiye\'de 24 yılı aşkın deneyime sahip profesyonel bir turist rehberidir. Erişilebilir turizme olan derin tutkusuyla kariyerini herkes için kapsayıcı seyahat deneyimleri yaratmaya adamıştır.'
+                    : 'Pınar Siverek is a Professional tour guide with over 24 years of experience in Turkey. With a deep passion for accessible tourism, she has dedicated her career to creating inclusive travel experiences for all.'}
                 </p>
               </div>
               <div className="pt-4">
                 <Link
-                  to={language === 'tr' ? '/pinar-siverek' : '/pinar-siverek'}
+                  to="/pinar-siverek"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  {t('about_meet_founder', 'About Our Founder')}
+                  {language === 'tr' ? 'Pınar Hakkında Daha Fazla Bilgi Edinin' : 'Learn More About Pınar'}
                 </Link>
               </div>
             </div>
