@@ -58,168 +58,184 @@ const TourDetailPage = () => {
     })
   : (tour?.id === 'PBWAI0021' || tour?.id === 'PBWAI0022') ? [
     {
-      id: 'hippodrome',
-      nameEn: 'Hippodrome',
-      nameTr: 'Hipodrom',
-      image: 'https://www.istanbul.com/img/hippodrome_l.jpg',
-      wheelchairEn: 'Wide and flat, open square',
-      wheelchairTr: 'Geniş ve düz, açık meydan',
-      hearingEn: 'Visually rich, sign language translator',
-      hearingTr: 'Görsel açıdan zengin, işaret dili tercümanı'
-    },
-    {
       id: 'blue-mosque',
       nameEn: 'Blue Mosque',
       nameTr: 'Sultanahmet Camii',
       image: 'https://theistanbulinsider.com/wp-content/uploads/2020/03/blue-mosque-aerial.jpg',
-      wheelchairEn: 'Entrance ramp and flat courtyard accessible. Inside, carpet flooring may slightly hinder movement.',
-      wheelchairTr: 'Giriş rampası ve düz avlu erişilebilir. İçeride halı zemin hareketi biraz engelleyebilir.',
-      hearingEn: 'Visual design (domes, tiles, calligraphy), Sign language translator.',
-      hearingTr: 'Görsel tasarım (kubbeler, çiniler, hat sanatı), İşaret dili tercümanı.'
-    },
-    {
-      id: 'topkapi-palace',
-      nameEn: 'Topkapi Palace',
-      nameTr: 'Topkapı Sarayı',
-      image: 'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg',
-      wheelchairEn: 'Large courtyards mostly flat. Some sections are accessible via ramps. Gardens are suitable for relaxation.',
-      wheelchairTr: 'Büyük avlular çoğunlukla düz. Bazı bölümler rampalarla erişilebilir. Bahçeler dinlenmek için uygundur.',
-      hearingEn: 'Visual architecture and artifacts. Sign language translator',
-      hearingTr: 'Görsel mimari ve eserler. İşaret dili tercümanı'
+      wheelchairEn: 'Ramp access and a wide courtyard allow an easy arrival. The visit is planned to maintain a comfortable and smooth experience inside.',
+      wheelchairTr: 'Rampa erişimi ve geniş avlu kolay bir varış sağlar. Ziyaret, içeride konforlu ve akıcı bir deneyim sürdürmek üzere planlanmıştır.',
+      hearingEn: 'A visually rich space shaped by domes, İznik tiles, and calligraphy. The experience gains depth as key details are noticed and connected within space. Sign language support available.',
+      hearingTr: 'Kubbeler, İznik çinileri ve hat sanatıyla şekillenmiş görsel açıdan zengin bir alan. Mekân içinde temel detaylar fark edildikçe ve birbirine bağlandıkça deneyim derinleşir. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Tactile access is limited. The experience is guided through spatial awareness and clear narration.',
+      visuallyImpairedTr: 'Dokunsal erişim sınırlıdır. Deneyim, mekânsal farkındalık ve net anlatım yoluyla yönlendirilir.'
     },
     {
       id: 'hagia-sophia',
       nameEn: 'Hagia Sophia',
       nameTr: 'Ayasofya',
       image: 'https://cdn-imgix.headout.com/media/images/db8d8e671a6ca9af5cffcc208f8a7846-11984-Istanbul-HistorianGuidedTourofHagiaSophia-10.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&ar=7%3A4&crop=faces&fit=crop',
-      wheelchairEn: 'There are wide entrance doors and ramps. Ground floor fully accessible; upper gallery not accessible. Large, open space suitable for wheelchairs.',
-      wheelchairTr: 'Geniş giriş kapıları ve rampalar var. Zemin kat tamamen erişilebilir; üst galeri erişilebilir değil. Tekerlekli sandalyeler için uygun geniş, açık alan.',
-      hearingEn: 'Stunning visuals, main experience is architectural and visual. Sign language translator.',
-      hearingTr: 'Muhteşem görseller, ana deneyim mimari ve görseldir. İşaret dili tercümanı.'
+      wheelchairEn: 'Ramp access leads to the main floor. The visit is carefully managed for comfort and ease. Upper gallery is not accessible.',
+      wheelchairTr: 'Rampa erişimi ana kata ulaşmayı sağlar. Ziyaret, konfor ve kolaylık için özenle düzenlenir. Üst galeri erişilebilir değildir.',
+      hearingEn: 'A powerful visual environment where architecture and light tell the story. The space reveals its layers through a clear visual sequence. Sign language support available.',
+      hearingTr: 'Mimari ve ışığın hikâyeyi anlattığı güçlü bir görsel ortam. Mekân, katmanlarını net bir görsel sırayla ortaya koyar. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Direct tactile interaction is limited. The space is explained through clear and structured narration.',
+      visuallyImpairedTr: 'Doğrudan dokunsal etkileşim sınırlıdır. Mekân, net ve yapılandırılmış anlatım aracılığıyla aktarılır.'
+    },
+    {
+      id: 'topkapi-palace',
+      nameEn: 'Topkapi Palace',
+      nameTr: 'Topkapı Sarayı',
+      image: 'https://galatagreenlandhotel.com/wp-content/uploads/2025/07/Topkapi-Palace-istanbul.jpg',
+      wheelchairEn: 'Extensive courtyards offer mostly flat access, with some ramp-supported transitions. The route is arranged to maintain a comfortable pace.',
+      wheelchairTr: 'Geniş avlular çoğunlukla düz erişim sunar; bazı geçişler rampa desteğiyle sağlanır. Rota, rahat bir tempoda ilerlemeyi sağlayacak şekilde düzenlenir.',
+      hearingEn: 'A visually detailed imperial setting. The experience becomes more meaningful as connections between the spaces and objects naturally unfold. Sign language support available.',
+      hearingTr: 'Görsel açıdan zengin bir imparatorluk ortamı. Mekânlar ve nesneler arasındaki bağlantılar doğal olarak ortaya çıktıkça deneyim daha anlamlı hale gelir. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Some outdoor areas allow spatial exploration. The visit is supported through clear descriptions of spaces and objects.',
+      visuallyImpairedTr: 'Bazı açık alanlar mekânsal keşfe olanak tanır. Ziyaret, mekânların ve nesnelerin net tanımlamalarıyla desteklenir.'
+    },
+    {
+      id: 'hippodrome',
+      nameEn: 'Hippodrome',
+      nameTr: 'Hipodrom',
+      image: 'https://www.istanbul.com/img/hippodrome_l.jpg',
+      wheelchairEn: 'A wide, open and mostly flat historic square, allowing easy movement across the site.',
+      wheelchairTr: 'Geniş, açık ve çoğunlukla düz bir tarihi meydan; alan boyunca kolay hareket imkânı sunar.',
+      hearingEn: 'An open-air setting where monuments and spatial layout define the story. Spatial connections are easy to follow. Sign language support is available.',
+      hearingTr: 'Anıtların ve mekânsal düzenin hikâyeyi tanımladığı açık hava ortamı. Mekânsal bağlantılar kolayca takip edilebilir. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'An open and spacious area that can be experienced through orientation and guided movement. Physical elements are limited in tactile interaction.',
+      visuallyImpairedTr: 'Yönelim ve rehberli hareketle deneyimlenebilen açık ve geniş bir alan. Fiziksel unsurların dokunsal etkileşimi sınırlıdır.'
     },
     {
       id: 'grand-bazaar',
       nameEn: 'Grand Bazaar',
       nameTr: 'Kapalıçarşı',
       image: 'https://istanbulapartmentsforsale.com/wp-content/uploads/2020/04/grand-bazaar2.jpg',
-      wheelchairEn: 'There are straight main roads.',
-      wheelchairTr: 'Düz ana yollar vardır.',
-      hearingEn: 'Sign language guide/translator',
-      hearingTr: 'İşaret dili rehberi/tercümanı',
-      visuallyImpairedEn: 'Guided "touch shopping".',
-      visuallyImpairedTr: 'Rehberli "dokunarak alışveriş".'
-    },
-    {
-      id: 'spice-market',
-      nameEn: 'Spice Market',
-      nameTr: 'Mısır Çarşısı',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dfUIgZDddRr_Uk3QZRBjHe79XL3b-mR2nQ&s',
-      wheelchairEn: 'Wheelchair-accessible main roads.',
-      wheelchairTr: 'Tekerlekli sandalye erişilebilir ana yollar.',
-      hearingEn: 'Market is a sensory, visual experience (spices, colors, goods). Seller shouting is not essential to enjoy. Sign language guide/translator.',
-      hearingTr: 'Çarşı duyusal, görsel bir deneyimdir (baharatlar, renkler, mallar). Satıcı bağırması keyif almak için gerekli değildir. İşaret dili rehberi/tercümanı.',
-      visuallyImpairedEn: 'Introducing spices by smell.',
-      visuallyImpairedTr: 'Baharatları koku ile tanıtma.'
+      wheelchairEn: "Main routes allow access, while the bazaar's dense structure and constantly changing flow influence how easily it can be navigated.",
+      wheelchairTr: 'Ana güzergahlar erişime olanak tanır; ancak çarşının yoğun yapısı ve sürekli değişen akışı gezinme kolaylığını etkiler.',
+      hearingEn: 'A vibrant visual environment filled with colors and textures. Orientation is kept clear. Sign language support is available.',
+      hearingTr: 'Renkler ve dokularla dolu canlı bir görsel ortam. Yönelim net tutulur. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Textures and materials create a tactile experience, becoming more engaging through structured interaction.',
+      visuallyImpairedTr: 'Dokular ve malzemeler dokunsal bir deneyim yaratır; yapılandırılmış etkileşimle daha ilgi çekici hale gelir.'
     },
     {
       id: 'basilica-cistern',
       nameEn: 'Basilica Cistern',
       nameTr: 'Yerebatan Sarnıcı',
       image: 'https://istanbultourstudio.s3.amazonaws.com/uploads/media_content/picture/1200/medium_Underground_Cistern_3.jpg',
-      wheelchairEn: 'There is lift and ramped entrance.',
-      wheelchairTr: 'Asansör ve rampalı giriş vardır.',
-      hearingEn: 'Strong lighting and dramatic visuals. Sign language guide / translator',
-      hearingTr: 'Güçlü aydınlatma ve dramatik görseller. İşaret dili rehberi / tercümanı'
+      wheelchairEn: 'Access is provided via lift with assistance. Entry is coordinated for a smooth visit. Inside, low lighting, reflective surfaces, and moisture require attentive movement throughout.',
+      wheelchairTr: 'Asansör yardımıyla erişim sağlanır. Giriş, sorunsuz bir ziyaret için koordine edilir. İçeride düşük aydınlatma, yansıtıcı yüzeyler ve nem dikkatli hareket gerektirir.',
+      hearingEn: 'A visually atmospheric space shaped by light, reflections, and columns. Important elements are clearly pointed out. Sign language support available.',
+      hearingTr: 'Işık, yansımalar ve sütunlarla şekillenmiş görsel açıdan atmosferik bir mekân. Önemli unsurlar açıkça vurgulanır. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Very low lighting, reflective surfaces, and moisture make independent navigation challenging. The experience depends on close guidance and spatial awareness.',
+      visuallyImpairedTr: 'Çok düşük aydınlatma, yansıtıcı yüzeyler ve nem bağımsız gezinmeyi zorlaştırır. Deneyim yakın rehberliğe ve mekânsal farkındalığa bağlıdır.'
+    },
+    {
+      id: 'spice-market',
+      nameEn: 'Spice Market',
+      nameTr: 'Mısır Çarşısı',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dfUIgZDddRr_Uk3QZRBjHe79XL3b-mR2nQ&s',
+      wheelchairEn: 'Accessible pathways allow movement through the market.',
+      wheelchairTr: 'Erişilebilir yollar çarşı boyunca hareket imkânı sağlar.',
+      hearingEn: 'A sensory-rich space centered on colors and displays. Sign language support is available.',
+      hearingTr: 'Renkler ve teşhirlere odaklanan duyusal açıdan zengin bir mekân. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Spices offer a strong sensory journey through scent and touch, enhanced through guided exploration.',
+      visuallyImpairedTr: 'Baharatlar koku ve dokunuşla güçlü bir duyusal yolculuk sunar; rehberli keşifle daha da zenginleşir.'
     },
     {
       id: 'bosphorus-cruise',
       nameEn: 'Bosphorus Cruise',
       nameTr: 'Boğaz Turu',
       image: 'https://sealandtrip.com/wp-content/uploads/2023/05/Istanbul-Bosphorus-Tour-1.jpg',
-      wheelchairEn: 'Public ferries and many private boats ramp accessible.',
-      wheelchairTr: 'Halk vapurları ve birçok özel tekne rampa erişilebilir.',
-      hearingEn: 'Sign language support.',
-      hearingTr: 'İşaret dili desteği.'
+      wheelchairEn: 'Accessible boarding is available on selected vessels. The overall comfort is closely linked to vessel selection, timing, and seating.',
+      wheelchairTr: 'Seçili teknelerde erişilebilir biniş imkânı mevcuttur. Genel konfor tekne seçimi, zamanlama ve oturma düzeniyle yakından bağlantılıdır.',
+      hearingEn: "A continuous visual journey along Istanbul's skyline. Landmarks gain meaning as they are connected along the route. Sign language support available.",
+      hearingTr: 'İstanbul silüeti boyunca kesintisiz bir görsel yolculuk. Önemli noktalar rota boyunca birbirine bağlandıkça anlam kazanır. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Limited tactile elements during the cruise. The experience relies on environmental sensations such as breeze, motion, and descriptive narration.',
+      visuallyImpairedTr: 'Gezi boyunca dokunsal unsurlar sınırlıdır. Deneyim esinti, hareket ve betimleyici anlatım gibi çevresel duyumlara dayanır.'
     },
     {
       id: 'dolmabahce-palace',
       nameEn: 'Dolmabahce Palace',
       nameTr: 'Dolmabahçe Sarayı',
       image: 'https://cdn-imgix.headout.com/blog-banner/image/f01bc213b95ab86534ee04fe64f21987-AdobeStock_68862154.jpeg',
-      wheelchairEn: 'Lift at the entrance gate to the main hall. No interior lift.',
-      wheelchairTr: 'Giriş kapısından ana salona asansör. İç asansör yok.',
-      hearingEn: 'Sign language translator.',
-      hearingTr: 'İşaret dili tercümanı.'
+      wheelchairEn: 'Access is provided via lift to the main hall. Movement inside is arranged for comfort.',
+      wheelchairTr: 'Ana salona asansörle erişim sağlanır. İçerideki hareket konfor için düzenlenir.',
+      hearingEn: 'An elegant interior filled with intricate details. Attention is guided to key elements. Sign language support available.',
+      hearingTr: 'İnce detaylarla dolu zarif bir iç mekân. Dikkat kilit unsurlara yönlendirilir. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Tactile access is restricted inside the palace. The experience depends on spatial guidance and descriptive interpretation.',
+      visuallyImpairedTr: 'Saray içinde dokunsal erişim kısıtlıdır. Deneyim mekânsal rehberliğe ve betimleyici yoruma bağlıdır.'
     },
     {
       id: 'camlica-hill',
       nameEn: 'Çamlıca Hill',
       nameTr: 'Çamlıca Tepesi',
       image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/6d/1f/e0/camlica-tepesi.jpg?w=900&h=500&s=1',
-      wheelchairEn: 'Accessible terraces and ramps. There is accessible restaurant on the hill.',
-      wheelchairTr: 'Erişilebilir teraslar ve rampalar. Tepede erişilebilir restoran vardır.',
-      hearingEn: 'Panoramic views, visual experience.',
-      hearingTr: 'Panoramik manzaralar, görsel deneyim.'
+      wheelchairEn: 'Accessible terraces allow comfortable movement throughout the area.',
+      wheelchairTr: 'Erişilebilir teraslar alan boyunca rahat hareket imkânı sağlar.',
+      hearingEn: 'Panoramic views offer a calm and clear visual experience.',
+      hearingTr: 'Panoramik manzaralar sakin ve net bir görsel deneyim sunar.',
+      visuallyImpairedEn: 'Open space allows orientation and movement, though the experience is limited without visual reference. Environmental elements such as breeze, birds, and distant city sounds offer a clear feeling of height and location.',
+      visuallyImpairedTr: 'Açık alan yönelim ve harekete olanak tanır; ancak görsel referans olmadan deneyim sınırlıdır. Esinti, kuşlar ve şehrin uzak sesleri gibi çevresel unsurlar yükseklik ve konum hissini net biçimde aktarır.'
     },
     {
       id: 'kadikoy',
-      nameEn: 'Kadıköy Town',
+      nameEn: 'Kadıköy',
       nameTr: 'Kadıköy',
       image: 'https://blog.obilet.com/wp-content/uploads/2018/05/Kad%C4%B1k%C3%B6y-Moda-Gezilecek-Yerler.jpg',
-      wheelchairEn: 'Seaside promenade is flat and accessible. Many cafes are barrier-free.',
-      wheelchairTr: 'Sahil promenadı düz ve erişilebilir. Birçok kafe engelsizdir.',
-      hearingEn: 'Shopping, markets and cafes are visually based. Sign language translator.',
-      hearingTr: 'Alışveriş, pazarlar ve kafeler görsel tabanlıdır. İşaret dili tercümanı.'
+      wheelchairEn: 'The waterfront promenade is generally accessible with flat pathways. Movement through the historic market area is arranged considering crowd flow and street conditions.',
+      wheelchairTr: 'Sahil promenadı genellikle düz yollarla erişilebilir durumdadır. Tarihi çarşı bölgesindeki hareket kalabalık akışı ve sokak koşulları gözetilerek düzenlenir.',
+      hearingEn: 'A vibrant local district shaped by daily life, street food culture, and market activity. Key points are clearly explained. Sign language support available.',
+      hearingTr: 'Günlük yaşam, sokak yemek kültürü ve pazar etkinliğiyle şekillenmiş canlı bir yerel semt. Kilit noktalar açıkça anlatılır. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'A sensory-rich setting defined by sounds, movement, and food culture. Guidance supports orientation through the waterfront and market area.',
+      visuallyImpairedTr: 'Sesler, hareket ve yemek kültürüyle tanımlanan duyusal açıdan zengin bir ortam. Rehberlik sahil ve pazar alanı boyunca yönelimi destekler.'
     },
     {
       id: 'archeology-museum',
       nameEn: 'Istanbul Archeology Museums',
       nameTr: 'İstanbul Arkeoloji Müzeleri',
       image: 'https://muze.gov.tr/s3/MysFileContainer/istanbul_arkeoloji_muzeleri_638166547630761367.jpg',
-      wheelchairEn: 'The museum complex is accessible via ramps between buildings and an elevator. Exhibition halls are wheelchair-friendly.',
-      wheelchairTr: 'Müze kompleksi, binalar arasında rampalar ve asansörle erişilebilir. Sergi salonları tekerlekli sandalye dostudur.',
-      hearingEn: 'Visual exhibits, artifacts. Sign language support.',
-      hearingTr: 'Görsel sergiler, eserler. İşaret dili desteği.'
+      wheelchairEn: 'Access is available to the main hall. Upper levels are not accessible, and the visit is arranged accordingly.',
+      wheelchairTr: 'Ana salona erişim mevcuttur. Üst katlara erişilemez ve ziyaret buna göre düzenlenir.',
+      hearingEn: 'A visually rich collection spanning different civilizations. Key pieces are clearly presented to support understanding. Sign language support available.',
+      hearingTr: 'Farklı medeniyetleri kapsayan görsel açıdan zengin bir koleksiyon. Anlayışı desteklemek için kilit eserler açıkça sunulur. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Direct tactile interaction is limited. The visit is supported through clear and structured narration.',
+      visuallyImpairedTr: 'Doğrudan dokunsal etkileşim sınırlıdır. Ziyaret net ve yapılandırılmış anlatımla desteklenir.'
     },
     {
       id: 'taksim-square',
-      nameEn: 'Taksim Square & Istiklal Street',
+      nameEn: 'Taksim Square & İstiklal Street',
       nameTr: 'Taksim Meydanı & İstiklal Caddesi',
       image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/4b/5d/c8/taksim-square.jpg?w=1200&h=-1&s=1',
-      wheelchairEn: 'Spacious flat-ground area. İstiklal Street has accessible flat paths and low curbs.',
-      wheelchairTr: 'Geniş düz zeminli alan. İstiklal Caddesi erişilebilir düz yollara ve alçak kaldırımlara sahiptir.',
-      hearingEn: 'Lively atmosphere, visual street life.',
-      hearingTr: 'Canlı atmosfer, görsel sokak hayatı.'
+      wheelchairEn: 'The square itself is mostly flat and accessible. İstiklal Street can be crowded, and the movement is guided for comfort.',
+      wheelchairTr: 'Meydanın kendisi çoğunlukla düz ve erişilebilir durumdadır. İstiklal Caddesi kalabalık olabilir ve hareket konfor için yönlendirilir.',
+      hearingEn: 'A lively urban environment filled with visual movement, architecture, and street life. The layout is easy to follow with clear explanations. Sign language support available.',
+      hearingTr: 'Görsel hareket, mimari ve sokak yaşamıyla dolu canlı bir kentsel ortam. Düzen net açıklamalarla kolayca takip edilebilir. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'A dynamic environment supported through guided movement. Surrounding sounds and spatial cues help orientation.',
+      visuallyImpairedTr: 'Rehberli hareketle desteklenen dinamik bir ortam. Çevredeki sesler ve mekânsal ipuçları yönelimi kolaylaştırır.'
     },
     {
       id: 'galata-tower',
-      nameEn: 'Galata Tower (Outside)',
-      nameTr: 'Galata Kulesi (Dışarıdan)',
+      nameEn: 'Galata Tower',
+      nameTr: 'Galata Kulesi',
       image: 'https://img.ulubat.com/i/galata-tower-istanbul.jpg',
-      wheelchairEn: 'Tower and surroundings are visible from outside; surrounding streets can be visited with a wheelchair.',
-      wheelchairTr: 'Kule ve çevresi dışarıdan görülebilir; çevresindeki sokaklar tekerlekli sandalye ile ziyaret edilebilir.',
-      hearingEn: 'Architectural visual experience.',
-      hearingTr: 'Mimari görsel deneyim.'
+      wheelchairEn: 'The tower itself is not suitable for wheelchair access. The surrounding area offers a visually rich setting with cobblestone streets and viewpoints ideal for experiencing the atmosphere and taking photos.',
+      wheelchairTr: 'Kulenin kendisi tekerlekli sandalye erişimi için uygun değildir. Çevre alan arnavut kaldırımlı sokaklar ve atmsosferi yaşamak ile fotoğraf çekmek için ideal bakış açılarıyla görsel açıdan zengin bir ortam sunar.',
+      hearingEn: 'A vibrant district where historic and modern elements meet. Visual details and connections between areas are clearly presented. Sign language support available.',
+      hearingTr: 'Tarihi ve modern unsurların buluştuğu canlı bir semt. Bölgeler arasındaki görsel detaylar ve bağlantılar açıkça sunulur. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'Tower is not suitable due to vertical structure and access limitations. Guidance supports movement and understanding of the surroundings.',
+      visuallyImpairedTr: 'Kule dikey yapısı ve erişim kısıtlamaları nedeniyle uygun değildir. Rehberlik hareketi ve çevrenin anlaşılmasını destekler.'
     },
     {
-      id: 'pierre-loti',
-      nameEn: 'Pierre Loti Hill',
-      nameTr: 'Pierre Loti Tepesi',
-      image: 'https://istanbeautiful.com/wp-content/uploads/pierre-loti-hill-istanbul.jpg',
-      wheelchairEn: 'The cafe area and viewing terrace at the top are wheelchair accessible.',
-      wheelchairTr: 'Tepedeki kafeterya alanı ve seyir terası tekerlekli sandalye ile erişilebilir durumdadır.',
-      hearingEn: 'Panoramic visual views.',
-      hearingTr: 'Panoramik görsel manzaralar.'
-    },
-    {
-      id: 'eyup-sultan',
-      nameEn: 'Eyup Sultan Mosque',
-      nameTr: 'Eyüp Sultan Camii',
+      id: 'pierre-loti-eyup',
+      nameEn: 'Pierre Loti Hill & Eyüp Sultan Mosque',
+      nameTr: 'Pierre Loti Tepesi & Eyüp Sultan Camii',
       image: 'https://www.istanbul.com/img/eyup_sultan_mosque_istanbul_l.jpg',
-      wheelchairEn: 'Flat courtyard and wheelchair-friendly entrance available.',
-      wheelchairTr: 'Düz avlu ve tekerlekli sandalye dostu giriş mevcuttur.',
-      hearingEn: 'Visual architecture, spiritual atmosphere.',
-      hearingTr: 'Görsel mimari, manevi atmosfer.'
+      wheelchairEn: 'The mosque area and waterfront are generally accessible with flat pathways. Access to Pierre Loti Hill is arranged by cable car or, depending on mobility needs, by vehicle for added comfort.',
+      wheelchairTr: "Cami alanı ve sahil genellikle düz yollarla erişilebilir durumdadır. Pierre Loti Tepesi'ne erişim teleferikle ya da mobilite ihtiyacına göre daha fazla konfor için araçla sağlanır.",
+      hearingEn: 'A calm and visually rich setting combining spiritual atmosphere with panoramic views. Sign language support available.',
+      hearingTr: 'Manevi atmosferi panoramik manzaralarla birleştiren sakin ve görsel açıdan zengin bir ortam. İşaret dili desteği mevcuttur.',
+      visuallyImpairedEn: 'A calm and spiritual atmosphere is felt through the quiet rhythm and stillness around the mosque. At Pierre Loti Hill, the setting opens up with a sense of elevation, where birdsong, breeze, and distant city sounds create a clear feeling of height and space.',
+      visuallyImpairedTr: "Cami çevresindeki sessiz ritim ve durgunluk aracılığıyla sakin ve manevi bir atmosfer hissedilir. Pierre Loti Tepesi'nde ortam bir yükseklik hissiyle açılır; kuş sesleri, esinti ve uzak şehir sesleri yükseklik ve mekân hissini net biçimde aktarır."
     }
   ] : []
 
