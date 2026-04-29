@@ -381,7 +381,7 @@ const HomePage = () => {
                       <div className="relative group">
                         <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden shadow-xl">
                           <img
-                            src="https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg"
+                            src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
                             alt="İstanbul Erişilebilir Gezisi"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
@@ -447,7 +447,7 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                       <img
-                        src="https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg"
+                        src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
                         alt="İstanbul Erişilebilir Gezisi"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />

@@ -10,7 +10,7 @@ const PhotoGallery = () => {
   const participantPhotos = [
     {
       id: 1,
-      image: "https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg",
+      image: "/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg",
       tourName: "Blue Mosque Tour",
       participantName: "Sarah Johnson",
       date: "March 15, 2024",
@@ -65,7 +65,7 @@ const PhotoGallery = () => {
     },
     {
       id: 6,
-      image: "https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg",
+      image: "/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg",
       tourName: "Historical Sites Tour",
       participantName: "David Brown",
       date: "April 25, 2024",

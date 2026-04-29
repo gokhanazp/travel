@@ -25,7 +25,7 @@ const GalleryPage = () => {
   const galleryPhotos = [
     {
       id: 1,
-      image: "https://gezilinki.com/wp-content/uploads/2021/12/2-9.jpg",
+      image: "/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg",
       title: language === 'en' ? 'Blue Mosque Accessible Tour' : 'Sultanahmet Camii Erişilebilir Turu',
       category: 'historical',
       location: language === 'en' ? 'Sultanahmet, Istanbul' : 'Sultanahmet, İstanbul',
