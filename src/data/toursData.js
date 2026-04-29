@@ -14,14 +14,75 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "8 saat",
     durationEn: "8 hours",
-    image: "/tur-fotolari/6a459363-0be7-4450-8ecf-84ebf41c1b21.jpeg",
+    image: "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
     isPopular: false,
+    galleryCategories: [
+      {
+        title: "Sultanahmet Camii",
+        titleEn: "Blue Mosque",
+        photos: [
+          "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+          "/tours-foto/blue-mosque/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
+          "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
+          "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
+          "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
+          "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+        ]
+      },
+      {
+        title: "Ayasofya",
+        titleEn: "Hagia Sophia",
+        photos: [
+          "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+          "/tours-foto/hagia-sophia/a049ad45-5670-447d-a16d-63e83faa5448.jpeg",
+          "/tours-foto/hagia-sophia/a6f2d6c8-6050-422a-9b06-dcccc80e7a43.jpeg",
+          "/tours-foto/hagia-sophia/b9139303-5749-42ef-b2af-7682ece0e8e3.jpeg",
+          "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
+          "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
+          "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+        ]
+      },
+      {
+        title: "Topkapı Sarayı",
+        titleEn: "Topkapi Palace",
+        photos: [
+          "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+          "/tours-foto/topkapi-sarayi/0ccfd3cf-e2c7-4d00-88cb-1acaca65db28.jpeg",
+          "/tours-foto/topkapi-sarayi/114c93cd-19b3-4fa5-81ef-5da01adb0996.jpeg",
+          "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
+          "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
+          "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
+        ]
+      },
+      {
+        title: "Kapalıçarşı",
+        titleEn: "Grand Bazaar",
+        photos: [
+          "/tours-foto/grand-bazaar/14455185-1866-41ba-acb3-7b97208425d5.jpeg",
+          "/tours-foto/grand-bazaar/90a5c181-056e-48dd-ab73-04e6379d7743.jpeg",
+          "/tours-foto/grand-bazaar/f575f116-259f-417c-b8b2-feeead6b4572.jpeg",
+          "/tours-foto/grand-bazaar/fd26154b-a8d0-4c73-b157-84207f8c9c8b.jpeg",
+        ]
+      },
+      {
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        photos: [
+          "/tours-foto/istanbul/0154112d-b194-44ab-a8b1-31273b1560aa.jpeg",
+          "/tours-foto/istanbul/12c86c66-c4fd-4668-a449-f459d0b56618.jpeg",
+          "/tours-foto/istanbul/22db8e59-865b-4b16-a997-fd1a505e2029.jpeg",
+          "/tours-foto/istanbul/25721751-40cc-4c3b-9002-16c55c9ae5f7.jpeg",
+          "/tours-foto/istanbul/32730294-3dfd-42f8-a25a-efa1189cc3f2.jpeg",
+          "/tours-foto/istanbul/337e6ec0-ecc2-42a7-8c58-69a3a8f708c3.jpeg",
+        ]
+      },
+    ],
     gallery: [
-      "/tur-fotolari/6a459363-0be7-4450-8ecf-84ebf41c1b21.jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42 (1).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42 (2).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.42.jpeg",
-      "/tur-fotolari/bfe85794-a30b-418c-b981-6638be9edc4e.jpeg",
+      "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+      "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+      "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+      "/tours-foto/grand-bazaar/14455185-1866-41ba-acb3-7b97208425d5.jpeg",
+      "/tours-foto/istanbul/0154112d-b194-44ab-a8b1-31273b1560aa.jpeg",
     ],
     features: [
       "Profesyonel lisanslı rehber",
@@ -346,14 +407,86 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "3 Gece 4 Gün",
     durationEn: "3 Nights 4 Days",
-    image: "/tur-fotolari/9ac7af68-9ab3-438e-8209-26fe87a0df52.jpeg",
+    image: "/tours-foto/istanbul/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
     isPopular: false,
+    galleryCategories: [
+      {
+        title: "Sultanahmet Camii",
+        titleEn: "Blue Mosque",
+        photos: [
+          "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+          "/tours-foto/blue-mosque/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
+          "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
+          "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
+        ]
+      },
+      {
+        title: "Ayasofya",
+        titleEn: "Hagia Sophia",
+        photos: [
+          "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+          "/tours-foto/hagia-sophia/a049ad45-5670-447d-a16d-63e83faa5448.jpeg",
+          "/tours-foto/hagia-sophia/a6f2d6c8-6050-422a-9b06-dcccc80e7a43.jpeg",
+          "/tours-foto/hagia-sophia/b9139303-5749-42ef-b2af-7682ece0e8e3.jpeg",
+        ]
+      },
+      {
+        title: "Topkapı Sarayı",
+        titleEn: "Topkapi Palace",
+        photos: [
+          "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+          "/tours-foto/topkapi-sarayi/0ccfd3cf-e2c7-4d00-88cb-1acaca65db28.jpeg",
+          "/tours-foto/topkapi-sarayi/114c93cd-19b3-4fa5-81ef-5da01adb0996.jpeg",
+          "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
+          "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
+        ]
+      },
+      {
+        title: "Kapalıçarşı",
+        titleEn: "Grand Bazaar",
+        photos: [
+          "/tours-foto/grand-bazaar/14455185-1866-41ba-acb3-7b97208425d5.jpeg",
+          "/tours-foto/grand-bazaar/90a5c181-056e-48dd-ab73-04e6379d7743.jpeg",
+          "/tours-foto/grand-bazaar/f575f116-259f-417c-b8b2-feeead6b4572.jpeg",
+          "/tours-foto/grand-bazaar/fd26154b-a8d0-4c73-b157-84207f8c9c8b.jpeg",
+        ]
+      },
+      {
+        title: "Dolmabahçe Sarayı",
+        titleEn: "Dolmabahce Palace",
+        photos: [
+          "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+          "/tours-foto/dolmabahce/1992c380-50fb-4c84-b0e7-1426d619e3e3.jpeg",
+          "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
+          "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
+        ]
+      },
+      {
+        title: "Çamlıca Tepesi",
+        titleEn: "Çamlıca Hill",
+        photos: [
+          "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
+          "/tours-foto/camlica-tepesi/c15c5dfe-e271-401b-a0d1-6e211bea697e.jpeg",
+          "/tours-foto/camlica-tepesi/d7b4ef81-2310-42d7-9ac2-d53813186cc7.jpeg",
+        ]
+      },
+      {
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        photos: [
+          "/tours-foto/istanbul/3bcc3837-b096-415a-ac18-b84192c451d2.jpeg",
+          "/tours-foto/istanbul/3d04fef2-cc4e-4ab4-86fb-1a16543526f3.jpeg",
+          "/tours-foto/istanbul/48007f9a-a7dc-4461-bec8-d558845c3af0.jpeg",
+          "/tours-foto/istanbul/6d9aaaad-c86b-4306-8a30-67f2cc02f023.jpeg",
+        ]
+      },
+    ],
     gallery: [
-      "/tur-fotolari/9ac7af68-9ab3-438e-8209-26fe87a0df52.jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (1).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (2).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (3).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.44 (1).jpeg",
+      "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+      "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+      "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+      "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+      "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
     ],
     features: [
       "Profesyonel lisanslı rehber",
@@ -668,14 +801,96 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "4 Gece 5 Gün",
     durationEn: "4 Nights 5 Days",
-    image: "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
+    image: "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
     isPopular: true,
+    galleryCategories: [
+      {
+        title: "Sultanahmet Camii",
+        titleEn: "Blue Mosque",
+        photos: [
+          "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+          "/tours-foto/blue-mosque/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
+          "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
+          "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
+          "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
+          "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+        ]
+      },
+      {
+        title: "Ayasofya",
+        titleEn: "Hagia Sophia",
+        photos: [
+          "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+          "/tours-foto/hagia-sophia/a049ad45-5670-447d-a16d-63e83faa5448.jpeg",
+          "/tours-foto/hagia-sophia/a6f2d6c8-6050-422a-9b06-dcccc80e7a43.jpeg",
+          "/tours-foto/hagia-sophia/b9139303-5749-42ef-b2af-7682ece0e8e3.jpeg",
+          "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
+          "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
+          "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+        ]
+      },
+      {
+        title: "Topkapı Sarayı",
+        titleEn: "Topkapi Palace",
+        photos: [
+          "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+          "/tours-foto/topkapi-sarayi/0ccfd3cf-e2c7-4d00-88cb-1acaca65db28.jpeg",
+          "/tours-foto/topkapi-sarayi/114c93cd-19b3-4fa5-81ef-5da01adb0996.jpeg",
+          "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
+          "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
+          "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
+        ]
+      },
+      {
+        title: "Kapalıçarşı",
+        titleEn: "Grand Bazaar",
+        photos: [
+          "/tours-foto/grand-bazaar/14455185-1866-41ba-acb3-7b97208425d5.jpeg",
+          "/tours-foto/grand-bazaar/90a5c181-056e-48dd-ab73-04e6379d7743.jpeg",
+          "/tours-foto/grand-bazaar/f575f116-259f-417c-b8b2-feeead6b4572.jpeg",
+          "/tours-foto/grand-bazaar/fd26154b-a8d0-4c73-b157-84207f8c9c8b.jpeg",
+        ]
+      },
+      {
+        title: "Dolmabahçe Sarayı",
+        titleEn: "Dolmabahce Palace",
+        photos: [
+          "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+          "/tours-foto/dolmabahce/1992c380-50fb-4c84-b0e7-1426d619e3e3.jpeg",
+          "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
+          "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
+          "/tours-foto/dolmabahce/7578a122-6e5e-4fe8-be02-e1981ce14cc4.jpeg",
+        ]
+      },
+      {
+        title: "Çamlıca Tepesi",
+        titleEn: "Çamlıca Hill",
+        photos: [
+          "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
+          "/tours-foto/camlica-tepesi/c15c5dfe-e271-401b-a0d1-6e211bea697e.jpeg",
+          "/tours-foto/camlica-tepesi/d7b4ef81-2310-42d7-9ac2-d53813186cc7.jpeg",
+          "/tours-foto/camlica-tepesi/dea6e41d-3f15-47d7-bc15-d89f5c67c508.jpeg",
+          "/tours-foto/camlica-tepesi/f7179762-98ac-4f8c-bc43-100e3dd231fb.jpeg",
+        ]
+      },
+      {
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        photos: [
+          "/tours-foto/istanbul/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
+          "/tours-foto/istanbul/802f5e73-e0a1-4f4a-95ea-ea897b9c62d2.jpeg",
+          "/tours-foto/istanbul/91323c82-0e4d-4bcb-9c98-08341705c2a8.jpeg",
+          "/tours-foto/istanbul/92a05f73-c7e8-47fa-8375-5e1b284b18d7.jpeg",
+          "/tours-foto/istanbul/a0260c03-e857-4ea3-af47-211fd1ed765c.jpeg",
+        ]
+      },
+    ],
     gallery: [
-      "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (4).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (5).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (6).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.44.jpeg",
+      "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+      "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+      "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+      "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+      "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
     ],
     features: [
       "Profesyonel lisanslı rehber",
@@ -953,14 +1168,129 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "6 Gece 7 Gün",
     durationEn: "6 Nights 7 Days",
-    image: "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
+    image: "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
     isPopular: true,
+    galleryCategories: [
+      {
+        title: "Ayasofya",
+        titleEn: "Hagia Sophia",
+        photos: [
+          "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+          "/tours-foto/hagia-sophia/a049ad45-5670-447d-a16d-63e83faa5448.jpeg",
+          "/tours-foto/hagia-sophia/a6f2d6c8-6050-422a-9b06-dcccc80e7a43.jpeg",
+          "/tours-foto/hagia-sophia/b9139303-5749-42ef-b2af-7682ece0e8e3.jpeg",
+          "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
+          "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
+          "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+        ]
+      },
+      {
+        title: "Sultanahmet Camii",
+        titleEn: "Blue Mosque",
+        photos: [
+          "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+          "/tours-foto/blue-mosque/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
+          "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
+          "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
+          "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
+          "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+        ]
+      },
+      {
+        title: "Topkapı Sarayı",
+        titleEn: "Topkapi Palace",
+        photos: [
+          "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+          "/tours-foto/topkapi-sarayi/0ccfd3cf-e2c7-4d00-88cb-1acaca65db28.jpeg",
+          "/tours-foto/topkapi-sarayi/114c93cd-19b3-4fa5-81ef-5da01adb0996.jpeg",
+          "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
+          "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
+          "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
+          "/tours-foto/topkapi-sarayi/3c0defe2-7e26-48eb-aaf3-a8f4e64d33f6.jpeg",
+          "/tours-foto/topkapi-sarayi/51e6d7ac-0d40-4d31-a3d1-f99416714273.jpeg",
+        ]
+      },
+      {
+        title: "Kapalıçarşı",
+        titleEn: "Grand Bazaar",
+        photos: [
+          "/tours-foto/grand-bazaar/14455185-1866-41ba-acb3-7b97208425d5.jpeg",
+          "/tours-foto/grand-bazaar/90a5c181-056e-48dd-ab73-04e6379d7743.jpeg",
+          "/tours-foto/grand-bazaar/f575f116-259f-417c-b8b2-feeead6b4572.jpeg",
+          "/tours-foto/grand-bazaar/fd26154b-a8d0-4c73-b157-84207f8c9c8b.jpeg",
+        ]
+      },
+      {
+        title: "Dolmabahçe Sarayı",
+        titleEn: "Dolmabahce Palace",
+        photos: [
+          "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+          "/tours-foto/dolmabahce/1992c380-50fb-4c84-b0e7-1426d619e3e3.jpeg",
+          "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
+          "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
+          "/tours-foto/dolmabahce/7578a122-6e5e-4fe8-be02-e1981ce14cc4.jpeg",
+          "/tours-foto/dolmabahce/88346e22-5d36-4df0-86d7-b2dd6ef386ec.jpeg",
+        ]
+      },
+      {
+        title: "Çamlıca Tepesi",
+        titleEn: "Çamlıca Hill",
+        photos: [
+          "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
+          "/tours-foto/camlica-tepesi/c15c5dfe-e271-401b-a0d1-6e211bea697e.jpeg",
+          "/tours-foto/camlica-tepesi/d7b4ef81-2310-42d7-9ac2-d53813186cc7.jpeg",
+          "/tours-foto/camlica-tepesi/dea6e41d-3f15-47d7-bc15-d89f5c67c508.jpeg",
+          "/tours-foto/camlica-tepesi/f7179762-98ac-4f8c-bc43-100e3dd231fb.jpeg",
+        ]
+      },
+      {
+        title: "Galata Kulesi",
+        titleEn: "Galata Tower",
+        photos: [
+          "/tours-foto/galata-tower/8547af4e-1135-40a6-83c7-3aeeed106056.jpeg",
+          "/tours-foto/galata-tower/bce8b265-3f34-4f61-9c21-38f23b95b569.jpeg",
+          "/tours-foto/galata-tower/c08a8dd1-8872-4204-8e39-50329c40612e.jpeg",
+          "/tours-foto/galata-tower/ebf6fcde-9588-4243-9057-297a21173895.jpeg",
+        ]
+      },
+      {
+        title: "Eyüp Sultan",
+        titleEn: "Eyup Sultan",
+        photos: [
+          "/tours-foto/eyup-sultan/210cc6ee-1b15-4db8-b543-ed236127b4bb.jpeg",
+          "/tours-foto/eyup-sultan/2b36eb06-1553-400e-a24c-f13a76a9d63b.jpeg",
+          "/tours-foto/eyup-sultan/4fbd3db6-6d98-43e5-b6c4-631b091a0be5.jpeg",
+          "/tours-foto/eyup-sultan/b183096d-706d-4239-800d-048d2e0b7bb3.jpeg",
+          "/tours-foto/eyup-sultan/d01cfde9-2971-43bc-8e35-70ef80aa60b2.jpeg",
+        ]
+      },
+      {
+        title: "İstiklal Caddesi",
+        titleEn: "Istiklal Street",
+        photos: [
+          "/tours-foto/istiklal-caddesi/07c532a2-448c-4e5e-bc7f-bda655ebac33.jpeg",
+          "/tours-foto/istiklal-caddesi/e6e88e07-d208-444e-ada4-6bd03a110646.jpeg",
+        ]
+      },
+      {
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        photos: [
+          "/tours-foto/istanbul/b8d1c75e-c850-469f-8e0c-4791fa2d83fc.jpeg",
+          "/tours-foto/istanbul/d87becc1-7568-45f6-990b-7d2fc4bf6d90.jpeg",
+          "/tours-foto/istanbul/dab3cdf7-9523-4db2-b850-f8dc71f1430c.jpeg",
+          "/tours-foto/istanbul/e31fc236-ad61-442c-9b34-6a9fab96714c.jpeg",
+          "/tours-foto/istanbul/f1eeea60-e946-4cdf-aa3d-cdc7ddd61e7a.jpeg",
+          "/tours-foto/istanbul/f5bef786-19dd-42be-82ef-0b221ca3fde2.jpeg",
+        ]
+      },
+    ],
     gallery: [
-      "/tur-fotolari/412356d3-b628-4ba8-a16c-b16fbd8e64a2.jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (4).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (5).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (6).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.44.jpeg",
+      "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+      "/tours-foto/blue-mosque/4dc85f04-bffa-4468-a05d-94876c6ae106.jpeg",
+      "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+      "/tours-foto/dolmabahce/03a91470-024b-420c-8507-453ca1292a7e.jpeg",
+      "/tours-foto/galata-tower/8547af4e-1135-40a6-83c7-3aeeed106056.jpeg",
     ],
     features: [
       "Profesyonel lisanslı rehber",
@@ -1383,13 +1713,25 @@ export const toursData = [
       "Tell us about your mobility needs, travel style and interests. We design a fully accessible, personalized Istanbul experience just for you.",
     price: "",
     priceEn: "",
-    image: "/tur-fotolari/ba245809-a9f0-4080-80e4-f53646218055.jpeg",
+    image: "/tours-foto/istanbul/e31fc236-ad61-442c-9b34-6a9fab96714c.jpeg",
     isCustom: true,
+    galleryCategories: [
+      {
+        title: "İstanbul",
+        titleEn: "Istanbul",
+        photos: [
+          "/tours-foto/istanbul/e31fc236-ad61-442c-9b34-6a9fab96714c.jpeg",
+          "/tours-foto/istanbul/f1eeea60-e946-4cdf-aa3d-cdc7ddd61e7a.jpeg",
+          "/tours-foto/istanbul/f5bef786-19dd-42be-82ef-0b221ca3fde2.jpeg",
+          "/tours-foto/istanbul/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+        ]
+      },
+    ],
     gallery: [
-      "/tur-fotolari/ba245809-a9f0-4080-80e4-f53646218055.jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (7).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43 (8).jpeg",
-      "/tur-fotolari/WhatsApp Image 2026-02-02 at 17.02.43.jpeg",
+      "/tours-foto/istanbul/e31fc236-ad61-442c-9b34-6a9fab96714c.jpeg",
+      "/tours-foto/istanbul/f1eeea60-e946-4cdf-aa3d-cdc7ddd61e7a.jpeg",
+      "/tours-foto/istanbul/f5bef786-19dd-42be-82ef-0b221ca3fde2.jpeg",
+      "/tours-foto/istanbul/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
     ],
   },
 ];

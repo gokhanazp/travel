@@ -8,16 +8,7 @@ import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg
 
 
 
-import vehicle_0 from '../assets/piba-arac/0ab9f16b-6b19-4d8f-91a6-007942b92c92.jpeg';
-import vehicle_1 from '../assets/piba-arac/0b1f30e5-0a58-496f-a206-f487c89a2d11.jpeg';
-import vehicle_2 from '../assets/piba-arac/1af082ac-6567-43ca-a283-bb901dd418de.jpeg';
-import vehicle_3 from '../assets/piba-arac/1ca166f3-7d12-4f76-aba2-4408d0079144.jpeg';
-import vehicle_4 from '../assets/piba-arac/2c9e5e6a-00d6-4a46-afbb-8ee4e5d31faf.jpeg';
-import vehicle_5 from '../assets/piba-arac/3a3a3063-0834-46d4-a42c-7af0718efe71.jpeg';
-import vehicle_6 from '../assets/piba-arac/3db50969-48c6-428e-89f6-13999b30e9b4.jpeg';
-import vehicle_7 from '../assets/piba-arac/5c28e09d-1d0b-4f0f-a961-a657ad9d99db.jpeg';
-import vehicle_8 from '../assets/piba-arac/6b70498b-3c78-4695-860d-4c3227100269.jpeg';
-import vehicle_9 from '../assets/piba-arac/6f645a54-6459-4075-a723-6bfd1bf61627.jpeg';
+// Araç fotoğrafları - public/vehicle klasöründen (import gerekmez)
 
 // Vehicle Slider Component
 const VehicleSlider = () => {
@@ -25,15 +16,15 @@ const VehicleSlider = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const vehicles = [
-    { id: 1, image: vehicle_0, name: 'Accessible Minivan' },
-    { id: 2, image: vehicle_1, name: 'Spacious Interior' },
-    { id: 3, image: vehicle_2, name: 'Wheelchair Lift' },
-    { id: 4, image: vehicle_3, name: 'Comfortable Seating' },
-    { id: 5, image: vehicle_4, name: 'Modern Design' },
-    { id: 6, image: vehicle_5, name: 'Safety Features' },
-    { id: 7, image: vehicle_6, name: 'Reliable Transport' },
-    { id: 8, image: vehicle_7, name: 'Group Travel Ready' },
-    { id: 9, image: vehicle_8, name: 'Easy Boarding' },
+    { id: 1, image: '/vehicle/001304e4-b441-4f7b-833a-aa53fcbd0435.jpeg', name: 'Accessible Minivan' },
+    { id: 2, image: '/vehicle/01c2abf7-cd6f-434e-acd2-6cc83fa1fd2f.jpeg', name: 'Spacious Interior' },
+    { id: 3, image: '/vehicle/14e32ccd-f29a-4fc4-8b38-f27369e1b377.jpeg', name: 'Wheelchair Lift' },
+    { id: 4, image: '/vehicle/1a57dd88-208b-4d73-8452-ba6946168bb7.jpeg', name: 'Comfortable Seating' },
+    { id: 5, image: '/vehicle/270d59d4-64bb-4d72-8d8e-883ab7f6bccb.jpeg', name: 'Modern Design' },
+    { id: 6, image: '/vehicle/2e0f6b3e-3449-4ae9-ae70-e8583b2273cd.jpeg', name: 'Safety Features' },
+    { id: 7, image: '/vehicle/360d8844-44c2-4be5-a9fb-fa4842abe856.jpeg', name: 'Reliable Transport' },
+    { id: 8, image: '/vehicle/3733875a-c63b-492e-bf25-fb82df052729.jpeg', name: 'Group Travel Ready' },
+    { id: 9, image: '/vehicle/3d6c12a2-7b67-4d60-ab8c-e001a450b6fa.jpeg', name: 'Easy Boarding' },
   ];
   
   const ITEMS_PER_PAGE = 3;

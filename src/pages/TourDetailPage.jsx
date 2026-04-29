@@ -261,15 +261,21 @@ const TourDetailPage = () => {
   // Gallery modal için keyboard navigation ve body scroll lock
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (selectedImage !== null && tour?.gallery) {
+      if (selectedImage !== null && tour) {
+        const allPhotos = tour.galleryCategories && tour.galleryCategories.length > 0
+          ? tour.galleryCategories.flatMap(cat => cat.photos)
+          : tour.gallery || [];
+        
+        if (allPhotos.length === 0) return;
+
         if (e.key === 'Escape') {
           setSelectedImage(null)
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault()
-          setSelectedImage(selectedImage > 0 ? selectedImage - 1 : tour.gallery.length - 1)
+          setSelectedImage(selectedImage > 0 ? selectedImage - 1 : allPhotos.length - 1)
         } else if (e.key === 'ArrowRight') {
           e.preventDefault()
-          setSelectedImage(selectedImage < tour.gallery.length - 1 ? selectedImage + 1 : 0)
+          setSelectedImage(selectedImage < allPhotos.length - 1 ? selectedImage + 1 : 0)
         }
       }
     }
@@ -285,7 +291,7 @@ const TourDetailPage = () => {
       document.body.style.overflow = 'unset'
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [selectedImage, tour?.gallery])
+  }, [selectedImage, tour?.galleryCategories, tour?.gallery])
 
   // Mobil dropdown menüsü için ESC tuşu ile kapatma
   useEffect(() => {
@@ -1400,7 +1406,60 @@ const TourDetailPage = () => {
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     {currentContent.gallery}
                   </h2>
-                  {tour.gallery && tour.gallery.length > 0 ? (
+                  {tour.galleryCategories && tour.galleryCategories.length > 0 ? (
+                    <div className="space-y-12">
+                      {tour.galleryCategories.map((category, catIndex) => {
+                        // Bu kategoriden önceki tüm fotoğrafların toplam sayısını hesapla (lightbox index için)
+                        const previousPhotosCount = tour.galleryCategories
+                          .slice(0, catIndex)
+                          .reduce((sum, cat) => sum + cat.photos.length, 0);
+
+                        return (
+                          <div key={catIndex}>
+                            {/* Kategori Başlığı */}
+                            <div className="flex items-center mb-6">
+                              <div className="w-1.5 h-8 bg-gradient-to-b from-orange-500 to-pink-500 rounded-full mr-4"></div>
+                              <h3 className="text-xl font-bold text-gray-900">
+                                {language === 'en' ? category.titleEn : category.title}
+                              </h3>
+                              <div className="ml-4 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">
+                                {category.photos.length} {language === 'en' ? 'photos' : 'fotoğraf'}
+                              </div>
+                              <div className="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent ml-4"></div>
+                            </div>
+
+                            {/* Fotoğraf Grid */}
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                              {category.photos.map((image, photoIndex) => (
+                                <div
+                                  key={photoIndex}
+                                  className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group transform transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
+                                  onClick={() => setSelectedImage(previousPhotosCount + photoIndex)}
+                                >
+                                  <img
+                                    src={image}
+                                    alt={`${language === 'en' ? category.titleEn : category.title} - ${photoIndex + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    onError={(e) => {
+                                      e.target.src = '/placeholder-image.jpg'
+                                    }}
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : tour.gallery && tour.gallery.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {tour.gallery.map((image, index) => (
                         <div
@@ -1572,73 +1631,82 @@ const TourDetailPage = () => {
       <Footer />
 
       {/* Gallery Lightbox Modal */}
-      {activeTab === 'gallery' && selectedImage !== null && tour.gallery && tour.gallery[selectedImage] && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative max-w-4xl max-h-full">
-            {/* Close button */}
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors duration-200 z-10"
-              aria-label={language === 'en' ? 'Close' : 'Kapat'}
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+      {activeTab === 'gallery' && selectedImage !== null && (() => {
+        // Tüm fotoğrafları düzleştir
+        const allPhotos = tour.galleryCategories && tour.galleryCategories.length > 0
+          ? tour.galleryCategories.flatMap(cat => cat.photos)
+          : tour.gallery || [];
+        
+        if (!allPhotos[selectedImage]) return null;
 
-            {/* Navigation buttons */}
-            {tour.gallery.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setSelectedImage(selectedImage > 0 ? selectedImage - 1 : tour.gallery.length - 1)
-                  }}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
-                  aria-label={language === 'en' ? 'Previous image' : 'Önceki resim'}
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setSelectedImage(selectedImage < tour.gallery.length - 1 ? selectedImage + 1 : 0)
-                  }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
-                  aria-label={language === 'en' ? 'Next image' : 'Sonraki resim'}
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </>
-            )}
+        return (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-4xl max-h-full">
+              {/* Close button */}
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors duration-200 z-10"
+                aria-label={language === 'en' ? 'Close' : 'Kapat'}
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
 
-            {/* Image */}
-            <img
-              src={tour.gallery[selectedImage]}
-              alt={`${title} - ${selectedImage + 1}`}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-              onError={(e) => {
-                e.target.src = '/placeholder-image.jpg'
-              }}
-            />
+              {/* Navigation buttons */}
+              {allPhotos.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setSelectedImage(selectedImage > 0 ? selectedImage - 1 : allPhotos.length - 1)
+                    }}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
+                    aria-label={language === 'en' ? 'Previous image' : 'Önceki resim'}
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setSelectedImage(selectedImage < allPhotos.length - 1 ? selectedImage + 1 : 0)
+                    }}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-all duration-200 z-10"
+                    aria-label={language === 'en' ? 'Next image' : 'Sonraki resim'}
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </>
+              )}
 
-            {/* Image counter */}
-            {tour.gallery.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
-                {selectedImage + 1} / {tour.gallery.length}
-              </div>
-            )}
+              {/* Image */}
+              <img
+                src={allPhotos[selectedImage]}
+                alt={`${title} - ${selectedImage + 1}`}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+                onError={(e) => {
+                  e.target.src = '/placeholder-image.jpg'
+                }}
+              />
+
+              {/* Image counter */}
+              {allPhotos.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+                  {selectedImage + 1} / {allPhotos.length}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Accessibility Location Modal */}
       {selectedLocation && (
