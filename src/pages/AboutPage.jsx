@@ -109,6 +109,44 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* --- About Piba Wings Mobility Section --- */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              {language === 'tr' ? 'Piba Wings Mobility Hakkında' : 'About Piba Wings Mobility'}
+            </h2>
+            <div className="mt-3 w-16 h-1 bg-gradient-to-r from-orange-400 to-red-400 mx-auto rounded-full"></div>
+          </div>
+          <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+            <p>
+              Piba Wings Mobility is the accessible brand of <strong>Piba Wings Travel</strong>, a licensed A-Group travel agency in Turkey.
+            </p>
+            <p>
+              Founded by a professional tour guide with over <strong>24 years of hands-on experience</strong>, we focus on creating accessible travel in İstanbul that is comfortable, smooth, and thoughtfully planned.
+            </p>
+            <p>
+              We believe accessibility is not only about reaching a destination, but about moving with ease and confidence at every step.
+            </p>
+            <p>
+              Our work is built on years of guiding travelers with different mobility needs, expectations, and travel styles. This has shaped a clear approach: <em>every detail matters — and every route should be carefully arranged.</em>
+            </p>
+            <p>
+              At Piba Wings Mobility, we design <strong>tailor-made journeys</strong> for travelers with mobility needs, seniors, and anyone seeking a more comfortable way to explore.
+            </p>
+            <p>
+              From accessible transportation to personalized itineraries and professional guiding, every element is designed with care.
+            </p>
+            <p>
+              Our goal is simple: <strong>remove uncertainty, provide comfort, and ensure a seamless journey from start to finish.</strong>
+            </p>
+            <p className="text-xl font-semibold text-orange-600 pt-4 border-t border-gray-100">
+              As Piba Wings Mobility, we are here to make travel simple, comfortable, and genuinely accessible — for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* --- Why Choose Us Section --- */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
