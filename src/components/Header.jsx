@@ -73,6 +73,9 @@ const MainHeader = () => {
             <Link to={language === 'tr' ? "/turlar" : "/tours"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('tours')}
             </Link>
+            <Link to="/optional-activities" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
+              Experiences
+            </Link>
             <Link to={language === 'tr' ? "/yazilar" : "/blog"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('blog')}
             </Link>
@@ -193,6 +196,13 @@ const MainHeader = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('tours')}
+              </Link>
+              <Link
+                to="/optional-activities"
+                className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Experiences
               </Link>
               <Link
                 to={language === 'tr' ? "/yazilar" : "/blog"}

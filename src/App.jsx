@@ -18,6 +18,7 @@ import TermsOfServicePage from './pages/TermsOfServicePage'
 import PaymentPolicyPage from './pages/PaymentPolicyPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailPage from './pages/BlogDetailPage'
+import OptionalActivitiesPage from './pages/OptionalActivitiesPage'
 
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -76,6 +77,8 @@ function App() {
               <Route path="/yazilar" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<BlogDetailPage />} />
               <Route path="/yazilar/:slug" element={<BlogDetailPage />} />
+              <Route path="/optional-activities" element={<OptionalActivitiesPage />} />
+              <Route path="/experiences" element={<OptionalActivitiesPage />} />
             </Routes>
             <WhatsAppButton />
           </div>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useLanguage } from '../contexts/LanguageContext'
 import { toursData } from '../data/toursData'
+import { activitiesData } from '../data/activitiesData'
 import { sendReservationEmail } from '../services/emailService'
 
 const ReservationPage = () => {
@@ -32,7 +33,8 @@ const ReservationPage = () => {
     participants: 1,
     airportTransfer: 'No',
     message: '',
-    selectedServices: {} // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
+    selectedServices: {}, // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
+    selectedActivities: {} // Seçilen optional activities: { activityId: true }
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -75,14 +77,28 @@ const ReservationPage = () => {
     }
   ]
 
-  // URL parametrelerinden tur ID'sini al ve otomatik seç
+  // URL parametrelerinden tur ID'sini ve aktivite ID'sini al ve otomatik seç
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search)
     const tourId = urlParams.get('tour')
-    if (tourId) {
-      setFormData(prev => ({ ...prev, tour: tourId }))
-    }
+    const activityId = urlParams.get('activity')
+    setFormData(prev => ({
+      ...prev,
+      ...(tourId ? { tour: tourId } : {}),
+      ...(activityId ? { selectedActivities: { ...prev.selectedActivities, [activityId]: true } } : {})
+    }))
   }, [location.search])
+
+  // Aktivite toggle handler
+  const handleActivityToggle = (activityId) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedActivities: {
+        ...prev.selectedActivities,
+        [activityId]: !prev.selectedActivities[activityId]
+      }
+    }))
+  }
 
   // Optional service seçimi için handler
   const handleServiceToggle = (serviceIndex) => {
@@ -447,6 +463,92 @@ const ReservationPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   />
                 </div>
+              </div>
+
+              {/* Optional Activities */}
+              <div className="border-t pt-8">
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      Optional Experiences
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      Add unique Istanbul experiences to your trip
+                    </p>
+                  </div>
+                  <Link
+                    to="/optional-activities"
+                    className="text-xs text-orange-500 hover:text-orange-600 font-semibold flex items-center gap-1 flex-shrink-0 ml-4"
+                  >
+                    View All
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+
+                <div className="space-y-3">
+                  {activitiesData.map(activity => {
+                    const isSelected = formData.selectedActivities[activity.id] || false
+                    return (
+                      <div
+                        key={activity.id}
+                        onClick={() => handleActivityToggle(activity.id)}
+                        className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                          isSelected
+                            ? 'border-orange-400 bg-orange-50 shadow-sm'
+                            : 'border-gray-100 bg-gray-50 hover:border-orange-200 hover:bg-orange-50/40'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3 flex-1 min-w-0">
+                          {/* Custom checkbox */}
+                          <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                            isSelected ? 'bg-orange-500 border-orange-500' : 'border-gray-300 bg-white'
+                          }`}>
+                            {isSelected && (
+                              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          {/* Icon + title */}
+                          <span className="text-xl flex-shrink-0">{activity.icon}</span>
+                          <div className="min-w-0">
+                            <p className="font-semibold text-gray-900 text-sm truncate">
+                              {activity.titleEn}
+                            </p>
+                            <p className="text-xs text-gray-500">⏱ {activity.duration}</p>
+                          </div>
+                        </div>
+                        {/* View details link */}
+                        <Link
+                          to="/optional-activities"
+                          onClick={e => e.stopPropagation()}
+                          className="text-xs text-orange-500 hover:text-orange-600 font-medium flex-shrink-0 ml-3 hover:underline"
+                        >
+                          Details
+                        </Link>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                {/* Selected activities summary */}
+                {Object.values(formData.selectedActivities).some(Boolean) && (
+                  <div className="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-xl">
+                    <p className="text-sm font-semibold text-orange-800 mb-2">Selected Experiences:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {activitiesData
+                        .filter(a => formData.selectedActivities[a.id])
+                        .map(a => (
+                          <span key={a.id} className="inline-flex items-center gap-1 bg-white border border-orange-200 text-orange-700 text-xs font-medium px-3 py-1.5 rounded-full">
+                            {a.icon} {a.titleEn.split(' ').slice(0, 3).join(' ')}…
+                          </span>
+                        ))
+                      }
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Optional Services - Her zaman göster */}
