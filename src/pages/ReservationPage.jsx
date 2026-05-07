@@ -127,8 +127,8 @@ const ReservationPage = () => {
 
   const content = {
     en: {
-      title: 'Make a Reservation',
-      subtitle: 'Book your accessible tour experience',
+      title: 'Plan Your Accessible Trip',
+      subtitle: 'Tell us your needs and we will design the perfect experience for you.',
       nameLabel: 'Full Name',
       namePlaceholder: 'Your full name',
       emailLabel: 'Email',
@@ -142,9 +142,8 @@ const ReservationPage = () => {
       dateLabel: 'Date',
       messageLabel: 'Special Requests and Notes',
       messagePlaceholder: 'Your special needs, accessibility requirements or questions...',
-      submitButton: 'Send Reservation Request',
-      submitNote: '* Your reservation request will be reviewed within 24 hours.',
-      successMessage: 'Your reservation request has been received! We will get back to you as soon as possible.',
+      submitButton: 'Plan My Trip',
+      submitNote: '* Your request will be carefully reviewed within 24 hours.',
       optionalServicesTitle: 'Optional Services',
       optionalServicesSubtitle: 'Enhance your tour experience with our additional services',
       airportTransferLabel: 'Airport Transfer Needed?',
@@ -154,8 +153,8 @@ const ReservationPage = () => {
       tours: toursData.map(t => ({ id: t.id, name: t.titleEn.replace('<br/>', ' '), price: t.priceEn, code: t.id }))
     },
     tr: {
-      title: 'Rezervasyon Yap',
-      subtitle: 'Engelli dostu turlarımız için rezervasyon yapın',
+      title: 'Plan Your Accessible Trip',
+      subtitle: 'Tell us your needs and we will design the perfect experience for you.',
       nameLabel: 'Ad Soyad',
       namePlaceholder: 'Adınız ve soyadınız',
       emailLabel: 'E-posta',
@@ -169,9 +168,8 @@ const ReservationPage = () => {
       dateLabel: 'Tarih',
       messageLabel: 'Özel İstekler ve Notlar',
       messagePlaceholder: 'Özel ihtiyaçlarınız, erişilebilirlik gereksinimleri veya sorularınız...',
-      submitButton: 'Rezervasyon Talebini Gönder',
-      submitNote: '* Rezervasyon talebiniz 24 saat içinde değerlendirilecektir.',
-      successMessage: 'Rezervasyon talebiniz alındı! En kısa sürede size dönüş yapacağız.',
+      submitButton: 'Plan My Trip',
+      submitNote: '* Talebiniz 24 saat içinde özenle değerlendirilecektir.',
       optionalServicesTitle: 'Opsiyonel Hizmetler',
       optionalServicesSubtitle: 'Ek hizmetlerimizle tur deneyiminizi zenginleştirin',
       airportTransferLabel: 'Havaalanı Transferi Gerekiyor mu?',
@@ -646,17 +644,44 @@ const ReservationPage = () => {
 
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
-                  <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="font-semibold">
-                        {language === 'en'
-                          ? 'Reservation sent successfully! We will contact you soon.'
-                          : 'Rezervasyon başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.'
-                        }
-                      </span>
+                  <div className="mt-8 relative overflow-hidden rounded-2xl shadow-xl">
+                    {/* Decorative top bar */}
+                    <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400" />
+                    <div className="bg-white px-8 py-10 text-center">
+                      {/* Icon */}
+                      <div className="flex justify-center mb-6">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center shadow-inner">
+                          <svg className="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                      </div>
+                      {/* Heading */}
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
+                        Thank you for your request.
+                      </h3>
+                      {/* Body text */}
+                      <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
+                        We have received your details and will carefully review your travel needs to create a personalized experience for you. We will get back to you within{' '}
+                        <span className="font-semibold text-emerald-600">24 hours</span>.
+                      </p>
+                      {/* Divider */}
+                      <div className="flex items-center gap-3 justify-center mb-6">
+                        <div className="h-px w-16 bg-gray-200" />
+                        <span className="text-gray-400 text-sm">✦</span>
+                        <div className="h-px w-16 bg-gray-200" />
+                      </div>
+                      {/* Urgent note */}
+                      <p className="text-sm text-gray-500 italic">
+                        If your request is urgent, feel free to{' '}
+                        <a
+                          href="tel:+905325433673"
+                          className="text-orange-500 font-semibold not-italic hover:text-orange-600 transition-colors"
+                        >
+                          contact us directly
+                        </a>
+                        .
+                      </p>
                     </div>
                   </div>
                 )}
