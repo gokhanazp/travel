@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import pibawingsLogo from '../assets/pibawings-logo.png'
 import pibaMainLogo from '../assets/pibalogo-300x279.webp'
-import tursabLogo from '../assets/tursab-logosu.png'
 
 const Footer = () => {
   const { language, t } = useLanguage()
@@ -157,25 +156,26 @@ const Footer = () => {
                   </svg>
                 </a>
               </div>
-            </div>
 
-            {/* Newsletter */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-              <h5 className="font-semibold mb-3">{t('footerSpecialOffers')}</h5>
-              <p className="text-sm text-gray-300 mb-3">
-                {t('footerNewsletter')}
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder={t('footerYourEmail')}
-                  className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-l-lg text-white placeholder-gray-300 focus:outline-none focus:border-blue-400"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition-colors duration-300">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </button>
+              {/* TÜRSAB Accreditation */}
+              <div className="pt-2">
+                <a
+                  href="https://www.tursab.org.tr/tr/ddsv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg inline-block transition-transform hover:scale-105"
+                >
+                  <img
+                    src="/tursab-dds-17842.webp"
+                    alt="TÜRSAB Dijital Doğrulama Sistemi"
+                    className="h-14 md:h-16 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </a>
+                <div className="text-[10px] md:text-xs text-gray-400 leading-tight mt-2">
+                  <p>{language === 'tr' ? 'Yaptırdığınız turlar TÜRSAB güvencesindedir.' : 'We are a registered travel agency'}</p>
+                  <p>{language === 'tr' ? 'Belge No: 17842' : 'under TURSAB (License No. 17842)'}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -207,26 +207,6 @@ const Footer = () => {
                 <Link to={language === 'tr' ? "/odeme-politikasi" : "/payment-policy"} className="text-gray-300 hover:text-white transition-colors duration-300">
                   {language === 'tr' ? 'Ödeme & İptal' : 'Payment Policy'}
                 </Link>
-              </div>
-              
-              <div className="flex flex-col items-center md:items-end space-y-2 mt-4 md:mt-0">
-                <a 
-                  href="https://www.tursab.org.tr/tr/ddsv" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg inline-block transition-transform hover:scale-105"
-                >
-                  <img
-                    src="/tursab-dds-17842.webp"
-                    alt="TÜRSAB Dijital Doğrulama Sistemi"
-                    className="h-14 md:h-16 w-auto object-contain"
-                    loading="lazy"
-                  />
-                </a>
-                <div className="text-[10px] md:text-xs text-gray-400 text-center md:text-right leading-tight">
-                  <p>{language === 'tr' ? 'Yaptırdığınız turlar TÜRSAB güvencesindedir.' : 'We are a registered travel agency'}</p>
-                  <p>{language === 'tr' ? 'Belge No: 17842' : 'under TURSAB (License No. 17842)'}</p>
-                </div>
               </div>
             </div>
           </div>

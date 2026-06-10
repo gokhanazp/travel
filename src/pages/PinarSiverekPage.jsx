@@ -140,6 +140,13 @@ Piba Wings Travel Acentesi`
                   <p className="text-lg text-gray-600">
                     Piba Wings Travel Agency
                   </p>
+                  <div className="inline-flex items-center justify-center gap-2 text-sm text-gray-500 font-medium mt-1">
+                    <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18" />
+                    </svg>
+                    {language === 'en' ? 'English & Chinese & Japanese' : 'İngilizce & Çince & Japonca'}
+                  </div>
                 </div>
 
                 {/* Professional Stats */}

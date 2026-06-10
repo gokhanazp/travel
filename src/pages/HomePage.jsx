@@ -16,15 +16,15 @@ const VehicleSlider = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const vehicles = [
-    { id: 1, image: '/vehicle/001304e4-b441-4f7b-833a-aa53fcbd0435.jpeg', name: 'Accessible Minivan' },
-    { id: 2, image: '/vehicle/01c2abf7-cd6f-434e-acd2-6cc83fa1fd2f.jpeg', name: 'Spacious Interior' },
-    { id: 3, image: '/vehicle/14e32ccd-f29a-4fc4-8b38-f27369e1b377.jpeg', name: 'Wheelchair Lift' },
-    { id: 4, image: '/vehicle/1a57dd88-208b-4d73-8452-ba6946168bb7.jpeg', name: 'Comfortable Seating' },
-    { id: 5, image: '/vehicle/270d59d4-64bb-4d72-8d8e-883ab7f6bccb.jpeg', name: 'Modern Design' },
-    { id: 6, image: '/vehicle/2e0f6b3e-3449-4ae9-ae70-e8583b2273cd.jpeg', name: 'Safety Features' },
-    { id: 7, image: '/vehicle/360d8844-44c2-4be5-a9fb-fa4842abe856.jpeg', name: 'Reliable Transport' },
-    { id: 8, image: '/vehicle/3733875a-c63b-492e-bf25-fb82df052729.jpeg', name: 'Group Travel Ready' },
-    { id: 9, image: '/vehicle/3d6c12a2-7b67-4d60-ab8c-e001a450b6fa.jpeg', name: 'Easy Boarding' },
+    { id: 1, image: '/vehicle/01c2abf7-cd6f-434e-acd2-6cc83fa1fd2f.jpeg', name: 'Spacious Interior' },
+    { id: 2, image: '/vehicle/14e32ccd-f29a-4fc4-8b38-f27369e1b377.jpeg', name: 'Wheelchair Lift System' },
+    { id: 3, image: '/vehicle/1a57dd88-208b-4d73-8452-ba6946168bb7.jpeg', name: 'Comfortable Accessible Seating' },
+    { id: 4, image: '/vehicle/270d59d4-64bb-4d72-8d8e-883ab7f6bccb.jpeg', name: 'Accessible Vehicle Design' },
+    { id: 5, image: '/vehicle/2e0f6b3e-3449-4ae9-ae70-e8583b2273cd.jpeg', name: 'Safety Features' },
+    { id: 6, image: '/vehicle/360d8844-44c2-4be5-a9fb-fa4842abe856.jpeg', name: 'Reliable Transport' },
+    { id: 7, image: '/vehicle/3733875a-c63b-492e-bf25-fb82df052729.jpeg', name: 'Accessible Group Transportation' },
+    { id: 8, image: '/vehicle/3d6c12a2-7b67-4d60-ab8c-e001a450b6fa.jpeg', name: 'Easy Wheelchair Boarding' },
+    { id: 9, image: '/vehicle/001304e4-b441-4f7b-833a-aa53fcbd0435.jpeg', name: 'Accessible Minivan' },
   ];
   
   const ITEMS_PER_PAGE = 3;
