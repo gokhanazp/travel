@@ -82,6 +82,9 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Quick Links + Social Media (stacked) */}
+          <div className="space-y-10">
+
           {/* Quick Links */}
           <div>
             <h4 className="text-xl font-bold mb-6">{t('footerQuickLinks')}</h4>
@@ -177,6 +180,37 @@ const Footer = () => {
                   <p>{language === 'tr' ? 'Belge No: 17842' : 'under TURSAB (License No. 17842)'}</p>
                 </div>
               </div>
+            </div>
+          </div>
+          </div>
+
+          {/* Why Choose Us & Founder */}
+          <div>
+            <h4 className="text-xl font-bold mb-6">{language === 'tr' ? 'Neden Biz?' : 'Why Choose Us'}</h4>
+            <ul className="space-y-3 mb-6">
+              {(language === 'tr'
+                ? ['24 Yıllık Deneyim', 'A Grubu Lisanslı Acente', 'Erişilebilir Araçlar', 'Kişiye Özel Erişilebilir Turlar', 'Doğrudan İletişim']
+                : ['24 Years Experience', 'Licensed A Group Agency', 'Accessible Vehicles', 'Personalized Accessible Tours', 'Direct Contact']
+              ).map((item, idx) => (
+                <li key={idx} className="flex items-center text-gray-300 text-sm">
+                  <svg className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-white/20 pt-4">
+              <p className="font-semibold text-white">Pınar Siverek</p>
+              <p className="text-sm text-gray-400 mb-1">
+                {language === 'tr' ? 'Kurucu & Lisanslı Tur Rehberi' : 'Founder & Licensed Tour Guide'}
+              </p>
+              <a
+                href="mailto:pinar@pibawingstravel.com"
+                className="text-sm text-orange-400 hover:text-orange-300 transition-colors break-all"
+              >
+                pinar@pibawingstravel.com
+              </a>
             </div>
           </div>
         </div>

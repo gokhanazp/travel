@@ -116,7 +116,7 @@ const AboutPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               {language === 'tr' ? 'Piba Wings Mobility Hakkında' : 'About Piba Wings Mobility'}
             </h2>
-            <div className="mt-3 w-16 h-1 bg-gradient-to-r from-orange-400 to-red-400 mx-auto rounded-full"></div>
+            <div className="mt-3 w-16 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
           </div>
           <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
             <p>
@@ -158,7 +158,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
             {whyChooseUsItems.map((item, index) => (
               <div key={index} className="flex flex-col items-center p-4 group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center mb-4 text-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center mb-4 text-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                   <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                     <path d={item.icon} />
                   </svg>
@@ -171,7 +171,7 @@ const AboutPage = () => {
       </section>
 
       {/* --- CTA Section --- */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             {t('about_cta', 'Ready to Explore İstanbul without barriers?')}

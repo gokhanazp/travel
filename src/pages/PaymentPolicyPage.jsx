@@ -39,7 +39,7 @@ const PaymentPolicyPage = () => {
       <Header />
 
       {/* Hero Banner */}
-      <div className="relative bg-gradient-to-br from-orange-600 via-orange-700 to-red-800 pt-24 pb-16 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-orange-600 via-orange-700 to-orange-800 pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-300 rounded-full blur-3xl" />
@@ -256,7 +256,7 @@ const PaymentPolicyPage = () => {
         </section>
 
         {/* ── Acceptance ── */}
-        <section className="bg-gradient-to-r from-orange-600 to-red-700 rounded-2xl p-8">
+        <section className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-2xl p-8">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

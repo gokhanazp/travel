@@ -10,8 +10,8 @@ export const toursData = [
       "Kültür, tarih ve alışverişi birleştiren rahat bir rota. Tekerlekli sandalye kullanıcıları ve düz, adım farkındalıklı bir rota tercih eden misafirler için özel olarak tasarlanmış, İstanbul'un tarihi kalbini konforlu bir tempoda deneyimleyin.",
     shortDescriptionEn:
       "A route combining culture, history and shopping. This full day walking tour experiences the historical heart of İstanbul at a comfortable pace, specially designed for wheelchair users and guests who prefer a smooth, step-aware route.",
-    price: "Fiyat Teklifi İsteyin",
-    priceEn: "Request a Quote",
+    price: "____ USD",
+    priceEn: "____ USD",
     duration: "8 saat",
     durationEn: "8 hours",
     image: "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
@@ -403,8 +403,8 @@ export const toursData = [
       "İstanbul'un tarihi ve kültürel özelliklerini erişilebilir bir şekilde sunan 3 Gece 4 Günlük tur. Alışveriş, doğa ve sosyal etkileşimi bir araya getiriyor.",
     shortDescriptionEn:
       "3 Nights 4 Days tour offering historical and cultural insights of Istanbul in an accessible way. It brings together shopping, nature and social interaction.",
-    price: "Fiyat Teklifi İsteyin",
-    priceEn: "Request a Quote",
+    price: "____ USD",
+    priceEn: "____ USD",
     duration: "3 Gece 4 Gün",
     durationEn: "3 Nights 4 Days",
     image: "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
@@ -797,8 +797,8 @@ export const toursData = [
       "Fiziksel engelli kişilerin rahatça seyahat edip İstanbul'u keşfetmesi için özel olarak tasarlanmış tur. Tüm tur rotaları engellilere erişilebilir şekilde tasarlanmış ve engelliler için gerekli olanaklar sağlanmıştır.",
     shortDescriptionEn:
       "This tour is specially designed for people with physical disabilities to travel comfortably and discover Istanbul. All tour routes are designed to be accessible to the disabled and the necessary facilities are provided for the disabled.",
-    price: "Fiyat Teklifi İsteyin",
-    priceEn: "Request a Quote",
+    price: "____ USD",
+    priceEn: "____ USD",
     duration: "4 Gece 5 Gün",
     durationEn: "4 Nights 5 Days",
     image: "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
@@ -1164,8 +1164,8 @@ export const toursData = [
       "İstanbul'un tüm önemli noktalarını kapsayan en kapsamlı erişilebilir tur. Tarihi yarımada, Boğaz, Asya yakası ve serbest zaman ile tam bir İstanbul deneyimi.",
     shortDescriptionEn:
       "The most comprehensive accessible tour covering all major highlights of Istanbul. Complete Istanbul experience with historic peninsula, Bosphorus, Asian side and leisure time.",
-    price: "Fiyat Teklifi İsteyin",
-    priceEn: "Request a Quote",
+    price: "____ USD",
+    priceEn: "____ USD",
     duration: "6 Gece 7 Gün",
     durationEn: "6 Nights 7 Days",
     image: "/tours-foto/istanbul/0154112d-b194-44ab-a8b1-31273b1560aa.jpeg",

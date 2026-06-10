@@ -367,7 +367,7 @@ const TourDetailPage = () => {
       priceExcludes: 'Price Excludes',
       additionalServices: 'Our Additional Services',
       accessibilityDetails: 'View Accessibility Details',
-      accessibilityNotice: 'At Piba Wings we carefully analyze each location to ensure comfortable access for wheelchair users and guests with limited mobility. Click below to see accessibility details for each site on this tour.'
+      accessibilityNotice: 'At Piba Wings Mobility, we carefully analyze each location to help guests understand accessibility conditions throughout the tour.'
     },
     tr: {
       overview: 'Öne Çıkanlar',
@@ -393,7 +393,7 @@ const TourDetailPage = () => {
       priceExcludes: 'Fiyata Dahil Değil',
       additionalServices: 'Ek Hizmetlerimiz',
       accessibilityDetails: 'Erişilebilirlik Detaylarını Görüntüle',
-      accessibilityNotice: 'Piba Wings olarak, tekerlekli sandalye kullanıcıları ve hareket kısıtlılığı olan misafirlerimiz için konforlu erişim sağlamak amacıyla her lokasyonu dikkatle analiz ediyoruz. Bu turdaki her bir alanın erişilebilirlik detaylarını görmek için aşağıya tıklayın.'
+      accessibilityNotice: 'Piba Wings Mobility olarak, misafirlerimizin tur boyunca erişilebilirlik koşullarını anlamasına yardımcı olmak için her lokasyonu dikkatle analiz ediyoruz.'
     }
   }
 
@@ -494,15 +494,9 @@ const TourDetailPage = () => {
 
                 {/* Tour Info Badges */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
-                  <span className="px-3 py-1.5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full text-xs sm:text-sm font-semibold shadow-lg">
                     {duration}
                   </span>
-                  <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-3 py-1.5 border border-white/20">
-                    <div className="flex items-center text-yellow-400 mr-1">
-                      {'★'.repeat(5)}
-                    </div>
-                    <span className="text-white text-xs sm:text-sm font-medium">(4.9)</span>
-                  </div>
                   <span className="px-3 py-1.5 bg-white/10 backdrop-blur-md text-white rounded-full text-xs sm:text-sm font-medium border border-white/20">
                     {language === 'en' ? 'Fully Accessible' : 'Tam Erişilebilir'}
                   </span>
@@ -524,7 +518,7 @@ const TourDetailPage = () => {
           <div className="grid grid-cols-2 gap-4">
             {/* Price */}
             <div className="text-center">
-              <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 {typeof tour.price === 'number' ? `${tour.price}${tour.currency}` : tour.price}
               </div>
               <p className="text-xs text-gray-600">
@@ -554,7 +548,7 @@ const TourDetailPage = () => {
           <div className="flex gap-2 mt-4">
             <Link
               to="/reservation"
-              className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150 flex items-center justify-center"
+              className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150 flex items-center justify-center"
             >
               {language === 'en' ? 'Plan Your Trip' : 'Seyahatinizi Planlayın'}
             </Link>
@@ -589,7 +583,7 @@ const TourDetailPage = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-orange-50/90 to-pink-50/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-orange-50/90 to-orange-50/95"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-3 gap-6 lg:gap-12">
@@ -602,7 +596,7 @@ const TourDetailPage = () => {
                   <div className="relative">
                     <button
                       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                      className="mobile-dropdown-button w-full flex items-center justify-between px-4 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold shadow-md active:scale-95 transition-transform duration-150 min-h-[48px]"
+                      className="mobile-dropdown-button w-full flex items-center justify-between px-4 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold shadow-md active:scale-95 transition-transform duration-150 min-h-[48px]"
                     >
                       <span className="text-sm sm:text-base">{tabs.find(tab => tab.id === activeTab)?.label}</span>
                       <svg className={`w-5 h-5 transition-transform duration-200 ${mobileMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -630,7 +624,7 @@ const TourDetailPage = () => {
                               } ${
                                 index === tabs.length - 1 ? 'rounded-b-xl' : 'border-b border-gray-100'
                               } ${
-                                activeTab === tab.id ? 'bg-orange-50 text-orange-600 font-semibold' : 'text-gray-700'
+                                activeTab === tab.id ? 'bg-piba-dark-navy text-white font-semibold' : 'text-gray-700'
                               }`}
                             >
                               <div className="flex items-center space-x-3">
@@ -674,8 +668,8 @@ const TourDetailPage = () => {
                         onClick={() => setActiveTab(tab.id)}
                         className={`py-3 px-4 md:px-6 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
                           activeTab === tab.id
-                            ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg transform scale-105'
-                            : 'text-gray-700 hover:text-gray-900 hover:bg-white/70 bg-white/50'
+                            ? "relative bg-piba-dark-navy text-white shadow-lg after:content-[''] after:absolute after:left-3 after:right-3 after:-bottom-2 after:h-1 after:bg-piba-orange after:rounded-full"
+                            : 'text-gray-600 hover:text-piba-dark-navy hover:bg-gray-100'
                         }`}
                       >
                         <div className="flex items-center space-x-1 md:space-x-2">
@@ -712,7 +706,7 @@ const TourDetailPage = () => {
                 {activeTab === 'overview' && (
                   <div className="space-y-8">
                     <div className="text-center mb-8">
-                      <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-pink-500 text-white mb-4">
+                      <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-orange-600 text-white mb-4">
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -744,7 +738,7 @@ const TourDetailPage = () => {
                     )}
 
                     {/* Main Description */}
-                    <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-8">
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8">
                       <p className="text-gray-800 leading-relaxed text-lg md:text-xl mb-6">
                         {tour?.id === 'PBWAI0019'
                           ? (language === 'en'
@@ -884,7 +878,7 @@ const TourDetailPage = () => {
                             className="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg hover:border-orange-300 transition-all duration-300 text-left group"
                           >
                             <div className="flex items-center space-x-4">
-                              <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
                                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 </svg>
@@ -906,9 +900,15 @@ const TourDetailPage = () => {
                       </div>
                       
                       {/* Accessibility Notice */}
-                      <div className="mt-8 p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
-                        <p className="text-gray-700 leading-relaxed text-center italic">
+                      <div className="mt-8 p-6 bg-blue-50/50 rounded-2xl border border-blue-100 text-center">
+                        <p className="text-gray-700 leading-relaxed italic mb-4">
                           {currentContent.accessibilityNotice}
+                        </p>
+                        <p className="font-bold text-gray-900 mb-1">
+                          {language === 'en' ? 'Need Additional Accessibility Support?' : 'Ek Erişilebilirlik Desteğine mi İhtiyacınız Var?'}
+                        </p>
+                        <p className="text-gray-700">
+                          {language === 'en' ? 'Please contact us before booking.' : 'Lütfen rezervasyondan önce bizimle iletişime geçin.'}
                         </p>
                       </div>
                     </div>
@@ -1061,10 +1061,10 @@ const TourDetailPage = () => {
                       {language === 'en' ? 'Why Piba Wings Mobility?' : 'Neden Piba Wings Mobility?'}
                     </h3>
 
-                    <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-8 border border-orange-100">
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-100">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -1083,7 +1083,7 @@ const TourDetailPage = () => {
                         </div>
 
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                             </svg>
@@ -1102,7 +1102,7 @@ const TourDetailPage = () => {
                         </div>
 
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
@@ -1121,7 +1121,7 @@ const TourDetailPage = () => {
                         </div>
 
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
@@ -1140,7 +1140,7 @@ const TourDetailPage = () => {
                         </div>
 
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -1159,7 +1159,7 @@ const TourDetailPage = () => {
                         </div>
 
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
@@ -1308,21 +1308,21 @@ const TourDetailPage = () => {
                       {tour.extraServices.map((service, index) => (
                         <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
                           {/* Service Header */}
-                          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 border-b border-gray-200">
+                          <div className="bg-piba-dark-navy p-6">
                             <div className="flex items-center justify-between">
                               <div className="flex items-center space-x-4">
-                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                                <div className="w-12 h-12 bg-piba-orange rounded-full flex items-center justify-center">
                                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
                                   </svg>
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900">
+                                <h4 className="text-xl font-bold text-white">
                                   {language === 'en' ? service.titleEn : service.title}
                                 </h4>
                               </div>
 
                               {service.hasSelectButton && (
-                                <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                                <button className="bg-piba-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-md">
                                   {language === 'en' ? 'Select' : 'Seç'}
                                 </button>
                               )}
@@ -1340,7 +1340,7 @@ const TourDetailPage = () => {
                               <div className="space-y-3">
                                 {(language === 'en' ? service.featuresEn : service.features).map((feature, featureIndex) => (
                                   <div key={featureIndex} className="flex items-start space-x-3">
-                                    <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                                    <div className="w-5 h-5 bg-piba-orange rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                       </svg>
@@ -1358,7 +1358,7 @@ const TourDetailPage = () => {
                                   <span className="text-sm text-gray-600">
                                     {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
                                   </span>
-                                  <span className="font-bold text-blue-600 text-lg">
+                                  <span className="font-bold text-piba-orange text-lg">
                                     {service.currency || service.currencyEn || '$'}{service.price} {service.duration ? `/ ${language === 'en' ? service.durationEn : service.duration}` : ''}
                                   </span>
                                 </div>
@@ -1418,7 +1418,7 @@ const TourDetailPage = () => {
                           <div key={catIndex}>
                             {/* Kategori Başlığı */}
                             <div className="flex items-center mb-6">
-                              <div className="w-1.5 h-8 bg-gradient-to-b from-orange-500 to-pink-500 rounded-full mr-4"></div>
+                              <div className="w-1.5 h-8 bg-gradient-to-b from-orange-500 to-orange-600 rounded-full mr-4"></div>
                               <h3 className="text-xl font-bold text-gray-900">
                                 {language === 'en' ? category.titleEn : category.title}
                               </h3>
@@ -1504,19 +1504,15 @@ const TourDetailPage = () => {
 
             {/* Enhanced Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 sticky top-8">
+              <div className="bg-piba-dark-navy rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 sticky top-8">
                 <div className="space-y-8">
                   {/* Enhanced Price Section */}
-                  <div className="text-center bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-6">
-                    <span className="text-sm text-gray-600 block mb-2">Starting from</span>
-                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                      {language === 'en' ? 'Contact for Price' : tour.price}
+                  <div className="text-center pb-6 border-b border-white/15">
+                    <span className="text-sm text-gray-200 block mb-2">Starting from</span>
+                    <div className="text-4xl md:text-5xl font-bold text-piba-orange mb-2">
+                      {language === 'en' ? tour.priceEn : tour.price}
                     </div>
-                    <p className="text-gray-600 font-medium">{language === 'en' ? 'per person' : 'kişi başı'}</p>
-                    <div className="flex items-center justify-center mt-4 text-yellow-500">
-                      {'★'.repeat(5)}
-                      <span className="text-gray-600 ml-2 text-sm">(4.9 rating)</span>
-                    </div>
+                    <p className="text-gray-300 font-medium">{language === 'en' ? 'per person' : 'kişi başı'}</p>
                   </div>
 
                   {/* Enhanced Tour Info */}
@@ -1547,7 +1543,7 @@ const TourDetailPage = () => {
                         </div>
                         <div className="flex gap-2">
                           {/* Wheelchair Accessibility */}
-                          <div className="bg-blue-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
+                          <div className="bg-piba-dark-navy p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Wheelchair Accessible' : 'Tekerlekli Sandalye Erişilebilir'}>
                             <img
                               src="/tekerlikli.png"
                               alt="Wheelchair Accessible"
@@ -1556,7 +1552,7 @@ const TourDetailPage = () => {
                           </div>
 
                           {/* Hearing Impaired Support */}
-                          <div className="bg-green-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
+                          <div className="bg-piba-dark-navy p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Hearing Impaired Support' : 'İşitme Engelli Desteği'}>
                             <img
                               src="/isitme.png"
                               alt="Hearing Support"
@@ -1565,7 +1561,7 @@ const TourDetailPage = () => {
                           </div>
 
                           {/* Visually Impaired Support */}
-                          <div className="bg-purple-600 p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
+                          <div className="bg-piba-dark-navy p-1.5 rounded-full shadow-md flex items-center justify-center" title={language === 'en' ? 'Visually Impaired Support' : 'Görme Engelli Desteği'}>
                             <img
                               src="/Gorme-engelli.png"
                               alt="Visual Support"
@@ -1581,7 +1577,7 @@ const TourDetailPage = () => {
                   <div className="space-y-4">
                     <Link
                       to="/reservation"
-                      className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-5 px-6 rounded-2xl font-bold text-lg text-center transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl block group"
+                      className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-5 px-6 rounded-2xl font-bold text-lg text-center transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl block group"
                     >
                       <div className="flex items-center justify-center space-x-3">
                         <svg className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1804,7 +1800,7 @@ const TourDetailPage = () => {
               <div className="mt-6 text-center">
                 <button
                   onClick={() => setSelectedLocation(null)}
-                  className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   {language === 'en' ? 'Close' : 'Kapat'}
                 </button>

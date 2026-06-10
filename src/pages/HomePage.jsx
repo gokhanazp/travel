@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import { toursData } from '../data/toursData';
+import { activitiesData } from '../data/activitiesData';
+import { blogData } from '../data/blogData';
 import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg';
 
 
@@ -107,7 +109,7 @@ const VehicleSlider = () => {
         <div className="mt-16 text-center">
           <Link
             to="/vehicles"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             {t('viewAllVehicles')}
           </Link>
@@ -215,7 +217,7 @@ const TourSlider = () => {
                       <div className="pt-4">
                         <Link
                           to={`/tour/${tour.slug}`}
-                          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                         >
                           {t('viewDetails')}
                           <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -248,7 +250,7 @@ const TourSlider = () => {
         <div className="mt-16 text-center">
           <Link
             to="/tours"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             {t('viewAllTours')}
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -314,7 +316,7 @@ const HomePage = () => {
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                   <span className="block mb-1 sm:mb-2 relative animate-float-up whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 animate-subtle-glow">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-500 to-orange-600 animate-subtle-glow">
                       "{t('heroSlogan')}"
                     </span>
                     <div className="hidden sm:block absolute -top-2 -left-2 w-4 h-4 bg-orange-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0s'}}></div>
@@ -324,7 +326,7 @@ const HomePage = () => {
                   </span>
                   <span className="block text-gray-800 relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                     PibaWings Mobility
-                    <div className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{width: '60%'}}></div>
+                    <div className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full animate-pulse" style={{width: '60%'}}></div>
                   </span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -332,17 +334,17 @@ const HomePage = () => {
                 </p>
                 <div className="mb-8 animate-slide-in-up" style={{animationDelay: '0.5s'}}>
                   <div className="flex items-center justify-center lg:justify-start">
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 mr-3 animate-scale-in" style={{animationDelay: '0.7s'}}></div>
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 mr-3 animate-scale-in" style={{animationDelay: '0.7s'}}></div>
                     <span className="text-sm text-gray-500 font-medium uppercase tracking-widest animate-fade-in" style={{animationDelay: '0.9s'}}>
                       Accessible Tourism Solutions
                     </span>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-pink-500 to-orange-500 ml-3 animate-scale-in" style={{animationDelay: '1.1s'}}></div>
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-500 ml-3 animate-scale-in" style={{animationDelay: '1.1s'}}></div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
                   <Link
                     to={language === 'tr' ? "/turlar" : "/tours"}
-                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-full hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
                   >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -518,142 +520,10 @@ const HomePage = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full p-4 shadow-lg">
+                <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full p-4 shadow-lg">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span dangerouslySetInnerHTML={{ __html: t('whyChooseUsTitle') }} />
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {t('whyChooseUsSubtitle')}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="group text-center p-8 bg-gray-50 rounded-3xl hover:bg-orange-50 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('fullAccessibility')}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{t('fullAccessibilityDesc')}</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('wheelchairRamps')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('accessibleToilets')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('audioGuides')}
-                </div>
-              </div>
-            </div>
-            <div className="group text-center p-8 bg-gray-50 rounded-3xl hover:bg-orange-50 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('expertGuides')}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{t('expertGuidesDesc')}</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('certifiedGuides')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('multiLanguage')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('localExpertise')}
-                </div>
-              </div>
-            </div>
-            <div className="group text-center p-8 bg-gray-50 rounded-3xl hover:bg-orange-50 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('specialVehicles')}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{t('specialVehiclesDesc')}</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('wheelchairVans')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('comfortableSeating')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('airConditioning')}
-                </div>
-              </div>
-            </div>
-            <div className="group text-center p-8 bg-gray-50 rounded-3xl hover:bg-orange-50 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('personalizedService')}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{t('personalizedServiceDesc')}</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('customItinerary')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('flexibleTiming')}
-                </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('specialNeeds')}
                 </div>
               </div>
             </div>
@@ -701,7 +571,7 @@ const HomePage = () => {
               </div>
               <div className="absolute -top-6 -left-6 bg-white rounded-2xl shadow-lg p-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
@@ -767,18 +637,279 @@ const HomePage = () => {
 
       <VehicleSlider />
 
+      {/* Additional Services Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50/40 via-white to-blue-50/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-orange-500/10 rounded-full border border-orange-500/20 mb-6">
+              <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Optional Experiences' : 'Opsiyonel Deneyimler'}
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {language === 'en' ? 'Additional Services' : 'Ek Hizmetler'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {language === 'en'
+                ? 'Enrich your accessible journey with handpicked Istanbul experiences and support services tailored to your needs.'
+                : 'Erişilebilir seyahatinizi, ihtiyaçlarınıza göre özenle seçilmiş İstanbul deneyimleri ve destek hizmetleriyle zenginleştirin.'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {activitiesData.slice(0, 4).map(activity => (
+              <Link
+                key={activity.id}
+                to="/optional-activities"
+                className="group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 flex flex-col"
+              >
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={activity.image}
+                    alt={activity.titleEn}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <span className="absolute top-3 left-3 bg-piba-dark-navy text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <svg className="w-3 h-3 text-piba-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {activity.duration}
+                  </span>
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-base font-bold text-piba-dark-navy mb-3 leading-snug">
+                    {activity.titleEn}
+                  </h3>
+                  <span className="mt-auto text-orange-500 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {language === 'en' ? 'Learn more' : 'Daha fazla'}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-14 text-center">
+            <Link
+              to="/optional-activities"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              {language === 'en' ? 'View All Services' : 'Tüm Hizmetleri Gör'}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-piba-dark-navy mb-6">
+              <span dangerouslySetInnerHTML={{ __html: t('whyChooseUsTitle') }} />
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {t('whyChooseUsSubtitle')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="group text-center p-8 bg-white border border-gray-100 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-20 h-20 bg-piba-orange rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('fullAccessibility')}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{t('fullAccessibilityDesc')}</p>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('wheelchairRamps')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('accessibleToilets')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('audioGuides')}
+                </div>
+              </div>
+            </div>
+            <div className="group text-center p-8 bg-white border border-gray-100 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-20 h-20 bg-piba-orange rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('expertGuides')}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{t('expertGuidesDesc')}</p>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('certifiedGuides')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('multiLanguage')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('localExpertise')}
+                </div>
+              </div>
+            </div>
+            <div className="group text-center p-8 bg-white border border-gray-100 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-20 h-20 bg-piba-orange rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('specialVehicles')}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{t('specialVehiclesDesc')}</p>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('wheelchairVans')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('comfortableSeating')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('airConditioning')}
+                </div>
+              </div>
+            </div>
+            <div className="group text-center p-8 bg-white border border-gray-100 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-20 h-20 bg-piba-orange rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('personalizedService')}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{t('personalizedServiceDesc')}</p>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('customItinerary')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('flexibleTiming')}
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <svg className="w-4 h-4 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('specialNeeds')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+                {language === 'en' ? 'Insights & Stories' : 'Yazılar & Hikayeler'}
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {language === 'en' ? 'From Our Blog' : "Blog'dan"}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {language === 'en'
+                ? 'Expert insights and practical tips on accessible travel in Istanbul and Turkey.'
+                : "İstanbul ve Türkiye'de erişilebilir seyahat üzerine uzman içerikler ve pratik ipuçları."}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogData.slice(0, 3).map(post => (
+              <Link
+                key={post.id}
+                to={`/blog/${post.slug}`}
+                className="group bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 flex flex-col"
+              >
+                <div className="h-52 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title[language] || post.title.en}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-xs text-gray-400 mb-3">
+                    {new Date(post.date).toLocaleDateString(language === 'en' ? 'en-US' : 'tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug line-clamp-2 group-hover:text-orange-500 transition-colors">
+                    {post.title[language] || post.title.en}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4 flex-1">
+                    {post.excerpt[language] || post.excerpt.en}
+                  </p>
+                  <span className="text-orange-500 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {language === 'en' ? 'Read more' : 'Devamını oku'}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-14 text-center">
+            <Link
+              to={language === 'tr' ? '/yazilar' : '/blog'}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              {language === 'en' ? 'View All Posts' : 'Tüm Yazılar'}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-20 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-piba-dark-navy mb-6">
             {t('questions')}
           </h2>
-          <p className="text-xl text-orange-100 mb-8">
+          <p className="text-xl text-gray-700 mb-8">
             {t('contactTeam')}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-orange-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-piba-orange text-white font-bold rounded-full hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

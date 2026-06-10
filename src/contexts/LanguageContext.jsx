@@ -69,7 +69,7 @@ const translations = {
     viewDetails: "View Details",
     reserveTour: "Reserve Tour",
     mostPopular: "Most Popular",
-    priceFrom: "Price from",
+    priceFrom: "Starting from",
 
     // Accessibility Features
     wheelchairRamps: "Wheelchair Ramps",
@@ -101,8 +101,8 @@ const translations = {
     price: "Price",
     rating: "Rating",
     quickInfo: "Quick Info",
-    contactUs: "Getting touch with us",
-    questions: "Let’s plan Your Trip Together",
+    contactUs: "Get In Touch With Us",
+    questions: "Personalized Accessible Travel",
     contactTeam: "Talk To Our Expert",
 
     // Why Choose Us
@@ -331,7 +331,7 @@ const translations = {
     viewDetails: "Detayları Gör",
     reserveTour: "Tur Rezervasyonu",
     mostPopular: "En Popüler",
-    priceFrom: "Fiyat",
+    priceFrom: "Başlangıç fiyatı",
 
     // Accessibility Features
     wheelchairRamps: "Tekerlekli Sandalye Rampaları",
@@ -364,7 +364,7 @@ const translations = {
     rating: "Puan",
     quickInfo: "Hızlı Bilgi",
     contactUs: "Bize Ulaşın",
-    questions: "Gelin Seyahatinizi Birlikte Planlayalım",
+    questions: "Kişiye Özel Erişilebilir Seyahat",
     contactTeam: "Uzmanımızla Görüşün",
 
     // Why Choose Us

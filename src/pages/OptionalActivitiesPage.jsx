@@ -9,26 +9,31 @@ const ActivityCard = ({ activity, language }) => {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-      {/* Card Header */}
-      <div className={`bg-gradient-to-r ${activity.color} p-6 relative overflow-hidden`}>
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white" />
-          <div className="absolute -left-4 -bottom-4 w-16 h-16 rounded-full bg-white" />
+    <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group">
+      {/* Image with duration badge */}
+      <div className="relative h-52 overflow-hidden">
+        <img
+          src={activity.image}
+          alt={activity.titleEn}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <span className="absolute top-4 left-4 bg-piba-dark-navy text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+          <svg className="w-3.5 h-3.5 text-piba-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {activity.duration}
+        </span>
+      </div>
+
+      {/* Navy header band */}
+      <div className="bg-piba-dark-navy px-6 py-5 flex items-center gap-4">
+        <div className="w-12 h-12 rounded-full bg-piba-orange flex items-center justify-center text-2xl flex-shrink-0 shadow-md">
+          {activity.icon}
         </div>
-        <div className="relative flex items-start justify-between">
-          <div>
-            <span className="text-4xl mb-3 block">{activity.icon}</span>
-            <h3 className="text-white font-bold text-xl leading-tight">
-              {activity.titleEn}
-            </h3>
-          </div>
-          {/* Duration badge */}
-          <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap ml-3 flex-shrink-0 border border-white/30">
-            ⏱ {activity.duration}
-          </span>
-        </div>
+        <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
+          {activity.titleEn}
+        </h3>
       </div>
 
       {/* Card Body */}
@@ -42,13 +47,13 @@ const ActivityCard = ({ activity, language }) => {
         <div className="mb-5">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center justify-between w-full text-left group/btn"
+            className="flex items-center justify-between w-full text-left"
           >
-            <span className="text-sm font-semibold text-gray-800">
+            <span className="text-base font-bold text-piba-dark-navy">
               What's Included
             </span>
             <svg
-              className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+              className={`w-4 h-4 text-piba-dark-navy transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -64,8 +69,8 @@ const ActivityCard = ({ activity, language }) => {
           <div className={`overflow-hidden transition-all duration-300 ${expanded ? 'max-h-96' : 'max-h-0'}`}>
             <ul className="space-y-2 pb-2">
               {activity.includesEn.map((item, i) => (
-                <li key={i} className="flex items-start text-sm text-gray-600">
-                  <svg className="w-4 h-4 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li key={i} className="flex items-start text-sm text-gray-700">
+                  <svg className="w-4 h-4 text-piba-orange mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
@@ -76,17 +81,17 @@ const ActivityCard = ({ activity, language }) => {
 
           {/* Collapsed preview — show first 2 items */}
           {!expanded && (
-            <ul className="space-y-1.5">
+            <ul className="space-y-2">
               {activity.includesEn.slice(0, 2).map((item, i) => (
-                <li key={i} className="flex items-start text-sm text-gray-500">
-                  <svg className="w-4 h-4 text-emerald-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li key={i} className="flex items-start text-sm text-gray-700">
+                  <svg className="w-4 h-4 text-piba-orange mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}
                 </li>
               ))}
               {activity.includesEn.length > 2 && (
-                <li className="text-xs text-gray-400 pl-6">
+                <li className="text-sm font-semibold text-piba-orange pl-6">
                   +{activity.includesEn.length - 2} more included
                 </li>
               )}
@@ -95,9 +100,13 @@ const ActivityCard = ({ activity, language }) => {
         </div>
 
         {/* Accessibility note */}
-        <div className={`${activity.bgLight} ${activity.borderColor} border rounded-lg px-4 py-3 mb-5`}>
-          <p className="text-xs text-gray-600 flex items-start">
-            <span className="mr-2 flex-shrink-0">♿</span>
+        <div className="bg-orange-50 border border-orange-100 rounded-xl px-4 py-3 mb-5 flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-piba-orange flex items-center justify-center flex-shrink-0">
+            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2a2 2 0 110 4 2 2 0 010-4zm-1.5 5h3a1 1 0 01.97.757l.5 2A1 1 0 0114 11h-1.382l.342 3.078A3.5 3.5 0 1110 18.5h-.5a1 1 0 110-2h.5a1.5 1.5 0 101.4-2.03L10.6 9H9a1 1 0 01-.97-1.243l.5-2A1 1 0 019.5 5h1z" />
+            </svg>
+          </div>
+          <p className="text-sm text-gray-700 leading-snug">
             {activity.accessibilityNote}
           </p>
         </div>
@@ -106,9 +115,12 @@ const ActivityCard = ({ activity, language }) => {
         <div className="mt-auto">
           <Link
             to={`/reservation?activity=${activity.id}`}
-            className={`w-full bg-gradient-to-r ${activity.color} text-white font-semibold py-3 px-6 rounded-xl text-sm text-center block transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]`}
+            className="w-full bg-piba-orange hover:bg-orange-600 text-white font-bold py-3.5 px-6 rounded-xl text-sm text-center flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg active:scale-[0.98]"
           >
-            Add to My Trip →
+            Add to My Trip
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
       </div>
