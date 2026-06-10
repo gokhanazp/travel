@@ -41,7 +41,7 @@ As Piba Wings Travel, our vision is to be a pioneer of accessible tourism not on
 As Piba Wings Travel Agency, we would be happy to be your traveling companion.
 
 Pınar SİVEREK
-Founder & CEO
+Founder & Licensed Tour Guide
 Piba Wings Travel Agency`
     },
     tr: {
@@ -64,7 +64,7 @@ Piba Wings Travel olarak vizyonumuz sadece Türkiye'de değil, küresel olarak d
 Piba Wings Travel Acentesi olarak seyahat arkadaşınız olmaktan mutluluk duyarız.
 
 Pınar SİVEREK
-Kurucu & CEO
+Kurucu & Lisanslı Tur Rehberi
 Piba Wings Travel Acentesi`
     }
   }
@@ -120,7 +120,7 @@ Piba Wings Travel Acentesi`
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white/50 backdrop-blur-sm">
                   <img
                     src={pinarSiverekImg}
-                    alt="Pınar Siverek - Founder & CEO"
+                    alt="Pınar Siverek - Founder & Licensed Tour Guide"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -135,7 +135,7 @@ Piba Wings Travel Acentesi`
                 </h2>
                 <div className="space-y-2">
                   <p className="text-xl text-blue-600 font-semibold">
-                    {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                    {language === 'en' ? 'Founder & Licensed Tour Guide' : 'Kurucu & Lisanslı Tur Rehberi'}
                   </p>
                   <p className="text-lg text-gray-600">
                     Piba Wings Travel Agency
@@ -198,7 +198,7 @@ Piba Wings Travel Acentesi`
                   }
 
                   // Skip signature lines (they'll be in the quote section)
-                  if (paragraph.includes('Pınar SİVEREK') || paragraph.includes('Kurucu & CEO') || paragraph.includes('Founder & CEO')) {
+                  if (paragraph.includes('Pınar SİVEREK') || paragraph.includes('Kurucu & Lisanslı Tur Rehberi') || paragraph.includes('Founder & Licensed Tour Guide')) {
                     return null
                   }
 
@@ -232,7 +232,7 @@ Piba Wings Travel Acentesi`
                     Pınar SİVEREK
                   </p>
                   <p className="text-blue-600 font-semibold">
-                    {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                    {language === 'en' ? 'Founder & Licensed Tour Guide' : 'Kurucu & Lisanslı Tur Rehberi'}
                   </p>
                   <p className="text-gray-600 text-sm mt-1">
                     Piba Wings Travel Agency

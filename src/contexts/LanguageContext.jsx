@@ -29,11 +29,11 @@ const translations = {
     readMore: "Read More",
 
     // Hero Section
-    accessibleTravel: "Accessible Travel Experience",
+    accessibleTravel: "Accessible Solutions",
     discoverWorld: "Discover The World With Us",
     heroSubtitle:
       "Specially designed accessible and small-group tours for comfortable, worry-free journeys.",
-    heroSlogan: "Free Your Soul",
+    heroSlogan: "Private Accessible Tours",
     // Alternative slogans (for future use)
     sloganOptions: [
       "Free Your Soul",
@@ -59,7 +59,7 @@ const translations = {
     getDetails: "Get Details",
     popularDestinations: "Popular Destinations",
     popularToursTitle:
-      'Our Most Popular <span class="text-orange-500">Accessible Tours</span>',
+      'Our <span class="text-orange-500">Accessible Tours</span>',
     popularToursSubtitle:
       "Discover the most beautiful places of Istanbul with accessible vehicles and special guidance services. Each tour is specially designed for barrier-free travel experience.",
     accessibilityFeatures: "Accessibility Features",
@@ -108,7 +108,7 @@ const translations = {
     // Why Choose Us
     whyChooseUs: "Why Piba Wings",
     whyChooseUsTitle:
-      'A Leading <span class="text-orange-500">Accessible</span> Travel Agency<br/>in Turkey',
+      '<span class="text-orange-500">Accessible Tours</span> Designed<br/>Around Your Needs',
     whyChooseUsSubtitle:
       "We are here to enhance your travel freedom! We provide safe and comfortable travel experiences with our tours and equipment, specially designed for individuals with disabilities.",
     happyCustomers: "Happy Guests",
@@ -291,11 +291,11 @@ const translations = {
     bookNow: "Seyahatinizi Planlayın",
 
     // Hero Section
-    accessibleTravel: "Erişilebilir Seyahat Deneyimi",
+    accessibleTravel: "Erişilebilir Çözümler",
     discoverWorld: "Dünyayı Bizimle Keşfedin",
     heroSubtitle:
       "Konforlu ve endişesiz yolculuklar için özel olarak tasarlanmış erişilebilir ve küçük grup turları.",
-    heroSlogan: "Ruhunuzu Özgür Bırakın",
+    heroSlogan: "Özel Erişilebilir Turlar",
     // Alternative slogans (for future use)
     sloganOptions: [
       "Ruhunuzu Özgür Bırakın",
@@ -321,7 +321,7 @@ const translations = {
     getDetails: "Detaylı Bilgi Al",
     popularDestinations: "Popüler Destinasyonlar",
     popularToursTitle:
-      'En Popüler <span class="text-orange-500">Accessible Turlarımız</span>',
+      'Erişilebilir <span class="text-orange-500">Turlarımız</span>',
     popularToursSubtitle:
       "Erişilebilir araçlar ve özel rehberlik hizmetleriyle İstanbul'un en güzel yerlerini keşfedin. Her tur, engelsiz seyahat deneyimi için özel olarak tasarlanmıştır.",
     accessibilityFeatures: "Erişilebilirlik Özellikleri",
@@ -370,7 +370,7 @@ const translations = {
     // Why Choose Us
     whyChooseUs: "Neden Bizi Seçmelisiniz",
     whyChooseUsTitle:
-      'Türkiye\'nin <span class="text-orange-500">Önde Gelen</span><br/>Erişilebilir Seyahat Acentesi',
+      'İhtiyaçlarınıza Göre Tasarlanmış<br/><span class="text-orange-500">Erişilebilir Turlar</span>',
     whyChooseUsSubtitle:
       "Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış turlarımız ve ekipmanlarımızla güvenli ve konforlu seyahat deneyimleri sunuyoruz.",
     happyCustomers: "Mutlu Misafir",

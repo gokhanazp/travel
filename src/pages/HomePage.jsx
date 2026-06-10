@@ -137,11 +137,6 @@ const TourSlider = () => {
     setCurrentSlide(index);
   };
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   if (featuredTours.length === 0) {
     return null;
   }
@@ -248,6 +243,17 @@ const TourSlider = () => {
             ))}
           </div>
         </div>
+
+        {/* View All Tours Button */}
+        <div className="mt-16 text-center">
+          <Link
+            to="/tours"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            {t('viewAllTours')}
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -307,7 +313,7 @@ const HomePage = () => {
                   </span>
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                  <span className="block mb-1 sm:mb-2 relative animate-float-up">
+                  <span className="block mb-1 sm:mb-2 relative animate-float-up whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 animate-subtle-glow">
                       "{t('heroSlogan')}"
                     </span>
@@ -717,7 +723,7 @@ const HomePage = () => {
                   Pınar SİVEREK
                 </h3>
                 <p className="text-xl text-blue-600 font-semibold mb-1">
-                  {language === 'en' ? 'Founder & CEO' : 'Kurucu & CEO'}
+                  {language === 'en' ? 'Founder & Licensed Tour Guide' : 'Kurucu & Lisanslı Tur Rehberi'}
                 </p>
                 <p className="text-lg text-gray-600">
                   Piba Wings Travel Agency

@@ -14,7 +14,7 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "8 saat",
     durationEn: "8 hours",
-    image: "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+    image: "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
     isPopular: false,
     galleryCategories: [
       {
@@ -407,7 +407,7 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "3 Gece 4 Gün",
     durationEn: "3 Nights 4 Days",
-    image: "/tours-foto/istanbul/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+    image: "/tours-foto/camlica-tepesi/94df0314-df67-4079-a3a6-0a646eb6d9dd.jpeg",
     isPopular: false,
     galleryCategories: [
       {
@@ -801,7 +801,7 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "4 Gece 5 Gün",
     durationEn: "4 Nights 5 Days",
-    image: "/tours-foto/hagia-sophia/434b592c-251e-4a57-a56b-7863162f57e7.jpeg",
+    image: "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
     isPopular: true,
     galleryCategories: [
       {
@@ -1168,7 +1168,7 @@ export const toursData = [
     priceEn: "Request a Quote",
     duration: "6 Gece 7 Gün",
     durationEn: "6 Nights 7 Days",
-    image: "/tours-foto/topkapi-sarayi/00560f39-4c0f-4a03-a76f-81232c0127a3.jpeg",
+    image: "/tours-foto/istanbul/0154112d-b194-44ab-a8b1-31273b1560aa.jpeg",
     isPopular: true,
     galleryCategories: [
       {
