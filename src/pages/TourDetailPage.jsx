@@ -366,7 +366,7 @@ const TourDetailPage = () => {
       priceIncludes: 'Price Includes',
       priceExcludes: 'Price Excludes',
       additionalServices: 'Our Additional Services',
-      accessibilityDetails: 'View Accessibility Details',
+      accessibilityDetails: 'Accessibility Information',
       accessibilityNotice: 'At Piba Wings Mobility, we carefully analyze each location to help guests understand accessibility conditions throughout the tour.'
     },
     tr: {
@@ -392,7 +392,7 @@ const TourDetailPage = () => {
       priceIncludes: 'Fiyata Dahil',
       priceExcludes: 'Fiyata Dahil Değil',
       additionalServices: 'Ek Hizmetlerimiz',
-      accessibilityDetails: 'Erişilebilirlik Detaylarını Görüntüle',
+      accessibilityDetails: 'Erişilebilirlik Bilgileri',
       accessibilityNotice: 'Piba Wings Mobility olarak, misafirlerimizin tur boyunca erişilebilirlik koşullarını anlamasına yardımcı olmak için her lokasyonu dikkatle analiz ediyoruz.'
     }
   }
@@ -888,7 +888,7 @@ const TourDetailPage = () => {
                                   {language === 'en' ? location.nameEn : location.nameTr}
                                 </h4>
                                 <p className="text-sm text-gray-600 mt-2 font-medium">
-                                  {language === 'en' ? 'Click for details' : 'Detaylar için tıklayın'}
+                                  {language === 'en' ? 'View Details' : 'Detayları Gör'}
                                 </p>
                               </div>
                               <svg className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

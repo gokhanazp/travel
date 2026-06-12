@@ -29,10 +29,19 @@ const ReservationPage = () => {
     phone: '',
     country: '',
     tour: '',
-    date: '',
+    arrivalDate: '',
+    departureDate: '',
     participants: 1,
     airportTransfer: 'No',
     message: '',
+    accessibilityNeeds: {
+      wheelchairUser: false,
+      mobilityAssistance: false,
+      hearingImpaired: false,
+      visuallyImpaired: false,
+      seniorTraveler: false,
+      other: false
+    },
     selectedServices: {}, // Seçilen optional services: { serviceIndex: { selected: true, quantity: 1 } }
     selectedActivities: {} // Seçilen optional activities: { activityId: true }
   })
@@ -100,6 +109,17 @@ const ReservationPage = () => {
     }))
   }
 
+  // Erişilebilirlik ihtiyaçları toggle handler
+  const handleAccessibilityToggle = (key) => {
+    setFormData(prev => ({
+      ...prev,
+      accessibilityNeeds: {
+        ...prev.accessibilityNeeds,
+        [key]: !prev.accessibilityNeeds[key]
+      }
+    }))
+  }
+
   // Optional service seçimi için handler
   const handleServiceToggle = (serviceIndex) => {
     setFormData(prev => ({
@@ -155,17 +175,35 @@ const ReservationPage = () => {
       participantsOption: 'person',
       tourLabel: 'Select Tour',
       tourPlaceholder: 'Choose a tour',
-      dateLabel: 'Date',
+      datesLabel: 'Preferred Travel Dates',
+      arrivalDateLabel: 'Arrival Date',
+      departureDateLabel: 'Departure Date',
       messageLabel: 'Special Requests and Notes',
       messagePlaceholder: 'Your special needs, accessibility requirements or questions...',
       submitButton: 'Plan My Trip',
       submitNote: '* Your request will be carefully reviewed within 24 hours.',
-      optionalServicesTitle: 'Optional Services',
+      founderNote: 'Every inquiry is received personally by Pınar Siverek, Founder & Licensed Tour Guide.',
+      selectedServices: 'Selected Services',
+      contactTitle: 'Prefer to Talk Directly?',
+      contactSubtitle: 'Reach out to us anytime — we are happy to help plan your trip.',
+      optionalServicesTitle: 'Additional Services',
       optionalServicesSubtitle: 'Enhance your tour experience with our additional services',
+      optionalActivitiesTitle: 'Optional Activities',
+      optionalActivitiesSubtitle: 'Add unique Istanbul experiences to your trip',
+      accessibilityTitle: 'Special Accessibility Needs',
+      accessibilitySubtitle: 'Let us know your requirements so we can prepare accordingly.',
       airportTransferLabel: 'Airport Transfer Needed?',
       no: 'No Transfer Needed',
       ist: 'Istanbul Airport (IST)',
       saw: 'Sabiha Gökçen Airport (SAW)',
+      accessibilityOptions: {
+        wheelchairUser: 'Wheelchair User',
+        mobilityAssistance: 'Mobility Assistance Required',
+        hearingImpaired: 'Hearing Impaired',
+        visuallyImpaired: 'Visually Impaired',
+        seniorTraveler: 'Senior Traveler',
+        other: 'Other'
+      },
       tours: toursData.map(t => ({ id: t.id, name: t.titleEn.replace('<br/>', ' '), price: t.priceEn, code: t.id }))
     },
     tr: {
@@ -181,17 +219,35 @@ const ReservationPage = () => {
       participantsOption: 'kişi',
       tourLabel: 'Tur Seçin',
       tourPlaceholder: 'Tur seçiniz',
-      dateLabel: 'Tarih',
+      datesLabel: 'Tercih Edilen Seyahat Tarihleri',
+      arrivalDateLabel: 'Geliş Tarihi',
+      departureDateLabel: 'Dönüş Tarihi',
       messageLabel: 'Özel İstekler ve Notlar',
       messagePlaceholder: 'Özel ihtiyaçlarınız, erişilebilirlik gereksinimleri veya sorularınız...',
       submitButton: 'Plan My Trip',
       submitNote: '* Talebiniz 24 saat içinde özenle değerlendirilecektir.',
-      optionalServicesTitle: 'Opsiyonel Hizmetler',
+      founderNote: 'Her talep, Kurucu & Lisanslı Tur Rehberi Pınar Siverek tarafından bizzat alınır.',
+      selectedServices: 'Seçilen Hizmetler',
+      contactTitle: 'Doğrudan Görüşmeyi mi Tercih Edersiniz?',
+      contactSubtitle: 'Bize istediğiniz zaman ulaşın — seyahatinizi planlamaktan memnuniyet duyarız.',
+      optionalServicesTitle: 'Ek Hizmetler',
       optionalServicesSubtitle: 'Ek hizmetlerimizle tur deneyiminizi zenginleştirin',
+      optionalActivitiesTitle: 'Opsiyonel Aktiviteler',
+      optionalActivitiesSubtitle: 'Gezinize özgün İstanbul deneyimleri ekleyin',
+      accessibilityTitle: 'Özel Erişilebilirlik İhtiyaçları',
+      accessibilitySubtitle: 'İhtiyaçlarınızı bize bildirin ki buna göre hazırlık yapabilelim.',
       airportTransferLabel: 'Havaalanı Transferi Gerekiyor mu?',
       no: 'Transfer İstemiyorum',
       ist: 'İstanbul Havalimanı (IST)',
       saw: 'Sabiha Gökçen Havalimanı (SAW)',
+      accessibilityOptions: {
+        wheelchairUser: 'Tekerlekli Sandalye Kullanıcısı',
+        mobilityAssistance: 'Hareket Desteği Gerekli',
+        hearingImpaired: 'İşitme Engelli',
+        visuallyImpaired: 'Görme Engelli',
+        seniorTraveler: 'Yaşlı Yolcu',
+        other: 'Diğer'
+      },
       tours: toursData.map(t => ({ id: t.id, name: (t.title || t.titleEn).replace('<br/>', ' '), price: t.price, code: t.id }))
     }
   }
@@ -231,6 +287,19 @@ const ReservationPage = () => {
 
       console.log('📋 Form submitted:', submissionData)
 
+      // Tarih aralığı, seçilen aktiviteler ve erişilebilirlik ihtiyaçlarını derle
+      const travelDates = formData.arrivalDate && formData.departureDate
+        ? `${formData.arrivalDate} → ${formData.departureDate}`
+        : (formData.arrivalDate || formData.departureDate || '')
+
+      const selectedAccessibility = Object.entries(formData.accessibilityNeeds)
+        .filter(([, v]) => v)
+        .map(([k]) => content.en.accessibilityOptions[k])
+
+      const selectedActivityNames = activitiesData
+        .filter(a => formData.selectedActivities[a.id])
+        .map(a => a.titleEn)
+
       // EmailJS için veri formatını dönüştür
       const emailData = {
         // Ad soyadı ayır
@@ -244,19 +313,25 @@ const ReservationPage = () => {
 
         // Tur bilgileri
         selectedTour: selectedTour?.title || formData.tour,
-        tourDate: formData.date,
+        tourDate: travelDates,
+        arrivalDate: formData.arrivalDate,
+        departureDate: formData.departureDate,
         participantCount: formData.participants,
         participants: formData.participants,
+
+        // Erişilebilirlik & opsiyonel aktiviteler
+        accessibilityNeeds: selectedAccessibility.join(', ') || 'Belirtilmedi',
+        optionalActivities: selectedActivityNames.join(', ') || 'Yok',
 
         // Mesaj ve özel istekler
         message: formData.message,
         specialRequests: formData.message,
-        assistanceNeeded: 'Rezervasyon formundan gönderildi',
+        assistanceNeeded: selectedAccessibility.join(', ') || 'Belirtilmedi',
 
         // Tur detayları
         tourInfo: {
           name: selectedTour?.title || formData.tour,
-          date: formData.date,
+          date: travelDates,
           participants: formData.participants,
           services: selectedServiceDetails,
           servicesTotal: calculateServicesTotal()
@@ -286,11 +361,21 @@ const ReservationPage = () => {
           phone: '',
           country: '',
           tour: '',
-          date: '',
+          arrivalDate: '',
+          departureDate: '',
           participants: 1,
           airportTransfer: 'No',
           message: '',
-          selectedServices: {}
+          accessibilityNeeds: {
+            wheelchairUser: false,
+            mobilityAssistance: false,
+            hearingImpaired: false,
+            visuallyImpaired: false,
+            seniorTraveler: false,
+            other: false
+          },
+          selectedServices: {},
+          selectedActivities: {}
         })
       } else {
         setSubmitStatus('error')
@@ -375,25 +460,6 @@ const ReservationPage = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="participants" className="block text-sm font-medium text-gray-700 mb-2">
-                    {currentContent.participantsLabel}
-                  </label>
-                  <select
-                    id="participants"
-                    name="participants"
-                    value={formData.participants}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  >
-                    {[1,2,3,4,5,6,7,8,9,10, '10+'].map(num => (
-                      <option key={num} value={num}>{num} {currentContent.participantsOption}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
                   <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
                     {language === 'en' ? 'Country' : 'Ülke'} *
                   </label>
@@ -408,26 +474,64 @@ const ReservationPage = () => {
                     placeholder={language === 'en' ? 'Your country' : 'Bulunduğunuz ülke'}
                   />
                 </div>
-                <div>
-                  <label htmlFor="airportTransfer" className="block text-sm font-medium text-gray-700 mb-2">
-                    {currentContent.airportTransferLabel}
-                  </label>
-                  <select
-                    id="airportTransfer"
-                    name="airportTransfer"
-                    value={formData.airportTransfer}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  >
-                    <option value="No">{currentContent.no}</option>
-                    <option value="Istanbul Airport (IST)">{currentContent.ist}</option>
-                    <option value="Sabiha Gökçen Airport (SAW)">{currentContent.saw}</option>
-                  </select>
+              </div>
+
+              {/* Preferred Travel Dates */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {currentContent.datesLabel} *
+                </label>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="arrivalDate" className="block text-xs text-gray-500 mb-1">
+                      {currentContent.arrivalDateLabel}
+                    </label>
+                    <input
+                      type="date"
+                      id="arrivalDate"
+                      name="arrivalDate"
+                      required
+                      value={formData.arrivalDate}
+                      onChange={handleInputChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="departureDate" className="block text-xs text-gray-500 mb-1">
+                      {currentContent.departureDateLabel}
+                    </label>
+                    <input
+                      type="date"
+                      id="departureDate"
+                      name="departureDate"
+                      required
+                      value={formData.departureDate}
+                      onChange={handleInputChange}
+                      min={formData.arrivalDate || new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Tour Selection */}
               <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="participants" className="block text-sm font-medium text-gray-700 mb-2">
+                    {currentContent.participantsLabel} *
+                  </label>
+                  <select
+                    id="participants"
+                    name="participants"
+                    value={formData.participants}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  >
+                    {[1,2,3,4,5,6,7,8,9,10, '10+'].map(num => (
+                      <option key={num} value={num}>{num} {currentContent.participantsOption}</option>
+                    ))}
+                  </select>
+                </div>
                 <div>
                   <label htmlFor="tour" className="block text-sm font-medium text-gray-700 mb-2">
                     {currentContent.tourLabel} *
@@ -448,21 +552,24 @@ const ReservationPage = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
-                    {currentContent.dateLabel} *
-                  </label>
-                  <input
-                    type="date"
-                    id="date"
-                    name="date"
-                    required
-                    value={formData.date}
-                    onChange={handleInputChange}
-                    min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  />
-                </div>
+              </div>
+
+              {/* Airport Transfer */}
+              <div className="border-t pt-8">
+                <label htmlFor="airportTransfer" className="block text-sm font-medium text-gray-700 mb-2">
+                  {currentContent.airportTransferLabel}
+                </label>
+                <select
+                  id="airportTransfer"
+                  name="airportTransfer"
+                  value={formData.airportTransfer}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                >
+                  <option value="No">{currentContent.no}</option>
+                  <option value="Istanbul Airport (IST)">{currentContent.ist}</option>
+                  <option value="Sabiha Gökçen Airport (SAW)">{currentContent.saw}</option>
+                </select>
               </div>
 
               {/* Optional Activities */}
@@ -470,17 +577,17 @@ const ReservationPage = () => {
                 <div className="flex items-center justify-between mb-5">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-1">
-                      Optional Experiences
+                      {currentContent.optionalActivitiesTitle}
                     </h3>
                     <p className="text-sm text-gray-500">
-                      Add unique Istanbul experiences to your trip
+                      {currentContent.optionalActivitiesSubtitle}
                     </p>
                   </div>
                   <Link
                     to="/optional-activities"
                     className="text-xs text-orange-500 hover:text-orange-600 font-semibold flex items-center gap-1 flex-shrink-0 ml-4"
                   >
-                    View All
+                    {language === 'en' ? 'View All' : 'Tümünü Gör'}
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -705,6 +812,45 @@ const ReservationPage = () => {
                 </div>
               )}
 
+              {/* Special Accessibility Needs */}
+              <div className="border-t pt-8">
+                <div className="mb-5">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {currentContent.accessibilityTitle}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {currentContent.accessibilitySubtitle}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {Object.entries(currentContent.accessibilityOptions).map(([key, label]) => {
+                    const isChecked = formData.accessibilityNeeds[key] || false
+                    return (
+                      <div
+                        key={key}
+                        onClick={() => handleAccessibilityToggle(key)}
+                        className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                          isChecked
+                            ? 'border-orange-400 bg-orange-50 shadow-sm'
+                            : 'border-gray-100 bg-gray-50 hover:border-orange-200 hover:bg-orange-50/40'
+                        }`}
+                      >
+                        <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                          isChecked ? 'bg-orange-500 border-orange-500' : 'border-gray-300 bg-white'
+                        }`}>
+                          {isChecked && (
+                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                        <span className="font-medium text-gray-900 text-sm">{label}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+
               {/* Additional Message */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -742,6 +888,12 @@ const ReservationPage = () => {
                 </button>
                 <p className="text-sm text-gray-500 mt-4">
                   {currentContent.submitNote}
+                </p>
+                <p className="text-sm text-piba-dark-navy font-medium mt-3 flex items-center justify-center gap-2 max-w-md mx-auto">
+                  <svg className="w-4 h-4 text-piba-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  {currentContent.founderNote}
                 </p>
 
                 {/* Success/Error Messages */}

@@ -64,7 +64,16 @@ const Footer = () => {
                 <div className="text-gray-300 text-sm">
                   <div className="font-semibold text-white mb-1">Direct Contact</div>
                   <div>Pınar SİVEREK</div>
+                  <div className="text-gray-400 mb-1">
+                    {language === 'tr' ? 'Kurucu & Lisanslı Tur Rehberi' : 'Founder & Licensed Tour Guide'}
+                  </div>
                   <div className="hover:text-white transition-colors">📱 +90 532 543 36 73</div>
+                  <a
+                    href="mailto:pinar@pibawingstravel.com"
+                    className="text-orange-400 hover:text-orange-300 transition-colors break-all"
+                  >
+                    pinar@pibawingstravel.com
+                  </a>
                 </div>
               </div>
               
@@ -200,18 +209,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="border-t border-white/20 pt-4">
-              <p className="font-semibold text-white">Pınar Siverek</p>
-              <p className="text-sm text-gray-400 mb-1">
-                {language === 'tr' ? 'Kurucu & Lisanslı Tur Rehberi' : 'Founder & Licensed Tour Guide'}
-              </p>
-              <a
-                href="mailto:pinar@pibawingstravel.com"
-                className="text-sm text-orange-400 hover:text-orange-300 transition-colors break-all"
-              >
-                pinar@pibawingstravel.com
-              </a>
-            </div>
           </div>
         </div>
 

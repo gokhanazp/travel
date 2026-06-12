@@ -238,6 +238,10 @@ export const toursData = [
         locationEn: "Restaurant",
         wheelchair: "Tekerlekli sandalye dostu masa düzeni.",
         wheelchairEn: "Wheelchair-friendly table arrangement.",
+        hearingImpaired: "Talep üzerine görsel iletişim desteğiyle rahat bir yemek vakti.",
+        hearingImpairedEn: "A comfortable dining time with visual communication support available on request.",
+        visuallyImpaired: "Gerektiğinde personel yardımı ve rehberli destek mevcuttur.",
+        visuallyImpairedEn: "Staff assistance and guided support are available when needed.",
       },
     ],
     extraServices: [
@@ -632,6 +636,10 @@ export const toursData = [
         locationEn: "Restaurant",
         wheelchair: "Tekerlekli sandalye dostu masa düzeni.",
         wheelchairEn: "Wheelchair-friendly table arrangement.",
+        hearingImpaired: "Talep üzerine görsel iletişim desteğiyle rahat bir yemek vakti.",
+        hearingImpairedEn: "A comfortable dining time with visual communication support available on request.",
+        visuallyImpaired: "Gerektiğinde personel yardımı ve rehberli destek mevcuttur.",
+        visuallyImpairedEn: "Staff assistance and guided support are available when needed.",
       },
     ],
     extraServices: [
@@ -1546,6 +1554,10 @@ export const toursData = [
         locationEn: "Restaurant",
         wheelchair: "Tekerlekli sandalye dostu masa düzeni.",
         wheelchairEn: "Wheelchair-friendly table arrangement.",
+        hearingImpaired: "Talep üzerine görsel iletişim desteğiyle rahat bir yemek vakti.",
+        hearingImpairedEn: "A comfortable dining time with visual communication support available on request.",
+        visuallyImpaired: "Gerektiğinde personel yardımı ve rehberli destek mevcuttur.",
+        visuallyImpairedEn: "Staff assistance and guided support are available when needed.",
       },
     ],
     extraServices: [

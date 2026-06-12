@@ -7,7 +7,7 @@ export const blogData = [
       tr: "Erişilebilir Seyahat Neden Sadece Bir Hizmet Değildir – Bu Bir Uzmanlıktır",
     },
     author: "Pınar Siverek",
-    date: "2024-03-20",
+    date: "2026-06-08",
     image: "/images/blog/expertise.png",
     excerpt: {
       en: "Accessible travel is often described as a service. But in reality, it is much more than that. It requires deep local knowledge and careful planning.",
@@ -74,7 +74,7 @@ Herkesin dünyayı keşfetmeyi, keşfetmeyi ve ondan ilham almayı hak ettiğine
       tr: "İstanbul Tekerlekli Sandalye Dostu mu? Tarihi Yarımada'da Gezilecek Erişilebilir Yerler",
     },
     author: "Pınar Siverek",
-    date: "2024-03-21",
+    date: "2026-05-22",
     image: "/images/blog/istanbul.png",
     excerpt: {
       en: "One of the most common questions travelers ask before visiting İstanbul is: 'Is İstanbul wheelchair friendly?' Let's explore the accessible highlights of the Old City.",
@@ -139,7 +139,7 @@ Osmanlı Sultanlarının eski ikametgahı olan **Topkapı Sarayı**, birkaç avl
       tr: "Türkiye'de Erişilebilir Ulaşım: Nasıl Konforlu Seyahat Edilir?",
     },
     author: "Pınar Siverek",
-    date: "2024-03-22",
+    date: "2026-05-09",
     image: "/images/blog/transport.png",
     excerpt: {
       en: "Traveling should be an enjoyable experience for everyone. For wheelchair users, transportation plays a crucial role in making travel comfortable and stress-free.",

@@ -75,7 +75,8 @@ app.post('/api/send-contact', async (req, res) => {
                     <p><strong>Ad Soyad:</strong> ${contactData.name}</p>
                     <p><strong>E-posta:</strong> ${contactData.email}</p>
                     <p><strong>Telefon:</strong> ${contactData.phone || 'Belirtilmedi'}</p>
-                    <p><strong>Konu:</strong> ${contactData.subject}</p>
+                    <p><strong>Ülke:</strong> ${contactData.country || 'Belirtilmedi'}</p>
+                    <p><strong>Bizi nasıl buldunuz?:</strong> ${contactData.howDidYouFind || 'Belirtilmedi'}</p>
                 </div>
                 
                 <div class="info-box">
@@ -83,10 +84,10 @@ app.post('/api/send-contact', async (req, res) => {
                     <p>${contactData.message}</p>
                 </div>
                 
-                ${contactData.accessibilityNeeds ? `
+                ${contactData.accessibility ? `
                 <div class="info-box">
                     <h3>♿ Erişilebilirlik İhtiyaçları</h3>
-                    <p>${contactData.accessibilityNeeds}</p>
+                    <p>${contactData.accessibility}</p>
                 </div>
                 ` : ''}
                 
@@ -144,7 +145,8 @@ app.post('/api/send-contact', async (req, res) => {
                     <p><strong>Ad Soyad:</strong> ${contactData.name}</p>
                     <p><strong>E-posta:</strong> ${contactData.email}</p>
                     <p><strong>Telefon:</strong> ${contactData.phone || 'Belirtilmedi'}</p>
-                    <p><strong>Konu:</strong> ${contactData.subject}</p>
+                    <p><strong>Ülke:</strong> ${contactData.country || 'Belirtilmedi'}</p>
+                    <p><strong>Bizi nasıl buldunuz?:</strong> ${contactData.howDidYouFind || 'Belirtilmedi'}</p>
                 </div>
                 
                 <div class="info-box">
@@ -152,16 +154,16 @@ app.post('/api/send-contact', async (req, res) => {
                     <p>${contactData.message}</p>
                 </div>
                 
-                ${contactData.accessibilityNeeds ? `
+                ${contactData.accessibility ? `
                 <div class="info-box">
                     <h3>♿ Erişilebilirlik İhtiyaçları</h3>
-                    <p><strong>Özel İhtiyaçlar:</strong> ${contactData.accessibilityNeeds}</p>
+                    <p><strong>Özel İhtiyaçlar:</strong> ${contactData.accessibility}</p>
                 </div>
                 ` : ''}
                 
                 <div class="info-box">
                     <h3>⚡ Hızlı Eylemler</h3>
-                    <p><strong>E-posta ile yanıtla:</strong> <a href="mailto:${contactData.email}?subject=Re: ${contactData.subject}">${contactData.email}</a></p>
+                    <p><strong>E-posta ile yanıtla:</strong> <a href="mailto:${contactData.email}?subject=Re: Piba Wings Travel">${contactData.email}</a></p>
                     ${contactData.phone ? `<p><strong>Telefon ile ara:</strong> <a href="tel:${contactData.phone}">${contactData.phone}</a></p>` : ''}
                 </div>
             </div>
@@ -175,21 +177,26 @@ app.post('/api/send-contact', async (req, res) => {
     </html>
     `
 
-    // Send customer confirmation email
+    // Send company notification email (primary — must succeed)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: contactData.email,
-      subject: '✅ Mesajınız Alındı - Piba Wings Travel',
-      html: customerEmailHTML
-    })
-
-    // Send company notification email
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: 'gokhanyildirim1905@gmail.com',
-      subject: `📧 YENİ İLETİŞİM: ${contactData.name} - ${contactData.subject}`,
+      to: 'info@pibawingstravel.com',
+      replyTo: contactData.email,
+      subject: `📧 YENİ İLETİŞİM: ${contactData.name}`,
       html: companyEmailHTML
     })
+
+    // Send customer confirmation email (best-effort — don't fail the request if this errors)
+    try {
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: contactData.email,
+        subject: '✅ Mesajınız Alındı - Piba Wings Travel',
+        html: customerEmailHTML
+      })
+    } catch (confirmErr) {
+      console.error('Customer confirmation email failed (non-blocking):', confirmErr)
+    }
 
     res.status(200).json({ 
       success: true, 

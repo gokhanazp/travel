@@ -22,7 +22,8 @@ const ContactPage = () => {
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    country: '',
+    howDidYouFind: '',
     message: '',
     accessibility: ''
   })
@@ -32,7 +33,7 @@ const ContactPage = () => {
 
   const content = {
     en: {
-      title: 'Getting touch with us',
+      title: 'Get in Touch With Us',
       subtitle: 'Get in touch with our expert team for your accessible travel needs',
       contactInfo: 'Contact Information',
       office: 'Our Office',
@@ -46,14 +47,16 @@ const ContactPage = () => {
       nameLabel: 'Full Name',
       emailLabel: 'Email Address',
       phoneLabel: 'Phone Number',
-      subjectLabel: 'Subject',
+      countryLabel: 'Country',
+      howFoundLabel: 'How did you find us?',
+      howFoundPlaceholder: 'Please select',
       messageLabel: 'Message',
       accessibilityLabel: 'Special Accessibility Needs',
       accessibilityPlaceholder: 'Please describe any special accessibility requirements...',
       sendButton: 'Send Message',
       requiredField: 'This field is required',
-      emergencyContact: 'Emergency Contact',
-      emergencyText: 'For urgent travel assistance, please call our 24/7 emergency line:'
+      directContact: 'Direct Contact',
+      directContactRole: 'Founder & Licensed Tour Guide'
     },
     tr: {
       title: 'İletişim',
@@ -70,14 +73,16 @@ const ContactPage = () => {
       nameLabel: 'Ad Soyad',
       emailLabel: 'E-posta Adresi',
       phoneLabel: 'Telefon Numarası',
-      subjectLabel: 'Konu',
+      countryLabel: 'Ülke',
+      howFoundLabel: 'Bizi nasıl buldunuz?',
+      howFoundPlaceholder: 'Lütfen seçin',
       messageLabel: 'Mesaj',
       accessibilityLabel: 'Özel Erişilebilirlik İhtiyaçları',
       accessibilityPlaceholder: 'Lütfen özel erişilebilirlik gereksinimlerinizi açıklayın...',
       sendButton: 'Mesaj Gönder',
       requiredField: 'Bu alan zorunludur',
-      emergencyContact: 'Acil Durum İletişim',
-      emergencyText: 'Acil seyahat yardımı için lütfen 7/24 acil durum hattımızı arayın:'
+      directContact: 'Doğrudan İletişim',
+      directContactRole: 'Kurucu & Lisanslı Tur Rehberi'
     }
   }
 
@@ -117,9 +122,10 @@ const ContactPage = () => {
           name: '',
           email: '',
           phone: '',
-          subject: '',
+          country: '',
+          howDidYouFind: '',
           message: '',
-          accessibilityNeeds: ''
+          accessibility: ''
         })
       } else {
         setSubmitStatus('error')
@@ -216,17 +222,21 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Emergency Contact */}
-            <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-red-800 mb-2 flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            {/* Direct Contact */}
+            <div className="bg-piba-dark-navy rounded-2xl p-6 text-white">
+              <h3 className="text-lg font-bold mb-4 flex items-center">
+                <svg className="w-5 h-5 mr-2 text-piba-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                {currentContent.emergencyContact}
+                {currentContent.directContact}
               </h3>
-              <p className="text-red-700 mb-3">{currentContent.emergencyText}</p>
-              <a href="tel:+905325433673" className="text-red-800 font-bold text-lg">
-                📞 +90 532 543 36 73
+              <div className="font-semibold text-white">Pınar SİVEREK</div>
+              <div className="text-gray-300 text-sm mb-3">{currentContent.directContactRole}</div>
+              <a href="tel:+905325433673" className="flex items-center text-piba-orange font-bold text-lg hover:text-orange-400 transition-colors">
+                📱 +90 532 543 36 73
+              </a>
+              <a href="mailto:info@pibawingstravel.com" className="flex items-center text-piba-orange hover:text-orange-400 transition-colors mt-1 break-all">
+                ✉️ info@pibawingstravel.com
               </a>
             </div>
           </div>
@@ -284,16 +294,36 @@ const ContactPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {currentContent.subjectLabel} *
+                  {currentContent.countryLabel}
                 </label>
                 <input
                   type="text"
-                  name="subject"
-                  required
-                  value={formData.subject}
+                  name="country"
+                  value={formData.country}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {currentContent.howFoundLabel}
+                </label>
+                <select
+                  name="howDidYouFind"
+                  value={formData.howDidYouFind}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors bg-white"
+                >
+                  <option value="">{currentContent.howFoundPlaceholder}</option>
+                  <option value="Google">{language === 'en' ? 'Google Search' : 'Google Araması'}</option>
+                  <option value="Social Media">{language === 'en' ? 'Social Media' : 'Sosyal Medya'}</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Friend / Referral">{language === 'en' ? 'Friend / Referral' : 'Arkadaş / Tavsiye'}</option>
+                  <option value="Travel Agency">{language === 'en' ? 'Travel Agency' : 'Seyahat Acentesi'}</option>
+                  <option value="Other">{language === 'en' ? 'Other' : 'Diğer'}</option>
+                </select>
               </div>
 
               <div>

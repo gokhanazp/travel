@@ -101,7 +101,7 @@ const translations = {
     price: "Price",
     rating: "Rating",
     quickInfo: "Quick Info",
-    contactUs: "Get In Touch With Us",
+    contactUs: "Get in Touch With Us",
     questions: "Personalized Accessible Travel",
     contactTeam: "Talk To Our Expert",
 
@@ -241,7 +241,7 @@ const translations = {
     why_choose_us_3: "Fully Accessible Vehicles",
     why_choose_us_4: "Personalized Service",
     why_choose_us_5: "Multilingual Support",
-    why_choose_us_6: "1000+ Happy Guests",
+    why_choose_us_6: "Licensed A Group Travel Agency",
     about_cta: "Ready to Explore İstanbul without barriers?",
 
     // Contact - using existing keys from above
@@ -503,7 +503,7 @@ const translations = {
     why_choose_us_3: "Tam Erişilebilir Araçlar",
     why_choose_us_4: "Kişiselleştirilmiş Hizmet",
     why_choose_us_5: "Çok Dilli Destek",
-    why_choose_us_6: "1000+ Mutlu Misafir",
+    why_choose_us_6: "A Grubu Lisanslı Seyahat Acentesi",
     about_cta: "İstanbul'u engelsiz keşfetmeye hazır mısınız?",
 
     // Contact - using existing keys from above

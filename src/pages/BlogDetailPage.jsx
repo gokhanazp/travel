@@ -92,7 +92,7 @@ const BlogDetailPage = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-slate-900 text-lg leading-tight uppercase tracking-wide">Pınar Siverek</h4>
-                                        <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">{language === 'tr' ? 'Yazar / Kurucu' : 'Author / Founder'}</p>
+                                        <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">{language === 'tr' ? 'Kurucu & Lisanslı Tur Rehberi' : 'Founder & Licensed Tour Guide'}</p>
                                     </div>
                                 </div>
                                 
@@ -109,6 +109,53 @@ const BlogDetailPage = () => {
                             </div>
                         </div>
                     </article>
+
+                    {/* Related Articles */}
+                    {(() => {
+                        const related = blogData.filter(p => p.slug !== slug).slice(0, 3);
+                        if (related.length === 0) return null;
+                        return (
+                            <section className="mt-20">
+                                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-10 text-center">
+                                    {language === 'tr' ? 'İlgili Yazılar' : 'Related Articles'}
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {related.map((rp) => (
+                                        <Link
+                                            key={rp.id}
+                                            to={`/blog/${rp.slug}`}
+                                            className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col border border-slate-100"
+                                        >
+                                            <div className="relative h-52 overflow-hidden">
+                                                <img
+                                                    src={rp.image}
+                                                    alt={rp.title[language]}
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                />
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="flex items-center text-xs text-slate-400 mb-3 font-medium uppercase tracking-wider">
+                                                    <span>{rp.date}</span>
+                                                </div>
+                                                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors duration-300 leading-snug line-clamp-2">
+                                                    {rp.title[language]}
+                                                </h3>
+                                                <p className="text-slate-600 mb-5 line-clamp-2 text-sm leading-relaxed flex-grow">
+                                                    {rp.excerpt[language]}
+                                                </p>
+                                                <div className="mt-auto flex items-center text-orange-500 font-bold text-sm tracking-wide">
+                                                    {language === 'tr' ? 'Makaleyi Oku' : 'Read Article'}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </section>
+                        );
+                    })()}
                 </div>
             </main>
 

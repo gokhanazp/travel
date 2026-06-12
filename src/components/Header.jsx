@@ -74,7 +74,7 @@ const MainHeader = () => {
               {t('tours')}
             </Link>
             <Link to="/optional-activities" className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
-              Experiences
+              Optional Activities
             </Link>
             <Link to={language === 'tr' ? "/yazilar" : "/blog"} className="text-gray-900 hover:text-orange-500 transition-colors duration-300 font-medium text-base relative group">
               {t('blog')}
@@ -202,7 +202,7 @@ const MainHeader = () => {
                 className="block px-4 py-4 text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors font-medium text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Experiences
+                Optional Activities
               </Link>
               <Link
                 to={language === 'tr' ? "/yazilar" : "/blog"}

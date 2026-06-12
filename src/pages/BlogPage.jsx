@@ -19,7 +19,7 @@ const BlogPage = () => {
                             {t('blog')}
                         </span>
                         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
-                            {language === 'tr' ? 'Keşfet & Bilgilen' : 'Explore & Stay Informed'}
+                            {language === 'tr' ? 'Erişilebilir Seyahat Rehberi' : 'Accessible Travel Guide'}
                         </h1>
                         <p className="text-lg text-slate-600 leading-relaxed">
                             {language === 'tr' 
@@ -56,7 +56,7 @@ const BlogPage = () => {
                                         {post.excerpt[language]}
                                     </p>
                                     <div className="mt-auto flex items-center text-orange-500 font-bold text-sm tracking-wide">
-                                        {t('readMore')}
+                                        {language === 'tr' ? 'Makaleyi Oku' : 'Read Article'}
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                         </svg>

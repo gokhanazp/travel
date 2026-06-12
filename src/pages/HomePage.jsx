@@ -46,7 +46,7 @@ const VehicleSlider = () => {
   );
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-14 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" dangerouslySetInnerHTML={{ __html: t('ourVehiclesTitle') }} />
@@ -144,7 +144,7 @@ const TourSlider = () => {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-14 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" dangerouslySetInnerHTML={{ __html: t('popularToursTitle') }} />
@@ -534,7 +534,7 @@ const HomePage = () => {
       <TourSlider />
 
       {/* Pınar Siverek Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="py-14 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -638,7 +638,7 @@ const HomePage = () => {
       <VehicleSlider />
 
       {/* Additional Services Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50/40 via-white to-blue-50/40">
+      <section className="py-14 bg-gradient-to-br from-orange-50/40 via-white to-blue-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-orange-500/10 rounded-full border border-orange-500/20 mb-6">
@@ -703,7 +703,7 @@ const HomePage = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-piba-dark-navy mb-6">
@@ -834,8 +834,77 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Guest Reviews Section */}
+      <section className="py-14 bg-piba-dark-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center px-6 py-3 bg-piba-orange/20 rounded-full border border-piba-orange/30 mb-6">
+              <span className="text-piba-orange font-semibold text-sm uppercase tracking-wide">
+                {t('guestComments')}
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              {language === 'en' ? 'What Our Guests Say' : 'Misafirlerimiz Ne Diyor'}
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              {language === 'en'
+                ? 'Real experiences from travelers who explored Istanbul with us — barrier-free and unforgettable.'
+                : 'İstanbul’u bizimle keşfeden gezginlerin gerçek deneyimleri — engelsiz ve unutulmaz.'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Sarah M.',
+                country: language === 'en' ? 'United Kingdom' : 'Birleşik Krallık',
+                text: language === 'en'
+                  ? 'From the wheelchair-accessible van to the thoughtful guide, every detail was handled with care. I finally experienced Istanbul without worrying about access.'
+                  : 'Tekerlekli sandalye erişimli araçtan özenli rehbere kadar her detay büyük bir özenle düşünülmüştü. İstanbul’u erişim endişesi olmadan ilk kez böyle deneyimledim.'
+              },
+              {
+                name: 'Thomas K.',
+                country: language === 'en' ? 'Germany' : 'Almanya',
+                text: language === 'en'
+                  ? 'Pınar and her team are true professionals. They planned the entire trip around my mother’s needs and made her feel completely comfortable the whole time.'
+                  : 'Pınar ve ekibi gerçek profesyoneller. Tüm geziyi annemin ihtiyaçlarına göre planladılar ve onun baştan sona rahat hissetmesini sağladılar.'
+              },
+              {
+                name: 'Yuki T.',
+                country: language === 'en' ? 'Japan' : 'Japonya',
+                text: language === 'en'
+                  ? 'Accessible, personal, and genuinely caring. The vehicles were comfortable and the guide spoke our language. Highly recommended for anyone with mobility needs.'
+                  : 'Erişilebilir, kişisel ve içten ilgili. Araçlar konforluydu ve rehber dilimizi konuşuyordu. Hareket kısıtlılığı olan herkese gönülden tavsiye ederim.'
+              }
+            ].map((review, idx) => (
+              <div key={idx} className="bg-white rounded-3xl shadow-lg p-8 flex flex-col">
+                <div className="flex text-piba-orange mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6 flex-1">
+                  “{review.text}”
+                </p>
+                <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+                  <div className="w-12 h-12 rounded-full bg-piba-dark-navy text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-piba-dark-navy">{review.name}</p>
+                    <p className="text-sm text-gray-500">{review.country}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Blog Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
@@ -899,7 +968,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-14 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-piba-dark-navy mb-6">
             {t('questions')}
