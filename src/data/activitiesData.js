@@ -1,7 +1,7 @@
 export const activitiesData = [
   {
     id: 'hammam',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    image: '/hamam-photo.jpeg',
     slug: 'accessible-turkish-hammam',
     icon: '🛁',
     color: 'from-amber-500 to-orange-500',
@@ -25,7 +25,7 @@ Due to the physical nature of the hammam experience, suitability may vary depend
   },
   {
     id: 'cooking',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80',
+    image: '/Turkish-Cooking-Class.jpeg',
     slug: 'turkish-cooking-class',
     icon: '👨‍🍳',
     color: 'from-red-500 to-rose-500',
@@ -49,7 +49,7 @@ Accessibility arrangements are carefully considered to ensure comfort and ease o
   },
   {
     id: 'museum',
-    image: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=800&q=80',
+    image: '/muze-photo.jpeg',
     slug: 'accessible-art-museum-experience',
     icon: '🏛️',
     color: 'from-blue-500 to-indigo-500',
@@ -74,7 +74,7 @@ The pace is always adjusted to individual needs, giving enough time at each stop
   },
   {
     id: 'bosphorus',
-    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80',
+    image: '/Bosphorus-Dinner-cruise.jpeg',
     slug: 'accessible-bosphorus-dinner-cruise',
     icon: '🚢',
     color: 'from-cyan-500 to-teal-500',
@@ -99,7 +99,7 @@ During the evening, our guests can also enjoy live Turkish performances, includi
   },
   {
     id: 'shopping',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
+    image: '/Accessible-Shopping-Experience.jpeg',
     slug: 'accessible-shopping-experience',
     icon: '🛍️',
     color: 'from-purple-500 to-violet-500',
@@ -124,7 +124,7 @@ The pace is adjusted according to individual needs, giving enough time at each l
   },
   {
     id: 'coffee',
-    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80',
+    image: '/turkish-coffee.jpeg',
     slug: 'turkish-coffee-tea-workshop',
     icon: '☕',
     color: 'from-yellow-600 to-amber-600',

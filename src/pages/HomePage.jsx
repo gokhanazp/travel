@@ -431,7 +431,7 @@ const HomePage = () => {
                       <div className="relative group">
                         <div className="relative h-36 sm:h-44 rounded-2xl overflow-hidden shadow-xl">
                           <img
-                            src="/pibawings2.jpeg"
+                            src="/ust-galeri.jpeg"
                             alt="Piba Wings Travel Services"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
@@ -495,7 +495,7 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-72 rounded-2xl overflow-hidden shadow-xl">
                       <img
-                        src="/pibawings2.jpeg"
+                        src="/ust-galeri.jpeg"
                         alt="Piba Wings Travel Services"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
