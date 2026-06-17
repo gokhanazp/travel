@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import { toursData } from '../data/toursData';
-import { activitiesData } from '../data/activitiesData';
 import { blogData } from '../data/blogData';
 import pinarSiverekImg from '../assets/7e00f7a9-eb16-4987-9997-57b62355358f.jpeg';
 
@@ -183,7 +182,6 @@ const TourSlider = () => {
                         alt={(language === 'en' ? tour.titleEn : tour.title).replace(/<br\s*\/?>/g, ' ')}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                        <div className="absolute top-4 left-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">
                         {t('accessibleTour')}
                       </div>
@@ -263,6 +261,9 @@ const TourSlider = () => {
 
 const HomePage = () => {
   const { t, language } = useLanguage()
+
+  // Additional services shown on tour detail pages (extra services)
+  const additionalServices = (toursData.find(tour => tour.id === 'PBWAI0021')?.extraServices || []).slice(0, 6);
 
   useEffect(() => {
     document.title = language === 'en' 
@@ -389,7 +390,7 @@ const HomePage = () => {
                       <div className="relative group">
                         <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden shadow-xl">
                           <img
-                            src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
+                            src="/ust-galeri.jpeg"
                             alt="İstanbul Erişilebilir Gezisi"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
@@ -431,7 +432,7 @@ const HomePage = () => {
                       <div className="relative group">
                         <div className="relative h-36 sm:h-44 rounded-2xl overflow-hidden shadow-xl">
                           <img
-                            src="/ust-galeri.jpeg"
+                            src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
                             alt="Piba Wings Travel Services"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
@@ -441,7 +442,7 @@ const HomePage = () => {
                       <div className="relative group">
                         <div className="relative h-20 sm:h-28 rounded-2xl overflow-hidden shadow-xl">
                           <img
-                            src="https://www.turizmguncel.com/img/-/sites/press/turizmguncel/uploads_arsiv/contents/6724/10155013082011.jpg"
+                            src="/pibawings2.jpeg"
                             alt="Accessible Tourism Services"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
@@ -455,7 +456,7 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                       <img
-                        src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
+                        src="/ust-galeri.jpeg"
                         alt="İstanbul Erişilebilir Gezisi"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -475,7 +476,7 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-32 rounded-2xl overflow-hidden shadow-xl">
                       <img
-                        src="https://www.turizmguncel.com/img/-/sites/press/turizmguncel/uploads_arsiv/contents/6724/10155013082011.jpg"
+                        src="/pibawings2.jpeg"
                         alt="Accessible Tourism Services"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -495,7 +496,7 @@ const HomePage = () => {
                   <div className="relative group break-inside-avoid">
                     <div className="relative h-72 rounded-2xl overflow-hidden shadow-xl">
                       <img
-                        src="/ust-galeri.jpeg"
+                        src="/782e9523-f8d9-40e7-9cf4-6dc96406cc12.jpeg"
                         alt="Piba Wings Travel Services"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
@@ -640,62 +641,61 @@ const HomePage = () => {
       {/* Additional Services Section */}
       <section className="py-14 bg-gradient-to-br from-orange-50/40 via-white to-blue-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center px-6 py-3 bg-orange-500/10 rounded-full border border-orange-500/20 mb-6">
               <span className="text-orange-600 font-semibold text-sm uppercase tracking-wide">
-                {language === 'en' ? 'Optional Experiences' : 'Opsiyonel Deneyimler'}
+                {language === 'en' ? 'Optional & Support Services' : 'Opsiyonel & Destek Hizmetleri'}
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {language === 'en' ? 'Additional Services' : 'Ek Hizmetler'}
+              {language === 'en' ? 'Our Additional Services' : 'Ek Hizmetlerimiz'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {language === 'en'
-                ? 'Enrich your accessible journey with handpicked Istanbul experiences and support services tailored to your needs.'
-                : 'Erişilebilir seyahatinizi, ihtiyaçlarınıza göre özenle seçilmiş İstanbul deneyimleri ve destek hizmetleriyle zenginleştirin.'}
+                ? 'In addition to our standard comfort services for all our guests, you can also take advantage of our optional additional services. You can easily add these to your tour as needed, completely customizing your trip.'
+                : 'Tüm misafirlerimiz için standart konfor hizmetlerimize ek olarak, opsiyonel ek hizmetlerimizden de yararlanabilirsiniz. Bu hizmetleri ihtiyacınıza göre kolayca turunuza ekleyebilir, seyahatinizi tamamen kişiselleştirebilirsiniz.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {activitiesData.slice(0, 4).map(activity => (
-              <Link
-                key={activity.id}
-                to="/optional-activities"
-                className="group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 flex flex-col"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {additionalServices.map((service, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
               >
-                <div className="relative h-40 overflow-hidden">
-                  <img
-                    src={activity.image}
-                    alt={activity.titleEn}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <span className="absolute top-3 left-3 bg-piba-dark-navy text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
-                    <svg className="w-3 h-3 text-piba-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                {/* Service Header */}
+                <div className="bg-piba-dark-navy p-5 flex items-center gap-4">
+                  <div className="w-11 h-11 bg-piba-orange rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
                     </svg>
-                    {activity.duration}
-                  </span>
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-base font-bold text-piba-dark-navy mb-3 leading-snug">
-                    {activity.titleEn}
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">
+                    {language === 'en' ? service.titleEn : service.title}
                   </h3>
-                  <span className="mt-auto text-orange-500 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {language === 'en' ? 'Learn more' : 'Daha fazla'}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
                 </div>
-              </Link>
+
+                {/* Service Content */}
+                <div className="p-5 flex flex-col flex-1">
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+                    {language === 'en' ? service.descriptionEn : service.description}
+                  </p>
+                  <div className="pt-4 border-t border-gray-100 flex items-center justify-end">
+                    <span className="font-bold text-piba-orange">
+                      {language === 'en' ? 'Available on request' : 'Talep üzerine mevcuttur'}
+                    </span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <div className="mt-12 text-center">
             <Link
-              to="/optional-activities"
+              to={language === 'tr' ? '/turlar' : '/tours'}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              {language === 'en' ? 'View All Services' : 'Tüm Hizmetleri Gör'}
+              {language === 'en' ? 'Explore Our Tours' : 'Turları Keşfet'}
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
@@ -835,25 +835,19 @@ const HomePage = () => {
       </section>
 
       {/* Guest Reviews Section */}
-      <section className="py-14 bg-piba-dark-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center px-6 py-3 bg-piba-orange/20 rounded-full border border-piba-orange/30 mb-6">
-              <span className="text-piba-orange font-semibold text-sm uppercase tracking-wide">
-                {t('guestComments')}
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="inline-block text-piba-orange font-semibold text-xs uppercase tracking-widest mb-2">
+              {t('guestComments')}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-piba-dark-navy">
               {language === 'en' ? 'What Our Guests Say' : 'Misafirlerimiz Ne Diyor'}
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              {language === 'en'
-                ? 'Real experiences from travelers who explored Istanbul with us — barrier-free and unforgettable.'
-                : 'İstanbul’u bizimle keşfeden gezginlerin gerçek deneyimleri — engelsiz ve unutulmaz.'}
-            </p>
+            <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-piba-orange" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
                 name: 'Sarah M.',
@@ -877,24 +871,27 @@ const HomePage = () => {
                   : 'Erişilebilir, kişisel ve içten ilgili. Araçlar konforluydu ve rehber dilimizi konuşuyordu. Hareket kısıtlılığı olan herkese gönülden tavsiye ederim.'
               }
             ].map((review, idx) => (
-              <div key={idx} className="bg-white rounded-3xl shadow-lg p-8 flex flex-col">
-                <div className="flex text-piba-orange mb-4">
+              <div
+                key={idx}
+                className="bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-medium hover:-translate-y-0.5 transition-all duration-300 p-5 flex flex-col"
+              >
+                <div className="flex text-piba-orange mb-3">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 leading-relaxed mb-6 flex-1">
+                <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1 line-clamp-4">
                   “{review.text}”
                 </p>
-                <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-piba-dark-navy text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
+                  <div className="w-9 h-9 rounded-full bg-piba-dark-navy text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
                     {review.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-bold text-piba-dark-navy">{review.name}</p>
-                    <p className="text-sm text-gray-500">{review.country}</p>
+                    <p className="text-sm font-bold text-piba-dark-navy leading-tight">{review.name}</p>
+                    <p className="text-xs text-gray-500">{review.country}</p>
                   </div>
                 </div>
               </div>

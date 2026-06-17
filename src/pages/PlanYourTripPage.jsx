@@ -464,21 +464,16 @@ const PlanYourTripPage = () => {
                           isSelected ? 'border-orange-500 bg-orange-50' : 'border-gray-200 hover:border-orange-200'
                         }`}
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center">
-                            <input
-                              type="checkbox"
-                              checked={isSelected}
-                              readOnly
-                              className="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
-                            />
-                            <h4 className="font-semibold text-gray-900 ml-3">
-                              {language === 'en' ? service.titleEn : service.title}
-                            </h4>
-                          </div>
-                          <div className="font-bold text-gray-900">
-                            {service.currency}{service.price}
-                          </div>
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            readOnly
+                            className="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                          />
+                          <h4 className="font-semibold text-gray-900 ml-3">
+                            {language === 'en' ? service.titleEn : service.title}
+                          </h4>
                         </div>
                       </div>
                     )

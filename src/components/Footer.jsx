@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
-import pibawingsLogo from '../assets/pibawings-logo.png'
 import pibaMainLogo from '../assets/pibalogo-300x279.webp'
 
 const Footer = () => {
@@ -16,14 +15,6 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6 space-y-4">
               <div className="flex flex-wrap items-center gap-4">
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                  <img
-                    src={pibawingsLogo}
-                    alt="PibaWings Travel Logo"
-                    className="h-10 md:h-12 w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
                   <img
                     src={pibaMainLogo}
@@ -116,17 +107,17 @@ const Footer = () => {
                 </svg>
                 <span>{t('blog')}</span>
               </Link></li>
-              <li><a href="/#accessibility" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+              <li><Link to={language === 'tr' ? "/hakkimizda" : "/about"} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                <span>{t('footerAccessibility')}</span>
-              </a></li>
-              <li><Link to="/rezervasyon" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
+                <span>{language === 'tr' ? 'Hakkımızda' : 'About Us'}</span>
+              </Link></li>
+              <li><Link to={language === 'tr' ? "/iletisim" : "/contact"} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4h3a1 1 0 011 1v8a1 1 0 01-1 1h-3v3a1 1 0 01-1 1H9a1 1 0 01-1-1v-3H5a1 1 0 01-1-1V8a1 1 0 011-1h3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>{t('footerReservation')}</span>
+                <span>{language === 'tr' ? 'İletişim' : 'Contact Us'}</span>
               </Link></li>
             </ul>
           </div>

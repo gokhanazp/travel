@@ -29,10 +29,10 @@ const translations = {
     readMore: "Read More",
 
     // Hero Section
-    accessibleTravel: "Accessible Solutions",
+    accessibleTravel: "Accessible Tours in İstanbul",
     discoverWorld: "Discover The World With Us",
     heroSubtitle:
-      "Specially designed accessible and small-group tours for comfortable, worry-free journeys.",
+      "Private accessible tours in İstanbul designed for comfort, independence, and authentic local experiences.",
     heroSlogan: "Private Accessible Tours",
     // Alternative slogans (for future use)
     sloganOptions: [
@@ -203,7 +203,7 @@ const translations = {
     comfortDescription:
       "We increase your travel freedom! We offer specially designed accessible vehicle solutions for disabled individuals, providing safe and comfortable transportation.",
 
-    ourVehiclesTitle: 'Our <span class="text-orange-500">Vehicles</span>',
+    ourVehiclesTitle: 'Our Accessible <span class="text-orange-500">Vehicles</span>',
     ourVehiclesSubtitle:
       "We offer a fleet of modern, specially-equipped vehicles to ensure safe, comfortable, and accessible transportation for all our guests.",
     viewAllVehicles: "View All Vehicles",
@@ -258,7 +258,7 @@ const translations = {
 
     // Footer
     footerDescription:
-      "Piba Wings Mobility is a brand of PİBA WINGS TRAVEL Agency provides specially designed accessible tours and travel services for individuals with mobility needs.",
+      "Piba Wings Mobility is the accessible travel division of Piba Wings Travel Agency, providing private accessible tours in Istanbul.",
     footerQuickLinks: "Quick Links",
     footerHome: "Home",
     footerOurTours: "Our Tours",
@@ -291,10 +291,10 @@ const translations = {
     bookNow: "Seyahatinizi Planlayın",
 
     // Hero Section
-    accessibleTravel: "Erişilebilir Çözümler",
+    accessibleTravel: "İstanbul'da Erişilebilir Turlar",
     discoverWorld: "Dünyayı Bizimle Keşfedin",
     heroSubtitle:
-      "Konforlu ve endişesiz yolculuklar için özel olarak tasarlanmış erişilebilir ve küçük grup turları.",
+      "İstanbul'da konfor, bağımsızlık ve özgün yerel deneyimler için tasarlanmış kişiye özel erişilebilir turlar.",
     heroSlogan: "Özel Erişilebilir Turlar",
     // Alternative slogans (for future use)
     sloganOptions: [
@@ -465,7 +465,7 @@ const translations = {
     comfortDescription:
       "Seyahat özgürlüğünüzü artırmak için buradayız! Engelli bireyler için özel olarak tasarlanmış araç çözümlerimizle güvenli ve konforlu bir yolculuk sunuyoruz.",
 
-    ourVehiclesTitle: 'Araç <span class="text-orange-500">Filomuz</span>',
+    ourVehiclesTitle: 'Erişilebilir <span class="text-orange-500">Araçlarımız</span>',
     ourVehiclesSubtitle:
       "Tüm misafirlerimiz için güvenli, konforlu ve erişilebilir ulaşım sağlamak üzere tasarlanmış modern ve özel donanımlı araç filomuzla hizmetinizdeyiz.",
     viewAllVehicles: "Tüm Araçları Görüntüle",
@@ -520,7 +520,7 @@ const translations = {
 
     // Footer
     footerDescription:
-      "Piba Wings Mobility, PİBA WINGS TRAVEL Acentesi'nin bir markasıdır; hareket kısıtlılığı olan bireyler için özel olarak tasarlanmış erişilebilir turlar ve seyahat hizmetleri sunar.",
+      "Piba Wings Mobility, Piba Wings Travel Acentesi'nin erişilebilir seyahat birimidir; İstanbul'da kişiye özel erişilebilir turlar sunar.",
     footerQuickLinks: "Hızlı Bağlantılar",
     footerHome: "Ana Sayfa",
     footerOurTours: "Turlarımız",

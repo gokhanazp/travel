@@ -91,6 +91,8 @@ export const sendReservationEmail = async (reservationData) => {
       from_name: customerName,
       from_email: reservationData.email,
       to_name: 'Piba Wings Travel',
+      to_email: 'pinar@pibawingstravel.com',
+      reply_to: reservationData.email,
       message: `
 🎯 YENİ REZERVASYON TALEBİ
 

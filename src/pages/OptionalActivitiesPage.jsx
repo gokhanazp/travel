@@ -27,10 +27,7 @@ const ActivityCard = ({ activity, language }) => {
       </div>
 
       {/* Navy header band */}
-      <div className="bg-piba-dark-navy px-6 py-5 flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-piba-orange flex items-center justify-center text-2xl flex-shrink-0 shadow-md">
-          {activity.icon}
-        </div>
+      <div className="bg-piba-dark-navy px-6 py-5 flex items-center">
         <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
           {activity.titleEn}
         </h3>

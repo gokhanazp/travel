@@ -323,8 +323,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Tekerlekli Sandalye Kiralama (Akülü)",
-        titleEn: "Wheelchair Rental (Electric Wheelchair)",
+        title: "Akülü Tekerlekli Sandalye Kiralama",
+        titleEn: "Electric Wheelchair Rental",
         description:
           "Elektrikli tekerlekli sandalye kiralama hizmeti sunuyoruz.",
         descriptionEn: "We provide electric wheelchair rental service.",
@@ -370,8 +370,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Özel Yemek Menüsü (Diyabet Dostu)",
-        titleEn: "Special Dietary Menu (Diabetic Friendly)",
+        title: "Diyabet Dostu Menü",
+        titleEn: "Diabetic Friendly Menu",
         description:
           "Diyabet hastalarına özel hazırlanmış dengeli ve sağlıklı öğünler.",
         descriptionEn:
@@ -721,8 +721,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Tekerlekli Sandalye Kiralama (Akülü)",
-        titleEn: "Wheelchair Rental (Electric Wheelchair)",
+        title: "Akülü Tekerlekli Sandalye Kiralama",
+        titleEn: "Electric Wheelchair Rental",
         description:
           "Elektrikli tekerlekli sandalye kiralama hizmeti sunuyoruz.",
         descriptionEn: "We provide electric wheelchair rental service.",
@@ -768,8 +768,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Özel Yemek Menüsü (Diyabet Dostu)",
-        titleEn: "Special Dietary Menu (Diabetic Friendly)",
+        title: "Diyabet Dostu Menü",
+        titleEn: "Diabetic Friendly Menu",
         description:
           "Diyabet hastalarına özel hazırlanmış dengeli ve sağlıklı öğünler.",
         descriptionEn:
@@ -1088,8 +1088,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Tekerlekli Sandalye Kiralama (Akülü)",
-        titleEn: "Wheelchair Rental (Electric Wheelchair)",
+        title: "Akülü Tekerlekli Sandalye Kiralama",
+        titleEn: "Electric Wheelchair Rental",
         description:
           "Elektrikli tekerlekli sandalye kiralama hizmeti sunuyoruz.",
         descriptionEn: "We provide electric wheelchair rental service.",
@@ -1135,8 +1135,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Özel Yemek Menüsü (Diyabet Dostu)",
-        titleEn: "Special Dietary Menu (Diabetic Friendly)",
+        title: "Diyabet Dostu Menü",
+        titleEn: "Diabetic Friendly Menu",
         description:
           "Diyabet hastalarına özel hazırlanmış dengeli ve sağlıklı öğünler.",
         descriptionEn:
@@ -1639,8 +1639,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Tekerlekli Sandalye Kiralama (Akülü)",
-        titleEn: "Wheelchair Rental (Electric Wheelchair)",
+        title: "Akülü Tekerlekli Sandalye Kiralama",
+        titleEn: "Electric Wheelchair Rental",
         description:
           "Elektrikli tekerlekli sandalye kiralama hizmeti sunuyoruz.",
         descriptionEn: "We provide electric wheelchair rental service.",
@@ -1686,8 +1686,8 @@ export const toursData = [
         hasSelectButton: true,
       },
       {
-        title: "Özel Yemek Menüsü (Diyabet Dostu)",
-        titleEn: "Special Dietary Menu (Diabetic Friendly)",
+        title: "Diyabet Dostu Menü",
+        titleEn: "Diabetic Friendly Menu",
         description:
           "Diyabet hastalarına özel hazırlanmış dengeli ve sağlıklı öğünler.",
         descriptionEn:

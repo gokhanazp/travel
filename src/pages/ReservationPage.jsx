@@ -547,7 +547,7 @@ const ReservationPage = () => {
                     <option value="">{currentContent.tourPlaceholder}</option>
                     {currentContent.tours.map(tour => (
                       <option key={tour.id} value={tour.id}>
-                        {tour.name} - {tour.price} ({tour.code})
+                        {tour.name} ({tour.code})
                       </option>
                     ))}
                   </select>
@@ -618,8 +618,7 @@ const ReservationPage = () => {
                               </svg>
                             )}
                           </div>
-                          {/* Icon + title */}
-                          <span className="text-xl flex-shrink-0">{activity.icon}</span>
+                          {/* Title */}
                           <div className="min-w-0">
                             <p className="font-semibold text-gray-900 text-sm truncate">
                               {activity.titleEn}
@@ -649,7 +648,7 @@ const ReservationPage = () => {
                         .filter(a => formData.selectedActivities[a.id])
                         .map(a => (
                           <span key={a.id} className="inline-flex items-center gap-1 bg-white border border-orange-200 text-orange-700 text-xs font-medium px-3 py-1.5 rounded-full">
-                            {a.icon} {a.titleEn.split(' ').slice(0, 3).join(' ')}…
+                            {a.titleEn.split(' ').slice(0, 3).join(' ')}…
                           </span>
                         ))
                       }
@@ -741,18 +740,6 @@ const ReservationPage = () => {
                                 </div>
                               </div>
                             )}
-
-                            {/* Price */}
-                            <div className="ml-6 text-right">
-                              <div className="font-bold text-xl text-gray-900 mb-1">
-                                {service.price} {service.currency}
-                              </div>
-                              {isSelected && quantity > 1 && (
-                                <div className="text-sm text-gray-600">
-                                  {quantity} x {service.price} = {(parseFloat(service.price) || 0) * quantity} {service.currency}
-                                </div>
-                              )}
-                            </div>
                           </div>
                         </div>
                       )
@@ -769,7 +756,6 @@ const ReservationPage = () => {
                         {Object.entries(formData.selectedServices).map(([index, service]) => {
                           if (!service.selected) return null
                           const serviceData = availableServices[parseInt(index)]
-                          const totalPrice = `${(parseFloat(serviceData.price) || 0) * service.quantity} ${serviceData.currency}`
 
                           return (
                             <div key={index} className="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
@@ -786,27 +772,10 @@ const ReservationPage = () => {
                                   </div>
                                 </div>
                               </div>
-                              <div className="font-bold text-green-700">
-                                {totalPrice}
-                              </div>
                             </div>
                           )
                         })}
                       </div>
-
-                      {/* Total Services Price */}
-                      {calculateServicesTotal() > 0 && (
-                        <div className="mt-4 pt-4 border-t border-green-200">
-                          <div className="flex justify-between items-center">
-                            <span className="font-bold text-green-800 text-lg">
-                              {language === 'en' ? 'Services Total:' : 'Hizmetler Toplamı:'}
-                            </span>
-                            <span className="font-bold text-green-800 text-xl">
-                              {calculateServicesTotal()} {availableServices[0]?.currency || '€'}
-                            </span>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   )}
                 </div>
