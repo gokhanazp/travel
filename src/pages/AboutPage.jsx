@@ -171,15 +171,15 @@ const AboutPage = () => {
       </section>
 
       {/* --- CTA Section --- */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-sky-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-piba-dark-navy">
             {t('about_cta', 'Ready to Explore İstanbul without barriers?')}
           </h2>
           <div className="mt-8">
             <Link
               to={language === 'tr' ? '/turlar' : '/tours'}
-              className="inline-block px-10 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-orange-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               {t('viewTours', 'View Our Tours')}
             </Link>

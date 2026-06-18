@@ -355,7 +355,10 @@ const TourDetailPage = () => {
       price: 'Price',
       features: 'Features',
       highlights: 'Highlights',
-      bookNow: 'Plan Your Trip',
+      bookNow: 'Request a Quote',
+      customPricing: 'Custom Pricing',
+      customPricingTitle: 'Tailor-Made Accessible Travel',
+      customPricingText: 'Every itinerary is customized according to your accessibility needs, travel dates and group size.',
       backToTours: 'Back to Tours',
       participantPhotos: 'Participant Photos',
       readMore: 'Read More',
@@ -381,7 +384,10 @@ const TourDetailPage = () => {
       price: 'Fiyat',
       features: 'Özellikler',
       highlights: 'Öne Çıkanlar',
-      bookNow: 'Seyahatinizi Planlayın',
+      bookNow: 'Teklif Alın',
+      customPricing: 'Kişiye Özel Fiyatlandırma',
+      customPricingTitle: 'Size Özel Erişilebilir Seyahat',
+      customPricingText: 'Her program; erişilebilirlik ihtiyaçlarınıza, seyahat tarihlerinize ve grup büyüklüğünüze göre özel olarak hazırlanır.',
       backToTours: 'Turlara Dön',
       participantPhotos: 'Katılımcı Fotoğrafları',
       readMore: 'Devamını Oku',
@@ -516,13 +522,13 @@ const TourDetailPage = () => {
       <div className="md:hidden -mt-8 relative z-10 mx-4 mb-6">
         <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
           <div className="grid grid-cols-2 gap-4">
-            {/* Price */}
+            {/* Custom Pricing */}
             <div className="text-center">
-              <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
-                {typeof tour.price === 'number' ? `${tour.price}${tour.currency}` : tour.price}
+              <div className="text-lg font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent leading-tight">
+                {currentContent.customPricing}
               </div>
               <p className="text-xs text-gray-600">
-                {language === 'en' ? 'Starting from' : 'Başlangıç fiyatı'}
+                {language === 'en' ? 'Tailored to you' : 'Size özel'}
               </p>
             </div>
 
@@ -550,7 +556,7 @@ const TourDetailPage = () => {
               to="/reservation"
               className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-semibold text-sm shadow-md active:scale-95 transition-transform duration-150 flex items-center justify-center"
             >
-              {language === 'en' ? 'Plan Your Trip' : 'Seyahatinizi Planlayın'}
+              {currentContent.bookNow}
             </Link>
             <button
               className="px-4 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 active:scale-95 transition-all duration-150"
@@ -1490,13 +1496,17 @@ const TourDetailPage = () => {
             <div className="lg:col-span-1">
               <div className="bg-piba-dark-navy rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 sticky top-8">
                 <div className="space-y-8">
-                  {/* Enhanced Price Section */}
+                  {/* Custom Pricing Section */}
                   <div className="text-center pb-6 border-b border-white/15">
-                    <span className="text-sm text-gray-200 block mb-2">Starting from</span>
-                    <div className="text-4xl md:text-5xl font-bold text-piba-orange mb-2">
-                      {language === 'en' ? tour.priceEn : tour.price}
-                    </div>
-                    <p className="text-gray-300 font-medium">{language === 'en' ? 'per person' : 'kişi başı'}</p>
+                    <span className="text-sm text-gray-200 block mb-3">{currentContent.customPricing}</span>
+                    <div className="w-10 h-0.5 bg-piba-orange mx-auto mb-4" />
+                    <h3 className="text-3xl md:text-4xl font-bold text-piba-orange leading-tight mb-4">
+                      {currentContent.customPricingTitle}
+                    </h3>
+                    <div className="w-full h-px bg-white/15 mb-4" />
+                    <p className="text-gray-200 leading-relaxed">
+                      {currentContent.customPricingText}
+                    </p>
                   </div>
 
                   {/* Enhanced Tour Info */}

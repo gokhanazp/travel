@@ -12,7 +12,6 @@ const TourCard = ({ tour, index = 0 }) => {
   const title = language === 'en' ? tour.titleEn : tour.title;
   const shortDescription = language === 'en' ? tour.shortDescriptionEn : tour.shortDescription;
   const tags = language === 'en' ? tour.tagsEn : tour.tags;
-  const price = language === 'en' ? tour.priceEn : tour.price;
 
   return (
     <div
@@ -66,10 +65,10 @@ const TourCard = ({ tour, index = 0 }) => {
         {/* Price & Action */}
         <div className="mt-auto pt-4 border-t border-gray-100">
           <div className="flex items-center justify-between">
-            {price ? (
+            {!isCustomTour ? (
               <div className="text-left">
-                <span className="text-xs text-gray-500">{t('priceFrom') || 'Price from'}</span>
-                <p className="text-lg font-bold text-gray-800">{price}</p>
+                <span className="text-xs text-gray-500">{language === 'en' ? 'Pricing' : 'Fiyatlandırma'}</span>
+                <p className="text-lg font-bold text-orange-600">{language === 'en' ? 'On request' : 'Talep üzerine'}</p>
               </div>
             ) : (
               <div></div> // Empty div to maintain layout for the custom card

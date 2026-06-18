@@ -218,17 +218,17 @@ const OptionalActivitiesPage = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-sky-100 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-piba-dark-navy mb-4">
             Ready to plan your accessible trip?
           </h2>
-          <p className="text-orange-100 mb-8 text-lg">
+          <p className="text-gray-600 mb-8 text-lg">
             Combine any of these experiences with our tours for a fully personalized journey.
           </p>
           <Link
             to="/reservation"
-            className="inline-block bg-white text-orange-600 font-bold px-10 py-4 rounded-full hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-10 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Plan My Trip
           </Link>

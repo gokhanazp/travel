@@ -116,15 +116,15 @@ const translations = {
     customerScore: "Recommendation Rate",
 
     // Features
-    fullAccessibility: "Special Tours for Disabled & Elderly",
+    fullAccessibility: "Accessible Tours Tailored Your Needs",
     fullAccessibilityDesc:
-      "Tours specially designed for disabled and elderly individuals with complete accessibility solutions",
+      "Personalized accessible tours designed around each guest's needs and preferences",
     expertGuides: "Reliable & Professional Service",
     expertGuidesDesc:
       "Turkey's most experienced team in accessible tourism with certified professional guides",
-    specialVehicles: "Specially Designed Equipment",
+    specialVehicles: "Accessible Transportation",
     specialVehiclesDesc:
-      "Modern vehicle fleet and equipment specially designed for disabled individuals",
+      "Comfortable and accessible vehicles designed for smooth and worry-free travel",
     personalizedService: "Safe & Comfortable Travel",
     personalizedServiceDesc:
       "We provide safe and comfortable travel opportunities with our professional approach",
@@ -378,15 +378,15 @@ const translations = {
     customerScore: "Tavsiye Oranı",
 
     // Features
-    fullAccessibility: "Engelli ve Yaşlı Bireylere Özel Turlar",
+    fullAccessibility: "İhtiyaçlarınıza Göre Erişilebilir Turlar",
     fullAccessibilityDesc:
-      "Engelli ve yaşlı bireylere özel olarak tasarlanmış, tam erişilebilirlik çözümlü turlar",
+      "Her misafirin ihtiyaç ve tercihlerine göre tasarlanmış kişiye özel erişilebilir turlar",
     expertGuides: "Güvenilir ve Profesyonel Hizmet",
     expertGuidesDesc:
       "Sertifikalı profesyonel rehberlerle erişilebilir turizm konusunda Türkiye'nin en deneyimli ekibi",
-    specialVehicles: "Özel Tasarım Ekipmanlar",
+    specialVehicles: "Erişilebilir Ulaşım",
     specialVehiclesDesc:
-      "Engelli bireyler için özel olarak tasarlanmış modern araç filosu ve ekipmanlar",
+      "Sorunsuz ve endişesiz seyahat için tasarlanmış konforlu ve erişilebilir araçlar",
     personalizedService: "Güvenli ve Konforlu Seyahat",
     personalizedServiceDesc:
       "Profesyonel yaklaşımımızla güvenli ve konforlu seyahat imkanları sunuyoruz",
