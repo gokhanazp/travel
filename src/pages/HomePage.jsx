@@ -259,6 +259,180 @@ const TourSlider = () => {
   );
 };
 
+// Guest Reviews Carousel
+const GuestReviewsSection = () => {
+  const { t, language } = useLanguage();
+  const [active, setActive] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  const reviews = [
+    {
+      name: 'Thomas K.',
+      country: language === 'en' ? 'Germany' : 'Almanya',
+      rating: 5,
+      text: language === 'en'
+        ? 'Pınar planned every detail around my mother’s needs. We felt comfortable throughout our Istanbul journey. Highly recommended for anyone looking for an accessible and caring travel experience.'
+        : 'Pınar her detayı annemin ihtiyaçlarına göre planladı. İstanbul yolculuğumuz boyunca kendimizi rahat hissettik. Erişilebilir ve özenli bir seyahat deneyimi arayan herkese gönülden tavsiye ederim.'
+    },
+    {
+      name: 'Sarah M.',
+      country: language === 'en' ? 'United Kingdom' : 'Birleşik Krallık',
+      rating: 5,
+      text: language === 'en'
+        ? 'From the wheelchair-accessible van to the thoughtful guide, every detail was handled with care. I finally experienced Istanbul without worrying about access.'
+        : 'Tekerlekli sandalye erişimli araçtan özenli rehbere kadar her detay büyük bir özenle düşünülmüştü. İstanbul’u erişim endişesi olmadan ilk kez böyle deneyimledim.'
+    },
+    {
+      name: 'Yuki T.',
+      country: language === 'en' ? 'Japan' : 'Japonya',
+      rating: 5,
+      text: language === 'en'
+        ? 'Accessible, personal, and genuinely caring. The vehicles were comfortable and the guide spoke our language. Highly recommended for anyone with mobility needs.'
+        : 'Erişilebilir, kişisel ve içten ilgili. Araçlar konforluydu ve rehber dilimizi konuşuyordu. Hareket kısıtlılığı olan herkese gönülden tavsiye ederim.'
+    },
+    {
+      name: 'James M.',
+      country: language === 'en' ? 'United States' : 'Amerika Birleşik Devletleri',
+      rating: 5,
+      text: language === 'en'
+        ? 'I used to avoid city tours, but frequent rest breaks and the accessible van made the whole day effortless. A truly caring and professional team.'
+        : 'Eskiden şehir turlarından kaçınırdım, ama sık verilen molalar ve erişilebilir araç tüm günü zahmetsiz hale getirdi. Gerçekten ilgili ve profesyonel bir ekip.'
+    }
+  ];
+
+  const goTo = (index) => {
+    setActive((index + reviews.length) % reviews.length);
+    setAutoPlay(false);
+  };
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    const id = setInterval(() => setActive((p) => (p + 1) % reviews.length), 6000);
+    return () => clearInterval(id);
+  }, [autoPlay, reviews.length]);
+
+  const current = reviews[active];
+
+  return (
+    <section className="bg-[#FBF3E8]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-16 lg:pb-20">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="inline-block text-piba-orange font-semibold text-xs uppercase tracking-widest mb-3">
+            {t('guestComments')}
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-piba-dark-navy">
+            {language === 'en' ? 'What Our Guests Say' : 'Misafirlerimiz Ne Diyor'}
+          </h2>
+          <div className="mt-4 mx-auto h-1 w-16 rounded-full bg-piba-orange" />
+        </div>
+
+        {/* Carousel */}
+        <div className="relative">
+          {/* Decorative quote marks */}
+          <span className="pointer-events-none select-none hidden md:block absolute -top-2 left-0 text-[7rem] leading-none font-serif text-piba-dark-navy/10">“</span>
+          <span className="pointer-events-none select-none hidden md:block absolute -bottom-10 right-0 text-[7rem] leading-none font-serif text-piba-dark-navy/10">”</span>
+
+          <div className="flex items-center justify-center gap-3 sm:gap-6">
+            {/* Prev */}
+            <button
+              onClick={() => goTo(active - 1)}
+              aria-label="Previous review"
+              className="hidden sm:flex flex-shrink-0 w-12 h-12 items-center justify-center rounded-full bg-white text-piba-dark-navy shadow-md hover:shadow-lg hover:bg-piba-dark-navy hover:text-white transition-all duration-300"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Card */}
+            <div className="relative z-10 flex-1 max-w-2xl bg-white rounded-2xl shadow-xl px-7 py-10 sm:px-12 sm:py-12 text-center">
+              {/* Stars */}
+              <div className="flex items-center justify-center gap-1.5 mb-6" aria-label={`${current.rating} out of 5`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    key={i}
+                    className={`w-6 h-6 ${i < current.rating ? 'text-piba-orange' : 'text-gray-200'}`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118L2.05 9.801c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <blockquote className="text-lg sm:text-2xl text-piba-dark-navy/90 leading-relaxed font-light mb-8">
+                “{current.text}”
+              </blockquote>
+
+              <div className="mx-auto mb-7 h-px w-full max-w-md bg-gray-200" />
+
+              {/* Guest */}
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-piba-dark-navy text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  {current.name.charAt(0)}
+                </div>
+                <div className="text-left">
+                  <p className="text-base font-bold text-piba-dark-navy leading-tight">{current.name}</p>
+                  <p className="text-sm text-gray-500">{current.country}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Next */}
+            <button
+              onClick={() => goTo(active + 1)}
+              aria-label="Next review"
+              className="hidden sm:flex flex-shrink-0 w-12 h-12 items-center justify-center rounded-full bg-white text-piba-dark-navy shadow-md hover:shadow-lg hover:bg-piba-dark-navy hover:text-white transition-all duration-300"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile arrows + Dots */}
+        <div className="flex items-center justify-center gap-6 mt-9">
+          <button
+            onClick={() => goTo(active - 1)}
+            aria-label="Previous review"
+            className="sm:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white text-piba-dark-navy shadow-md"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div className="flex items-center gap-2.5">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Go to review ${i + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  i === active ? 'w-7 bg-piba-orange' : 'w-2.5 bg-piba-dark-navy/20 hover:bg-piba-dark-navy/40'
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => goTo(active + 1)}
+            aria-label="Next review"
+            className="sm:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white text-piba-dark-navy shadow-md"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const HomePage = () => {
   const { t, language } = useLanguage()
 
@@ -835,70 +1009,7 @@ const HomePage = () => {
       </section>
 
       {/* Guest Reviews Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <span className="inline-block text-piba-orange font-semibold text-xs uppercase tracking-widest mb-2">
-              {t('guestComments')}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-piba-dark-navy">
-              {language === 'en' ? 'What Our Guests Say' : 'Misafirlerimiz Ne Diyor'}
-            </h2>
-            <div className="mt-3 mx-auto h-1 w-14 rounded-full bg-piba-orange" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              {
-                name: 'Sarah M.',
-                country: language === 'en' ? 'United Kingdom' : 'Birleşik Krallık',
-                text: language === 'en'
-                  ? 'From the wheelchair-accessible van to the thoughtful guide, every detail was handled with care. I finally experienced Istanbul without worrying about access.'
-                  : 'Tekerlekli sandalye erişimli araçtan özenli rehbere kadar her detay büyük bir özenle düşünülmüştü. İstanbul’u erişim endişesi olmadan ilk kez böyle deneyimledim.'
-              },
-              {
-                name: 'Thomas K.',
-                country: language === 'en' ? 'Germany' : 'Almanya',
-                text: language === 'en'
-                  ? 'Pınar and her team are true professionals. They planned the entire trip around my mother’s needs and made her feel completely comfortable the whole time.'
-                  : 'Pınar ve ekibi gerçek profesyoneller. Tüm geziyi annemin ihtiyaçlarına göre planladılar ve onun baştan sona rahat hissetmesini sağladılar.'
-              },
-              {
-                name: 'Yuki T.',
-                country: language === 'en' ? 'Japan' : 'Japonya',
-                text: language === 'en'
-                  ? 'Accessible, personal, and genuinely caring. The vehicles were comfortable and the guide spoke our language. Highly recommended for anyone with mobility needs.'
-                  : 'Erişilebilir, kişisel ve içten ilgili. Araçlar konforluydu ve rehber dilimizi konuşuyordu. Hareket kısıtlılığı olan herkese gönülden tavsiye ederim.'
-              }
-            ].map((review, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl border border-gray-100 shadow-soft hover:shadow-medium hover:-translate-y-0.5 transition-all duration-300 p-5 flex flex-col"
-              >
-                <div className="flex text-piba-orange mb-3">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.075 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1 line-clamp-4">
-                  “{review.text}”
-                </p>
-                <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                  <div className="w-9 h-9 rounded-full bg-piba-dark-navy text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                    {review.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-piba-dark-navy leading-tight">{review.name}</p>
-                    <p className="text-xs text-gray-500">{review.country}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GuestReviewsSection />
 
       {/* Blog Section */}
       <section className="py-14 bg-gray-50">

@@ -62,24 +62,14 @@ const TourCard = ({ tour, index = 0 }) => {
           {shortDescription}
         </p>
 
-        {/* Price & Action */}
+        {/* Action */}
         <div className="mt-auto pt-4 border-t border-gray-100">
-          <div className="flex items-center justify-between">
-            {!isCustomTour ? (
-              <div className="text-left">
-                <span className="text-xs text-gray-500">{language === 'en' ? 'Pricing' : 'Fiyatlandırma'}</span>
-                <p className="text-lg font-bold text-orange-600">{language === 'en' ? 'On request' : 'Talep üzerine'}</p>
-              </div>
-            ) : (
-              <div></div> // Empty div to maintain layout for the custom card
-            )}
-            <Link
-              to={isCustomTour ? '/plan-trip' : `/tour/${tour.slug}`}
-              className="bg-orange-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-orange-600 transition-colors duration-300 text-center"
-            >
-              {isCustomTour ? 'Start My Trip Planning' : (t('viewDetails') || 'View Details')}
-            </Link>
-          </div>
+          <Link
+            to={isCustomTour ? '/plan-trip' : `/tour/${tour.slug}`}
+            className="block w-full bg-orange-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-orange-600 transition-colors duration-300 text-center"
+          >
+            {isCustomTour ? 'Start My Trip Planning' : (t('viewDetails') || 'View Details')}
+          </Link>
         </div>
       </div>
     </div>

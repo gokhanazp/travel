@@ -27,6 +27,9 @@ export const toursData = [
           "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
           "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
           "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+          "/tours-foto/blue-mosque/bm-new-1.jpeg",
+          "/tours-foto/blue-mosque/bm-new-2.jpeg",
+          "/tours-foto/blue-mosque/bm-new-3.jpeg",
         ]
       },
       {
@@ -40,6 +43,10 @@ export const toursData = [
           "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
           "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
           "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-1.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-2.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-3.jpeg",
+          "/tours-foto/hagia-sophia/hs-video-1.mp4",
         ]
       },
       {
@@ -52,6 +59,15 @@ export const toursData = [
           "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
           "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
           "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-1.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-2.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-3.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-4.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-5.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-6.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-7.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-8.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-9.jpeg",
         ]
       },
       {
@@ -422,6 +438,9 @@ export const toursData = [
           "/tours-foto/blue-mosque/7127be6d-d3d0-46ec-9301-426857885838.jpeg",
           "/tours-foto/blue-mosque/87c61df3-6863-4ede-b934-a3896240c30a.jpeg",
           "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
+          "/tours-foto/blue-mosque/bm-new-1.jpeg",
+          "/tours-foto/blue-mosque/bm-new-2.jpeg",
+          "/tours-foto/blue-mosque/bm-new-3.jpeg",
         ]
       },
       {
@@ -432,6 +451,10 @@ export const toursData = [
           "/tours-foto/hagia-sophia/a049ad45-5670-447d-a16d-63e83faa5448.jpeg",
           "/tours-foto/hagia-sophia/a6f2d6c8-6050-422a-9b06-dcccc80e7a43.jpeg",
           "/tours-foto/hagia-sophia/b9139303-5749-42ef-b2af-7682ece0e8e3.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-1.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-2.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-3.jpeg",
+          "/tours-foto/hagia-sophia/hs-video-1.mp4",
         ]
       },
       {
@@ -443,6 +466,15 @@ export const toursData = [
           "/tours-foto/topkapi-sarayi/114c93cd-19b3-4fa5-81ef-5da01adb0996.jpeg",
           "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
           "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-1.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-2.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-3.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-4.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-5.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-6.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-7.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-8.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-9.jpeg",
         ]
       },
       {
@@ -463,6 +495,37 @@ export const toursData = [
           "/tours-foto/dolmabahce/1992c380-50fb-4c84-b0e7-1426d619e3e3.jpeg",
           "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
           "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
+        ]
+      },
+      {
+        title: "Yerebatan Sarnıcı",
+        titleEn: "Basilica Cistern",
+        photos: [
+          "/tours-foto/yerebatan-sarnici/yb-new-1.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-2.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-3.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-4.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-5.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-6.jpeg",
+        ]
+      },
+      {
+        title: "Boğaz Turu",
+        titleEn: "Bosphorus Cruise",
+        photos: [
+          "/tours-foto/Bosphorus-Cruise/bc-new-1.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-2.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-3.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-4.jpeg",
+        ]
+      },
+      {
+        title: "Erişilebilir Konaklama",
+        titleEn: "Accessible Accommodation",
+        photos: [
+          "/tours-foto/Accessible-Accommodation/acc-new-1.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-2.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-3.jpeg",
         ]
       },
       {
@@ -822,6 +885,9 @@ export const toursData = [
           "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
           "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
           "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+          "/tours-foto/blue-mosque/bm-new-1.jpeg",
+          "/tours-foto/blue-mosque/bm-new-2.jpeg",
+          "/tours-foto/blue-mosque/bm-new-3.jpeg",
         ]
       },
       {
@@ -835,6 +901,10 @@ export const toursData = [
           "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
           "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
           "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-1.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-2.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-3.jpeg",
+          "/tours-foto/hagia-sophia/hs-video-1.mp4",
         ]
       },
       {
@@ -847,6 +917,15 @@ export const toursData = [
           "/tours-foto/topkapi-sarayi/12f4879d-a21f-4731-b58b-3462f5873321.jpeg",
           "/tours-foto/topkapi-sarayi/260950a3-332f-4525-a6c4-20f475bc0a53.jpeg",
           "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-1.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-2.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-3.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-4.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-5.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-6.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-7.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-8.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-9.jpeg",
         ]
       },
       {
@@ -868,6 +947,37 @@ export const toursData = [
           "/tours-foto/dolmabahce/25bf850c-16ab-4d0f-8269-49e45ed5fe7a.jpeg",
           "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
           "/tours-foto/dolmabahce/7578a122-6e5e-4fe8-be02-e1981ce14cc4.jpeg",
+        ]
+      },
+      {
+        title: "Yerebatan Sarnıcı",
+        titleEn: "Basilica Cistern",
+        photos: [
+          "/tours-foto/yerebatan-sarnici/yb-new-1.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-2.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-3.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-4.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-5.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-6.jpeg",
+        ]
+      },
+      {
+        title: "Boğaz Turu",
+        titleEn: "Bosphorus Cruise",
+        photos: [
+          "/tours-foto/Bosphorus-Cruise/bc-new-1.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-2.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-3.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-4.jpeg",
+        ]
+      },
+      {
+        title: "Erişilebilir Konaklama",
+        titleEn: "Accessible Accommodation",
+        photos: [
+          "/tours-foto/Accessible-Accommodation/acc-new-1.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-2.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-3.jpeg",
         ]
       },
       {
@@ -1190,6 +1300,10 @@ export const toursData = [
           "/tours-foto/hagia-sophia/ba13694a-3b77-4e88-987d-292477a5edcb.jpeg",
           "/tours-foto/hagia-sophia/cd63ccf9-2b4b-406f-8159-48604b9a4f37.jpeg",
           "/tours-foto/hagia-sophia/f41ccd6b-2705-431f-a153-330acc56faa0.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-1.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-2.jpeg",
+          "/tours-foto/hagia-sophia/hs-new-3.jpeg",
+          "/tours-foto/hagia-sophia/hs-video-1.mp4",
         ]
       },
       {
@@ -1202,6 +1316,9 @@ export const toursData = [
           "/tours-foto/blue-mosque/edab9434-e230-460b-b249-faac7b3fac2d.jpeg",
           "/tours-foto/blue-mosque/f1c515df-dc7d-4124-bb4f-dee9616e964f.jpeg",
           "/tours-foto/blue-mosque/f8ef0466-d4f1-478b-8818-d4e7c085b1ce.jpeg",
+          "/tours-foto/blue-mosque/bm-new-1.jpeg",
+          "/tours-foto/blue-mosque/bm-new-2.jpeg",
+          "/tours-foto/blue-mosque/bm-new-3.jpeg",
         ]
       },
       {
@@ -1216,6 +1333,15 @@ export const toursData = [
           "/tours-foto/topkapi-sarayi/34f9017f-57aa-46f5-9279-a6df070b8c41.jpeg",
           "/tours-foto/topkapi-sarayi/3c0defe2-7e26-48eb-aaf3-a8f4e64d33f6.jpeg",
           "/tours-foto/topkapi-sarayi/51e6d7ac-0d40-4d31-a3d1-f99416714273.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-1.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-2.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-3.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-4.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-5.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-6.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-7.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-8.jpeg",
+          "/tours-foto/topkapi-sarayi/tk-new-9.jpeg",
         ]
       },
       {
@@ -1238,6 +1364,37 @@ export const toursData = [
           "/tours-foto/dolmabahce/44578af6-a74e-433b-b341-32a733964cf3.jpeg",
           "/tours-foto/dolmabahce/7578a122-6e5e-4fe8-be02-e1981ce14cc4.jpeg",
           "/tours-foto/dolmabahce/88346e22-5d36-4df0-86d7-b2dd6ef386ec.jpeg",
+        ]
+      },
+      {
+        title: "Yerebatan Sarnıcı",
+        titleEn: "Basilica Cistern",
+        photos: [
+          "/tours-foto/yerebatan-sarnici/yb-new-1.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-2.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-3.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-4.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-5.jpeg",
+          "/tours-foto/yerebatan-sarnici/yb-new-6.jpeg",
+        ]
+      },
+      {
+        title: "Boğaz Turu",
+        titleEn: "Bosphorus Cruise",
+        photos: [
+          "/tours-foto/Bosphorus-Cruise/bc-new-1.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-2.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-3.jpeg",
+          "/tours-foto/Bosphorus-Cruise/bc-new-4.jpeg",
+        ]
+      },
+      {
+        title: "Erişilebilir Konaklama",
+        titleEn: "Accessible Accommodation",
+        photos: [
+          "/tours-foto/Accessible-Accommodation/acc-new-1.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-2.jpeg",
+          "/tours-foto/Accessible-Accommodation/acc-new-3.jpeg",
         ]
       },
       {
